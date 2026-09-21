@@ -4,7 +4,7 @@
 작성 중
 
 ## 배포 URL
-배포 후 추가
+https://chihun-an.github.io/rag-field-scan/
 
 ## 출발 질문
 규정·품질 문서에 근거를 달아 답하는 AI를 만들려면 무엇을 알아야 할까?
