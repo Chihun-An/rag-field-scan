@@ -1,7 +1,7 @@
 # RAG Field Scan
 
 ## 결론
-작성 중
+규정·품질 문서에 근거를 달아 답하는 AI는 검색 성능보다 '어느 문서의 어느 판에서 왔는지'를 파이프라인 끝까지 잇는 설계가 관건이다.
 
 ## 배포 URL
 https://chihun-an.github.io/rag-field-scan/
@@ -16,6 +16,7 @@ https://chihun-an.github.io/rag-field-scan/
 - [field-map.md](field-map.md) — 분야 지도 (10개 영역)
 - [sources.md](sources.md) — 출처 모음
 - [key-contexts.md](key-contexts.md) — 핵심 맥락 5개
+- [process.md](process.md) — 제작 과정
 - 영역 파일 10개
   - [areas/01-rag-basics.md](areas/01-rag-basics.md) — RAG 기본 구조
   - [areas/02-document-parsing-chunking.md](areas/02-document-parsing-chunking.md) — 문서 파싱·청킹
@@ -27,4 +28,3 @@ https://chihun-an.github.io/rag-field-scan/
   - [areas/08-agentic-rag.md](areas/08-agentic-rag.md) — 에이전트형 RAG·데이터 분석 에이전트
   - [areas/09-long-context-vs-rag.md](areas/09-long-context-vs-rag.md) — 긴 컨텍스트 vs RAG
   - [areas/10-security-governance.md](areas/10-security-governance.md) — 권한·보안·거버넌스
-- 나머지 문서: 9/21 이후 추가 예정

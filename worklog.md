@@ -157,12 +157,12 @@
 
 ### 목표
 
-areas 폴더 생성, 영역 파일 4개 작성 (01~04) + 영역 파일 3개 작성 (05~07) + 영역 파일 3개 작성 (08~10, 완결) + 링크 정리, sources.md 작성 + key-contexts.md 작성
+areas 폴더 생성, 영역 파일 4개 작성 (01~04) + 영역 파일 3개 작성 (05~07) + 영역 파일 3개 작성 (08~10, 완결) + 링크 정리, sources.md 작성 + key-contexts.md 작성 + process.md 작성
 
 ### 시작·종료 시각
 
 - 시작: 2026-09-22 09:20경
-- 종료: (작업 끝나면 채움)
+- 종료: 2026-09-22 11:04경
 
 ### 환경
 
@@ -181,6 +181,7 @@ areas 폴더 생성, 영역 파일 4개 작성 (01~04) + 영역 파일 3개 작�
 9. field-map.md 표의 영역 파일 경로를 실제 링크로 교체하고, "영역 파일은 9/22~23에 작성 예정" 문장 삭제. README.md 문서 목록에 영역 파일 10개 링크와 sources.md 링크 추가.
 10. sources.md 신규 작성: areas/01~10 출처를 표(영역·출처 제목·URL·확인 날짜·확인자)로 모음. 확인자는 semver.org(04)·genai.owasp.org(10)는 "에드워드", worklog에 Claude(Cowork)가 열어 확인했다고 기록된 것은 "Claude(Cowork) 확인", 그 외 확인 기록이 없는 것은 "미확인"으로 표시.
 11. AGENTS.md, scope.md, field-map.md, sources.md를 먼저 읽고 areas/01~10 전부를 읽은 뒤 key-contexts.md 신규 작성: 10개 영역을 관통하는 핵심 맥락 5개(제목/설명 3~5문장/근거 영역 2개 이상/출발 질문에 주는 답), 그중 최소 2개는 품질·규정 문서 조건에서 특별히 중요한 맥락. 새 사실·출처를 만들지 않고 영역 파일 내용만 근거로 사용. README.md에 링크 추가.
+12. AGENTS.md와 worklog.md 전체를 먼저 읽고 process.md 신규 작성: worklog에 기록된 사실만 근거로, 한 줄 요약/도구별 역할 표/작업 순서/확인 방법(sources.md 링크)/에이전트가 틀린 순간 3건 표/규칙이 바뀐 지점/다시 한다면 3개. worklog에 없는 사실은 만들지 않음. README.md에 링크 추가.
 
 ### 읽은 파일
 
@@ -191,6 +192,7 @@ areas 폴더 생성, 영역 파일 4개 작성 (01~04) + 영역 파일 3개 작�
 - README.md
 - sources.md
 - areas/01-rag-basics.md ~ areas/10-security-governance.md (10개, sources.md·key-contexts.md 작성을 위해 다시 읽음)
+- worklog.md 전체 (process.md 작성을 위해 다시 읽음)
 
 ### 만든·고친 파일
 
@@ -227,6 +229,15 @@ areas 폴더 생성, 영역 파일 4개 작성 (01~04) + 영역 파일 3개 작�
 - worklog.md: 2026-09-22 항목에 key-contexts.md 작성 기록 추가 (이 기록)
 - key-contexts.md: 수정 (2026-09-22, Claude Code) — 1번·2번 설명 끝에 한 줄씩 추가해 두 맥락의 차이("출처의 연결" vs "출처의 시점")를 명시. commit·push는 하지 않음
 - worklog.md: 2026-09-22 항목에 key-contexts.md 1·2번 구분 문장 추가 기록 (이 기록)
+- process.md: 만듦 (2026-09-22, Claude Code) — AGENTS.md와 worklog.md 전체를 읽고, worklog에 기록된 사실만 근거로 제작 과정 작성. 한 줄 요약, 도구별 역할 표, 작업 순서, 확인 방법(sources.md 링크), 에이전트가 틀린 순간 3건 표, 규칙이 바뀐 지점, 다시 한다면 3개로 구성. commit·push는 하지 않음
+- README.md: 수정 (2026-09-22, Claude Code) — 문서 목록에 process.md 링크 추가. commit·push는 하지 않음
+- worklog.md: 2026-09-22 항목에 process.md 작성 기록 추가 (이 기록)
+- process.md: 수정 (2026-09-22, Claude Code) — "3. 작업 순서"의 9/21 줄에 멘토 피드백 반영 내용 추가, "5. 에이전트가 틀린 순간" 2·3행의 "어떻게 발견했나"에 발견 주체(Claude Cowork) 명시, "6. 규칙이 바뀐 지점" 앞에 9/21 멘토 피드백 계기 문장 추가. commit·push는 하지 않음
+- worklog.md: 2026-09-22 항목에 process.md 수정 기록 추가 (이 기록)
+- README.md: 수정 (2026-09-22, Claude Code) — "결론" 항목을 한 줄 결론 문장으로 교체. commit·push는 하지 않음
+- worklog.md: 수정 (2026-09-22, Claude Code) — 2026-09-22 항목의 종료 시각을 "2026-09-22 11:04경"(시스템 시각)으로 채움, 맨 아래 "전체 요약" 항목 추가. commit·push는 하지 않음
+- README.md: 수정 (2026-09-22, Claude Code) — 문서 목록 맨 아래 "나머지 문서: 9/21 이후 추가 예정" 줄 삭제. commit·push는 하지 않음
+- worklog.md: 수정 (2026-09-22, Claude Code) — 2026-09-22 항목 "다음 작업"을 9/25~9/26 일정과 선택 도전 항목으로 교체. commit·push는 하지 않음
 
 ### 내가 검토한 것
 
@@ -254,4 +265,14 @@ areas 폴더 생성, 영역 파일 4개 작성 (01~04) + 영역 파일 3개 작�
 
 ### 다음 작업
 
-- 9/24 핵심 맥락 5, 출처 목록, 출처 직접 확인
+- 9/25 21:00: 최종 URL 공유
+- 9/26 09:00: 5분 발표 (자료는 README·key-contexts·process 기준)
+- 남은 선택 도전: 영역 md로 키워드 검색 RAG 만들기 (필수 완료 후)
+
+## 전체 요약
+
+- 기간: 2026-09-19 ~ 09-22
+- 만든 문서: README, AGENTS.md, scope.md, field-map.md, areas/01~10, sources.md, key-contexts.md, process.md, worklog.md
+- 출처: 14건 (사람 직접 확인 5건, Claude Cowork 확인 8건, 미확인 1건)
+- 에이전트 오류 기록: 3건
+- 배포 URL: https://chihun-an.github.io/rag-field-scan/
