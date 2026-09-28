@@ -17,6 +17,7 @@ https://chihun-an.github.io/rag-field-scan/
 - [sources.md](sources.md) — 출처 모음
 - [key-contexts.md](key-contexts.md) — 핵심 맥락 5개
 - [process.md](process.md) — 제작 과정
+- [deep/README.md](deep/README.md) — 2주 깊이 파기
 - 영역 파일 10개
   - [areas/01-rag-basics.md](areas/01-rag-basics.md) — RAG 기본 구조
   - [areas/02-document-parsing-chunking.md](areas/02-document-parsing-chunking.md) — 문서 파싱·청킹

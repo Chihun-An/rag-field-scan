@@ -281,3 +281,73 @@ areas 폴더 생성, 영역 파일 4개 작성 (01~04) + 영역 파일 3개 작�
 - 출처: 14건 (사람 직접 확인 5건, Claude Cowork 확인 8건, 미확인 1건)
 - 에이전트 오류 기록: 3건
 - 배포 URL: https://chihun-an.github.io/rag-field-scan/
+
+## 2026-09-28
+
+### 목표
+
+2주 깊이 파기 준비: deep/README.md 주제 확정, deep/05-citation/·deep/07-graphrag/ 작성
+
+### 시작·종료 시각
+
+- 시작: 2026-09-28 15:10경
+- 종료: 2026-09-28 15:11경
+
+### 환경
+
+- macOS, Claude Code 데스크톱
+
+### Claude Code에 준 지시
+
+1. AGENTS.md, README.md, deep/README.md, areas/05-citation-grounding.md, areas/07-graphrag.md를 먼저 읽을 것. commit·push는 하지 않음.
+2. deep/04-versioning 폴더가 있으면 deep/07-graphrag로 이름 변경(안의 내용은 새로 씀).
+3. deep/README.md의 주제 2개를 05(근거 인용·환각 억제, 실험)와 07(GraphRAG, 계획)로 정하고 각 목표를 적음.
+4. deep/05-citation/ 작성: questions.md(실험 질문 5개), tools.md(RAGAS·ALCE·MiniCheck 비교표와 MiniCheck를 먼저 고르는 판단), data.md(한국 법령·EU AI Act 재료 계획, IATF 원문 비공개 원칙), papers.md(AIS·ALCE·RARR 논문 표, 출처는 웹 검색으로 확인).
+5. deep/07-graphrag/ 작성: plan.md(주제/참고자료/활용처/데이터 수집/개체·관계 설계 + 답하고 싶은 질문 3개), tools.md(Microsoft GraphRAG·LightRAG·Neo4j LLM Graph Builder 비교표, 선택 기준만 적고 선택은 비움), papers.md(GraphRAG·LightRAG·Graph RAG 서베이 논문 표).
+6. URL은 웹 검색으로 실제 확인한 것만, 리다이렉트되면 최종 주소로. 표 앞뒤·제목 뒤 빈 줄. README.md 문서 목록에 deep/README.md 링크 추가. worklog에 오늘 항목 기록.
+
+### 읽은 파일
+
+- AGENTS.md
+- README.md
+- areas/05-citation-grounding.md
+- areas/07-graphrag.md
+- (deep/README.md는 이 저장소에 존재하지 않아 읽지 못함 — 아래 "문제와 대처" 참고)
+
+### 만든·고친 파일
+
+- deep/README.md: 만듦(이미 있던 파일을 고친 것이 아니라 새로 만듦)
+- deep/05-citation/questions.md: 만듦
+- deep/05-citation/tools.md: 만듦. RAGAS·ALCE·MiniCheck 저장소 URL을 웹 검색으로 확인해 넣음
+- deep/05-citation/data.md: 만듦. 국가법령정보센터·EUR-Lex(EU AI Act) URL을 웹 검색으로 확인해 넣음
+- deep/05-citation/papers.md: 만듦. Rashkin et al.(AIS)·Gao et al.(ALCE)·Gao et al.(RARR) 출처를 웹 검색으로 확인해 넣음
+- deep/07-graphrag/plan.md: 만듦. McKinsey Global Institute·BCG Henderson Institute·Bain 인사이트 페이지 URL을 웹 검색으로 확인해 넣음
+- deep/07-graphrag/tools.md: 만듦. Microsoft GraphRAG·LightRAG·Neo4j LLM Graph Builder 저장소 URL을 웹 검색으로 확인해 넣음. 도구 선택은 비워 둠
+- deep/07-graphrag/papers.md: 만듦. Edge et al.(GraphRAG)·Guo et al.(LightRAG)·Peng et al.(서베이) 출처를 웹 검색으로 확인해 넣음
+- README.md: 문서 목록에 deep/README.md 링크 추가
+- deep/05-citation/tools.md: 수정 (2026-09-28, Claude Code) — RAGAS 저장소 URL을 explodinggradients/ragas에서 vibrantlabsai/ragas로 교체, 판단 아래에 조직명 변경 사실 한 줄 추가. commit·push는 하지 않음
+- deep/05-citation/papers.md: 수정 (2026-09-28, Claude Code) — RARR 연도 표기를 "2023"에서 "2022(arXiv) / 2023(ACL)"로 정정. commit·push는 하지 않음
+- worklog.md: 오늘 항목 "내가 검토한 것"·"문제와 대처"에 RAGAS 저장소 조직명 변경, RARR 연도 오류 관련 기록 추가 (이 기록)
+
+### 내가 검토한 것
+
+- 출처 확인(2026-09-28, Claude Cowork): 논문 6건의 arXiv 주소를 열어 제목·저자·연도를 대조. RAGAS 저장소 조직명 변경과 RARR 연도 표기 오류를 발견해 수정 지시
+
+### 커밋
+
+-
+
+### Pages URL
+
+- 변경 없음
+
+### 문제와 대처
+
+- 지시문은 deep/README.md와 deep/04-versioning 폴더가 이미 있다고 전제했으나, 이 저장소에는 deep/ 폴더 자체가 없었음(git log·작업 폴더 모두 확인). → deep/04-versioning 이름 변경은 건너뛰고, deep/README.md는 "고치는" 대신 지시받은 두 주제로 새로 만듦. 사람에게 이 사실을 알림.
+- deep/05-citation/tools.md의 RAGAS 저장소 URL(explodinggradients/ragas)이 vibrantlabsai/ragas로 조직명이 바뀌어 있었음 → 새 주소로 교체하고, 저장소 주소도 확인 날짜와 함께 적어야 한다는 점을 표 아래에 남김
+- deep/05-citation/papers.md의 RARR 연도를 "2023"으로만 적었으나 arXiv 제출은 2022년 10월, ACL 발표는 2023년으로 갈림 → "2022(arXiv) / 2023(ACL)"로 정정
+
+### 다음 작업
+
+- deep/05-citation 실험 실행(MiniCheck로 questions.md 5개 질문 확인)
+- deep/07-graphrag 도구 3개 중 하나 선택
