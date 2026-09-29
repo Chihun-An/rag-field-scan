@@ -375,6 +375,9 @@ deep/05-citation 실험 재료로 산업안전보건법 조문을 국가법령�
 4. 저장 후 실제로 들어간 조문 번호 목록과, 조문별 다른 조문 참조 표현 개수를 확인해 상위 5개를 보고.
 5. worklog.md에 오늘 항목을 만들어 이번 작업, 데이터 출처, 수집 방법을 기록.
 6. deep/05-citation/questions.md, data/sanan-law.md, deep/README.md를 먼저 읽고 deep/05-citation/experiments/design-01.md 작성: 실험 목적, 재료(출처·시행일 포함), 질문 5개(Q1 단일 조항, Q2 상호참조 1단계, Q3 상호참조 2단계, Q4 다른 법률로 넘어감, Q5 없는 내용 — 각각 무엇을 보려는지·기대 답·기대 근거 조항), 측정 방법 표 틀(값은 비움), 판정 기준, 아직 안 정한 것. 기대 답은 저장된 원문에서 확인한 내용만 쓰고 원문에 없으면 "문서에 없음"으로 표시. worklog.md 오늘 항목에 기록.
+7. deep/05-citation/data.md를 deep/05-citation/data-plan.md로 이름 변경(같은 폴더의 data/ 폴더와 구분). 저장소 전체에서 이 파일을 가리키는 링크가 있으면 새 이름으로 수정. worklog.md 오늘 항목에 기록.
+8. deep/05-citation/experiments/design-01.md와 tools.md를 먼저 읽고, design-01.md의 "[6] 아직 안 정한 것"을 "[6] 실행 방법"으로 바꿔 답 생성 모델·인용 강제 프롬프트·판정 방법·실행 순서를 채움. worklog.md 오늘 항목에 기록.
+9. deep/05-citation/data/sanan-law.md와 experiments/design-01.md를 읽고, design-01.md [6]의 인용 강제 프롬프트를 그대로 적용해 Q1~Q5에 답함(design-01.md의 기대 답을 먼저 보지 않고 sanan-law.md만 근거로 답을 만든 뒤, 기록 단계에서 기대 답과 비교). deep/05-citation/experiments/results-01.md를 만들어 질문·기대 답·기대 근거 조항·실제 답변 전문·실제 인용 조항·조항 일치·사람 판정(빈칸)·자동 판정(빈칸)·메모를 지정된 형식으로 기록. 답변은 요약하거나 고치지 않고 그대로 남김. worklog.md 오늘 항목에 기록.
 
 ### 읽은 파일
 
@@ -384,6 +387,10 @@ deep/05-citation 실험 재료로 산업안전보건법 조문을 국가법령�
 - deep/05-citation/questions.md
 - deep/05-citation/data/sanan-law.md
 - deep/README.md
+- deep/05-citation/experiments/design-01.md
+- deep/05-citation/tools.md
+- deep/05-citation/data/sanan-law.md (재확인, 답변 생성 전)
+- deep/05-citation/experiments/design-01.md (재확인, 프롬프트 문구 확인)
 
 ### 만든·고친 파일
 
@@ -393,6 +400,10 @@ deep/05-citation 실험 재료로 산업안전보건법 조문을 국가법령�
 - worklog.md: 2026-09-29 항목에 실험 설계 파일 작성 기록 추가 (이 기록)
 - deep/05-citation/data.md → deep/05-citation/data-plan.md: 이름 변경 (2026-09-29, Claude Code) — 같은 폴더의 data/ 폴더(법령 원문)와 헷갈려서 데이터 수집 계획 문서만 data-plan.md로 구분함. 저장소 전체를 검색했으나 이 파일을 가리키는 마크다운 링크는 없었음(deep/README.md는 05-citation/ 폴더 단위로만 링크). 파일 내용은 그대로. commit·push는 하지 않음
 - worklog.md: 2026-09-29 항목에 data.md → data-plan.md 이름 변경 기록 추가 (이 기록)
+- deep/05-citation/experiments/design-01.md: 수정 (2026-09-29, Claude Code) — "[6] 아직 안 정한 것"을 "[6] 실행 방법"으로 바꾸고, 답 생성 모델(Claude Code, 한계 포함)·인용 강제 프롬프트 문구·판정 방법(사람 1차, MiniCheck 2차)·실행 순서(results-01.md 기록)를 채움. commit·push는 하지 않음
+- worklog.md: 2026-09-29 항목에 design-01.md [6] 채운 기록 추가 (이 기록)
+- deep/05-citation/experiments/results-01.md: 만듦. design-01.md [6]의 인용 강제 프롬프트로 Q1~Q5에 답하고, sanan-law.md 원문 대조 결과 조항 일치는 맞음 4개(Q1~Q4)·일부 1개(Q5)로 나옴. 사람 판정·자동 판정 칸은 비워 둠. commit·push는 하지 않음
+- worklog.md: 2026-09-29 항목에 실험 실행(results-01.md) 기록 추가 (이 기록)
 
 ### 데이터 출처와 수집 방법
 
@@ -421,5 +432,6 @@ deep/05-citation 실험 재료로 산업안전보건법 조문을 국가법령�
 ### 다음 작업
 
 - deep/05-citation 실험 재료로 EU AI Act 발췌 추가
-- design-01.md의 "아직 안 정한 것"(도구 설치, 모델, 인용 강제 프롬프트) 정하기
-- design-01.md 측정 방법 표를 채워 실험 실행
+- results-01.md 사람 판정 채우기 (에드워드)
+- MiniCheck 설치 후 results-01.md 자동 판정 채우기
+- Q5(조항 일치 "일부")처럼 "없음" 답변에 근거 조항을 붙이는 방식이 맞는지 findings에 정리
