@@ -391,6 +391,8 @@ deep/05-citation 실험 재료로 산업안전보건법 조문을 국가법령�
 - worklog.md: 2026-09-29 항목 추가 (이 기록)
 - deep/05-citation/experiments/design-01.md: 만듦. Q1~Q5 각각의 기대 답·기대 근거 조항을 sanan-law.md 원문과 대조해 적음(지어내지 않음). 측정 방법 표는 틀만 만들고 값은 비움. commit·push는 하지 않음
 - worklog.md: 2026-09-29 항목에 실험 설계 파일 작성 기록 추가 (이 기록)
+- deep/05-citation/data.md → deep/05-citation/data-plan.md: 이름 변경 (2026-09-29, Claude Code) — 같은 폴더의 data/ 폴더(법령 원문)와 헷갈려서 데이터 수집 계획 문서만 data-plan.md로 구분함. 저장소 전체를 검색했으나 이 파일을 가리키는 마크다운 링크는 없었음(deep/README.md는 05-citation/ 폴더 단위로만 링크). 파일 내용은 그대로. commit·push는 하지 않음
+- worklog.md: 2026-09-29 항목에 data.md → data-plan.md 이름 변경 기록 추가 (이 기록)
 
 ### 데이터 출처와 수집 방법
 
