@@ -440,7 +440,7 @@ deep/05-citation 실험 재료로 산업안전보건법 조문을 국가법령�
 
 ### 목표
 
-deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록
+deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록 + 실험 코드 규칙을 AGENTS.md에 추가 + 층위 1 자동 판정(조항 번호 실재 여부) 스크립트 작성·실행
 
 ### 시작·종료 시각
 
@@ -457,12 +457,20 @@ deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록
 2. "## 요약" 아래에 "사람 판정 요약"(맞음 4건·일부 1건, 발견한 오류 1건, 판정자, 확인 방법)을 추가.
 3. 같은 위치에 "이번 오류의 성격" 항목을 추가(지금까지의 출처 문제와 달리, 실재하는 조항의 내용을 잘못 설명한 오류).
 4. worklog.md에 오늘 항목을 만들어 이번 작업을 기록하고, "내가 검토한 것"에 사람 판정 수행 사실과 발견한 오류를 적음.
+5. AGENTS.md "작업 방식"에 실험 코드 예외 규칙(deep/<영역>/experiments/scripts/, 영문 소문자·하이픈 파일명)을 추가하고, 맨 아래에 "## 실험 코드" 절(코드 위치, 맨 위 주석, 결과는 .md로 기록, 자동 판정과 사람 판정 열 분리, 도구 설치 기록, 공개 금지 적용)을 추가. 코드를 만들기 전에 규칙부터 고치는 것. worklog.md 오늘 항목에 기록. commit·push는 하지 않음.
+
+6. 새 "## 실험 코드" 규칙에 따라 deep/05-citation/experiments/scripts/check-article-numbers.py 작성(표준 라이브러리만 사용, 맨 위 한국어 주석에 하는 일·입력·출력). 입력은 data/sanan-law.md와 experiments/results-01.md, 출력은 experiments/results-01-layer1.md. 발췌본에서 조·항·호 목록을 만들고, results-01.md 각 Q의 "실제 인용 조항:" 줄을 개별 (조, 항, 호)로 펼쳐 "실재함 / 발췌 범위 밖 / 다른 법률 / 파싱 실패"로 판정. 규칙에 안 맞는 표기는 조용히 버리지 않고 파싱 실패로 출력. results-01.md의 사람 판정·자동 판정 칸은 건드리지 않음. 실제로 실행해 터미널 출력을 보고, 결과가 예상과 다르면 코드를 고치기 전에 먼저 보고. commit·push는 하지 않음.
+7. 이 작업을 기록하고, "다음 작업"의 "MiniCheck 자동 판정 코드" 줄을 "자동 판정을 두 층위로 나눔" 문장으로 고침.
 
 ### 읽은 파일
 
 - deep/05-citation/experiments/results-01.md
 - worklog.md (끝부분)
 - git status (작업 폴더 상태 확인)
+- AGENTS.md
+- README.md
+- deep/05-citation/data/sanan-law.md (스크립트 입력, 형식 확인 및 실행 시 읽음)
+- deep/05-citation/experiments/results-01-layer1.md (스크립트가 만든 출력 확인)
 
 ### 만든·고친 파일
 
@@ -470,6 +478,11 @@ deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록
 - worklog.md: 2026-10-04 항목 추가 (이 기록)
 - deep/05-citation/experiments/results-01.md: 수정 (2026-10-04, Claude Code) — Q5 메모 끝에 "일부" 판정이 조항 일치(인용 방식 차이)와 사람 판정(내용 오류) 두 층위에서 각각 나왔다는 설명 한 단락 추가. commit·push는 하지 않음
 - worklog.md: 2026-10-04 항목에 Q5 메모 추가 기록 (이 기록)
+- AGENTS.md: 수정 (2026-10-04, Claude Code) — "작업 방식"에 "실험에 쓰는 코드는 예외로 deep/<영역>/experiments/scripts/ 아래에 둔다…" 줄 추가, 맨 아래에 "## 실험 코드" 절(6개 항목) 추가. commit·push는 하지 않음
+- worklog.md: 2026-10-04 항목에 AGENTS.md 실험 코드 규칙 추가 기록 (이 기록)
+- deep/05-citation/experiments/scripts/check-article-numbers.py: 만듦 (2026-10-04, Claude Code) — 층위 1 자동 판정 스크립트. 표준 라이브러리만 사용(설치 없음). commit·push는 하지 않음
+- deep/05-citation/experiments/results-01-layer1.md: 만듦 (2026-10-04 20:48 실행, Python 3.13.3) — 스크립트 출력. 발췌본 11개 조 파싱 결과와 인용 항목 29건 판정(실재함 21 / 발췌 범위 밖 7 / 다른 법률 1 / 파싱 실패 0). 실행 결과는 코드를 돌리기 전에 예상한 값과 같았음. results-01.md는 읽기만 했고 수정하지 않음. commit·push는 하지 않음
+- worklog.md: 2026-10-04 항목에 층위 1 스크립트 작성·실행 기록 추가, "다음 작업" 줄 수정 (이 기록)
 
 ### 내가 검토한 것
 
@@ -488,9 +501,11 @@ deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록
 ### 문제와 대처
 
 - Q5 답변이 제42조 제2항의 내용을 잘못 설명함(인용 조항 번호는 실재) → 사람 판정 칸과 "이번 오류의 성격"에 그대로 기록하고 답변 본문은 고치지 않음(틀린 답도 실험 결과로 보존). 자동 판정기가 같은 조 안의 다른 항 내용과 섞어 "뒷받침됨"으로 볼 가능성이 있어, MiniCheck 자동 판정 때 사람 판정과 갈리는지 확인할 예정
+- 05 심화 실험에 파이썬 코드를 쓰게 되면서, AGENTS.md의 "모든 문서는 Markdown(.md)으로 쓴다" 규칙이 코드 파일이라는 새 상황을 담지 못함 → 코드를 만들기 전에 규칙부터 고침(코드 위치·파일명 예외, "## 실험 코드" 절 추가). 코드 파일은 아직 만들지 않음
 
 ### 다음 작업
 
+- 자동 판정을 두 층위로 나눔: 층위 1 조항 번호 대조(규칙 기반, 한국어 그대로) → 층위 2 MiniCheck 내용 뒷받침 판정(영어 번역 쌍 필요)
 - deep/05-citation 실험 재료로 EU AI Act 발췌 추가
 - MiniCheck 설치 후 results-01.md 자동 판정 채우기
 - 자동 판정과 사람 판정이 갈리는 질문(특히 Q5) 정리 → findings 작성
