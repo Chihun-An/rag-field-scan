@@ -7,21 +7,26 @@
 #      - 조만 적힌 경우: 조 전체(조 제목 줄 포함)
 #      - 항이 적힌 경우: 그 항 표시(①~⑳)부터 다음 항 표시 전까지(그 항의 호 줄 포함)
 #      - 호가 적힌 경우: 그 호 줄 하나(목 줄은 포함하지 않는다)
+#      - "본문"이 붙은 경우("제15조 제1항 본문"): 그 항 표시부터 첫 호 줄 전까지(조 제목 줄은 넣지 않는다)
+#      - "제목"이 붙은 경우("제15조 제목"): 조 첫 줄의 "제○조(제목)" 부분만(첫 항 표시 앞까지)
 #      - "+"로 묶인 경우: 앞에서부터 순서대로 빈 줄 하나를 두고 이어 붙인다
+#        뒤쪽에 호만 적혀 있으면("+제1호") 앞쪽의 조·항을 이어받는다
 #   3. 조·항·호 해석은 check-article-numbers.py의 로직(parse_law, parse_ref, judge)을 재사용한다.
 #      이 스크립트의 조문 자르기 결과가 parse_law의 항·호 목록과 같은지 실행할 때마다 검사한다.
 #
 # 입력 1: deep/05-citation/data/sanan-law.md
-# 입력 2: deep/05-citation/experiments/pairs-01-ko.md
+# 입력 2: deep/05-citation/experiments/pairs-01-ko.md (기본값. 첫 인자로 다른 쌍 파일을 줄 수 있다)
 # 출력  : 화면 (파일을 만들지 않는다)
 #
 # 실행: 저장소 루트에서  python3 deep/05-citation/experiments/scripts/extract-doc-text.py
+#       실험 02:        python3 deep/05-citation/experiments/scripts/extract-doc-text.py deep/05-citation/experiments/pairs-02-ko.md
 # 표준 라이브러리만 사용한다. 설치할 것이 없다.
 #
 # 다른 스크립트에서 쓰는 함수: load_checker, load_pairs, build_doc_texts
 
 import importlib.util
 import re
+import sys
 from collections import OrderedDict
 from pathlib import Path
 
@@ -31,6 +36,8 @@ LAW_PATH = EXP_DIR.parent / "data" / "sanan-law.md"
 PAIRS_PATH = EXP_DIR / "pairs-01-ko.md"
 CHECK_PATH = SCRIPT_DIR / "check-article-numbers.py"
 KEYS = ("doc_ref", "claim_id", "claim_ko", "human", "hypothesis")
+BODY = "본문"  # parse_doc_ref가 "제○항 본문"을 호 자리에 이 값으로 표시한다
+TITLE = "제목"  # parse_doc_ref가 "제○조 제목"을 호 자리에 이 값으로 표시한다
 
 
 def load_checker():
@@ -145,23 +152,70 @@ def extract_one(articles, circled, jo, hang, ho):
     raise SystemExit("오류: 제%d조 제%s항 안에 제%d호가 없습니다." % (jo, hang, ho))
 
 
-def parse_doc_ref(doc_ref, checker):
-    """"제42조 제1항+제2항" 같은 doc_ref를 (조, 항, 호) 목록으로 푼다.
+def extract_hang_body(articles, circled, jo, hang):
+    """제○항의 각 호 앞 본문(항 표시부터 첫 호 줄 전까지)을 뽑는다. 조 제목 줄은 넣지 않는다."""
+    region = extract_one(articles, circled, jo, hang, None)
+    out = []
+    for line in region.split("\n"):
+        if re.match(r"^\d+\.\s", line):
+            break
+        out.append(line)
+    if len(out) == len(region.split("\n")):
+        raise SystemExit("오류: 제%d조 제%d항에 호가 없어 '본문'을 따로 뽑을 수 없습니다." % (jo, hang))
+    return "\n".join(out).strip()
 
-    "+"로 묶인 뒤쪽 표기에 조가 없으면 앞쪽의 조를 이어받는다. 해석은 parse_ref를 재사용한다.
+
+def extract_title(articles, circled, jo):
+    """조 제목 줄의 "제○조(제목)" 부분만 뽑는다. 첫 항 표시가 있으면 그 앞까지다."""
+    header = articles[jo][0]
+    mark = re.search("[" + circled + "]", header)
+    if mark:
+        return header[:mark.start()].strip()
+    m = re.match(r"^제\d+조\([^)]*\)", header)
+    if not m:
+        raise SystemExit("오류: 제%d조의 제목을 찾지 못했습니다." % jo)
+    return m.group(0)
+
+
+def parse_doc_ref(doc_ref, checker):
+    """"제42조 제1항+제2항", "제15조 제1항 본문+제1호" 같은 doc_ref를 (조, 항, 호) 목록으로 푼다.
+
+    "+"로 묶인 뒤쪽 표기에 조가 없으면 앞쪽의 조를 이어받고, 호만 적혀 있으면 앞쪽의 조·항을
+    이어받는다. 항 뒤에 "본문"이 붙으면 호 자리에 BODY를, 조 뒤에 "제목"이 붙으면 호 자리에
+    TITLE을 넣는다. 해석은 parse_ref를 재사용한다.
     """
     parts = [p.strip() for p in doc_ref.split("+")]
     first_jo = re.match(r"^제\d+조", parts[0])
     if not first_jo:
         raise SystemExit("오류: doc_ref가 '제○조'로 시작하지 않습니다: %s" % doc_ref)
     refs = []
+    prev_jo_hang = first_jo.group(0)
     for part in parts:
-        if not re.match(r"^제\d+조", part):
+        if re.match(r"^제\d+호", part):
+            part = prev_jo_hang + " " + part
+        elif not re.match(r"^제\d+조", part):
             part = first_jo.group(0) + " " + part
+        body = re.search(r"\s*본문$", part)
+        if body:
+            part = part[:body.start()]
+        title = re.search(r"\s*제목$", part)
+        if title:
+            part = part[:title.start()]
         try:
-            refs.extend(checker.parse_ref(part))
+            parsed = checker.parse_ref(part)
         except ValueError as e:
             raise SystemExit("오류: doc_ref를 해석하지 못했습니다 (%s): %s" % (doc_ref, e))
+        if title:
+            if len(parsed) != 1 or parsed[0][1] is not None or parsed[0][2] is not None:
+                raise SystemExit("오류: '제목'은 조 하나 뒤에만 쓸 수 있습니다: %s" % doc_ref)
+            parsed = [(parsed[0][0], None, TITLE)]
+        if body:
+            if len(parsed) != 1 or parsed[0][1] is None or parsed[0][2] is not None:
+                raise SystemExit("오류: '본문'은 항 하나 뒤에만 쓸 수 있습니다: %s" % doc_ref)
+            parsed = [(parsed[0][0], parsed[0][1], BODY)]
+        hang_m = re.match(r"^(제\d+조\s*제\d+항)", part)
+        prev_jo_hang = hang_m.group(1) if hang_m else re.match(r"^제\d+조", part).group(0)
+        refs.extend(parsed)
     return refs
 
 
@@ -177,16 +231,24 @@ def build_doc_texts(pairs=None):
     for name, fields in pairs.items():
         chunks = []
         for jo, hang, ho in parse_doc_ref(fields["doc_ref"], checker):
-            item = {"fail": None, "law": None, "ref": (jo, hang, ho)}
+            ref = (jo, hang, None if ho in (BODY, TITLE) else ho)
+            item = {"fail": None, "law": None, "ref": ref}
             if checker.judge(item, parsed) != checker.REAL:
                 raise SystemExit("오류: %s의 doc_ref '%s'가 발췌본에 없습니다." % (name, fields["doc_ref"]))
-            chunks.append(extract_one(articles, checker.CIRCLED, jo, hang, ho))
+            if ho is TITLE:
+                chunks.append(extract_title(articles, checker.CIRCLED, jo))
+            elif ho is BODY:
+                chunks.append(extract_hang_body(articles, checker.CIRCLED, jo, hang))
+            else:
+                chunks.append(extract_one(articles, checker.CIRCLED, jo, hang, ho))
         texts[name] = "\n\n".join(chunks)
     return texts
 
 
 def main():
-    pairs = load_pairs()
+    pairs_path = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else PAIRS_PATH
+    print("입력 쌍 파일: %s" % pairs_path.name)
+    pairs = load_pairs(pairs_path)
     texts = build_doc_texts(pairs)
     print("조문 자르기 검사: parse_law 결과와 일치 (조 %d개)" % len(load_checker().parse_law(
         LAW_PATH.read_text(encoding="utf-8"))))

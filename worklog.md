@@ -558,6 +558,10 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 5. [E] results-01-layer2.md 작성, results-01.md "자동 판정" 칸에 "층위 1: 값 / 층위 2: 값" 기록(사람 판정 칸·pairs의 human 값은 건드리지 않음).
 6. [F] worklog에 2026-10-05 항목 기록. commit·push는 하지 않음.
 7. (세 번째 세션) 층위 2 자동 판정 마무리: extract-doc-text.py 실행 → citation-judge 8회 호출(조문 원문과 claim_ko만 넘김) → 중단 조건(P8 뒷받침됨, P5 뒷받침 안 됨) 확인 → 8개가 끝난 뒤 human과 비교 → results-01-layer2.md 작성(판정 방식, 도구 수준 격리 설계, 세 번째 세션에서야 실행된 경위, 조문 원문 8개, 판정 표, 갈린 쌍, P1·P2 비교, 한계 3개) → results-01.md "자동 판정" 칸을 "층위 1: 값 / 층위 2: 값"으로 채움 → worklog에 판정 실행과 "반복 작업 자동화" 기록. citation-judge.md 프런트매터는 고치지 않음. commit·push는 하지 않음.
+8. (실험 02 첫 지시) P7 불일치가 근거를 자른 범위 때문인지 확인: pairs-02-ko.md에 P9(제15조 제1항 본문+제1호) 작성 → extract-doc-text.py가 "본문"을 처리하게 고치고 실행해 뽑힌 원문을 먼저 보고 → P7·P9 각 3회 판정 → results-02.md 작성. 원문 보고 단계에서 P9 가설과 원문이 어긋나 판정 전에 멈추고 보고함(아래 "문제와 대처").
+9. (실험 02 수정 지시) pairs-02-ko.md의 P9 hypothesis 교체, P10(제15조 제목+제1항 본문+제1호) 추가, 설계 원칙에 "판정 전에 가설을 고쳤다" 한 줄 추가 → extract-doc-text.py가 "제목"을 처리하게 고침 → 원문 세 개 확인 → citation-judge를 P7·P9·P10 각 3회(총 9회) 호출(앞선 결과·human·hypothesis는 넘기지 않음) → results-02.md 작성 → worklog 기록. commit·push는 하지 않음.
+10. (findings) deep/05-citation/findings.md 작성: 지정한 파일에 적힌 것만 쓰고, 숫자는 파일에서 가져오며, 새 주장·해석을 보태지 않음. 지정한 절 구성(한 줄 결론 ~ 남은 질문, 끝에 상대 경로 링크). deep/README.md에 findings 링크 추가. worklog 기록. commit·push는 하지 않음.
+11. (실험 03) 실험 02에서 조 제목이 판정을 뒤집은 이유를 좁힘: pairs-02-ko.md P9 hypothesis 아래에 correction 줄 추가(가설 원문은 그대로) → pairs-03-ko.md에 P11(제1항 본문+제1호+제2항), P12(…+제3항) 작성 → extract-doc-text.py로 원문 추출·가설 전제 확인, pairs-01·02 출력 불변 확인 → citation-judge P11·P12 각 3회(총 6회)를 한 건씩 순서대로 호출 → results-03.md 작성 → findings.md 갱신(발견 2, 한계 6·7, 설계 규칙 2, 남은 질문) → worklog 기록. commit·push는 하지 않음.
 
 ### 읽은 파일
 
@@ -565,6 +569,9 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - deep/05-citation/data/sanan-law.md, deep/05-citation/experiments/pairs-01-ko.md (extract-doc-text.py가 입력으로 읽음)
 - https://code.claude.com/docs/en/sub-agents (서브에이전트 정의 파일 형식과 로드 시점 확인, 확인일 2026-10-05)
 - (세 번째 세션) AGENTS.md, README.md, worklog.md, .claude/agents/citation-judge.md, deep/05-citation/experiments/scripts/extract-doc-text.py, deep/05-citation/experiments/pairs-01-ko.md, deep/05-citation/experiments/results-01.md, deep/05-citation/experiments/results-01-layer1.md, deep/05-citation/data/sanan-law.md(extract-doc-text.py가 입력으로 읽음)
+- (findings) deep/05-citation/experiments/design-01.md, results-01.md, results-01-layer1.md, results-01-layer2.md, pairs-01-ko.md, pairs-02-ko.md, results-02.md, deep/05-citation/tools.md, questions.md, data-plan.md, key-contexts.md, areas/02-document-parsing-chunking.md, areas/05-citation-grounding.md, areas/06-rag-evaluation.md, deep/README.md, field-map.md(링크 확인), deep/05-citation/data/sanan-law.md(제15조에서 "안전보건관리책임자" 위치 확인)
+- (실험 03) deep/05-citation/experiments/pairs-02-ko.md, pairs-03-ko.md·pairs-01-ko.md(스크립트 입력), deep/05-citation/data/sanan-law.md(스크립트 입력), deep/05-citation/findings.md, worklog.md
+- (실험 02) deep/05-citation/experiments/scripts/check-article-numbers.py(parse_ref 확인), deep/05-citation/data/sanan-law.md(제15조 확인, 스크립트 입력), deep/05-citation/experiments/pairs-02-ko.md·pairs-01-ko.md(스크립트 입력), worklog.md
 
 ### 만든·고친 파일
 
@@ -578,6 +585,19 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - deep/05-citation/experiments/results-01-layer2.md: 만듦 (2026-10-05, Claude Code) — citation-judge 8회 판정 결과. 일치 7, 불일치 1(P7). commit·push는 하지 않음
 - deep/05-citation/experiments/results-01.md: 수정 (2026-10-05, Claude Code) — Q1~Q5 "자동 판정" 칸만 "층위 1: 값 / 층위 2: 값"으로 채움. "사람 판정" 칸과 pairs-01-ko.md의 human 값은 건드리지 않음. commit·push는 하지 않음
 - worklog.md: 2026-10-05 항목에 판정 실행·반복 작업 자동화 기록 추가 (이 기록)
+- deep/05-citation/experiments/pairs-02-ko.md: 만듦 (2026-10-05, Claude Code) — 실험 02 판정 쌍. P9를 지정한 내용대로 넣고, 뒤이은 지시로 P9 hypothesis 교체, P10 추가, 설계 원칙에 판정 전 가설 수정 한 줄 추가. commit·push는 하지 않음
+- deep/05-citation/experiments/scripts/extract-doc-text.py: 수정 (2026-10-05, Claude Code) — (1) "제○항 본문"(항 표시부터 첫 호 줄 전까지, 조 제목 제외) 처리, (2) "제○조 제목"(조 첫 줄의 "제○조(제목)" 부분) 처리, (3) "+제1호"처럼 호만 적힌 뒤쪽 표기가 앞쪽의 조·항을 이어받게 함, (4) 첫 인자로 쌍 파일을 받게 함(기본값 pairs-01-ko.md). 맨 위 주석도 고침. 수정 뒤 pairs-01-ko.md 출력이 수정 전과 같은지 diff로 확인함(차이 없음). commit·push는 하지 않음
+- deep/05-citation/experiments/results-02.md: 만듦 (2026-10-05, Claude Code) — 실험 02 결과(P7·P9·P10 각 3회 판정). commit·push는 하지 않음
+- worklog.md: 2026-10-05 항목에 실험 02 기록 추가 (이 기록)
+- deep/05-citation/findings.md: 만듦 (2026-10-05, Claude Code) — 05 심화 결론 문서. 발견 4개, 통제군, 빗나간 가설, 한계 7개, 출발 질문에 주는 답(설계 규칙 3개), 1차 과제와의 연결(확인한 것/못한 것), 남은 질문(실험 3개). commit·push는 하지 않음
+- deep/README.md: 수정 (2026-10-05, Claude Code) — 05 절에 findings.md 링크 한 줄 추가. commit·push는 하지 않음
+- worklog.md: 2026-10-05 항목에 findings 작성 기록 추가 (이 기록)
+- deep/05-citation/experiments/pairs-02-ko.md: 수정 (2026-10-05, Claude Code) — P9 hypothesis 바로 아래에 지정한 correction 줄 추가. 가설 원문은 사전 등록 기록으로 그대로 둠. extract-doc-text.py는 KEYS에 없는 줄을 읽지 않으므로 출력에 영향 없음(확인함). commit·push는 하지 않음
+- deep/05-citation/experiments/pairs-03-ko.md: 만듦 (2026-10-05, Claude Code) — 실험 03 판정 쌍 P11·P12. 지정한 내용 그대로. commit·push는 하지 않음
+- deep/05-citation/experiments/results-03.md: 만듦 (2026-10-05, Claude Code) — 실험 03 결과(P11·P12 각 3회 순차 판정). commit·push는 하지 않음
+- deep/05-citation/findings.md: 수정 (2026-10-05, Claude Code) — 발견 2에 P11·P12 반영, 한계 6을 실험 03 결과로 갱신(확인 필요 해소, 범위 제한은 남김), 한계 4·5·7 갱신, 설계 규칙 2 보강, 남은 질문 정리. 지시 범위 밖이지만 일관성을 위해 "무엇을 했나"에 실험 03 문단, "빗나간 가설"에 correction 줄 반영과 P11·P12 결과, "1차 과제와의 연결"에 P11, 맨 아래 링크에 실험 03 추가. commit·push는 하지 않음
+- extract-doc-text.py: 고치지 않음. "제15조 제1항 본문+제1호+제2항"과 "…+제3항"은 실험 02에서 넣은 코드("+" 뒤 항 표기는 앞쪽 조를 이어받음)로 처리됐음
+- worklog.md: 2026-10-05 항목에 실험 03 기록 추가 (이 기록)
 - worklog.md: 2026-10-05 항목 추가 (이 기록)
 - .gitignore: 수정 (2026-10-05, Claude Code) — `.claude/settings.local.json`, `.venv/` 두 줄 추가. 개인 권한 설정 파일을 gitignore에 넣어 공개 대상에서 제외했다. commit·push는 하지 않음
 
@@ -608,6 +628,9 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - ~/.cache/pip 경로가 없어 지시한 용량 측정 대상이 비어 있음 → 실제 pip 캐시 위치(~/Library/Caches/pip)를 찾아 용량만 보고하고 지우지 않음
 - 재시도(2026-10-05 09:50): [D-2]를 이어서 하려고 extract-doc-text.py를 다시 실행해 8개 쌍의 조문 원문을 얻었으나(정상), citation-judge 호출은 같은 오류(`Agent type 'citation-judge' not found. Available agents: claude, claude-code-guide, Explore, general-purpose, Plan, statusline-setup`)로 실패함. 판정 호출 0/8. 진단: 프런트매터는 name·description·disallowedTools 세 줄로 형식이 맞고, 설치된 Claude Code 2.1.274 실행 파일에 disallowedTools 필드명이 들어 있으며 공식 문서에도 지원 필드로 적혀 있어 disallowedTools가 원인일 가능성은 낮다고 봄(파일이 실제로 파싱되는지는 직접 확인하지 못함). 에이전트 목록이 앞선 시도와 같은 것으로 보아, .claude/agents/가 만들어진(09:40:54) 뒤에 세션이 새로 시작되지 않은 것으로 판단함. 프런트매터는 바꾸지 않았고 결과 파일도 쓰지 않음 → 사람에게 보고
 - 세 번째 세션(2026-10-05 10:01 무렵): Claude Code를 새로 시작한 세션에서 citation-judge가 에이전트 목록에 나타났고 8회 호출이 모두 성공함(8/8, 서브에이전트 도구 사용 0회). 프런트매터는 고치지 않았으므로, 앞선 실패는 .claude/agents/ 폴더를 새로 만든 뒤 재시작하지 않았기 때문이라는 진단과 맞음. 공식 문서 문구: "New agents directories require a restart"(https://code.claude.com/docs/en/sub-agents , 확인 2026-10-05). 기존 대화를 이어가는 것은 재시작에 해당하지 않음
+- P9 가설이 원문과 다름(실험 02, 판정 전에 바로잡음): 처음 P9 hypothesis는 "제1항 본문에 주체(안전보건관리책임자)와 의무(총괄하여 관리)가 있다"고 적었음. 이 가설을 쓴 쪽은 사람(Claude Cowork)임. Claude Code가 extract-doc-text.py로 원문을 뽑아 확인하니, 제1항 본문에는 의무("총괄하여 관리하도록 하여야 한다")는 있으나 "안전보건관리책임자"라는 명칭은 없고 조 제목 "제15조(안전보건관리책임자)"에만 있었음. Claude Code는 판정 호출을 하지 않고 멈춰서 어긋남을 보고함. 사람이 P9 hypothesis를 고치고 조 제목을 넣은 P10을 추가한 뒤 판정을 실행함. 가설은 판정 결과를 보기 전에 고쳤음(이 시점까지 P9 판정 호출 0회)
+- 에이전트 오류(Claude Code, findings 작성 중 발견): 위 P9 어긋남을 보고할 때 Claude Code는 제1항만 확인하고 "명칭은 조 제목에만 있다"고 보고했고, 이 기록에도 같은 내용("조 제목 … 에만 있었음")을 적었음. findings 작성 중 sanan-law.md 제15조 전체를 확인하니 "안전보건관리책임자"는 조 제목 외에 제2항("이하 "안전보건관리책임자"라 한다", 정의 문장)과 제3항에도 있었음. 이 보고를 바탕으로 고친 pairs-02-ko.md의 P9 hypothesis에도 "명칭은 조 제목에만 있다"가 들어감. 실험 02에 건넨 조각들(제1호, 제1항 본문, 조 제목) 안에서는 맞는 말이라 판정 입력·결과에는 영향이 없음. 대처: findings.md에 정확한 위치를 적고 "빗나간 가설"에 기록함. pairs-02-ko.md의 hypothesis와 이 worklog의 앞선 문장은 기록 보존을 위해 고치지 않고 사람에게 보고함
+- findings 지시와 원문이 다른 점: 지시는 발견 2에 "제15조에서 '안전보건관리책임자'가 나오는 곳이 조 제목뿐"이라고 쓰라고 했으나 원문과 달라(위 항목) 그대로 쓰지 않음. 대신 "건넨 조각 안에서는 조 제목에만 있고, 제15조 전체로는 제2항·제3항에도 있다"로 씀. 지시의 출발 질문 규칙 예시("조 제목을 떼면 그 조각으로는 답변을 검증할 수 없다")도 제2항으로 이어 주는 경우를 시험하지 않았으므로 쓰지 않고, 실험 결과로 뒷받침되는 규칙만 씀
 
 ### 층위 2 판정 실행 기록
 
@@ -617,6 +640,23 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - 중단 조건: P8 뒷받침 안 됨, P5 뒷받침됨 → 해당 없음
 - human과 비교(8개 판정이 끝난 뒤): 일치 7, 불일치 1(P7, 자동 뒷받침 안 됨 / 사람 맞음). P1·P2는 둘 다 뒷받침 안 됨으로 갈리지 않음
 - 비교할 때 human "맞음"을 "뒷받침됨"과 같은 쪽으로 봄(pairs-01-ko.md의 human 표기가 두 가지라 정한 대응). results-01-layer2.md에 적어 둠
+
+### 실험 02 실행 기록
+
+- 목적: 실험 01 P7의 불일치(자동 뒷받침 안 됨 / 사람 맞음)가 근거를 자른 범위 때문인지 확인. 같은 주장에 근거를 제1호(P7) → 제1항 본문+제1호(P9) → 조 제목+제1항 본문+제1호(P10)로 넓힘
+- 원문 추출: 2026-10-05 10:13:10 +0900, extract-doc-text.py(pairs-01-ko.md, pairs-02-ko.md) 모두 종료 코드 0
+- 판정: citation-judge 9회(P7·P9·P10 각 3회), 병렬 호출, 10:13:36 확인 시점에 모두 끝남. 서브에이전트 도구 사용 0회. 넘긴 것은 조문 원문과 claim_ko뿐
+- 결과: P7 뒷받침 안 됨 ×3, P9 뒷받침 안 됨 ×3, P10 뒷받침됨 ×3. 쌍마다 3회가 모두 같았음
+- 판정이 바뀐 지점: 조 제목을 더한 P9 → P10. 제1항 본문을 더한 P7 → P9에서는 바뀌지 않음
+
+### 실험 03 실행 기록
+
+- 목적: 실험 02에서 조 제목이 판정을 뒤집은 이유가 "명칭이 글자로 들어와서"인지 "명칭과 의무를 잇는 정의가 들어와서"인지 구분. 제목을 빼고 제2항 정의문(P11) 또는 제3항 명칭(P12)을 제1항 본문+제1호에 더함
+- 원문 추출: 2026-10-05 10:24:38 +0900, extract-doc-text.py(pairs-03-ko.md) 종료 코드 0. pairs-01-ko.md 출력은 실험 02 때 저장본과 diff 차이 없음, pairs-02-ko.md 출력은 results-02.md의 원문과 같음
+- 가설 전제 확인(판정 전): P11 제2항에 정의문 있음, P12 제3항에 명칭만 있고 제1항과 잇는 정의 없음. 둘 다 원문과 맞음
+- 판정: citation-judge 6회(P11 3회 → P12 3회), 한 건씩 순서대로 호출(앞 결과가 돌아온 뒤 다음 호출), 10:25:38 확인 시점에 모두 끝남. 서브에이전트 도구 사용 0회. 넘긴 것은 조문 원문과 claim_ko뿐
+- 결과: P11 뒷받침됨 ×3, P12 뒷받침 안 됨 ×3. 쌍마다 3회가 모두 같았음. P11·P12 가설은 빗나가지 않음
+- 관찰: P11-3과 P12-2의 근거가 한 줄이 아니라 여러 문장이었음(citation-judge 규칙은 한 줄). 판정 값은 두 값 중 하나로 규칙대로였음. results-03.md에 적어 둠
 
 ### 설계 기록
 
@@ -628,6 +668,10 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 
 - (완료, 세 번째 세션) citation-judge 로드 확인 → 8회 호출 → human과 비교 → results-01-layer2.md 작성, results-01.md "자동 판정" 칸 기록
 - 사람이 results-01-layer2.md를 검토(특히 P7 불일치, P3를 "뒷받침됨"으로 본 것, human "맞음"↔"뒷받침됨" 대응)
-- 같은 쌍을 여러 번 돌려 판정이 매번 같은지 확인할지 결정(이번에는 쌍마다 1회)
+- 같은 쌍을 여러 번 돌려 판정이 매번 같은지 확인할지 결정(이번에는 쌍마다 1회) → 실험 02에서 P7·P9·P10을 각 3회 돌림(쌍마다 3회 모두 같았음). 실험 01의 나머지 쌍은 아직 1회
+- 사람이 results-02.md 검토
+- 사람이 findings.md 검토. pairs-02-ko.md P9 hypothesis의 "명칭은 조 제목에만 있다"를 고칠지 결정
+- (findings 남은 질문 1) 같은 주장에 제1항 본문+제1호+제2항을 건네 정의 문장으로 이어 줘도 판정이 바뀌는지 확인 → 실험 03에서 완료(P11 뒷받침됨 ×3)
+- 사람이 results-03.md와 갱신된 findings.md 검토
 - deep/05-citation 실험 재료로 EU AI Act 발췌 추가
 - 자동 판정과 사람 판정이 갈리는 질문 정리 → findings 작성

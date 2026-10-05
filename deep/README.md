@@ -8,6 +8,7 @@
 - 확인할 질문: 전문 용어가 많고 조항끼리 상호참조하는 문서에서도 자동 귀속 평가가 잘 맞는가?
 - 관련 영역: [areas/05-citation-grounding.md](../areas/05-citation-grounding.md)
 - 작업 폴더: [05-citation/](05-citation/)
+- 결론: [05-citation/findings.md](05-citation/findings.md)
 
 ## 07 GraphRAG (계획)
 
