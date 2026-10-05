@@ -601,6 +601,7 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 
 - 서브에이전트 호출 실패: `Agent type 'citation-judge' not found. Available agents: claude, claude-code-guide, Explore, general-purpose, Plan, statusline-setup`. 원인은 .claude/agents/ 폴더가 이번 세션 시작 때 없었기 때문임. 공식 문서(확인 2026-10-05)에 새 agents 폴더의 첫 파일은 재시작해야 로드된다고 적혀 있음. → [D-2]의 판정 호출 8회를 한 번도 실행하지 못했고(0/8), 임의로 general-purpose 등 다른 에이전트로 바꿔 돌리지 않고 멈춰서 보고함. [D-3] 중단 조건(P8, P5)에 해당한 것은 아님
 - ~/.cache/pip 경로가 없어 지시한 용량 측정 대상이 비어 있음 → 실제 pip 캐시 위치(~/Library/Caches/pip)를 찾아 용량만 보고하고 지우지 않음
+- 재시도(2026-10-05 09:50): [D-2]를 이어서 하려고 extract-doc-text.py를 다시 실행해 8개 쌍의 조문 원문을 얻었으나(정상), citation-judge 호출은 같은 오류(`Agent type 'citation-judge' not found. Available agents: claude, claude-code-guide, Explore, general-purpose, Plan, statusline-setup`)로 실패함. 판정 호출 0/8. 진단: 프런트매터는 name·description·disallowedTools 세 줄로 형식이 맞고, 설치된 Claude Code 2.1.274 실행 파일에 disallowedTools 필드명이 들어 있으며 공식 문서에도 지원 필드로 적혀 있어 disallowedTools가 원인일 가능성은 낮다고 봄(파일이 실제로 파싱되는지는 직접 확인하지 못함). 에이전트 목록이 앞선 시도와 같은 것으로 보아, .claude/agents/가 만들어진(09:40:54) 뒤에 세션이 새로 시작되지 않은 것으로 판단함. 프런트매터는 바꾸지 않았고 결과 파일도 쓰지 않음 → 사람에게 보고
 
 ### 설계 기록
 
@@ -609,6 +610,7 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 
 ### 다음 작업
 
+- Claude Code를 완전히 종료했다가 이 저장소에서 새로 시작한 뒤(.claude/agents/가 이미 있는 상태로 시작해야 함), 에이전트 목록에 citation-judge가 보이는지 확인
 - 세션을 다시 시작해 citation-judge가 로드되는지 확인한 뒤, [D-2]대로 8회 호출 → 8개가 끝난 뒤 human과 비교 → results-01-layer2.md 작성, results-01.md "자동 판정" 칸에 "층위 1 / 층위 2" 기록
 - 재시작이 어려우면 사람이 대체 방식(general-purpose 서브에이전트에 같은 규칙을 프롬프트로 주는 방식)을 승인할지 결정. 이 경우 판정자의 도구·시스템 프롬프트가 달라진다는 점을 한계에 적어야 함
 - deep/05-citation 실험 재료로 EU AI Act 발췌 추가
