@@ -440,7 +440,7 @@ deep/05-citation 실험 재료로 산업안전보건법 조문을 국가법령�
 
 ### 목표
 
-deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록 + 실험 코드 규칙을 AGENTS.md에 추가 + 층위 1 자동 판정(조항 번호 실재 여부) 스크립트 작성·실행
+deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록 + 실험 코드 규칙을 AGENTS.md에 추가 + 층위 1 자동 판정(조항 번호 실재 여부) 스크립트 작성·실행 + 층위 2 판정 쌍 파일(pairs-01.md) 작성 + MiniCheck 설치(성공)·층위 2 실행 시도(실패, accelerate 없음)
 
 ### 시작·종료 시각
 
@@ -461,11 +461,16 @@ deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록 + 실험 �
 
 6. 새 "## 실험 코드" 규칙에 따라 deep/05-citation/experiments/scripts/check-article-numbers.py 작성(표준 라이브러리만 사용, 맨 위 한국어 주석에 하는 일·입력·출력). 입력은 data/sanan-law.md와 experiments/results-01.md, 출력은 experiments/results-01-layer1.md. 발췌본에서 조·항·호 목록을 만들고, results-01.md 각 Q의 "실제 인용 조항:" 줄을 개별 (조, 항, 호)로 펼쳐 "실재함 / 발췌 범위 밖 / 다른 법률 / 파싱 실패"로 판정. 규칙에 안 맞는 표기는 조용히 버리지 않고 파싱 실패로 출력. results-01.md의 사람 판정·자동 판정 칸은 건드리지 않음. 실제로 실행해 터미널 출력을 보고, 결과가 예상과 다르면 코드를 고치기 전에 먼저 보고. commit·push는 하지 않음.
 7. 이 작업을 기록하고, "다음 작업"의 "MiniCheck 자동 판정 코드" 줄을 "자동 판정을 두 층위로 나눔" 문장으로 고침.
+8. deep/05-citation/experiments/pairs-01.md를 사용자가 준 내용 그대로 새로 만듦(한 글자도 바꾸지 않음). 번역문은 사람이 원문과 대조해 확정한 것이라 다듬거나 교정하지 않고, P1·P2·P8의 claim_en은 의도적으로 원문과 다른 서술이므로 그대로 둠. P3·P8의 "(same as P2)"도 스크립트가 P2 값을 가져다 쓰도록 그대로 둠. commit·push는 하지 않음.
+
+9. 층위 2 자동 판정을 MiniCheck로 돌림. (1) 저장소 밖 가상환경 ~/.venvs/minicheck를 만들고 `pip install "minicheck @ git+https://github.com/Liyan06/MiniCheck.git@main"`로 설치([llm] 추가 의존성은 설치하지 않음), 모델 가중치는 저장소 안에 두지 않고 cache_dir=~/.cache/minicheck-ckpts 사용, .gitignore에 ckpts/ 와 *.pt 추가. 설치 명령·성공 여부·실패 시 오류 문구를 기록하고 실패하면 멈추고 보고. (2) deep/05-citation/experiments/scripts/run-minicheck.py 작성: 입력 pairs-01.md, 출력 results-01-layer2.md, "(same as P2)"는 P2 값 사용, flan-t5-large, scorer.score로 전체 쌍 한 번에 판정, 쌍별 자동 판정·확률·사람 판정·일치 여부 표와 갈린 쌍·한계 절 포함. results-01.md 사람 판정 칸과 pairs-01.md의 human 값은 건드리지 않음. 실행해 터미널 출력을 보고하고, 예상과 다른 결과가 나오면 코드를 고치기 전에 먼저 보고. commit·push는 하지 않음.
 
 ### 읽은 파일
 
 - deep/05-citation/experiments/results-01.md
 - worklog.md (끝부분)
+- deep/05-citation/experiments/pairs-01.md (run-minicheck.py 입력, 실행 시 읽음)
+- ~/.venvs/minicheck/.../minicheck/minicheck.py, inference.py (설치된 MiniCheck의 실제 API와 장치 설정 확인용, 저장소 밖 파일)
 - git status (작업 폴더 상태 확인)
 - AGENTS.md
 - README.md
@@ -483,6 +488,12 @@ deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록 + 실험 �
 - deep/05-citation/experiments/scripts/check-article-numbers.py: 만듦 (2026-10-04, Claude Code) — 층위 1 자동 판정 스크립트. 표준 라이브러리만 사용(설치 없음). commit·push는 하지 않음
 - deep/05-citation/experiments/results-01-layer1.md: 만듦 (2026-10-04 20:48 실행, Python 3.13.3) — 스크립트 출력. 발췌본 11개 조 파싱 결과와 인용 항목 29건 판정(실재함 21 / 발췌 범위 밖 7 / 다른 법률 1 / 파싱 실패 0). 실행 결과는 코드를 돌리기 전에 예상한 값과 같았음. results-01.md는 읽기만 했고 수정하지 않음. commit·push는 하지 않음
 - worklog.md: 2026-10-04 항목에 층위 1 스크립트 작성·실행 기록 추가, "다음 작업" 줄 수정 (이 기록)
+- deep/05-citation/experiments/pairs-01.md: 만듦 (2026-10-04, Claude Code) — 층위 2에서 MiniCheck에 넣을 (문서, 주장) 쌍 P1~P8과 번역 원칙. 사용자가 준 내용을 그대로 옮김(수정·교정 없음). commit·push는 하지 않음
+- worklog.md: 2026-10-04 항목에 pairs-01.md 작성 기록 추가 (이 기록)
+- .gitignore: 만듦 (2026-10-04, Claude Code) — 파일이 없어서 새로 만들고 `ckpts/`, `*.pt`를 추가(모델 가중치가 저장소에 들어가지 않게 함). commit·push는 하지 않음
+- deep/05-citation/experiments/scripts/run-minicheck.py: 만듦 (2026-10-04, Claude Code) — 층위 2 자동 판정 스크립트. pairs-01.md 파싱·"(same as P2)" 치환까지는 실행에서 정상 통과했고, 모델을 불러오는 단계에서 실패함(아래 "문제와 대처"). commit·push는 하지 않음
+- (만들지 못한 파일) deep/05-citation/experiments/results-01-layer2.md: 스크립트가 모델 불러오기 단계에서 실패해 아직 생성되지 않음
+- worklog.md: 2026-10-04 항목에 MiniCheck 설치·실행 시도 기록 추가 (이 기록)
 
 ### 내가 검토한 것
 
@@ -503,10 +514,102 @@ deep/05-citation 실험 결과(results-01.md)에 사람 판정 기록 + 실험 �
 - Q5 답변이 제42조 제2항의 내용을 잘못 설명함(인용 조항 번호는 실재) → 사람 판정 칸과 "이번 오류의 성격"에 그대로 기록하고 답변 본문은 고치지 않음(틀린 답도 실험 결과로 보존). 자동 판정기가 같은 조 안의 다른 항 내용과 섞어 "뒷받침됨"으로 볼 가능성이 있어, MiniCheck 자동 판정 때 사람 판정과 갈리는지 확인할 예정
 - 05 심화 실험에 파이썬 코드를 쓰게 되면서, AGENTS.md의 "모든 문서는 Markdown(.md)으로 쓴다" 규칙이 코드 파일이라는 새 상황을 담지 못함 → 코드를 만들기 전에 규칙부터 고침(코드 위치·파일명 예외, "## 실험 코드" 절 추가). 코드 파일은 아직 만들지 않음
 
+### MiniCheck 설치·실행 기록
+
+- 가상환경: ~/.venvs/minicheck (저장소 밖, 파이썬 3.13.3, 용량 약 1.1GB)
+- 설치 명령: `python3 -m venv ~/.venvs/minicheck` → `pip install "minicheck @ git+https://github.com/Liyan06/MiniCheck.git@main"`
+- 설치 결과: 성공(종료 코드 0), pip install 약 88초(2026-10-04 21:02:51 ~ 21:04:19 +0900). minicheck 0.1.0, torch 2.14.1, transformers 5.18.0 등이 함께 설치됨. pip 업데이트 안내(25.0.1 -> 26.2.1)는 오류가 아님
+- 실행 명령: `~/.venvs/minicheck/bin/python deep/05-citation/experiments/scripts/run-minicheck.py`
+- 실행 결과: 실패(종료 코드 1). 모델을 불러오는 `MiniCheck(model_name='flan-t5-large', cache_dir=...)` 단계에서 오류. 모델 가중치는 아직 내려받기 전이라 ~/.cache/minicheck-ckpts는 12KB
+- 오류 문구(마지막 줄 그대로): `ValueError: Using a `device_map`, `tp_plan`, `torch.device` context manager or setting `torch.set_default_device(device)` requires `accelerate`. You can install it with `pip install accelerate``
+- 원인: 설치된 minicheck의 inference.py가 `from_pretrained(..., device_map="auto")`를 쓰는데, 지시한 설치 명령으로는 `accelerate` 패키지가 함께 설치되지 않음
+- 디스크 여유: 설치 후 약 7.2GiB(모델 가중치 약 3GB 예정)
+
 ### 다음 작업
 
+- accelerate 설치 여부를 사람이 결정(지시한 설치 명령 밖의 추가 설치라 먼저 보고) → 승인되면 설치 후 run-minicheck.py 다시 실행해 results-01-layer2.md 생성
 - 자동 판정을 두 층위로 나눔: 층위 1 조항 번호 대조(규칙 기반, 한국어 그대로) → 층위 2 MiniCheck 내용 뒷받침 판정(영어 번역 쌍 필요)
 - deep/05-citation 실험 재료로 EU AI Act 발췌 추가
 - MiniCheck 설치 후 results-01.md 자동 판정 채우기
 - 자동 판정과 사람 판정이 갈리는 질문(특히 Q5) 정리 → findings 작성
 - "없음" 답변에 근거 조항을 붙이는 방식이 맞는지 findings에 정리
+
+## 2026-10-05
+
+### 목표
+
+MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-01-ko.md)과 판정 서브에이전트(citation-judge) 준비, 층위 2 판정 실행
+
+### 시작·종료 시각
+
+- 시작:
+- 종료:
+
+### 환경
+
+- macOS, Claude Code 데스크톱 (Claude Code 2.1.274), Python 3.13.3
+
+### Claude Code에 준 지시
+
+1. [A] MiniCheck 설치물 정리(저장소 밖만): 지우기 전에 용량 측정 → `~/.venvs/minicheck`, `~/.cache/minicheck-ckpts`만 삭제(삭제는 에드워드가 승인) → 여유 용량 보고. `~/.cache/pip`은 지우지 않고 용량만 보고. 저장소 안 파일은 지우지 않고 run-minicheck.py와 pairs-01.md에 "[미사용 기록]" 머리말만 붙임.
+2. [B] pairs-01-ko.md를 지정한 내용 그대로 만듦(조문 원문은 적지 않고 data/sanan-law.md에서 뽑아 씀).
+3. [C] .claude/agents/citation-judge.md 만들기(프런트매터 형식은 Claude Code가 기대하는 형식을 확인해 맞춤).
+4. [D] extract-doc-text.py로 조문 원문 8개를 뽑아 확인 → 쌍마다 citation-judge를 한 번씩(총 8회) 호출. 서브에이전트에는 조문 원문과 claim_ko만 넘기고 human·hypothesis·P 번호는 넘기지 않음. 판정이 끝난 뒤에 human과 비교. P8이 "뒷받침됨"이거나 P5가 "뒷받침 안 됨"이면 결과 파일을 쓰지 않고 즉시 보고.
+5. [E] results-01-layer2.md 작성, results-01.md "자동 판정" 칸에 "층위 1: 값 / 층위 2: 값" 기록(사람 판정 칸·pairs의 human 값은 건드리지 않음).
+6. [F] worklog에 2026-10-05 항목 기록. commit·push는 하지 않음.
+
+### 읽은 파일
+
+- .claude/settings.local.json (기존 설정 확인)
+- deep/05-citation/data/sanan-law.md, deep/05-citation/experiments/pairs-01-ko.md (extract-doc-text.py가 입력으로 읽음)
+- https://code.claude.com/docs/en/sub-agents (서브에이전트 정의 파일 형식과 로드 시점 확인, 확인일 2026-10-05)
+
+### 만든·고친 파일
+
+- deep/05-citation/experiments/scripts/run-minicheck.py: 수정 (2026-10-05, Claude Code) — 맨 위에 "[미사용 기록]" 주석 머리말 추가(지우지 않음). commit·push는 하지 않음
+- deep/05-citation/experiments/pairs-01.md: 수정 (2026-10-05, Claude Code) — 제목 아래에 "[미사용 기록]" 인용 블록 추가(지우지 않음). commit·push는 하지 않음
+- deep/05-citation/experiments/pairs-01-ko.md: 만듦 (2026-10-05, Claude Code) — 한국어 판정 쌍 P1~P8과 설계 원칙. 지정한 내용 그대로, 조문 원문은 적지 않음. commit·push는 하지 않음
+- .claude/agents/citation-judge.md: 만듦 (2026-10-05, Claude Code) — 조문과 주장 한 쌍의 뒷받침 여부만 판정하는 서브에이전트. 지정한 name·description·규칙을 그대로 넣고, 프런트매터에 `disallowedTools: Read, Glob, Grep, Bash, Edit, Write, NotebookEdit`를 추가함(저장소 파일을 읽지 말라는 규칙을 도구 수준에서도 막으려는 추가이며, 지시에 없던 항목). commit·push는 하지 않음
+- deep/05-citation/experiments/scripts/extract-doc-text.py: 만듦 (2026-10-05, Claude Code) — pairs-01-ko.md의 doc_ref에 해당하는 조문 원문을 sanan-law.md에서 뽑아 화면에 출력. check-article-numbers.py의 parse_law·parse_ref·judge를 재사용하고, 조문 자르기 결과가 parse_law와 같은지 실행 때마다 검사함. 표준 라이브러리만 사용. 실행 결과 8개 쌍의 원문이 모두 정상 추출됨. commit·push는 하지 않음
+- (지움, 저장소 밖) ~/.venvs/minicheck, ~/.cache/minicheck-ckpts: 삭제 (2026-10-05, 에드워드 승인). 아래 "정리 기록" 참고
+- (만들지 못한 파일) deep/05-citation/experiments/results-01-layer2.md, results-01.md의 "자동 판정" 칸: 판정이 실행되지 않아 만들지 않음·채우지 않음
+- worklog.md: 2026-10-05 항목 추가 (이 기록)
+- .gitignore: 수정 (2026-10-05, Claude Code) — `.claude/settings.local.json`, `.venv/` 두 줄 추가. 개인 권한 설정 파일을 gitignore에 넣어 공개 대상에서 제외했다. commit·push는 하지 않음
+
+### 정리 기록 (용량)
+
+- 지우기 전 용량: ~/.venvs/minicheck 1.1GB, ~/.cache/minicheck-ckpts 12KB
+- ~/.cache/pip: 이 경로는 없음. macOS의 pip 캐시는 ~/Library/Caches/pip이고 728MB(다른 파이썬 작업과 공유되므로 지우지 않음)
+- df -h / : 사용 가능 5.5Gi(사용률 68%) → 삭제 후 6.7Gi(64%). 데이터 볼륨(df -h ~)은 5.5Gi(98%) → 6.7Gi(97%). 확보된 여유는 약 1.2GiB
+- 참고: 10/4 설치 직후에는 7.2GiB였는데 오늘 삭제 전에 5.5GiB로 줄어 있었음(그 사이 MiniCheck와 무관한 다른 사용분)
+- 모델 가중치는 내려받기 전에 중단했다. 실제로 용량을 쓴 것은 torch·transformers가 들어간 가상환경(1.1GB)이었고, 가중치 폴더는 12KB뿐이었다.
+
+### 내가 검토한 것
+
+- 삭제 승인(에드워드): 위 두 경로의 삭제를 승인함. 저장소 안 파일은 지우지 않기로 함
+- run-minicheck.py와 pairs-01.md를 지우지 않고 머리말만 붙여 남기기로 판단. 근거는 AGENTS.md "## 실험 코드"의 규칙(설치가 필요한 도구는 설치 명령, 성공·실패 여부, 실패 시 오류 문구를 .md에 남긴다)이며, 실패한 경로도 시도 기록으로 남겨야 한다고 봄
+
+### 커밋
+
+-
+
+### Pages URL
+
+- 변경 없음
+
+### 문제와 대처
+
+- 서브에이전트 호출 실패: `Agent type 'citation-judge' not found. Available agents: claude, claude-code-guide, Explore, general-purpose, Plan, statusline-setup`. 원인은 .claude/agents/ 폴더가 이번 세션 시작 때 없었기 때문임. 공식 문서(확인 2026-10-05)에 새 agents 폴더의 첫 파일은 재시작해야 로드된다고 적혀 있음. → [D-2]의 판정 호출 8회를 한 번도 실행하지 못했고(0/8), 임의로 general-purpose 등 다른 에이전트로 바꿔 돌리지 않고 멈춰서 보고함. [D-3] 중단 조건(P8, P5)에 해당한 것은 아님
+- ~/.cache/pip 경로가 없어 지시한 용량 측정 대상이 비어 있음 → 실제 pip 캐시 위치(~/Library/Caches/pip)를 찾아 용량만 보고하고 지우지 않음
+
+### 설계 기록
+
+- citation-judge로 쌍 8개 판정을 자동화하기로 한 것은 반복 작업 자동화 기록이다. 다만 서브에이전트가 이번 세션에서 로드되지 않아 자동화 자체는 아직 실행하지 못했다.
+- 판정자에게 사람 판정(human)과 기대 답(hypothesis 등)을 넘기지 않는다. 판정자에게 넘기는 것은 조문 원문과 claim_ko 두 개뿐이고, P 번호도 넘기지 않으며, 비교는 8개 판정이 모두 끝난 뒤에 한다. 서브에이전트 규칙에도 results-01.md, design-01.md, pairs-01-ko.md를 읽지 말라고 적었다. 이렇게 판정자가 정답 쪽 정보를 보지 못하게 해 판정이 오염되는 것을 막는 설계다.
+
+### 다음 작업
+
+- 세션을 다시 시작해 citation-judge가 로드되는지 확인한 뒤, [D-2]대로 8회 호출 → 8개가 끝난 뒤 human과 비교 → results-01-layer2.md 작성, results-01.md "자동 판정" 칸에 "층위 1 / 층위 2" 기록
+- 재시작이 어려우면 사람이 대체 방식(general-purpose 서브에이전트에 같은 규칙을 프롬프트로 주는 방식)을 승인할지 결정. 이 경우 판정자의 도구·시스템 프롬프트가 달라진다는 점을 한계에 적어야 함
+- deep/05-citation 실험 재료로 EU AI Act 발췌 추가
+- 자동 판정과 사람 판정이 갈리는 질문 정리 → findings 작성
