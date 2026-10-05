@@ -557,12 +557,14 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 4. [D] extract-doc-text.py로 조문 원문 8개를 뽑아 확인 → 쌍마다 citation-judge를 한 번씩(총 8회) 호출. 서브에이전트에는 조문 원문과 claim_ko만 넘기고 human·hypothesis·P 번호는 넘기지 않음. 판정이 끝난 뒤에 human과 비교. P8이 "뒷받침됨"이거나 P5가 "뒷받침 안 됨"이면 결과 파일을 쓰지 않고 즉시 보고.
 5. [E] results-01-layer2.md 작성, results-01.md "자동 판정" 칸에 "층위 1: 값 / 층위 2: 값" 기록(사람 판정 칸·pairs의 human 값은 건드리지 않음).
 6. [F] worklog에 2026-10-05 항목 기록. commit·push는 하지 않음.
+7. (세 번째 세션) 층위 2 자동 판정 마무리: extract-doc-text.py 실행 → citation-judge 8회 호출(조문 원문과 claim_ko만 넘김) → 중단 조건(P8 뒷받침됨, P5 뒷받침 안 됨) 확인 → 8개가 끝난 뒤 human과 비교 → results-01-layer2.md 작성(판정 방식, 도구 수준 격리 설계, 세 번째 세션에서야 실행된 경위, 조문 원문 8개, 판정 표, 갈린 쌍, P1·P2 비교, 한계 3개) → results-01.md "자동 판정" 칸을 "층위 1: 값 / 층위 2: 값"으로 채움 → worklog에 판정 실행과 "반복 작업 자동화" 기록. citation-judge.md 프런트매터는 고치지 않음. commit·push는 하지 않음.
 
 ### 읽은 파일
 
 - .claude/settings.local.json (기존 설정 확인)
 - deep/05-citation/data/sanan-law.md, deep/05-citation/experiments/pairs-01-ko.md (extract-doc-text.py가 입력으로 읽음)
 - https://code.claude.com/docs/en/sub-agents (서브에이전트 정의 파일 형식과 로드 시점 확인, 확인일 2026-10-05)
+- (세 번째 세션) AGENTS.md, README.md, worklog.md, .claude/agents/citation-judge.md, deep/05-citation/experiments/scripts/extract-doc-text.py, deep/05-citation/experiments/pairs-01-ko.md, deep/05-citation/experiments/results-01.md, deep/05-citation/experiments/results-01-layer1.md, deep/05-citation/data/sanan-law.md(extract-doc-text.py가 입력으로 읽음)
 
 ### 만든·고친 파일
 
@@ -572,7 +574,10 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - .claude/agents/citation-judge.md: 만듦 (2026-10-05, Claude Code) — 조문과 주장 한 쌍의 뒷받침 여부만 판정하는 서브에이전트. 지정한 name·description·규칙을 그대로 넣고, 프런트매터에 `disallowedTools: Read, Glob, Grep, Bash, Edit, Write, NotebookEdit`를 추가함(저장소 파일을 읽지 말라는 규칙을 도구 수준에서도 막으려는 추가이며, 지시에 없던 항목). commit·push는 하지 않음
 - deep/05-citation/experiments/scripts/extract-doc-text.py: 만듦 (2026-10-05, Claude Code) — pairs-01-ko.md의 doc_ref에 해당하는 조문 원문을 sanan-law.md에서 뽑아 화면에 출력. check-article-numbers.py의 parse_law·parse_ref·judge를 재사용하고, 조문 자르기 결과가 parse_law와 같은지 실행 때마다 검사함. 표준 라이브러리만 사용. 실행 결과 8개 쌍의 원문이 모두 정상 추출됨. commit·push는 하지 않음
 - (지움, 저장소 밖) ~/.venvs/minicheck, ~/.cache/minicheck-ckpts: 삭제 (2026-10-05, 에드워드 승인). 아래 "정리 기록" 참고
-- (만들지 못한 파일) deep/05-citation/experiments/results-01-layer2.md, results-01.md의 "자동 판정" 칸: 판정이 실행되지 않아 만들지 않음·채우지 않음
+- (만들지 못한 파일, 앞선 두 세션) deep/05-citation/experiments/results-01-layer2.md, results-01.md의 "자동 판정" 칸: 판정이 실행되지 않아 만들지 않음·채우지 않음 → 세 번째 세션에서 아래 두 줄로 처리함
+- deep/05-citation/experiments/results-01-layer2.md: 만듦 (2026-10-05, Claude Code) — citation-judge 8회 판정 결과. 일치 7, 불일치 1(P7). commit·push는 하지 않음
+- deep/05-citation/experiments/results-01.md: 수정 (2026-10-05, Claude Code) — Q1~Q5 "자동 판정" 칸만 "층위 1: 값 / 층위 2: 값"으로 채움. "사람 판정" 칸과 pairs-01-ko.md의 human 값은 건드리지 않음. commit·push는 하지 않음
+- worklog.md: 2026-10-05 항목에 판정 실행·반복 작업 자동화 기록 추가 (이 기록)
 - worklog.md: 2026-10-05 항목 추가 (이 기록)
 - .gitignore: 수정 (2026-10-05, Claude Code) — `.claude/settings.local.json`, `.venv/` 두 줄 추가. 개인 권한 설정 파일을 gitignore에 넣어 공개 대상에서 제외했다. commit·push는 하지 않음
 
@@ -602,16 +607,27 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - 서브에이전트 호출 실패: `Agent type 'citation-judge' not found. Available agents: claude, claude-code-guide, Explore, general-purpose, Plan, statusline-setup`. 원인은 .claude/agents/ 폴더가 이번 세션 시작 때 없었기 때문임. 공식 문서(확인 2026-10-05)에 새 agents 폴더의 첫 파일은 재시작해야 로드된다고 적혀 있음. → [D-2]의 판정 호출 8회를 한 번도 실행하지 못했고(0/8), 임의로 general-purpose 등 다른 에이전트로 바꿔 돌리지 않고 멈춰서 보고함. [D-3] 중단 조건(P8, P5)에 해당한 것은 아님
 - ~/.cache/pip 경로가 없어 지시한 용량 측정 대상이 비어 있음 → 실제 pip 캐시 위치(~/Library/Caches/pip)를 찾아 용량만 보고하고 지우지 않음
 - 재시도(2026-10-05 09:50): [D-2]를 이어서 하려고 extract-doc-text.py를 다시 실행해 8개 쌍의 조문 원문을 얻었으나(정상), citation-judge 호출은 같은 오류(`Agent type 'citation-judge' not found. Available agents: claude, claude-code-guide, Explore, general-purpose, Plan, statusline-setup`)로 실패함. 판정 호출 0/8. 진단: 프런트매터는 name·description·disallowedTools 세 줄로 형식이 맞고, 설치된 Claude Code 2.1.274 실행 파일에 disallowedTools 필드명이 들어 있으며 공식 문서에도 지원 필드로 적혀 있어 disallowedTools가 원인일 가능성은 낮다고 봄(파일이 실제로 파싱되는지는 직접 확인하지 못함). 에이전트 목록이 앞선 시도와 같은 것으로 보아, .claude/agents/가 만들어진(09:40:54) 뒤에 세션이 새로 시작되지 않은 것으로 판단함. 프런트매터는 바꾸지 않았고 결과 파일도 쓰지 않음 → 사람에게 보고
+- 세 번째 세션(2026-10-05 10:01 무렵): Claude Code를 새로 시작한 세션에서 citation-judge가 에이전트 목록에 나타났고 8회 호출이 모두 성공함(8/8, 서브에이전트 도구 사용 0회). 프런트매터는 고치지 않았으므로, 앞선 실패는 .claude/agents/ 폴더를 새로 만든 뒤 재시작하지 않았기 때문이라는 진단과 맞음. 공식 문서 문구: "New agents directories require a restart"(https://code.claude.com/docs/en/sub-agents , 확인 2026-10-05). 기존 대화를 이어가는 것은 재시작에 해당하지 않음
+
+### 층위 2 판정 실행 기록
+
+- 실행 시각: 2026-10-05 10:01~10:02 +0900 (extract-doc-text.py 10:01:21 실행, 종료 코드 0)
+- 판정자: citation-judge 서브에이전트, 호출 8회(쌍마다 1회, 재실행 없음)
+- 넘긴 것: 조문 원문, claim_ko / 넘기지 않은 것: human, hypothesis, P 번호(claim_id, doc_ref도 넘기지 않음)
+- 중단 조건: P8 뒷받침 안 됨, P5 뒷받침됨 → 해당 없음
+- human과 비교(8개 판정이 끝난 뒤): 일치 7, 불일치 1(P7, 자동 뒷받침 안 됨 / 사람 맞음). P1·P2는 둘 다 뒷받침 안 됨으로 갈리지 않음
+- 비교할 때 human "맞음"을 "뒷받침됨"과 같은 쪽으로 봄(pairs-01-ko.md의 human 표기가 두 가지라 정한 대응). results-01-layer2.md에 적어 둠
 
 ### 설계 기록
 
 - citation-judge로 쌍 8개 판정을 자동화하기로 한 것은 반복 작업 자동화 기록이다. 다만 서브에이전트가 이번 세션에서 로드되지 않아 자동화 자체는 아직 실행하지 못했다.
+- 반복 작업 자동화 (세 번째 세션에서 실행): 같은 규칙으로 (조문, 주장) 쌍을 판정하는 일을 citation-judge 서브에이전트 하나로 정의해 두고, 쌍 8개를 같은 정의로 8회 호출해 처리했다. 판정 규칙·출력 형식·도구 제한이 정의 파일 한 곳에 있으므로, 쌍이 늘어나도 호출만 반복하면 되고 판정 조건이 호출마다 달라지지 않는다.
 - 판정자에게 사람 판정(human)과 기대 답(hypothesis 등)을 넘기지 않는다. 판정자에게 넘기는 것은 조문 원문과 claim_ko 두 개뿐이고, P 번호도 넘기지 않으며, 비교는 8개 판정이 모두 끝난 뒤에 한다. 서브에이전트 규칙에도 results-01.md, design-01.md, pairs-01-ko.md를 읽지 말라고 적었다. 이렇게 판정자가 정답 쪽 정보를 보지 못하게 해 판정이 오염되는 것을 막는 설계다.
 
 ### 다음 작업
 
-- Claude Code를 완전히 종료했다가 이 저장소에서 새로 시작한 뒤(.claude/agents/가 이미 있는 상태로 시작해야 함), 에이전트 목록에 citation-judge가 보이는지 확인
-- 세션을 다시 시작해 citation-judge가 로드되는지 확인한 뒤, [D-2]대로 8회 호출 → 8개가 끝난 뒤 human과 비교 → results-01-layer2.md 작성, results-01.md "자동 판정" 칸에 "층위 1 / 층위 2" 기록
-- 재시작이 어려우면 사람이 대체 방식(general-purpose 서브에이전트에 같은 규칙을 프롬프트로 주는 방식)을 승인할지 결정. 이 경우 판정자의 도구·시스템 프롬프트가 달라진다는 점을 한계에 적어야 함
+- (완료, 세 번째 세션) citation-judge 로드 확인 → 8회 호출 → human과 비교 → results-01-layer2.md 작성, results-01.md "자동 판정" 칸 기록
+- 사람이 results-01-layer2.md를 검토(특히 P7 불일치, P3를 "뒷받침됨"으로 본 것, human "맞음"↔"뒷받침됨" 대응)
+- 같은 쌍을 여러 번 돌려 판정이 매번 같은지 확인할지 결정(이번에는 쌍마다 1회)
 - deep/05-citation 실험 재료로 EU AI Act 발췌 추가
 - 자동 판정과 사람 판정이 갈리는 질문 정리 → findings 작성
