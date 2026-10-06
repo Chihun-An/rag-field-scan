@@ -562,6 +562,7 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 9. (실험 02 수정 지시) pairs-02-ko.md의 P9 hypothesis 교체, P10(제15조 제목+제1항 본문+제1호) 추가, 설계 원칙에 "판정 전에 가설을 고쳤다" 한 줄 추가 → extract-doc-text.py가 "제목"을 처리하게 고침 → 원문 세 개 확인 → citation-judge를 P7·P9·P10 각 3회(총 9회) 호출(앞선 결과·human·hypothesis는 넘기지 않음) → results-02.md 작성 → worklog 기록. commit·push는 하지 않음.
 10. (findings) deep/05-citation/findings.md 작성: 지정한 파일에 적힌 것만 쓰고, 숫자는 파일에서 가져오며, 새 주장·해석을 보태지 않음. 지정한 절 구성(한 줄 결론 ~ 남은 질문, 끝에 상대 경로 링크). deep/README.md에 findings 링크 추가. worklog 기록. commit·push는 하지 않음.
 11. (실험 03) 실험 02에서 조 제목이 판정을 뒤집은 이유를 좁힘: pairs-02-ko.md P9 hypothesis 아래에 correction 줄 추가(가설 원문은 그대로) → pairs-03-ko.md에 P11(제1항 본문+제1호+제2항), P12(…+제3항) 작성 → extract-doc-text.py로 원문 추출·가설 전제 확인, pairs-01·02 출력 불변 확인 → citation-judge P11·P12 각 3회(총 6회)를 한 건씩 순서대로 호출 → results-03.md 작성 → findings.md 갱신(발견 2, 한계 6·7, 설계 규칙 2, 남은 질문) → worklog 기록. commit·push는 하지 않음.
+12. (07 계획서, 실제 작업 시각 2026-10-06 08:53 무렵부터) deep/07-graphrag/plan.md를 "MBB 공개 리포트로 산업 × 펌별 관점 비교 그래프" 계획으로 다시 씀(지정한 9개 절). 사람이 확인한 서지 정보는 그대로 쓰고 URL이 열리는지 확인해 확인 날짜를 붙임. arXiv:2506.05690은 열어서 제목·저자·날짜가 맞을 때만 넣음. 준 적 없는 논문·수치·인용은 만들지 않음. deep/README.md 07 항목에 plan.md 링크 확인·추가. worklog 2026-10-05 항목에 기록(지시대로). commit·push는 하지 않음.
 
 ### 읽은 파일
 
@@ -570,6 +571,8 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - https://code.claude.com/docs/en/sub-agents (서브에이전트 정의 파일 형식과 로드 시점 확인, 확인일 2026-10-05)
 - (세 번째 세션) AGENTS.md, README.md, worklog.md, .claude/agents/citation-judge.md, deep/05-citation/experiments/scripts/extract-doc-text.py, deep/05-citation/experiments/pairs-01-ko.md, deep/05-citation/experiments/results-01.md, deep/05-citation/experiments/results-01-layer1.md, deep/05-citation/data/sanan-law.md(extract-doc-text.py가 입력으로 읽음)
 - (findings) deep/05-citation/experiments/design-01.md, results-01.md, results-01-layer1.md, results-01-layer2.md, pairs-01-ko.md, pairs-02-ko.md, results-02.md, deep/05-citation/tools.md, questions.md, data-plan.md, key-contexts.md, areas/02-document-parsing-chunking.md, areas/05-citation-grounding.md, areas/06-rag-evaluation.md, deep/README.md, field-map.md(링크 확인), deep/05-citation/data/sanan-law.md(제15조에서 "안전보건관리책임자" 위치 확인)
+- (07 계획서) deep/07-graphrag/plan.md(고치기 전), papers.md, tools.md, areas/07-graphrag.md, deep/README.md, worklog.md
+- (07 계획서, 웹, 확인 2026-10-06) https://arxiv.org/abs/2404.16130 , https://arxiv.org/abs/2410.05779 , https://arxiv.org/abs/2506.05690 , https://github.com/HKUDS/LightRAG , https://neo4j.com/labs/genai-ecosystem/llm-graph-builder/ , https://github.com/neo4j-labs/llm-graph-builder , https://github.com/microsoft/graphrag
 - (실험 03) deep/05-citation/experiments/pairs-02-ko.md, pairs-03-ko.md·pairs-01-ko.md(스크립트 입력), deep/05-citation/data/sanan-law.md(스크립트 입력), deep/05-citation/findings.md, worklog.md
 - (실험 02) deep/05-citation/experiments/scripts/check-article-numbers.py(parse_ref 확인), deep/05-citation/data/sanan-law.md(제15조 확인, 스크립트 입력), deep/05-citation/experiments/pairs-02-ko.md·pairs-01-ko.md(스크립트 입력), worklog.md
 
@@ -598,6 +601,9 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - deep/05-citation/findings.md: 수정 (2026-10-05, Claude Code) — 발견 2에 P11·P12 반영, 한계 6을 실험 03 결과로 갱신(확인 필요 해소, 범위 제한은 남김), 한계 4·5·7 갱신, 설계 규칙 2 보강, 남은 질문 정리. 지시 범위 밖이지만 일관성을 위해 "무엇을 했나"에 실험 03 문단, "빗나간 가설"에 correction 줄 반영과 P11·P12 결과, "1차 과제와의 연결"에 P11, 맨 아래 링크에 실험 03 추가. commit·push는 하지 않음
 - extract-doc-text.py: 고치지 않음. "제15조 제1항 본문+제1호+제2항"과 "…+제3항"은 실험 02에서 넣은 코드("+" 뒤 항 표기는 앞쪽 조를 이어받음)로 처리됐음
 - worklog.md: 2026-10-05 항목에 실험 03 기록 추가 (이 기록)
+- deep/07-graphrag/plan.md: 다시 씀 (2026-10-06, Claude Code) — 기존 내용(주제·참고 자료·활용처·수집·개체 관계·질문 3개)을 지정한 9개 절로 바꿈. 기존에 있던 펌별 연구 조직 링크 3개와 papers.md 링크는 새 구성에 없어 넣지 않음. commit·push는 하지 않음
+- deep/README.md: 수정 (2026-10-06, Claude Code) — 07 항목에 plan.md 링크가 없어 한 줄 추가. commit·push는 하지 않음
+- worklog.md: 2026-10-05 항목에 07 계획서 작성 기록 추가 (이 기록)
 - worklog.md: 2026-10-05 항목 추가 (이 기록)
 - .gitignore: 수정 (2026-10-05, Claude Code) — `.claude/settings.local.json`, `.venv/` 두 줄 추가. 개인 권한 설정 파일을 gitignore에 넣어 공개 대상에서 제외했다. commit·push는 하지 않음
 
@@ -658,6 +664,18 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - 결과: P11 뒷받침됨 ×3, P12 뒷받침 안 됨 ×3. 쌍마다 3회가 모두 같았음. P11·P12 가설은 빗나가지 않음
 - 관찰: P11-3과 P12-2의 근거가 한 줄이 아니라 여러 문장이었음(citation-judge 규칙은 한 줄). 판정 값은 두 값 중 하나로 규칙대로였음. results-03.md에 적어 둠
 
+### 07 계획서 확인 기록 (2026-10-06 작업)
+
+- 날짜: 지시는 이 2026-10-05 항목에 기록하고 확인 날짜를 2026-10-05로 붙이라고 했으나, 실제 확인은 2026-10-06 08:53 +0900 이후에 했음. 확인 날짜는 실제 날짜(2026-10-06)로 적음
+- URL 확인(7개 모두 열림): arXiv 2404.16130·2410.05779 서지(제목·저자 순서·v1/v2/v3 날짜)는 사람이 준 값과 같음. LightRAG 저장소 제목에 "[EMNLP2025]" 표기 있음. Edge et al. 초록에서 전역 질문·커뮤니티 요약·"1 million token range"·포괄성과 다양성 개선 문구 확인
+- arXiv:2506.05690: 제목이 사람이 준 후보와 같음. 저자 Zhishang Xiang, Chuanjie Wu, Qinggang Zhang, Shengyuan Chen, Zijin Hong, Xiao Huang, Jinsong Su, v1 2025-06-06, v3 2026-02-22 → 넣음. 본문은 읽지 않았고 초록 내용만 씀
+- 사람이 준 사실과 원문이 다른 점:
+  - Neo4j LLM Graph Builder: 지시는 "LLM API 키가 필요하다"였으나, labs 페이지에는 API 키 필요 여부가 명시돼 있지 않음. 저장소 README에는 OpenAI 모델용 키와 함께 Ollama 로컬 모델 설정이 있음 → plan.md에 그대로 적고 "확인 필요"로 둠
+  - LightRAG: 지시는 "기본 저장이 파일 기반"이었으나, README는 기본 저장소 4개가 메모리 기반이고 로컬 파일은 저장(persistence)용이라고 적음. 그래프 DB 없이 쓸 수 있다는 점은 같음 → README 표현대로 적음
+  - MS GraphRAG: "유료 API 키가 전제"를 직접 적은 문장은 README에서 찾지 못함. README에는 "indexing can be an expensive operation"만 있음 → 사람이 정리한 내용으로 표시하고 지원 모델·로컬 모델은 확인 필요로 둠
+- 디스크 여유: 지시의 약 6.7GiB는 2026-10-05 MiniCheck 삭제 직후 값. 2026-10-06 확인 시 `df -h ~` 사용 가능 3.9Gi(99%) → 두 값을 시점과 함께 적음
+- 저장소 안의 deep/07-graphrag/papers.md·tools.md는 고치지 않음. tools.md의 LightRAG "필요한 것: LLM API 키"는 README의 로컬 모델 경로와 맞지 않을 수 있음(사람이 판단)
+
 ### 설계 기록
 
 - citation-judge로 쌍 8개 판정을 자동화하기로 한 것은 반복 작업 자동화 기록이다. 다만 서브에이전트가 이번 세션에서 로드되지 않아 자동화 자체는 아직 실행하지 못했다.
@@ -673,5 +691,92 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - 사람이 findings.md 검토. pairs-02-ko.md P9 hypothesis의 "명칭은 조 제목에만 있다"를 고칠지 결정
 - (findings 남은 질문 1) 같은 주장에 제1항 본문+제1호+제2항을 건네 정의 문장으로 이어 줘도 판정이 바뀌는지 확인 → 실험 03에서 완료(P11 뒷받침됨 ×3)
 - 사람이 results-03.md와 갱신된 findings.md 검토
+- 사람이 07 plan.md 검토. Neo4j·LightRAG·MS GraphRAG 서술 차이(위 "07 계획서 확인 기록") 확인, papers.md·tools.md를 plan.md에 맞춰 고칠지 결정
+- 07 1차 범위 산업·주제 정하기 → deep/07-graphrag/data/reports.md 만들기(아직 없음)
 - deep/05-citation 실험 재료로 EU AI Act 발췌 추가
 - 자동 판정과 사람 판정이 갈리는 질문 정리 → findings 작성
+
+## 2026-10-06
+
+### 목표
+
+실험 04: 개인정보 보호법을 새 입력으로 삼아 05의 절차(원문 추출 → 답변 생성 → 층위 1·2 판정 → 사람 판정과 비교 → 기록)를 그대로 적용하고, 어디까지 재사용되고 어디서 깨지는지 확인
+
+### 시작·종료 시각
+
+- 시작:
+- 종료:
+
+### 환경
+
+- macOS, Claude Code 데스크톱, Python 3.13.3
+
+### Claude Code에 준 지시
+
+1. 실험 04 계획만 먼저 제시하고 승인 전에는 파일을 만들지 않음(계획 제시, 파일 만들지 않음).
+2. 계획 승인과 결정: (1) 발췌 범위 제2조, 제15조~제18조, 제28조의2~제28조의3 (2) 통제군은 Claude Code가 답변 생성 전에 법령 원문에서 거짓 주장 후보 2~3개를 뽑고 에드워드가 하나 고름 (3) 층위 2는 기본 1회, "뒷받침 안 됨"이 나온 쌍과 통제군만 3회. 이 규칙을 pairs-04-ko.md에 돌리기 전에 적어 둠 (4) 스크립트를 고치기 전 상태를 먼저 보고 (5) settings.local.json은 바꾸지 않고, 메인 세션은 규칙으로만 막혀 있다는 점을 결과 파일 한계에 적음. 추가: [A] Q6 층위 2에서 "뒷받침 안 됨"이 다수 나올 것이라는 예측을 판정 전에 pairs-04-ko.md에 적음 [B] Q6 호 인용 2건만 doc_ref를 "제15조 제1항 본문+해당 호"로 바꾼 짝 비교 쌍 추가. 1단계(원문 수집)부터 하고 구조를 보고한 뒤 멈춤.
+3. 1단계 승인. 판(시행일) 건을 privacy-law.md 머리말과 worklog에 기록(Cowork 교차 확인 결과와 출처, 핵심 맥락 2번과의 관계, 시행일이 세 갈래라는 점). 2단계: questions-04.md(기대 답 없이), answer-key-04.md(빈 틀), .claude/agents/answer-writer.md(disallowedTools, 본문 규칙은 design-01.md 인용 강제 프롬프트 그대로) 만들고 에이전트 목록에 뜨는지 확인. 거짓 주장 후보 2~3개 제시. 다 되면 멈추고 보고.
+
+### 읽은 파일
+
+- deep/05-citation/experiments/scripts/check-article-numbers.py, deep/05-citation/data/sanan-law.md(머리말 형식), .claude/settings.local.json(읽기만), .gitignore, worklog.md (계획 단계)
+- 국가법령정보센터 개인정보 보호법 페이지(Claude 내장 브라우저): https://www.law.go.kr/법령/개인정보보호법 → 본문 프레임 https://www.law.go.kr/LSW//lsInfoP.do?lsiSeq=283839&chrClsCd=010202&urlMode=lsInfoP&efYd=20260911&ancYnChk=0 (확인 2026-10-06)
+- (2단계) deep/05-citation/experiments/design-01.md(인용 강제 프롬프트 대조), .claude/agents/ 목록, https://code.claude.com/docs/en/sub-agents.md (로드 시점 문구 재확인, 확인 2026-10-06)
+
+### 만든·고친 파일
+
+- deep/05-citation/data/privacy-law.md: 만듦 (2026-10-06, Claude Code) — 개인정보 보호법(시행 2026. 9. 11., 법률 제21445호) 제2조, 제15조~제18조, 제28조의2~제28조의3 발췌. 머리말에 출처·시행일·법률 번호·URL·수집일·범위 기록. commit·push는 하지 않음
+- worklog.md: 2026-10-06 항목 추가 (이 기록)
+- deep/05-citation/data/privacy-law.md: 수정 (2026-10-06, Claude Code) — 머리말에 판(시행일) 교차 확인 기록 추가(Cowork 확인 결과·출처, 시행일 세 갈래). 본문은 고치지 않음. commit·push는 하지 않음
+- deep/05-citation/experiments/questions-04.md: 만듦 (2026-10-06, Claude Code) — Q6·Q7과 입력 자료 지정만. 기대 답 없음. commit·push는 하지 않음
+- deep/05-citation/experiments/answer-key-04.md: 만듦 (2026-10-06, Claude Code) — 빈 틀(질문별 기대 답·기대 근거 조항·사람 판정, 층위 2 쌍 human 표). 값은 비움. commit·push는 하지 않음
+- .claude/agents/answer-writer.md: 만듦 (2026-10-06 10:52, Claude Code) — name·description·disallowedTools(Read, Glob, Grep, Bash, Edit, Write, NotebookEdit). 본문은 역할 안내 한 줄("너는 질문에 답하는 에이전트다. 호출할 때 법령 발췌 원문과 질문 하나를 받는다. 아래 규칙을 따른다.")과 design-01.md 인용 강제 프롬프트. 프롬프트 블록은 design-01.md와 diff로 글자 단위 일치 확인(5줄). 역할 안내 한 줄은 지시에 없던 추가임. commit·push는 하지 않음
+
+### 원문 수집 기록
+
+- 방법: 내장 브라우저로 페이지를 열고, 본문 프레임의 innerText에서 세 구간(제2조, 제15조~제18조, 제28조의2~제28조의3)을 잘라 냄. 줄 앞 공백만 지우고 3줄 이상 빈 줄을 2줄로 줄였으며 글자는 바꾸지 않음
+- 검증: 브라우저에서 세 구간의 SHA-256을 계산하고, 저장한 파일에서 같은 구간을 잘라 SHA-256을 비교함 → 세 구간 모두 일치(길이 1355 / 3510 / 533자)
+- curl로 같은 URL을 받으면 본문이 들어 있지 않음(본문은 페이지가 따로 불러옴). 그래서 브라우저 경로를 씀
+- 현행 판 선택: 같은 페이지에 "[시행일: 2027. 3. 9.] 제2조"(제9호 "인공지능기술" 추가, <개정 … 2026. 9. 8.>)가 함께 실려 있었음. 현행(시행 2026. 9. 11.) 제2조를 옮기고 머리말에 적음
+
+### 판(시행일) 기록
+
+- 발견: Claude Code가 수집 중 law.go.kr 같은 페이지에서 시행 예정 제2조를 발견해 보고함
+- 교차 확인(확인자: Claude Cowork, 확인일 2026-10-06, law.go.kr 밖의 자료). Claude Code의 보고와 일치함
+  - 현행: 법률 제21445호, 2026. 3. 10. 공포, 2026. 9. 11. 시행
+  - 미시행: 법률 제21910호, 2026. 9. 8. 공포, 2027. 3. 9. 시행. 제2조제9호를 신설해 "인공지능기술"을 「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」에 따른 인공지능기술로 정의
+  - 현행 개정법 부칙상 제32조의2 제1항 단서와 제75조 제2항 제15호는 2027. 7. 1. 시행으로 따로 늦춰져 있음(이번 발췌 범위 밖)
+  - 출처: https://www.lawtimes.co.kr/news/articleView.html?idxno=226510 (법률신문), https://datalaw.kr/posts/pipa-2026-amendment-comparison/ (신구조문 대조표). Claude Code는 이 두 출처를 직접 열어 보지 않았음
+- (1) 1차 과제 핵심 맥락 2번("최신 버전만 근거로 남기기")이 실제 자료에서 나타난 사례다. 다만 이번에는 구버전이 섞인 것이 아니라, 아직 시행되지 않은 미래판이 섞인 반대 방향의 경우다
+- (2) 같은 법 안에 시행일이 서로 다른 조항이 최소 세 갈래(2026. 9. 11. / 2027. 3. 9. / 2027. 7. 1.) 있다. 문서 식별자(법률 이름·번호)만으로는 "어느 판에서 왔는가"가 정해지지 않고, 조항 단위의 시행일까지 따라가야 한다
+
+### 커밋
+
+-
+
+### Pages URL
+
+- 변경 없음
+
+### 문제와 대처
+
+- 계획 단계의 위험 2(새 에이전트 파일이 재시작 없이 로드되는지)는 에드워드가 공식 문서를 확인해 해소함: .claude/agents/ 폴더 안 파일 변경은 자동 반영되고 재시작은 폴더를 새로 만든 경우만 필요(https://code.claude.com/docs/en/sub-agents.md, 확인 2026-10-05, 에드워드). answer-writer를 만든 뒤 실제로 로드되는지는 아직 확인하지 않음
+- answer-writer 로드 실패(2026-10-06 10:52~10:53): 파일을 만든 직후와 약 1분 뒤 두 번 로드 확인용 호출(실험 답변이 아닌 "로드 확인" 요청)을 보냈으나 둘 다 `Agent type 'answer-writer' not found. Available agents: citation-judge, claude, claude-code-guide, Explore, general-purpose, Plan, statusline-setup`. .claude/agents/는 이 세션 시작 전부터 있던 폴더이고(citation-judge는 로드돼 있음), 파일 형식은 citation-judge와 같음. 공식 문서(재확인 2026-10-06)는 기존 agents 폴더의 파일 변경을 몇 초 안에 감지한다고 적고, 예외로 새 agents 폴더, --add-dir 폴더, --disable-slash-commands로 시작한 세션 세 가지를 든다. 이 세션이 어느 예외에 해당하는지, 데스크톱 앱 환경에서 감시가 동작하지 않는지는 확인하지 못함(확인 필요). 다른 에이전트로 바꿔 돌리지 않고 멈춰서 보고함. 답변 생성은 아직 시작 전이라(기대 답 미기입) 실험 진행에는 아직 영향 없음
+
+### 통제군 거짓 주장 후보 (답변 생성 전, 2026-10-06 제시)
+
+- C1 (제15조 제1항): "개인정보처리자는 제15조제1항 각 호에 따라 수집한 개인정보를 수집 목적과 관계없이 이용할 수 있다." — 원문은 "그 수집 목적의 범위에서 이용할 수 있다"
+- C2 (제2조 제1호의2): "“가명처리”란 개인정보의 전부를 삭제하여 추가 정보가 있어도 특정 개인을 알아볼 수 없도록 처리하는 것을 말한다." — 원문은 "일부를 삭제하거나 일부 또는 전부를 대체하는 등의 방법으로 추가 정보가 없이는" 알아볼 수 없도록 처리
+- C3 (제28조의2 제1항): "개인정보처리자는 통계작성, 과학적 연구, 공익적 기록보존 등을 위하여 가명정보를 처리하려면 정보주체의 동의를 받아야 한다." — 원문은 "정보주체의 동의 없이 가명정보를 처리할 수 있다"
+- 에드워드가 하나를 고른다(아직 고르지 않음)
+
+### 계획 변경 기록
+
+- (없음. 아래에 계획을 도중에 바꾼 지점을 적는다)
+
+### 다음 작업
+
+- (완료) 2단계 파일 만들기, 거짓 주장 후보 제시
+- 에드워드: 통제군 후보 하나 고르기, answer-key-04.md에 기대 답 채우기
+- answer-writer 로드 문제 해결(세션 재시작 등) → 로드 확인 후 답변 생성
+- 층위 2 쌍 human 값을 answer-key-04.md에 어떻게 넣을지 결정(메인 세션이 이 파일을 읽지 않고 편집할 수 없음)

@@ -15,3 +15,4 @@
 - 목표: 전략 컨설팅 펌의 공개 리포트를 대상으로 GraphRAG 계획을 세운다.
 - 관련 영역: [areas/07-graphrag.md](../areas/07-graphrag.md)
 - 작업 폴더: [07-graphrag/](07-graphrag/)
+- 계획서: [07-graphrag/plan.md](07-graphrag/plan.md)
