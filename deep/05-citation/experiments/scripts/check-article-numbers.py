@@ -13,7 +13,7 @@
 #      - 앞 항목의 조(또는 조·항, 조·항·호)를 생략한 표기("제15조 제1항, 제3항"의 "제3항")는
 #        바로 앞 항목에서 생략된 부분을 이어받는다.
 #   3. 각 항목을 발췌본 목록과 대조해 "실재함 / 발췌 범위 밖 / 다른 법률 / 파싱 실패" 중 하나로 판정한다.
-#   4. 인용 항목이 0건이거나 파싱 실패가 절반을 넘으면 경고를 내고 종료 코드 2로 끝낸다.
+#   4. 인용 항목이 0건이거나 파싱 실패가 절반 이상이면 경고를 내고 종료 코드 2로 끝낸다.
 #
 # 이 스크립트가 보지 않는 것:
 #   조항 번호가 실재하는지만 본다. 그 조항의 내용이 답변 문장을 뒷받침하는지는 보지 않는다.
@@ -82,7 +82,7 @@ def fmt(jo, hang, ho, mok, law=None):
     if hang is not None:
         out += " 제%d항" % hang
     if ho is not None:
-        out += " 제%s호" % fmt_ho_num(ho)
+        out += " 제%d호" % ho[0] + ("의%d" % ho[1] if ho[1] is not None else "")  # 법령 표기: 제1호의2
     if mok is not None:
         out += " %s목" % mok
     return ("「%s」 " % law + out) if law else out
@@ -602,8 +602,8 @@ def main():
     if total == 0:
         warnings.append("인용 항목이 0건입니다. 결과 파일의 \"실제 인용 조항\" 형식을 확인하세요.")
         fatal = True
-    elif n_fail * 2 > total:
-        warnings.append("파싱 실패가 전체 %d건 중 %d건으로 절반을 넘습니다." % (total, n_fail))
+    elif n_fail * 2 >= total:
+        warnings.append("파싱 실패가 전체 %d건 중 %d건으로 절반 이상입니다." % (total, n_fail))
         fatal = True
 
     now = datetime.now().astimezone()
