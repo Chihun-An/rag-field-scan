@@ -2,61 +2,68 @@
 
 McKinsey·BCG·Bain(이하 MBB) 세 펌의 공개 리포트를 그래프로 엮어, 같은 산업·주제에 대해 펌마다 관점이 어떻게 다른지 비교한다.
 
+- 다시 씀: 2026-10-07 (Claude Code). 서지 정보는 Claude Cowork가 확인한 값을 받아 쓰고, Claude Code가 각 URL을 2026-10-07에 다시 열어 대조했다. 도구 설명 중 원문과 다른 곳은 원문 표현대로 고치고 7절 "받은 설명과 원문이 다른 점"에 적었다.
+
 ## 1. 주제와 고른 이유
 
 주제는 산업 × 펌별 관점 비교 그래프다. 고른 이유는 두 가지다.
 
-- (a) 한 문서만 읽어서는 답할 수 없는 질문이 자연스럽게 나오는 자료다. 같은 산업에 대해 세 펌이 각각 따로 리포트를 내므로, 비교하려면 반드시 문서를 가로질러야 한다.
-- (b) 05에서 다룬 "근거의 사슬" 문제가 다른 형태로 나타난다. 05에서는 한 조문 안에서 명칭과 의무가 떨어져 있었다(제15조의 "안전보건관리책임자"는 제목·제2항에, 의무는 제1항에 있었다. [05 결론](../05-citation/findings.md) 발견 2). 여기서는 같은 주제에 대한 서로 다른 주장이 다른 문서에 떨어져 있다.
+- (a) 한 문서만 읽어서는 답할 수 없는 질문이 자연스럽게 나온다. 같은 산업에 대해 세 펌이 각각 따로 리포트를 내므로, 비교하려면 반드시 문서를 가로질러야 한다.
+- (b) 05에서 다룬 "근거의 사슬" 문제가 다른 형태로 나타난다. 05에서는 한 조문 안에서 명칭과 의무가 떨어져 있었다(산업안전보건법 제15조의 "안전보건관리책임자"는 조 제목·제2항·제3항에, 의무는 제1항에 있었다. [05 결론](../05-citation/findings.md) 발견 2). 여기서는 같은 주제에 대한 서로 다른 주장이 다른 문서에 떨어져 있다.
 
 ## 2. 연구 레퍼런스
 
-서지 정보는 각 arXiv 페이지에서 확인했다(확인 2026-10-06).
+| 논문 | 저자 | arXiv·버전 | URL | 확인 |
+|------|------|------------|-----|------|
+| From Local to Global: A Graph RAG Approach to Query-Focused Summarization | Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, Jonathan Larson | arXiv:2404.16130, v1 2024-04-24, v2 2025-02-19 | https://arxiv.org/abs/2404.16130 | 열림, 2026-10-07 |
+| LightRAG: Simple and Fast Retrieval-Augmented Generation | Zirui Guo, Lianghao Xia, Yanhua Yu, Tu Ao, Chao Huang | arXiv:2410.05779, v1 2024-10-08, v2 2024-11-07, v3 2025-04-28. 저장소 제목에 "[EMNLP2025]" 표기 | https://arxiv.org/abs/2410.05779 | 열림, 2026-10-07 |
+| When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation | Zhishang Xiang, Chuanjie Wu, Qinggang Zhang, Shengyuan Chen, Zijin Hong, Xiao Huang, Jinsong Su | arXiv:2506.05690, v1 2025-06-06, v2 2025-10-07, v3 2026-02-22 | https://arxiv.org/abs/2506.05690 | 열림, 2026-10-07 |
 
-| 논문 | 저자 | 버전·날짜 | URL |
-|------|------|-----------|-----|
-| From Local to Global: A Graph RAG Approach to Query-Focused Summarization | Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, Jonathan Larson | arXiv:2404.16130, v1 2024-04-24, v2 2025-02-19 | https://arxiv.org/abs/2404.16130 |
-| LightRAG: Simple and Fast Retrieval-Augmented Generation | Zirui Guo, Lianghao Xia, Yanhua Yu, Tu Ao, Chao Huang | arXiv:2410.05779, v1 2024-10-08, v3 2025-04-28. 저장소 표기 EMNLP 2025 | https://arxiv.org/abs/2410.05779 |
-| When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation | Zhishang Xiang, Chuanjie Wu, Qinggang Zhang, Shengyuan Chen, Zijin Hong, Xiao Huang, Jinsong Su | arXiv:2506.05690, v1 2025-06-06, v3 2026-02-22 | https://arxiv.org/abs/2506.05690 |
+- 세 논문 모두 제목·저자 순서·버전 날짜를 arXiv 페이지와 대조했다(2026-10-07). 받은 값과 다른 곳은 없었다. LightRAG v2(2024-11-07)와 Xiang et al. v2(2025-10-07)는 받은 값에 없던 것을 arXiv 페이지에서 확인해 더했다.
+- 세 번째 논문(arXiv:2506.05690)은 Cowork가 확인하지 않은 후보로 받았다. Claude Code가 열어 제목·저자·날짜가 맞는 것을 확인한 뒤 넣었다.
 
 ### Edge et al. (Microsoft GraphRAG)
 
-- 일반 RAG가 못 푸는 것은 "이 말뭉치의 주요 주제는 무엇인가" 같은 전역 질문이라고 본다.
-- 방법: 개체 그래프를 만들고 커뮤니티로 묶어 요약을 미리 만들어 둔 뒤, 부분 답변을 모아 최종 답을 만든다.
-- 결과: 약 100만 토큰 규모 자료에서 기존 RAG 대비 답변의 포괄성과 다양성이 개선됐다고 보고한다.
+arXiv 초록에서 확인한 것(2026-10-07):
 
-이 계획의 질문 1·2(세 펌 비교, 공통 주제)는 특정 문서 하나가 아니라 자료 전체를 훑어야 하는 전역 질문에 가깝다. 그래서 이 논문의 설계 목적과 가장 잘 맞는다. 다만 1차 범위(리포트 15~20건)의 토큰 수는 아직 재지 않았다. 논문이 다룬 약 100만 토큰 규모와 비교할 수 있는지, 이 규모에서도 같은 이득이 나는지는 확인 필요.
+- 일반 RAG가 못 푸는 것은 "이 말뭉치의 주요 주제는 무엇인가" 같은 전역 질문이라고 본다("RAG fails on global questions directed at an entire text corpus").
+- 방법: 개체 그래프를 만들고 커뮤니티로 묶어 요약을 미리 만들어 둔 뒤("pregenerate community summaries"), 부분 답변을 모아 최종 답을 만든다.
+- 결과: 약 100만 토큰 규모 자료("in the 1 million token range")에서 기존 RAG 대비 답변의 포괄성과 다양성이 개선됐다고 보고한다.
+
+이 계획의 질문 1·2(세 펌 비교, 공통 주제)는 특정 문서 하나가 아니라 자료 전체를 훑어야 하는 전역 질문에 가깝다. 그래서 이 논문의 설계 목적과 가장 잘 맞는다. 다만 1차 범위(리포트 15~20건)의 토큰 수는 아직 재지 않았다. 이 규모에서도 같은 이득이 나는지는 확인 필요.
 
 ### Guo et al. (LightRAG)
 
-- 그래프 구조와 벡터 검색을 함께 쓰는 이중 수준 검색을 쓴다.
-- 자료가 늘어날 때 전체를 다시 만들지 않는 증분 갱신을 지원한다.
+arXiv 초록에서 확인한 것(2026-10-07):
 
-이 계획은 리포트를 15~20건으로 시작해 사람이 손으로 계속 쌓는다(4절). 그래서 새 리포트가 들어올 때마다 그래프 전체를 다시 만들지 않아도 되는 증분 갱신이 이 수집 방식과 맞는다. 7절에서 실행 조건을 함께 본다.
+- 그래프 구조와 벡터 검색을 함께 쓰는 이중 수준 검색("dual-level retrieval system")을 쓴다.
+- 자료가 늘어날 때 새 자료를 바로 반영하는 증분 갱신("incremental update algorithm")을 지원한다.
+
+이 계획은 리포트를 15~20건으로 시작해 사람이 손으로 계속 쌓는다(4절). 그래서 증분 갱신이 이 수집 방식과 맞는다. 실행 조건은 7절에서 본다.
 
 ### Xiang et al. (그래프를 언제 쓰는 것이 이득인가)
 
-arXiv 초록은 다음 두 가지를 적고 있다(확인 2026-10-06).
+arXiv 초록에서 확인한 것(2026-10-07):
 
-- 그래프 기반 RAG가 기대와 달리 일반 RAG보다 성능이 낮은 경우가 많다.
+- 그래프 기반 RAG가 실제 과제에서 일반 RAG보다 성능이 낮은 경우가 많다는 보고가 있다("GraphRAG frequently underperforms vanilla RAG on many real-world tasks").
 - 그래서 그래프가 언제 이득인지를 체계적으로 평가하는 벤치마크(GraphRAG-Bench)를 만들었다.
 
-이 계획은 "이 자료에 그래프가 필요한가"를 전제로 두지 않고 따져야 한다. 이 논문은 그 판단 기준을 찾을 때 참고한다. 이 논문이 제시하는 구체적인 조건이 무엇인지는 본문을 아직 읽지 않아 확인 필요.
+이 계획은 "이 자료에 그래프가 필요한가"를 전제로 두지 않고 따져야 한다. 이 논문은 그 판단 기준을 찾을 때 참고한다. 논문이 제시하는 구체적인 조건은 본문을 아직 읽지 않아 확인 필요.
 
 ## 3. B2B 활용
 
-- 컨설팅 펌 내부: 과거 제안서와 산업 리포트를 가로질러 "우리가 이 산업에 대해 과거에 어떤 관점을 냈는가"를 찾는 용도. RFP 대응 시 관련 사례 탐색.
-- 사업회사 전략팀: 외부 컨설팅사들의 관점이 갈리는 지점을 추적해 의사결정의 근거로 삼는 용도.
+- 컨설팅 펌 내부: 과거 제안서와 산업 리포트를 가로질러 "우리가 이 산업에 어떤 관점을 냈는가"를 찾는 용도. RFP 대응 시 관련 사례 탐색.
+- 사업회사 전략팀: 외부 컨설팅사들의 관점이 갈리는 지점을 추적해 의사결정 근거로 삼는 용도.
 
 ## 4. 데이터 수집 방법
 
-- 대상: MBB 세 펌의 공개 리포트·인사이트 글. 1차 범위는 한 산업 또는 한 주제로 좁혀 15~20건.
+- 대상: MBB 세 펌의 공개 리포트. 1차 범위는 한 산업 또는 한 주제로 좁혀 15~20건.
 - 저장소에 올리는 것:
   - URL, 제목, 발행일, 발행 펌, 저자(공개된 경우)
   - 에드워드가 직접 쓴 한 줄 요약과 주장 정리
 - 저장소에 올리지 않는 것: 본문 전문이나 긴 발췌. [AGENTS.md](../../AGENTS.md) "## 공개 금지"를 따른다.
 - 수집은 사람이 직접 읽고 손으로 적는다. 자동 수집을 하려면 각 사이트의 이용약관과 robots.txt를 먼저 확인해야 한다. 이 계획은 확인 전까지 수동 수집을 전제로 한다.
-- 파일 형식: deep/07-graphrag/data/reports.md에 표로 쌓는다. 수집일을 함께 적는다. (이 파일은 아직 만들지 않았다.)
+- 파일: deep/07-graphrag/data/reports.md에 표로 쌓고 수집일을 함께 적는다. (이 파일은 아직 만들지 않았다.)
 
 ## 5. 엔티티·관계 설계
 
@@ -69,7 +76,7 @@ arXiv 초록은 다음 두 가지를 적고 있다(확인 2026-10-06).
 | 산업 | 이름 | 1차 범위는 하나 |
 | 주제 | 이름 | 산업 안의 세부 주제 |
 | 주장 | 한 줄 서술 | 에드워드가 쓴 한 줄 |
-| 근거 유형 | 값 | 자체 설문, 사례 연구, 자체 지수·추정, 공개 통계 인용, 출처 미상 |
+| 근거 유형 | 값 | 예: 자체 설문, 사례 연구, 자체 지수·추정, 공개 통계 인용, 출처 미상 |
 
 ### 엣지
 
@@ -85,7 +92,7 @@ arXiv 초록은 다음 두 가지를 적고 있다(확인 2026-10-06).
 
 ### "근거 유형"을 넣는 이유
 
-같은 주제에 대해 세 펌이 서로 다른 종류의 근거를 쓰는지 보기 위해서다. 예를 들어 한 펌은 자체 설문을, 다른 펌은 공개 통계를 인용해 같은 결론을 낼 수도 있다. 반대로 같은 종류의 근거로 다른 결론을 낼 수도 있다. 주장만 비교하면 이 차이가 보이지 않는다. 이것은 05에서 "어떤 근거가 주장을 뒷받침하는가"를 본 것과 같은 축이다. 05가 조문 조각과 주장 사이의 뒷받침을 판정했다면, 여기서는 주장마다 어떤 종류의 근거에 기대고 있는지를 노드로 남긴다.
+같은 주제에 대해 세 펌이 서로 다른 종류의 근거를 쓰는지 보기 위해서다. 주장만 비교하면 한 펌은 자체 설문으로, 다른 펌은 공개 통계 인용으로 같은 결론을 낸 경우와, 같은 종류의 근거로 다른 결론을 낸 경우가 구별되지 않는다. 이것은 05에서 "어떤 근거가 주장을 뒷받침하는가"를 본 것과 같은 축이다. 05가 조문 조각과 주장 사이의 뒷받침을 판정했다면, 여기서는 주장마다 어떤 종류의 근거에 기대고 있는지를 노드로 남긴다.
 
 ## 6. 문서를 가로질러야 답할 수 있는 질문 3개
 
@@ -100,55 +107,90 @@ arXiv 초록은 다음 두 가지를 적고 있다(확인 2026-10-06).
 
 | 도구 | 그래프 저장소 | LLM 요구 | 지금 조건에서 실행 가능한가 | 비고 |
 |------|---------------|----------|-----------------------------|------|
-| MS GraphRAG | 확인 필요 | 그래프 구축에 말뭉치 전체를 LLM으로 훑어야 함 | 아니오 (유료 LLM API 키 없음) | 전역 질문에 답하는 설계 목적이 이 계획의 질문 유형과 가장 잘 맞음 |
-| LightRAG | 기본 저장소 4개가 메모리 기반이고 WORKING_DIR의 로컬 파일로 저장(NetworkXStorage 등). 그래프 DB 없이 쓸 수 있음 | 일반 RAG보다 LLM 능력 요구가 높음. 로컬 추출 모델은 Qwen3-30B-A3B-Instruct급이 "합리적 최소", 임베딩은 BAAI/bge-m3 권장 | 확인 필요 (로컬 모델 경로는 있으나, 권장 최소 모델을 지금 디스크·하드웨어에서 돌릴 수 있는지 확인하지 않음) | 증분 갱신 지원 |
-| Neo4j LLM Graph Builder | Neo4j (AuraDB Free 지원) | OpenAI 모델을 쓰려면 OpenAI 키 필요. 로컬 모델(Ollama) 설정도 README에 있음 | 확인 필요 | 표·이미지·슬라이드 자료에는 덜 적합하다고 명시. MBB 리포트는 슬라이드형 PDF가 많아 이 점이 걸림 |
+| MS GraphRAG | 확인 필요(README에서 찾지 못함) | 그래프 구축에 말뭉치 전체를 LLM으로 훑어야 함. README는 인덱싱이 비용이 큰 작업이라고 적음. 기본 지원은 OpenAI 모델이고, LiteLLM으로 다른 모델(로컬 포함)도 쓸 수 있으나 JSON 스키마 구조화 출력을 안정적으로 내야 함. 필요한 최소 모델은 명시 없음 | 지금은 아니오. API 경로: 유료 API 키 없음. 로컬 경로: 막는 것은 하드웨어 쪽 확인 부족(8GB 메모리·디스크 3.7GiB에 올릴 수 있는 모델이 GraphRAG가 요구하는 JSON 출력을 안정적으로 내는지 확인하지 않음) | 전역 질문에 답하는 설계 목적이 이 계획의 질문 유형과 가장 잘 맞음. 문서는 Ollama 같은 프록시에서 JSON 응답이 깨지는 문제가 자주 보인다고 적음 |
+| LightRAG | 기본 저장소 네 개(JsonKVStorage, NanoVectorDBStorage, NetworkXStorage, JsonDocStatusStorage)가 메모리 기반이고 WORKING_DIR 아래 로컬 파일로 저장됨. 그래프 DB 없이 쓸 수 있음. README는 이 기본 저장소를 소규모 시험·평가·디버깅용이라고 적음 | 일반 RAG보다 LLM 능력 요구가 높다고 명시. 로컬 추출 모델은 Qwen3-30B-A3B-Instruct가 "reasonable minimum", 로컬 임베딩은 BAAI/bge-m3가 "a solid choice" | 아니오. API 경로: 유료 API 키 없음. 로컬 경로: 하드웨어 부족. README가 "reasonable minimum"으로 든 Qwen3-30B-A3B-Instruct는 30.5B 파라미터 BF16이라 원본 가중치만 약 61GB(30.5B × 2바이트로 계산)이고, 지금 디스크 여유 3.7GiB·메모리 8GB를 넘는다. 양자화판 크기는 확인하지 않음 | 증분 갱신 지원 |
+| Neo4j LLM Graph Builder | Neo4j (AuraDB Free 인스턴스를 만들어 쓰는 절차가 있음) | labs 페이지에는 API 키 필요 여부가 없음. 저장소 README: OpenAI 모델을 쓰려면 OpenAI 키 필요, Ollama 로컬 모델 설정 항목 있음 | 지금은 아니오. API 경로(OpenAI 등): 유료 API 키 없음. 로컬 경로(Ollama): 막는 이유는 API 키가 아니다. 필요한 모델 크기가 명시돼 있지 않아, 8GB 메모리·디스크 3.7GiB에 올릴 수 있는 모델로 추출이 되는지 확인하지 않음 | 표·이미지·도표·슬라이드 자료에는 덜 적합하다고 명시. MBB 리포트는 슬라이드형 PDF가 많아, 실행이 되더라도 이 점이 걸림 |
 
-근거(확인 2026-10-06):
+### 근거 (URL 모두 2026-10-07에 열림)
 
-- MS GraphRAG
-  - 그래프 구축에 말뭉치 전체를 LLM으로 훑어야 해 유료 API 키가 전제라는 점은 사람이 정리한 내용이다.
-  - 저장소 README는 "GraphRAG indexing can be an expensive operation"이라고 적고 있다(https://github.com/microsoft/graphrag).
-  - README에서 지원 모델 제공자와 로컬 모델 사용 여부는 확인하지 못했다. 확인 필요.
+- MS GraphRAG (https://github.com/microsoft/graphrag)
+  - README: "GraphRAG indexing can be an expensive operation, please read all of the documentation to understand the process and costs involved"
+  - README에서 필요한 API 키·LLM 제공자, 그래프 저장 방식은 찾지 못했다. 확인 필요
+  - 모델 설정 문서(https://microsoft.github.io/graphrag/config/models/ , 2026-10-07 열림): "GraphRAG was built and tested using OpenAI models, so this is the default model set we support." "GraphRAG uses LiteLLM for calling language models." 모델은 JSON 스키마를 따르는 구조화 출력을 낼 수 있어야 하고, Ollama 같은 프록시에서는 "we frequently see issues with malformed responses (especially JSON)"라고 적음. API 키가 반드시 필요한지는 명시 없음
 - LightRAG (https://github.com/HKUDS/LightRAG)
-  - README가 로컬 추출 모델로 "Qwen3-30B-A3B-Instruct is a reasonable minimum"이라고 적고 있다.
-  - 임베딩은 BAAI/bge-m3를 권한다.
-  - "일반 RAG보다 LLM 능력 요구가 높다"고 명시한다.
-  - 기본 저장소는 메모리 기반이고 로컬 파일은 저장용으로만 쓴다고 적혀 있다.
-- Neo4j LLM Graph Builder (https://neo4j.com/labs/genai-ecosystem/llm-graph-builder/)
-  - 문서가 "less well suited for tabular data like Excel or CSV or images/diagrams/slides"라고 적고 있다.
-  - AuraDB Free 인스턴스를 만들어 쓰는 절차가 있다.
-  - LLM API 키 필요 여부는 이 페이지에 명시돼 있지 않다.
-  - 저장소 README(https://github.com/neo4j-labs/llm-graph-builder)에는 OpenAI 모델을 쓰려면 OpenAI 키가 필요하다는 내용과 Ollama 로컬 모델 설정이 함께 있다.
-  - 키 없이 로컬 모델만으로 이 계획을 돌릴 수 있는지는 확인 필요.
+  - README: "LightRAG has higher capability requirements for Large Language Models (LLMs) than traditional RAG"
+  - README: 추출용 로컬 모델 "Qwen3-30B-A3B-Instruct is a reasonable minimum", 로컬 임베딩 "`BAAI/bge-m3` is a solid choice"
+  - README: "All four default storages are in-memory databases", 소규모 시험·평가·디버깅용이며 운영용으로 적합하지 않다고 적음. 저장은 WORKING_DIR 아래 로컬 파일
+  - 권장 최소 모델 페이지(https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507 , 2026-10-07 열림): "30.5B in total and 3.3B activated", 텐서 형식 BF16. LightRAG README는 "Qwen3-30B-A3B-Instruct"라고만 적어 이 2507판과 같은 것인지는 확인 필요
+- Neo4j LLM Graph Builder (https://neo4j.com/labs/genai-ecosystem/llm-graph-builder/, 저장소 https://github.com/neo4j-labs/llm-graph-builder)
+  - labs 페이지: "less well suited for tabular data like Excel or CSV or images/diagrams/slides", "create a new AuraDB Free Database"
+  - labs 페이지에는 API 키 필요 여부가 없다
+  - 저장소 README: "An OpenAI Key is required to use OpenAI LLM model", Ollama 로컬 모델 설정(`LLM_MODEL_CONFIG_ollama_<model_name>`)
 - 현재 환경
   - 유료 LLM API 키가 없다.
-  - 맥 디스크 여유는 2026-10-05 MiniCheck 삭제 직후 약 6.7GiB였다([worklog.md](../../worklog.md) 2026-10-05 "정리 기록"). 2026-10-06 확인 시점(`df -h ~`)에는 3.9GiB다.
+  - 하드웨어: Apple M1, 메모리 8GB(`sysctl`, 2026-10-07 17:41 확인)
+  - 맥 디스크 여유: 2026-10-05 MiniCheck 삭제 직후 약 6.7GiB([worklog.md](../../worklog.md) 2026-10-05 "정리 기록"). 2026-10-07 `df -h ~` 기준 3.6GiB(17:25), 3.7GiB(17:41).
   - worklog 2026-10-04·10-05에 MiniCheck 설치·삭제 기록이 있다. torch·transformers가 든 가상환경 하나가 약 1.1GB였다.
+
+### 받은 설명과 원문이 다른 점 (2026-10-07 확인, 2026-10-06 확인 때와 같음. MS GraphRAG 로컬 경로는 2026-10-07에 새로 확인)
+
+- MS GraphRAG "유료 API 키가 전제": README에서 이 내용을 찾지 못했다. README에 있는 것은 인덱싱이 비용이 큰 작업이라는 문장이다. 모델 설정 문서는 OpenAI 모델이 기본이지만 LiteLLM으로 로컬 모델도 쓸 수 있다고 적는다. 그래서 막는 이유를 API 경로(키 없음)와 로컬 경로(하드웨어 쪽 확인 부족)로 나눠 적었다.
+- LightRAG "기본 저장이 파일 기반": README는 기본 저장소 네 개가 메모리 기반이고 로컬 파일은 저장용이라고 적는다. 그래프 DB 없이 쓸 수 있다는 점은 같다. 표는 README 표현대로 적었다.
+- Neo4j LLM Graph Builder "LLM API 키가 필요": labs 페이지에는 적혀 있지 않다. 저장소 README는 OpenAI 모델을 쓸 때 OpenAI 키가 필요하다고 적고, Ollama 로컬 모델 설정도 함께 있다. 키 없이 로컬 모델만으로 되는지는 확인 필요.
+- 디스크 여유 "약 6.7GiB": 2026-10-05 값이다. 2026-10-07 확인 시점에는 3.6GiB다. 두 값을 시점과 함께 적었다.
 
 ### 결론: 조건부 2단계
 
+결론은 그대로 성립한다. 세 도구 모두 지금 조건에서는 돌릴 수 없고, 1단계는 사람이 손으로 만든다. 다만 근거를 고쳤다. 막는 것은 도구마다 다르다.
+
+| 도구 | API 경로를 막는 것 | 로컬 경로를 막는 것 |
+|------|--------------------|----------------------|
+| MS GraphRAG | 유료 API 키 없음 | 확인 부족: 8GB 메모리·디스크 3.7GiB에 올릴 모델이 JSON 구조화 출력을 안정적으로 내는지 모름(문서가 프록시에서 JSON 오류가 잦다고 적음) |
+| LightRAG | 유료 API 키 없음 | 하드웨어 부족: README의 권장 최소 모델(30.5B, BF16 원본 약 61GB)이 디스크·메모리를 넘음 |
+| Neo4j LLM Graph Builder | 유료 API 키 없음 | 확인 부족: 필요한 모델 크기가 명시돼 있지 않음. 실행되더라도 슬라이드형 자료에 덜 적합하다고 명시 |
+
+- 바뀐 점(2026-10-07): 2단계의 조건을 "API 키가 생기면"에서 "API 키가 생기거나, 로컬 모델을 올릴 하드웨어가 생기거나, 지금 하드웨어에 맞는 작은 로컬 모델로 추출이 되는지 확인되면"으로 넓혔다. 세 도구 모두 로컬 모델 경로가 있어 API 키만이 막는 이유가 아니었기 때문이다.
+
 - 1단계(지금 가능)
   - 리포트 15~20건을 사람이 읽고 노드·엣지를 손으로 적어 작은 그래프를 만든다.
-  - 위 질문 3개를 규칙 기반 조회로 답해 본다.
+  - 6절 질문 3개를 규칙 기반 조회로 답해 본다.
   - 05의 층위 1(조항 번호 실재 여부를 규칙으로 판정)과 같은 접근이다.
-- 2단계(API 키가 생기면)
+- 2단계(API 키가 생기거나, 로컬 모델을 올릴 하드웨어가 생기거나, 작은 로컬 모델로 추출이 되는지 확인되면)
   - 같은 자료에 MS GraphRAG를 적용해 1단계 결과와 비교한다.
   - 비교 지점은 "사람이 만든 그래프가 놓친 연결을 자동 추출이 찾아내는가"다.
 
-## 8. 05에서 가져온 것
+## 8. 05의 검증 절차를 어디에 연결하는가
 
-[05 결론](../05-citation/findings.md)에서 이 계획에 적용할 것:
+[05 결론](../05-citation/findings.md)에 실제로 나온 결과만 근거로 적는다. 05는 법령 조문과 답변 문장을 다뤘고, 아래는 그 결과를 이 계획의 2단계(자동 추출과 비교)에 옮겨 적용할 지점이다. 리포트 그래프에서 같은 결과가 나오는지는 시험하지 않았다.
 
-- 자동 판정이든 자동 추출이든 거짓 입력을 넣는 통제군이 있어야 결과를 근거로 쓸 수 있다. 05에서는 거짓 주장 P8을 판정기가 "뒷받침 안 됨"으로 걸러낸 것을 확인한 뒤에야 나머지 판정을 근거로 썼다. 2단계에서 자동 추출을 비교할 때도 리포트에 없는 관계를 일부러 섞은 통제 항목을 둔다.
-- 근거 범위를 어디서 자르느냐가 결과를 바꾼다. 05에서는 같은 주장이라도 조문을 어디서 잘라 건넸느냐에 따라 판정이 뒤집혔다. 그래프를 만들 때 리포트를 어느 단위로 자를지(리포트 전체 / 섹션 / 문단)를 기록해야 한다.
+1. 통제군 (findings "통제군 (실험 01)", "실험 04의 통제군과 부분 오류 쌍", 설계 규칙 3)
+   - 05: 실험 01의 거짓 주장 P8과 실험 04의 통제군 C3를 판정기가 모두 "뒷받침 안 됨"으로 걸렀고, 한 구절만 틀린 부분 오류 쌍 C1도 걸렀다. 통제군이 걸러진 것을 확인한 뒤에야 나머지 판정값을 근거로 썼다.
+   - 여기: 자동 추출 결과를 비교할 때 리포트에 없는 관계(거짓 "대립" 엣지 등)와 한 부분만 틀린 관계를 일부러 섞은 통제 항목을 둔다. 걸러지지 않으면 자동 추출 결과를 근거로 쓰지 않는다.
+2. 근거 범위 (findings 발견 2·9, 설계 규칙 2)
+   - 05: 같은 주장이라도 건넨 조각 범위에 따라 판정이 뒤집혔다(실험 02·03). 실험 04에서는 주장이 조각 안의 내용만 되풀이할 때 범위를 바꿔도 판정이 같았다. 범위가 판정을 바꾼 것은 주장이 조각 밖의 요소를 담고 있을 때였다.
+   - 여기: 그래프를 만들 때 리포트를 어느 단위로 자를지(리포트 전체 / 섹션 / 문단)를 기록한다.
+3. 도구의 판 (findings 발견 7, 설계 규칙 4)
+   - 05: 층위 1 스크립트를 새 입력에 맞춰 고치자 실험 01 결과의 구조 표가 달라졌다(판정 결과는 같았다).
+   - 여기: 추출 도구·설정·모델을 바꾸면 옛 그래프도 달라질 수 있다. 어느 판으로 만든 그래프인지 기록한다.
+4. 조용한 실패 (findings 발견 6, 설계 규칙 5)
+   - 05: 고치기 전 스크립트가 새 입력에서 대조 항목 0건인데 종료 코드 0, 오류 문구 없이 끝났고, 사실과 다른 실패 사유를 냈다.
+   - 여기: 추출한 노드·엣지가 0건이거나 대부분 실패했는데 성공으로 끝나지 않게 한다.
+5. 재현성 (findings 발견 12, 설계 규칙 6)
+   - 05: 같은 입력을 3회 돌린 쌍 하나(P29)에서 판정 값이 2:1로 갈렸다.
+   - 여기: 자동 추출을 같은 자료에 여러 번 돌려 노드·엣지가 같게 나오는지 함께 기록한다.
+6. 단위를 고르는 쪽과 잘린 주장 (findings 발견 8·10)
+   - 05: 인용 단위는 답변하는 쪽이 골랐고 그 선택이 판정 입력 범위를 정했다. 문장을 기계적으로 나누자 주어가 앞 문장에 남아 잘린 주장(P35)과 판정 대상이 아닌 메타 문장(P40)이 쌍이 됐다.
+   - 여기: 2단계에서 자동 추출이 리포트 문장을 주장 노드로 만들 때 같은 일이 생길 수 있다. 주장 노드가 원문 어느 범위에서 왔는지 함께 남긴다.
+7. 판정 척도와 사람 판정의 독립성 (findings 발견 13, 한계 8)
+   - 05: 사람은 "부분 뒷받침"이라는 세 번째 값이 필요했고 판정기는 두 값뿐이었다. 사람 판정은 Cowork의 판정을 본 뒤에 이뤄져 완전히 독립되지 않았다.
+   - 여기: 1단계(사람)와 2단계(자동) 그래프를 비교할 값 체계를 비교 전에 정하고, 사람이 노드·엣지를 쓸 때 자동 추출 결과를 먼저 보지 않는다.
 
 ## 9. 남은 질문
 
 1. 1차 범위의 산업·주제를 무엇으로 할지. 세 펌이 모두 리포트를 낸 주제여야 질문 1·2가 성립한다.
-2. 리포트 15~20건 규모에서 그래프가 일반 검색보다 이득인지. Xiang et al.이 제시하는 조건과 비교해 본다(확인 필요).
-3. 로컬 모델 경로(LightRAG, Neo4j LLM Graph Builder + Ollama)를 지금 디스크·하드웨어에서 실제로 돌릴 수 있는지.
+2. 리포트 15~20건 규모에서 그래프가 일반 검색보다 이득인지. Xiang et al.이 제시하는 조건과 비교해 본다(본문 미확인).
+3. 지금 하드웨어(M1, 메모리 8GB, 디스크 약 3.6~3.7GiB, 2026-10-07)에 올릴 수 있는 작은 로컬 모델로 MS GraphRAG(LiteLLM)나 Neo4j LLM Graph Builder(Ollama)의 추출이 되는지. LightRAG는 README의 권장 최소 모델이 이 하드웨어를 넘는다.
 
 ---
 
-[분야 지도](../../field-map.md) · [07 영역 파일](../../areas/07-graphrag.md) · [05 결론](../05-citation/findings.md)
+[분야 지도](../../field-map.md) · [07 영역 파일](../../areas/07-graphrag.md) · [05 결론](../05-citation/findings.md) · [07 논문](papers.md) · [07 도구](tools.md)

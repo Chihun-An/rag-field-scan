@@ -929,6 +929,8 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 1. answer-key-04.md와 answer-key-04-pairs.md를 읽어도 됨(모든 판정 끝). results-04.md에 "사람 판정과 자동 판정 비교" 절(표본 17건 표, "부분 뒷받침" 처리 규칙을 표 앞에), 갈린 쌍마다 양쪽 근거 인용 단락, "판정 기준에 대한 관찰"을 P17·P29 자동 근거와 나란히, Q6·Q7 기대 답 대조 절(근거 조항, 더하거나 빠뜨린 것, Q6 제4호 각주), 한계 3가지. 판정 값은 고치지 않음, commit·push 하지 않음.
 2. deep/05-citation/findings.md를 실험 04까지 반영해 갱신. 기존 내용은 지우지 않음, 지정한 실험 파일과 worklog 10-06·10-07에 적힌 것만 씀. 한 줄 결론 재판단, "무엇을 했나"에 실험 04, 새 발견 9개(각 근거 파일 명시), 한계 3개 추가, 설계 규칙 재검토, 빗나간 가설에 [A]와 그 전제, 남은 질문 5개 이내, 링크 갱신. commit·push 하지 않음.
 3. findings.md "1차 과제와의 연결"에 핵심 맥락 2번(최신 버전만 근거로 남기기) 항목을 더함. 실험 04 자료 수집 단계에서 나타난 판(시행일) 건을 확인된 것으로 적고 근거를 붙임. 판정 실험의 결과가 아니라 자료 수집 중 관찰이라는 점을 구분. commit·push 하지 않음.
+4. deep/07-graphrag/plan.md 다시 쓰기(MBB 공개 리포트 "산업 × 펌별 관점 비교" 그래프). Cowork가 확인한 서지 정보를 쓰되 각 URL이 열리는지 확인하고 확인 날짜 2026-10-07을 붙임, 열리지 않으면 확인 필요로 표시·보고. arXiv:2506.05690은 열어서 맞을 때만 넣음. 1~9절 구성(주제, 레퍼런스, B2B, 수집, 노드·엣지 표, 질문 3개, 도구 비교 표와 조건부 2단계, 05 연결 최소 4가지, 남은 질문 3개 이내). deep/README.md 07 항목 링크 확인. commit·push 하지 않음.
+5. plan.md 7절 결론을 고친 사실에 맞춰 다시 봄. 결론이 성립하는지 확인하고, 실제 제약을 환경 쪽 사실(디스크 3.6GiB, 유료 API 키 없음)로 쓰고, 도구마다 "API 키 때문"인지 "필요한 모델을 올릴 하드웨어가 없어서"인지 구분. 결론이 바뀌면 바꾸고 이유 한 줄. worklog에 Cowork 설명 네 가지가 원문과 달랐던 건 기록. commit·push 하지 않음.
 
 ### 읽은 파일
 
@@ -938,6 +940,9 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - 자동 판정 근거는 이 세션이 2026-10-06에 쓴 results-04-layer2.md 출력 원문과 판정 기록에서 옮김
 - (지시 2) deep/05-citation/findings.md, experiments/design-01.md, results-01-layer2.md, results-03.md (이 세션에서 처음 끝까지 읽음). results-01.md, results-01-layer1.md, results-02.md, questions-04.md, results-04.md, results-04-layer1.md, results-04-layer2.md, pairs-04-ko.md, answer-key-04.md, answer-key-04-pairs.md, worklog.md 10-06·10-07은 이 세션에서 앞서 읽었거나 썼고, 숫자는 파일에서 다시 확인함(층위 1 16건, 호출 46회, 표본 17건, 일치 14/같은 쪽 1/불일치 2)
 - (지시 3) key-contexts.md(2번 문구 인용용), findings.md "1차 과제와의 연결" 절. privacy-law.md 머리말과 worklog 2026-10-06 "원문 수집 기록"·"판(시행일) 기록"은 이 세션에서 앞서 읽은 내용으로 대조
+- (지시 4) deep/07-graphrag/plan.md(다시 쓰기 전), deep/README.md(07 항목), deep/07-graphrag/ 목록, worklog.md 2026-10-06 "07 계획서 확인 기록", findings.md(8절 연결용, 이 세션에서 갱신한 내용)
+- (지시 4) 웹, 모두 2026-10-07 확인(WebFetch): https://arxiv.org/abs/2404.16130 , https://arxiv.org/abs/2410.05779 , https://arxiv.org/abs/2506.05690 , https://github.com/HKUDS/LightRAG , https://neo4j.com/labs/genai-ecosystem/llm-graph-builder/ , https://github.com/neo4j-labs/llm-graph-builder , https://github.com/microsoft/graphrag
+- (지시 5) 로컬: `sysctl -n machdep.cpu.brand_string hw.memsize`(Apple M1, 8589934592바이트=8GB), `df -h ~`(3.7GiB, 17:41). 웹(2026-10-07): https://microsoft.github.io/graphrag/config/models/ , https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507
 
 ### 만든·고친 파일
 
@@ -947,6 +952,10 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - worklog.md: 수정 (2026-10-07, Claude Code, 지시 2). commit·push는 하지 않음
 - deep/05-citation/findings.md: 수정 (2026-10-07 17:21, Claude Code, 지시 3) — "1차 과제와의 연결"에 key-contexts.md 2번 항목 추가(확인한 것: 자료 수집 중 관찰, 판정 실험 결과 아님 / 확인하지 못한 것: 파이프라인의 판 거르기, 구버전이 섞인 경우). 1번의 "문서 식별자·개정판 추적", 4번의 "구버전 문서·개정 이력 평가" 줄은 지우지 않고 새 항목을 가리키는 괄호를 붙임. 2027. 7. 1. 시행 조항은 Cowork 교차 확인에서 나온 것이고 Claude Code는 법률신문·datalaw.kr 두 출처를 직접 열지 않았다는 점도 적음. commit·push는 하지 않음
 - worklog.md: 수정 (2026-10-07, Claude Code, 지시 3). commit·push는 하지 않음
+- deep/07-graphrag/plan.md: 다시 씀 (2026-10-07 17:27, Claude Code, 지시 4) — 1~9절. 레퍼런스 표에 확인 열(열림, 2026-10-07), 7절에 "받은 설명과 원문이 다른 점", 8절에 05 연결 7가지(통제군, 근거 범위, 도구의 판, 조용한 실패, 재현성, 단위·잘린 주장, 척도·사람 판정 독립성). deep/README.md 07 항목에는 이미 plan.md 링크가 있어 고치지 않음. papers.md·tools.md는 고치지 않음. commit·push는 하지 않음
+- worklog.md: 수정 (2026-10-07, Claude Code, 지시 4). commit·push는 하지 않음
+- deep/07-graphrag/plan.md: 수정 (2026-10-07 17:42, Claude Code, 지시 5) — 7절 도구 표의 "실행 가능한가" 칸을 API 경로·로컬 경로로 나눠 다시 씀, 근거에 GraphRAG 모델 설정 문서·Qwen3-30B-A3B 모델 페이지 추가, 환경에 하드웨어(M1, 8GB) 추가, 결론 절에 도구별 제약 표와 "바뀐 점" 한 줄, 2단계 조건 넓힘, 남은 질문 3 갱신. commit·push는 하지 않음
+- worklog.md: 수정 (2026-10-07, Claude Code, 지시 5). commit·push는 하지 않음
 
 ### 비교 결과 요약
 
@@ -962,6 +971,41 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - 발견 9의 좁힌 결론은 지시에 따라 적었고, results-04-layer2.md가 이 차이를 Claude Code의 관찰·"확인 필요"로 둔 점과 근거가 주장 세 개(실험 02·03 하나, 실험 04 둘)뿐이라는 점을 같은 절에 적음
 - 발견 6의 실험 01 대비: 실험 01 "파싱 실패 0"은 진짜 0이었음(목 인용이 없었음, 발견 7). 그래서 "두 실행이 종료 코드와 오류 문구만으로는 구별되지 않았다"까지만 적음
 - 설계 규칙: 규칙 1은 그대로. 규칙 2는 문장을 지우지 않고 좁힘 줄을 붙임. 규칙 3에 C3·C1 결과를 더함. 규칙 4(도구 판 기록, 발견 7), 5(조용한 실패 방지, 발견 6), 6(여러 번 돌려 일치 여부 기록, 발견 12)을 더함. "조각에 조 번호를 붙여 건네라"는 실험으로 시험하지 않아 규칙으로 넣지 않고 남은 질문 3에 둠
+
+### 07 계획서 다시 쓰기 기록 (지시 4)
+
+- URL 7개 모두 열림(2026-10-07). "확인 필요"로 표시한 URL 없음
+- arXiv 세 편: 제목·저자 순서·버전 날짜가 받은 값과 같음. 받은 값에 없던 LightRAG v2(2024-11-07), Xiang et al. v2(2025-10-07)를 arXiv 페이지에서 확인해 더함. arXiv:2506.05690은 열어서 맞는 것을 확인한 뒤 넣음
+- 받은 설명과 원문이 다른 점(2026-10-06 확인 때와 같음, plan.md 7절에 적음)
+  - MS GraphRAG "유료 API 키가 전제": README에 없음. README는 "indexing can be an expensive operation"만 적음. 필요한 API 키·제공자, 그래프 저장 방식도 README에서 찾지 못함
+  - LightRAG "기본 저장이 파일 기반": README는 기본 저장소 네 개가 메모리 기반이고 WORKING_DIR 아래 로컬 파일로 저장한다고 적음. 이번에 README에 소규모 시험·평가·디버깅용이고 운영용이 아니라는 문장도 있음을 확인
+  - LightRAG 임베딩 "권한다": README 표현은 "a solid choice"(로컬 배포 기준). 표에 원문 표현을 씀
+  - Neo4j "LLM API 키 필요": labs 페이지에 없음. README는 OpenAI 모델에 OpenAI 키 필요, Ollama 로컬 설정 있음. 로컬 모델만으로 키 없이 되는지는 명시 없음
+  - 디스크 "약 6.7GiB": 2026-10-05 값. 2026-10-07 17:25 `df -h ~` 3.6GiB
+- 8절 통제군: 지시는 "05에서 C3·C1이 모두 걸러졌기 때문에"였으나 findings상 C1은 통제군이 아니라 부분 오류 쌍이다. 통제군(P8, C3)과 부분 오류 쌍(C1)을 나눠 적음
+- 8절 근거 범위: findings 발견 9의 좁힌 결론(주장이 조각 밖 요소를 담을 때 범위가 판정을 바꿈)을 함께 적음
+- 8절에 지시의 네 가지 말고 findings에서 재현성(발견 12), 단위·잘린 주장(발견 8·10), 척도·사람 판정 독립성(발견 13, 한계 8)을 더함. 리포트 그래프에서 같은 결과가 나오는지는 시험하지 않았다는 점을 8절 머리에 적음
+
+### 07 계획서 7절 결론 재검토 기록 (지시 5)
+
+- 결론("세 도구 모두 지금 조건에서 실행 불가, 1단계는 수동")은 그대로 성립. 근거를 도구별로 고침
+  - MS GraphRAG: API 경로는 유료 API 키 없음. 로컬 경로가 있음(모델 설정 문서: OpenAI가 기본, LiteLLM으로 다른 모델 가능, 모델이 JSON 구조화 출력을 내야 함, Ollama 같은 프록시에서 JSON 오류가 잦다고 적음). 로컬 경로를 막는 것은 확인 부족(8GB 메모리·디스크 3.7GiB에 올릴 모델이 그 출력을 안정적으로 내는지 모름)
+  - LightRAG: 로컬 경로를 막는 것은 하드웨어 부족. README의 "reasonable minimum" Qwen3-30B-A3B-Instruct는 30.5B 파라미터·BF16(Hugging Face 페이지)이라 원본 가중치 약 61GB(30.5B × 2바이트로 Claude Code가 계산). 양자화판 크기는 확인하지 않음. README의 모델 이름과 Hugging Face의 2507판이 같은 것인지는 확인 필요
+  - Neo4j LLM Graph Builder: 로컬 경로(Ollama)를 막는 이유는 API 키가 아님. 필요한 모델 크기가 명시돼 있지 않아 지금 하드웨어로 되는지 확인 부족. 실행되더라도 슬라이드형 자료에 덜 적합
+- 바뀐 것: 2단계 조건을 "API 키가 생기면"에서 "API 키가 생기거나, 로컬 모델을 올릴 하드웨어가 생기거나, 작은 로컬 모델로 추출이 되는지 확인되면"으로 넓힘. 세 도구 모두 로컬 경로가 있어 API 키만이 막는 이유가 아니었기 때문
+- 새로 확인한 사실: MS GraphRAG도 로컬 모델 경로가 있다. 지시 4 때는 README만 봐서 확인하지 못했던 것
+
+### Cowork 설명이 원문과 달랐던 건 (지시 4·5, 에드워드 지시로 기록)
+
+- 지시 4로 받은 설명 네 가지가 원문과 달랐고, Claude Code가 원문을 열어 잡았다
+  1. MS GraphRAG "유료 API 키가 전제": README에 없음. 모델 설정 문서는 로컬 모델 경로도 적음
+  2. LightRAG "기본 저장이 파일 기반": README는 기본 저장소 네 개가 메모리 기반, 로컬 파일은 저장용
+  3. Neo4j LLM Graph Builder "LLM API 키가 필요": labs 페이지에 없음. 저장소 README에는 OpenAI 모델용 키와 Ollama 로컬 설정이 함께 있음
+  4. 디스크 "약 6.7GiB": 2026-10-05 값. 2026-10-06에 이미 3.9GiB, 2026-10-07에 3.6~3.7GiB였음. 이틀 전 값을 갱신하지 않고 쓴 것
+- 1~3은 2026-10-06 "07 계획서 확인 기록"에서 Claude Code가 이미 원문과 다르다고 적은 내용이다. 지시 4가 같은 설명을 다시 담고 있었다
+- Neo4j 건은 Cowork가 웹 페이지 요약 모델의 추론을 문서에 적힌 사실처럼 옮긴 것이다(에드워드 전언. Cowork가 어떤 경로로 이 설명을 만들었는지 Claude Code는 확인할 수 없음)
+- 에드워드는 이번이 Cowork의 미확인 추정을 Claude Code가 잡은 네 번째 사례라고 함. 앞의 세 건으로 든 것은 9월 존재하지 않는 폴더 가정, 10-05 P9 가설의 "명칭은 조 제목에만 있다", 10-06 실험 01 "파싱 실패 0"의 원인 설명
+- 기록과 대조(Claude Code): 위 2026-10-06 "문제와 대처"에 적은 대로, 10-05 건에서 Cowork가 쓴 것은 처음 P9 가설("제1항 본문에 주체와 의무가 있다")이고, "명칭은 조 제목에만 있다"는 Claude Code가 보고하면서 쓴 문장(기록상 "에이전트 오류(Claude Code)")이다. 그래서 기록 기준으로는 네 건이 9월 폴더 가정(지시문 작성자는 전언), 10-05 처음 P9 가설, 10-06 "파싱 실패 0" 원인 설명, 이번 도구·환경 설명 네 가지다. 건수(네 번째)는 같고, 10-05 건의 내용이 다르다
 
 ### 커밋
 
