@@ -957,6 +957,7 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 - deep/07-graphrag/plan.md: 수정 (2026-10-07 17:42, Claude Code, 지시 5) — 7절 도구 표의 "실행 가능한가" 칸을 API 경로·로컬 경로로 나눠 다시 씀, 근거에 GraphRAG 모델 설정 문서·Qwen3-30B-A3B 모델 페이지 추가, 환경에 하드웨어(M1, 8GB) 추가, 결론 절에 도구별 제약 표와 "바뀐 점" 한 줄, 2단계 조건 넓힘, 남은 질문 3 갱신. commit·push는 하지 않음
 - worklog.md: 수정 (2026-10-07, Claude Code, 지시 5). commit·push는 하지 않음
 - worklog.md: 수정 (2026-10-08, Claude Code, 에드워드 지시) — 2026-10-07 항목 끝에 "판단 기록 — AI 제안 / 내 선택 / 이유 (멘토 피드백 ③)" 절을 에드워드가 준 문구 그대로 추가(다듬지 않음). 추가 전 대조: 절이 근거로 든 기록(worklog 2026-10-04·10-05, plan.md)에서 7.2GiB(10-04 설치 후), 1.1GB, 3.6GiB(10-07)는 확인됨. "사용률 97%"는 10-05 삭제 후 값(6.7GiB, 97%)으로 기록돼 있고 10-04 시점 사용률은 기록에 없음. "flan-t5-large 3.13GB / roberta-large 1.42GB"는 그 기록들에 없음(10-04 기록은 "모델 가중치 약 3GB 예정"). 문구는 고치지 않고 에드워드에게 보고함. commit·push는 하지 않음
+- worklog.md: 수정 (2026-10-08, Claude Code, 에드워드 지시) — "판단 기록" 절의 "그 뒤 기록으로 확인된 것" 문단만 에드워드가 준 문구로 교체(앞 세 문단은 고치지 않음), 2026-10-07 "문제와 대처"의 "없음"을 세 줄로 바꿈. 교체 전 대조: 두 HuggingFace URL이 열리고 pytorch_model.bin이 각각 3.13 GB, 1.42 GB인 것을 Claude Code가 확인함(2026-10-08). commit·push는 하지 않음
 
 ### 비교 결과 요약
 
@@ -1018,7 +1019,9 @@ MiniCheck 경로를 접고 설치물 정리, 한국어 원문 판정 쌍(pairs-0
 
 ### 문제와 대처
 
-- 없음
+- Cowork가 준 판단 기록 문단에서 모델 가중치 수치(3.13GB / 1.42GB)를 "기록으로 확인된 것"으로 적었으나 worklog에는 없는 값이었다. Cowork가 10-05에 외부에서 확인한 값인데 저장소에 남기지 않은 것이다. Claude Code가 대조해 잡았고, 출처를 붙여 정정했다.
+- 디스크 사용률 97%는 10-05 값인데 10-04에 붙여 쓴 것도 함께 정정했다.
+- 이번이 Cowork의 미확인·출처 없는 서술을 Claude Code가 잡아낸 다섯 번째 사례다.
 
 ### 다음 작업
 
@@ -1039,6 +1042,10 @@ AI가 제안한 것: Cowork가 네 가지를 제시했다. (1) Claude Code를 �
 그렇게 판단한 이유: 저장용량이 부족했다. roberta-large로 줄여도 결국 용량을 쓰는 건 같아서,
 아예 설치가 필요 없는 쪽으로 갔다.
 
-그 뒤 기록으로 확인된 것: 당시 디스크 여유 7.2GiB(사용률 97%), 가상환경만으로 1.1GB 사용,
-모델 가중치는 flan-t5-large 3.13GB / roberta-large 1.42GB였다. 2026-10-07 기준 여유는 3.6GiB다.
-(worklog 2026-10-04·10-05, deep/07-graphrag/plan.md)
+그 뒤 확인된 것: 2026-10-04 MiniCheck 설치 후 디스크 여유 7.2GiB, 가상환경만으로 1.1GB 사용
+(worklog 2026-10-04·10-05). 2026-10-07 기준 여유 3.6GiB(deep/07-graphrag/plan.md).
+모델 가중치는 flan-t5-large 3.13GB, roberta-large 1.42GB로, Claude Cowork가 2026-10-05에
+HuggingFace 파일 목록에서 확인했다.
+- https://huggingface.co/lytang/MiniCheck-Flan-T5-Large/tree/main
+- https://huggingface.co/lytang/MiniCheck-RoBERTa-Large/tree/main
+10-04 시점의 디스크 사용률은 worklog에 기록돼 있지 않다.
