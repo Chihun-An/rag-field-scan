@@ -1159,3 +1159,38 @@ Claude Code가 주간 사용 한도에 걸려(한도 재설정 2026-10-10 15:00)
 - `git check-ignore -v --no-index deep/07-graphrag/.DS_Store areas/x/.Rhistory` → 둘 다 .gitignore 10·11번 줄에 걸림. 하위 폴더에서도 무시됨
 - `git status --short`: 네 파일 삭제(D, 스테이징됨), .gitignore 수정(M). 그 밖에 바뀐 파일 없음(이 worklog.md 수정 제외)
 - commit·push는 하지 않음. 네 파일의 삭제는 `git rm`으로 스테이징만 된 상태이고, commit은 에드워드가 한다
+
+### 3주 챌린지 작업 공간 (2026-10-12 17:44경, Claude Code)
+
+#### 2번 도메인 변경
+
+2번 도메인 변경 승인을 요청했고, 답이 오기 전에 진행하며, 거절되면 defense/ 폴더를 새로 만들어 전환한다.
+
+- 두 도메인: 1번 AI 컨설팅, 2번 무역 & 기름(지금 다루는 제품 UMO, ULO, PPO)
+- 2번은 원래 방산으로 받았고, 2026-10-12에 에드워드가 무역 & 기름으로 바꾸는 승인을 요청함
+
+#### Claude Code에 준 지시
+
+목표: 3주 챌린지(두 도메인 GraphRAG)를 시작하기 위해 deep/07-graphrag/ 안에 도메인별 작업 공간을 만들고, 2번 도메인을 바꾸기로 한 사실을 기록한다.
+
+1. deep/07-graphrag/ 아래에 ai-consulting/, oil-trade/, shared/ 세 폴더를 만들고 각 폴더에 README.md(폴더가 무엇을 담는지 두세 줄)를 둠. shared/는 골든 룰 검사 스크립트처럼 도메인과 상관없는 도구를 두는 곳
+2. deep/07-graphrag/README.md를 새로 만들어 폴더 구조, 두 도메인 이름, 2번 도메인이 승인 대기 중이라는 사실, 기존 plan.md·papers.md·tools.md가 이전 과제(MBB 리포트) 계획이라는 것을 적음. 기존 세 파일은 고치지 않음
+3. AGENTS.md "공개 금지"에 "무역 & 기름 도메인의 실무 정보(거래처, 가격, 계약 조건, 받은 서류)는 저장소에 올리지 않는다"를 한 줄 추가. 다른 줄은 고치지 않음
+4. worklog.md의 2026-10-12 항목에 이어서 이 지시와 2번 도메인 변경 사실을 기록
+5. 위 파일 말고는 바꾸지 않음. commit·push 하지 않음
+
+#### 읽은 파일
+
+- AGENTS.md "공개 금지" 절
+- deep/07-graphrag/plan.md·papers.md·tools.md 앞부분(이전 과제 계획인지 확인. 고치지 않음)
+- 저장소 전체에서 "골든"·"golden"을 찾았으나 나오지 않음. 골든 룰이 무엇인지는 저장소에 정의가 없어, shared/README.md에는 지시 문구("골든 룰 검사 스크립트처럼")만 옮기고 내용은 풀어 쓰지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/README.md: 새로 만듦 — 두 도메인 표(2번 "승인 대기 중"), 변경 경위와 거절 시 defense/ 전환, 폴더 구조, 기존 세 파일이 이전 과제 계획이라는 설명
+- deep/07-graphrag/ai-consulting/README.md: 새로 만듦
+- deep/07-graphrag/oil-trade/README.md: 새로 만듦 — 승인 대기 중이라는 사실과 실무 정보를 두지 않는다는 줄 포함
+- deep/07-graphrag/shared/README.md: 새로 만듦
+- AGENTS.md: 수정 — "공개 금지" 끝에 위 한 줄 추가. 다른 줄은 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
