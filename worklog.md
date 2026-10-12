@@ -1114,3 +1114,48 @@ Claude Code가 주간 사용 한도에 걸려(한도 재설정 2026-10-10 15:00)
 - 배포 페이지(2026-10-10 푸시분, 커밋 e1759aa) 전수 조사: 페이지 안 링크 33개 중 어긋난 것 0. URL 형태가 아닌 href는 `판정 전` 하나뿐이었고 그것을 고침
 - 제목을 바꾼 뒤 목차 링크 9개와 제목 id를 다시 대조(어긋남 0, 중복 id 0)
 - 위 수정은 아직 commit·push 전이다. push 뒤 배포 페이지에서 "작업 방식" 목차 링크와 "판정 전" 표시를 다시 확인해야 한다
+
+## 2026-10-12
+
+### 목표
+
+저장소에 올라간 macOS·R 임시 파일을 git에서 빼고, 다시 올라가지 않게 막음
+
+### Claude Code에 준 지시
+
+1. git이 추적 중인 임시 파일 네 개(.DS_Store, deep/.DS_Store, deep/05-citation/.DS_Store, deep/05-citation/experiments/.Rhistory(빈 파일))를 git 추적에서 빼고 디스크에서도 지움
+2. .gitignore에 .DS_Store와 .Rhistory를 추가해 어느 폴더에 생겨도 무시되게 함. 기존 .gitignore 내용과 주석은 그대로 둠
+3. git ls-files 결과에 .DS_Store와 .Rhistory가 하나도 없는지 확인
+4. 위 네 파일과 .gitignore, worklog.md 말고는 아무 파일도 바꾸지 않음
+5. worklog.md에 2026-10-12 항목을 만들고 이 지시, 지운 파일 경로, .gitignore에 추가한 줄, 3번 확인 결과를 기록
+6. commit·push 하지 않음
+
+### 읽은 파일
+
+- AGENTS.md, README.md(앞부분), worklog.md(처음과 마지막 항목), .gitignore
+- `git ls-files`, `git status` 출력
+
+### 만든·고친 파일
+
+- 지움 (2026-10-12 13:32경, Claude Code, `git rm`으로 추적 해제와 디스크 삭제를 함께 함. 파일 삭제는 에드워드가 이 지시로 승인함):
+  - .DS_Store
+  - deep/.DS_Store
+  - deep/05-citation/.DS_Store
+  - deep/05-citation/experiments/.Rhistory
+- .gitignore: 수정 (2026-10-12, Claude Code) — 기존 두 묶음과 주석은 그대로 두고 맨 끝에 아래 세 줄을 추가함. 슬래시 없는 패턴이라 어느 폴더에서든 맞는다
+
+  ```
+  # macOS·R이 자동으로 만드는 임시 파일은 어느 폴더에서든 올리지 않는다
+  .DS_Store
+  .Rhistory
+  ```
+
+- worklog.md: 수정 (2026-10-12, Claude Code) — 이 항목 추가
+
+### 확인
+
+- `git ls-files | grep -cE '(^|/)\.(DS_Store|Rhistory)$'` → 0. 추적 중인 .DS_Store·.Rhistory 없음
+- 위 네 경로가 디스크에 남아 있지 않음(`ls -a`로 확인)
+- `git check-ignore -v --no-index deep/07-graphrag/.DS_Store areas/x/.Rhistory` → 둘 다 .gitignore 10·11번 줄에 걸림. 하위 폴더에서도 무시됨
+- `git status --short`: 네 파일 삭제(D, 스테이징됨), .gitignore 수정(M). 그 밖에 바뀐 파일 없음(이 worklog.md 수정 제외)
+- commit·push는 하지 않음. 네 파일의 삭제는 `git rm`으로 스테이징만 된 상태이고, commit은 에드워드가 한다
