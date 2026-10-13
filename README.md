@@ -151,6 +151,7 @@ https://chihun-an.github.io/rag-field-scan/
 
 ## 문서 목록
 - [AGENTS.md](AGENTS.md) — 에이전트 작업 규칙
+- [handoff.md](handoff.md) — 인수인계 (새 대화에서 먼저 읽는 문서)
 - [worklog.md](worklog.md) — 작업 기록
 - [scope.md](scope.md) — 범위와 깊이 기준
 - [field-map.md](field-map.md) — 분야 지도 (10개 영역)

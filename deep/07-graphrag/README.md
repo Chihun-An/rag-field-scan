@@ -13,6 +13,8 @@
 
 E1 결정(두 도메인 범위와 분류 축): [e1-decisions.md](e1-decisions.md)
 
+3주 챌린지 과제 정의(핵심 질문, 단계 E0~E7과 마감, 필수선): [challenge.md](challenge.md)
+
 ## 폴더 구조
 
 ```
