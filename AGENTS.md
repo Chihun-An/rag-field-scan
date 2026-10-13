@@ -8,6 +8,7 @@
 - 이 저장소 폴더 안에서만 파일을 읽고 쓴다.
 - 작업 전에 AGENTS.md, README.md, worklog.md를 먼저 읽는다.
 - 모든 문서는 Markdown(.md)으로 쓴다.
+- 원장·그래프 데이터 같은 데이터 파일은 CSV나 JSON으로 둘 수 있다.
 - 실험에 쓰는 코드는 예외로 deep/<영역>/experiments/scripts/ 아래에 둔다. 코드 파일명도 영문 소문자와 하이픈만 쓴다.
 - 파일명은 영문 소문자와 하이픈만 쓴다. (예: areas/01-rag-basics.md)
 - 문서 간 링크는 상대 경로로 쓴다. (예: [범위](scope.md))

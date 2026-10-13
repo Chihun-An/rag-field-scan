@@ -1251,3 +1251,95 @@ E1(두 도메인 범위 + 분류 축 결정)을 deep/07-graphrag/e1-decisions.md
 - deep/07-graphrag/README.md: 수정 — 두 도메인 문단 뒤에 "E1 결정(두 도메인 범위와 분류 축): [e1-decisions.md](e1-decisions.md)" 한 줄 추가. 다른 문장과 폴더 구조 블록은 고치지 않음(그래서 폴더 구조 블록에는 e1-decisions.md가 아직 없다)
 - worklog.md: 수정 — 이 항목 추가
 - commit·push는 하지 않음
+
+### 1번 도메인 원천 원장 (2026-10-13 15:20경~16:50경, Claude Code)
+
+#### Claude Code에 준 지시
+
+목표: 1번 도메인(AI 컨설팅)의 원천 원장을 만든다. 원장은 나중에 그래프를 만들 자료의 목록이다. 검색 방법과 파일 형식은 Claude Code가 정한다. 범위는 E1 결정(컨설팅 펌이 공개한 AI 도입 사례, McKinsey·BCG·Bain·Deloitte·PwC·EY·KPMG).
+
+- 넣는 기준: 펌 공식 사이트의 고객 사례 페이지, AI(머신러닝, 생성형 AI 등)가 해결책의 중심, 고객이 겪던 문제와 펌이 한 일이 본문에 있음
+- 빼는 것: 리포트·서베이·의견 기사, 펌 자체 제품 광고, 언론 보도만 있는 사례
+
+1. deep/07-graphrag/ai-consulting/에 원장 파일. 스크립트로 읽을 수 있고 깃허브에서 표로 보이는 형식
+2. 총 15~20건, 펌마다 2건 이상
+3. 원장 칸은 서지 정보만(번호, 펌, 제목, URL, 발행일(없으면 "확인 불가"), 확인한 날짜, 원문 저장 경로, 원문 해시(SHA-256)). 업무 유형·병목·해결책·고객 산업은 적지 않음(사람 그래프를 에이전트 결과를 보지 않고 먼저 만들어야 하므로)
+4. 찾았지만 기준에 안 맞거나 읽지 못한 자료도 따로 표로(URL, 이유)
+5. 각 사례 본문을 ai-consulting/raw/에 저장하고 이 폴더는 .gitignore에 넣음(저작권). 해시는 이 파일 기준
+6. 15건이 안 되면 원장을 쓰지 말고 멈춰서 펌별 건수 보고
+7. worklog 2026-10-13 항목에 이 지시, 검색 방법, 펌별 건수, 만든·고친 파일 기록
+8. 위 파일 말고는 바꾸지 않음. commit·push 하지 않음
+
+#### 검색·수집 방법
+
+- 후보 찾기: 펌마다 WebSearch(대상 도메인으로 제한)로 "client story / case study / client results + AI" 검색. 펌 사이트의 사례 목록 페이지(McKinsey Tech and AI case studies, PwC 사례 라이브러리, EY AI case studies)에서 링크를 더 찾음. 검색 결과 요약이 아니라 페이지 본문을 직접 읽고 넣는 기준을 판정함
+- 본문 저장: curl로 직접 받으려 했으나 McKinsey(응답 없음), BCG·Bain·PwC(403)가 막아서, 모든 페이지를 Claude 내장 브라우저로 열어 읽음. 저장 텍스트 규칙: 페이지의 본문 요소(main이 있으면 main, 없으면 사례 첫 문장과 마지막 문장을 함께 담는 가장 안쪽 요소, 그것이 페이지 전체이면 제목 줄부터 마지막 본문 문장까지)의 innerText. 줄 끝 공백 제거, 줄바꿈 3개 이상은 2개로, 끝에 줄바꿈 하나. 이 규칙이라 관련 사례 목록·담당자 이름 같은 주변 글이 일부 섞인 파일이 있음
+- 해시 검증: 브라우저 안에서 같은 텍스트의 SHA-256을 계산하고, 파일로 쓴 뒤 shasum -a 256 값과 대조함. 브라우저에서 읽은 15건 모두 일치
+- Bain: 내장 브라우저에서 Cloudflare 사람 확인(체크박스)이 떠서 Claude Code는 누르지 않음. 에드워드가 눌러도 내장 브라우저가 봇으로 인식해 통과되지 않았고, 에드워드가 구글 크롬에서 페이지를 PDF로 저장해 줌(InsuranceCo 1개 2026-10-13 16:32, 이어서 검색 결과 10개 묶음 Desktop/Bain 16:37~16:38). Claude Code가 macOS 기본 PDFKit(JXA, `osascript -l JavaScript`)로 텍스트를 추출해 raw/에 저장. 설치한 도구 없음(pdftotext·pypdf·PyMuPDF는 없었음). 이 두 파일은 브라우저 텍스트가 아니라 PDF 추출 텍스트라 인쇄 머리글·바닥글(날짜, URL, 쪽 번호)이 섞여 있고, InsuranceCo의 "five-part plan" 목록 내용은 PDF에서 "."만 남아 빠져 있음
+- 발행일 규칙: 페이지에 보이는 날짜 → 없으면 메타·JSON-LD의 발행일 → 메타 값끼리 서로 다르면 "확인 불가". 관련 사례 목록에 붙은 다른 글의 날짜는 쓰지 않음
+  - 페이지 표시: 2(2024-11-13), 10(2026-01-07)
+  - 메타: 3(JSON-LD datePublished 2026-02-04, itemdate 같음), 11(pwcReleaseDate 2026-08-31), 12(firstpublishdate와 dateuser 모두 2024-09-16)
+  - 메타 값이 서로 달라 확인 불가: 13(firstpublishdate 2023-02-02 / dateuser 2023-01-17), 14(2026-10-12 / 2024-10-15), 15(publishDate 2025-01-21 / displayDate 2025-04-14), 16(2022-06-15 / 2024-02-09), 17(2021-01-01 / 2023-08-30)
+  - 날짜 정보 없음: 1, 4, 5, 6, 7, 8, 9. 7의 PDF에 있는 "November 22, 2024"는 페이지 안 보도자료 묶음의 날짜라 쓰지 않음
+- 형식: CSV. GitHub에서 표로 보이고 csv 모듈로 바로 읽힌다. AGENTS.md "모든 문서는 Markdown"과 다르지만, 원장은 문서가 아니라 데이터 파일로 보고 CSV로 함(확인 필요: 에드워드가 다르게 보면 바꿈)
+
+#### 펌별 건수 (원장 17건)
+
+| 펌 | 원장 | 제외 표 |
+|----|------|---------|
+| McKinsey | 3 | 4 |
+| BCG | 2 | 2 |
+| Bain | 2 | 9 |
+| Deloitte | 2 | 0 |
+| PwC | 2 | 1 |
+| EY | 3 | 3 |
+| KPMG | 3 | 0 |
+| 합계 | 17 | 19 |
+
+- 펌마다 2건을 먼저 채운 뒤(14건) 15건 기준을 넘기려고 EY·KPMG·McKinsey에서 1건씩 더 넣음. 세 펌을 고른 이유는 사례 목록에서 기준에 맞는 후보가 바로 보였기 때문이고, 다른 기준은 없음
+- 판정이 얇은 것: 7(Banca Investis)은 고객 문제가 "서비스 모델의 혁신이 필요했다" 정도로만 적혀 있음. 펌이 한 일은 본문에 있어 넣음. 11(Seattle Mariners)은 고객 인터뷰 형식이지만 펌 사례 라이브러리 페이지이고 문제와 PwC가 한 일이 본문에 있어 넣음
+- 제외 표에는 실제로 열어 보았거나 제목·URL로 판단한 것만 적음. 검색 결과에 나왔지만 판단하지 않은 후보(예: BCG Reckitt·KLM, Deloitte Zora 송장 사례, Bain Athena Pathway)는 적지 않음
+
+#### 문제와 대처
+
+- 내장 브라우저에서 로컬 수신 서버(127.0.0.1)로 본문을 보내 저장하려 했으나 브라우저에서 연결되지 않음(Failed to fetch). 임시 수신기(스크래치 폴더의 receiver.py, 저장소 밖)를 멈추고, 본문을 읽어 파일로 쓰고 해시를 대조하는 방식으로 바꿈. 시험할 때 만든 test-probe.txt는 Claude Code가 만든 것이라 바로 지움
+- 저장소에 코드 파일은 만들지 않음. 쓴 코드는 브라우저에서 실행한 JavaScript, PDF 추출용 osascript 한 줄, 검증용 python 한 줄뿐이고 모두 이 기록의 방법 설명으로 남김
+- McKinsey Aviva 페이지는 THE SOLUTION 절이 로드되지 않아(새로고침 뒤에도 같음) 제외함
+- 작업 중 한 번 자동 모드 판정기가 일시적으로 쓸 수 없어 브라우저 실행이 막혔고, 그사이 Bain PDF 작업을 먼저 하고 돌아와 다시 실행함
+
+#### 읽은 파일
+
+- deep/07-graphrag/e1-decisions.md(범위), .gitignore
+- 에드워드가 준 PDF: Desktop의 InsuranceCo PDF, Desktop/Bain 폴더의 PDF 중 Banca Investis·NatWest 두 개(나머지 8개는 파일 이름만 확인). Desktop의 다른 파일은 열지 않음
+- 웹 페이지 원문은 raw/ 파일과 sources.csv의 URL 참고
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/ai-consulting/sources.csv: 새로 만듦 — 원장 17건
+- deep/07-graphrag/ai-consulting/excluded.csv: 새로 만듦 — 제외·읽지 못한 자료 19건(펌, URL, 이유)
+- deep/07-graphrag/ai-consulting/raw/*.txt: 새로 만듦 — 사례 본문 17개. .gitignore로 저장소에 올라가지 않음
+- .gitignore: 수정 — 맨 끝에 `# 사례 원문은 저작권 때문에 저장소에 올리지 않는다 (해시는 원장에 남긴다)`와 `deep/07-graphrag/ai-consulting/raw/` 두 줄 추가. 기존 줄은 그대로
+- worklog.md: 수정 — 이 절 추가
+- 확인: python csv 모듈로 sources.csv 17행·8열, excluded.csv 19행·3열을 읽음. 원장 해시와 raw 파일 해시 불일치 0. `git check-ignore`로 raw/ 무시 확인. `git status`에는 .gitignore, sources.csv, excluded.csv, worklog.md만 나옴
+- commit·push는 하지 않음
+
+### 원장 수정 (2026-10-13, Claude Code)
+
+#### Claude Code에 준 지시
+
+1. raw/ 파일 이름에 고객명·업무·해결책 같은 정보가 들어가 있어, 원장 "원문 저장 경로" 칸을 통해 원장에 그래프 내용을 적지 않기로 한 기준 3과 어긋남. raw/ 파일 이름을 원장 번호만 담은 이름(ac-01.txt ~ ac-17.txt)으로 바꾸고 sources.csv 경로 칸을 맞춤. 바꾼 뒤 해시 17개가 다시 일치하는지 확인. worklog에는 옛 이름과 새 이름의 대응표를 적지 않음
+2. AGENTS.md "모든 문서는 Markdown(.md)으로 쓴다." 바로 아래에 "원장·그래프 데이터 같은 데이터 파일은 CSV나 JSON으로 둘 수 있다."를 한 줄 추가. 다른 줄은 고치지 않음
+3. worklog 2026-10-13 항목에 기록. commit·push 하지 않음
+
+#### 한 일
+
+- raw/ 파일 17개: 파일 이름에 그래프에 들어갈 정보가 있어 번호로 바꿈. 파일 내용은 바꾸지 않음
+- deep/07-graphrag/ai-consulting/sources.csv: 수정 — "원문 저장 경로" 칸을 raw/ac-01.txt ~ raw/ac-17.txt로 바꿈. python csv 모듈로 다시 써서, 쉼표가 없는 제목 칸의 따옴표가 빠짐(읽은 값은 같음)
+- AGENTS.md: 수정 — "작업 방식"에 위 한 줄 추가. 다른 줄은 고치지 않음. 이 줄로 앞 절 "형식" 항목의 "확인 필요"가 풀림
+- worklog.md: 수정 — 이 절 추가
+
+#### 확인
+
+- sources.csv 17행·8열, 경로 17개가 raw/ac-01.txt ~ raw/ac-17.txt와 정확히 일치, 원장 해시와 파일 해시 불일치 0
+- 첫 확인 스크립트가 쓰기 파일을 닫기 전에 다시 읽어 "0행"으로 나왔다(Claude Code 스크립트 오류). 스크립트가 끝난 뒤 다시 읽어 17행·불일치 0을 확인함
+- commit·push는 하지 않음
