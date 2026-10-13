@@ -1220,3 +1220,34 @@ Claude Code가 주간 사용 한도에 걸려(한도 재설정 2026-10-10 15:00)
 - deep/07-graphrag/oil-trade/README.md: 고치지 않음 — "승인 대기 중이다(2026-10-12 요청)"만 있고 진행·전환을 말하는 문장이 없어 새 방침과 어긋나지 않음
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+## 2026-10-13
+
+### 목표
+
+E1(두 도메인 범위 + 분류 축 결정)을 deep/07-graphrag/e1-decisions.md에 기록
+
+### Claude Code에 준 지시
+
+1. deep/07-graphrag/e1-decisions.md를 새로 만들고 다음을 적음
+   - 1번 AI 컨설팅 범위: 컨설팅 펌이 공개한 AI 도입 사례. 대상 펌은 McKinsey, BCG, Bain, Deloitte, PwC, EY, KPMG 일곱 곳
+   - 2번 무역 & 기름: 멘토 승인 대기 중. 범위는 승인 뒤에 정함(07 README 링크)
+   - 분류 축: 업무 유형(잠정). 2번 도메인 답이 오면 확정
+   - 판단 기록: 세 항목(AI가 제안한 것 / 내가 채택하거나 고친 것 / 그렇게 판단한 이유)을 글자 그대로 옮기고, 맨 위에 "작성: 에드워드, 2026-10-13. 1항은 Cowork가 사실을 정리했고, 2·3항은 에드워드가 쓰고 Cowork가 문장만 다듬음"을 적음
+2. deep/07-graphrag/README.md에 e1-decisions.md로 가는 링크를 한 줄 추가. 다른 문장은 고치지 않음
+3. worklog.md에 2026-10-13 항목을 만들고 이 지시와 만든·고친 파일을 기록
+4. 위 파일 말고는 바꾸지 않음. commit·push 하지 않음
+
+첫 지시에는 판단 기록 세 항목이 "(위 완성본 1항 그대로)" 같은 자리표시로만 있고 원문이 없었다. Claude Code가 내용을 채우지 않고 원문을 요청했고, 에드워드가 세 항목 원문을 따로 보내 줌(2026-10-13).
+
+### 읽은 파일
+
+- deep/07-graphrag/README.md
+- worklog.md 끝부분(2026-10-12 항목)
+
+### 만든·고친 파일
+
+- deep/07-graphrag/e1-decisions.md: 새로 만듦 (2026-10-13 15:02경, Claude Code) — 1번 범위와 대상 펌 일곱 곳, 2번 승인 대기(07 README 링크), 분류 축 업무 유형(잠정), 판단 기록. 판단 기록 세 항목은 에드워드가 보낸 원문을 글자 그대로 옮기고 고치지 않음
+- deep/07-graphrag/README.md: 수정 — 두 도메인 문단 뒤에 "E1 결정(두 도메인 범위와 분류 축): [e1-decisions.md](e1-decisions.md)" 한 줄 추가. 다른 문장과 폴더 구조 블록은 고치지 않음(그래서 폴더 구조 블록에는 e1-decisions.md가 아직 없다)
+- worklog.md: 수정 — 이 항목 추가
+- commit·push는 하지 않음
