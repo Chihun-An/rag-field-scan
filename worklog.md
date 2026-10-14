@@ -1780,3 +1780,32 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - handoff.md: 수정 — 5절 "E3 계획 안" 네 줄을 지시한 아홉 줄로 바꿈. 다른 줄은 고치지 않음; 이어서 Cowork 정정에 따라 5절 "주의" 줄을 고침(자동 모드 위험을 적고, python3 허용이 입력 붙은 명령까지 통과시키는지는 확인 필요로 바꿈. 처음 문장은 Cowork가 확인 없이 단정한 것이었음)
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 1번 E3 기대 답 (2026-10-14, 16:30경 마침, 정답 격리 Claude Code 대화)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 1번 도메인 골든 세트의 기대 답(정답)을 쓴다. 이 대화는 정답 격리 전용이고 끝나면 다시 쓰지 않는다.
+
+- 지킬 것: handoff.md 5절 정답 격리 규칙에 따라 저장소 밖에는 /Volumes/rag-answer-keys에만 쓴다(AGENTS.md "저장소 폴더 안에서만" 규칙의 예외). 다른 저장소 밖 파일은 열지 않고 웹을 쓰지 않는다. schema.md 원칙대로 원문에 적힌 것만 쓴다. 디스크 안 파일은 Write/Edit 도구로만 쓰고 Bash에는 정답 내용을 넣지 않는다. 저장소 안에는 정답 내용을 쓰지 않고 raw/를 복사하지 않는다. commit·push 하지 않는다
+1. 디스크 안 ai-consulting/ 폴더에 기준 그래프, Q1~Q10·T1~T4 기대 답, T5 진술과 기대 답(사람 그래프 대상 7건이 아닌 사례로) 세 파일을 쓴다
+2. 저장소에 세 파일의 SHA-256 해시 파일을 만들고, handoff.md 4절 표 E3 행 1번 칸과 5절 "1번 E3 골든 세트" 줄에 해시 파일 링크를 넣는다
+3. worklog 2026-10-14 항목 끝에 이 절
+4. 마지막 보고는 정답 내용 없이 한다
+
+#### 읽은 파일
+
+- AGENTS.md, handoff.md, worklog.md(끝부분)
+- deep/07-graphrag/ai-consulting/schema.md, questions.md, sources.csv
+- deep/07-graphrag/ai-consulting/raw/ac-01.txt ~ ac-17.txt(17건 전부)
+- 저장소 밖: /Volumes/rag-answer-keys(폴더 목록, 이 대화가 쓴 파일만). 다른 저장소 밖 파일은 열지 않았고 웹도 쓰지 않음
+- 근거 문장이 원문에 그대로 있는지 확인하는 스크립트를 이 대화의 임시 폴더(저장소 밖, Claude Code scratchpad)에 두고 돌림. 스크립트에는 정답 내용이 없고, 출력은 행 번호만 냄
+
+#### 만든·고친 파일
+
+- 디스크 안(/Volumes/rag-answer-keys/ai-consulting/, 저장소 밖): reference-triples.csv(177줄), answer-key.md(422줄), t5-statement.md(26줄). 내용은 여기 적지 않음
+- deep/07-graphrag/ai-consulting/answer-key.sha256: 새로 만듦 — 디스크 안 폴더에서 `shasum -a 256 answer-key.md reference-triples.csv t5-statement.md`를 돌린 출력 그대로
+- handoff.md: 수정 — 4절 표 E3 행 1번 칸, 5절 "1번 E3 골든 세트" 줄. 다른 줄은 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- 정답 내용은 저장소에 쓰지 않음. raw/ 파일은 다른 곳으로 복사하지 않음
+- commit·push는 하지 않음. 디스크 잠그기는 에드워드가 함
