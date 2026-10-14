@@ -1726,3 +1726,30 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - handoff.md: 수정 — 4절 표 E3 행 1번 칸, 5절 "1번 E3 골든 세트" 줄. 2번 칸과 근거 칸, 다른 줄은 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 1번 E3 질문·통제 항목 (2026-10-14, 14:31경 마침, Claude Code)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 1번 도메인 골든 세트의 질문 10개와 통제 항목 5개를 deep/07-graphrag/ai-consulting/questions.md로 만든다.
+
+- 지킬 것: ai-consulting/raw/ 안의 사례 본문은 열지 않는다. 저장소 밖 파일은 열지 않고, 웹을 쓰지 않는다. commit·push 하지 않는다. 기대 답(정답)은 쓰지 않고 질문만 쓴다
+
+1. questions.md를 새로 만든다. 지시문의 "=== questions.md 시작 ==="과 "=== questions.md 끝 ===" 사이 내용을 한 글자도 바꾸지 않고 쓴다(1~6절: 설계 원칙, 질문 종류 A~E, 질문 10개와 고른 방법, 통제 항목 5개, 기대 답을 쓸 때 확인할 것, 판단 기록)
+2. ai-consulting/README.md 끝에 "골든 세트 질문(E3): [questions.md](questions.md)" 한 줄을 더한다
+3. handoff.md 4절 표 E3 행의 1번 칸을 "진행. 스키마(…)·질문(…) 확정"으로, 5절 "1번 E3 골든 세트" 줄의 "질문·통제 항목"을 "질문·통제 항목(완료, …)"으로 바꾼다
+4. worklog 2026-10-14 항목 끝에 이 절
+
+#### 읽은 파일
+
+- handoff.md, worklog.md(끝부분), deep/07-graphrag/ai-consulting/README.md
+- deep/07-graphrag/ai-consulting/sources.csv(번호·펌·제목 칸만). questions.md 3절 "고른 방법"이 원장과 맞는지 확인함: 사람 그래프 대상이 아닌 사례 중 펌이 서로 다른 두 건을 번호가 작은 것부터 고르면 2번(McKinsey)·5번(BCG)으로 Q1·Q2와 일치(3번은 2번과 같은 McKinsey). 제목에 은행·보험이 보이는 원장은 1·6·10·13번
+- ai-consulting/raw/는 열지 않음. 저장소 밖 파일은 열지 않았고 웹도 쓰지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/ai-consulting/questions.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음. 기대 답(정답)은 쓰지 않음
+- deep/07-graphrag/ai-consulting/README.md: 수정 — 끝에 지시한 한 줄 추가(앞 줄과 빈 줄 없이 붙음)
+- handoff.md: 수정 — 4절 표 E3 행 1번 칸, 5절 "1번 E3 골든 세트" 줄. 다른 줄은 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
