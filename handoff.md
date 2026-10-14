@@ -55,7 +55,7 @@
 |------|---------------|-----------------|------|
 | E0 | 완료(커밋 7b45236, 도메인 공통) | 완료(공통) | [worklog.md](worklog.md) 2026-10-12 |
 | E1 | 완료(분류 축 확정) | 완료 | [e1-decisions.md](deep/07-graphrag/e1-decisions.md) |
-| E2 | 완료. 원장 17건, 제외 19건(커밋 0d9f7e2) | 완료. 원장 16건, 제외 23건(커밋 5e4c595) | 1번 [sources.csv](deep/07-graphrag/ai-consulting/sources.csv), [excluded.csv](deep/07-graphrag/ai-consulting/excluded.csv) / 2번 [sources.csv](deep/07-graphrag/oil-trade/sources.csv), [excluded.csv](deep/07-graphrag/oil-trade/excluded.csv) |
+| E2 | 완료. 원장 17건, 제외 19건(커밋 0d9f7e2) | 완료. 원장 17건, 제외 24건(커밋 5e4c595에 원장 16건·제외 23건, 2026-10-14 원장 관세율표 1건·제외 관세법 본문 1건 추가) | 1번 [sources.csv](deep/07-graphrag/ai-consulting/sources.csv), [excluded.csv](deep/07-graphrag/ai-consulting/excluded.csv) / 2번 [sources.csv](deep/07-graphrag/oil-trade/sources.csv), [excluded.csv](deep/07-graphrag/oil-trade/excluded.csv) |
 | E3 골든 세트 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E4 사람 그래프 vs 에이전트 그래프 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E5 답변 비교 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
@@ -64,7 +64,7 @@
 
 ## 5. 다음 할 일
 
-- 2번 E2 후속: 읽지 못한 관세법 관세율표(한국 10단위 세번)를 읽을 방법을 찾는다. 원장 9·11~14번 별표의 자체 개정일을 원장에 적을지 정한다. 원장 6·7·9번 법령 번호는 사람이 국가법령정보센터에서 확인한다. 판정이 얇은 자료 중 원장 4·5·15번은 worklog에 적은 포함 근거가 원문에 있음을 2026-10-14 Cowork가 확인했다(넣을지 최종 판단은 에드워드). 제외 표의 석유사업법 시행령과 2022-02-03 보도자료는 Cowork가 원문을 열지 못해 확인하지 못했으므로 에드워드가 넣을지 뺄지 정한다.
+- 2번 E2 후속: 원장 9·11~14·17번 별표의 자체 개정일을 원장에 적을지 정한다. 판정이 얇은 자료 중 원장 4·5·15번은 worklog에 적은 포함 근거가 원문에 있음을 2026-10-14 Cowork가 확인했다(넣을지 최종 판단은 에드워드). 제외 표의 석유사업법 시행령과 2022-02-03 보도자료는 2026-10-14 에드워드가 제외로 확정했다. 원장 6·7·9번 법령 번호는 2026-10-14 에드워드가 국가법령정보센터에서 확인했다(일치). 관세율표는 원장 17번으로 넣었다. 관세율표 제27류에는 10단위 세번이 없고 호·소호와 번호 매긴 세분 항목만 있다. 관세법 본문은 품목을 세분한 관세·통계통합품목분류표를 재정경제부장관이 고시한다고 정한다(2026-10-14 Cowork가 관세법 본문에서 확인. 10단위 세번이 그 고시에 있는지는 확인 필요).
 - 두 도메인 E3 골든 세트
 - 1번 E3 골든 세트: 스키마 → 질문·통제 항목 → 기대 답 → 골든 룰과 검사 스크립트 → 예측
 - [07 README](deep/07-graphrag/README.md) 폴더 구조 블록에 e1-decisions.md가 아직 없다(worklog 2026-10-13에 기록된 상태)
