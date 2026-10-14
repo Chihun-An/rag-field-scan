@@ -1809,3 +1809,85 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - worklog.md: 수정 — 이 절 추가
 - 정답 내용은 저장소에 쓰지 않음. raw/ 파일은 다른 곳으로 복사하지 않음
 - commit·push는 하지 않음. 디스크 잠그기는 에드워드가 함
+
+### 정답 격리 후속 (2026-10-14, 에드워드)
+
+- 기대 답을 쓴 Claude Code 세션을 에드워드가 삭제했다. 대화 기록에 정답이 남아 디스크 밖 사본이 되는 것을 막기 위해서다. 디스크는 잠갔다.
+
+### 1번 E3 골든 룰과 검사 스크립트 (2026-10-14, 16:47경 마침, Claude Code)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 1번 도메인 골든 룰(답이 채점 전에 지켜야 할 규칙)과 검사 스크립트를 만들고 시험한다.
+
+- 지킬 것: 정답(기대 답)은 보지 않는다. /Volumes/rag-answer-keys는 열지 않고, 열려 있으면 멈춘다. 저장소 밖 파일은 열지 않고, 웹을 쓰지 않고, 설치하지 않는다(python 표준 라이브러리만). commit·push 하지 않는다. 시험 파일에는 원장 제목, sources.csv의 펌(수행), 일부러 틀린 값, "테스트" 같은 문자열만 쓰고 사례를 분류한 실제 값은 쓰지 않는다
+
+1. ai-consulting/golden-rules.md를 지시문의 시작·끝 표시 사이 내용 그대로 새로 만든다(1~5절: 하는 일과 하지 않는 일, 답의 모양, 골든 룰 G1~G9, 검사 스크립트, 판단 기록)
+2. experiments/scripts/check-golden-rules.py: 맨 위 한국어 주석(하는 일, 입력, 출력), G1~G9 구현, 출력과 종료 코드는 4절대로 한국어로. 스키마 목록 상수를 시작할 때 schema.md 본문과 대조해 없으면 종료 코드 2. 원장 번호·펌은 sources.csv, G4는 ai-consulting/raw/를 읽고 없으면 종료 코드 2. 한 주장에 걸린 규칙은 모두 보고
+3. experiments/fixtures/에 golden-rules-pass.json(모두 통과), golden-rules-fail.json(G1~G9 하나씩), golden-rules-empty.json(빈 목록) — 항목은 지시대로
+4. 세 파일로 돌려 experiments/golden-rules-test.md에 실행 명령, 종료 코드, 출력 그대로, 판정 표(코드 판정과 사람 판정 열을 나눔, 사람 판정은 "에드워드 확인 전")를 남긴다. 기대와 다르면 고치고 고친 내용과 다시 돌린 결과를 남긴다
+5. ai-consulting/README.md 끝에 "골든 룰(E3): [golden-rules.md](golden-rules.md)" 한 줄
+6. handoff.md 4절 표 E3 행 1번 칸의 " 확정" 앞에 골든 룰 링크, 5절 "1번 E3 골든 세트" 줄의 "골든 룰과 검사 스크립트"에 "(완료, …)"
+7. worklog 2026-10-14 항목 끝에 "정답 격리 후속"(에드워드) 절과 이 절
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함(Macintosh HD만 있음). 디스크 안은 열지 않음
+- 시험 결과: 통과 시험 종료 코드 0(위반 없음), 위반 시험 종료 코드 1(G1~G9가 항목마다 하나씩 걸림, T1만 G8이 두 조건으로 두 번), 입력 오류 시험 종료 코드 2. 기대와 다르게 나온 것이 없어 시험 뒤 스크립트를 고치지 않음. 자세한 출력은 deep/07-graphrag/experiments/golden-rules-test.md
+- G4 정규화 시험이 실제로 되었는지 따로 확인함: 원장 7번 제목은 원문에 그대로는 없고 공백 정규화 뒤에는 있음(원문 내용은 출력하지 않음)
+- 규칙끼리 어긋난 곳(확인 필요): 스키마 5절 목록 이름은 "생성형 AI(LLM 포함)"인데 골든 룰 G9는 Q3 값을 "생성형 AI"로 정함. 스크립트는 목록 이름을 "생성형 AI"로 보고 괄호는 설명으로 뺐다. 에드워드가 정할 일
+- 입력 오류 기준을 글자대로 구현해 파일 전체 주장이 0개여도 종료 코드 2가 됨(T1·T3·T4 답만 든 파일은 입력 오류). G4는 하이픈을 붙인 정규화로 못 찾으면 하이픈을 남긴 정규화로도 한 번 더 봄(낱말 안 하이픈 대비). 둘 다 golden-rules-test.md 3절에 적음
+- 설치한 도구 없음(python 표준 라이브러리 csv, json, re, pathlib)
+
+#### 읽은 파일
+
+- handoff.md, worklog.md(끝부분), deep/07-graphrag/ai-consulting/README.md, schema.md(스크립트가 읽음), sources.csv(번호·펌·제목)
+- ai-consulting/raw/ac-*.txt: 스크립트(G4)와 7번 정규화 확인 코드가 읽음. Claude Code가 원문 내용을 화면에 출력하거나 읽지는 않았고, 시험에 쓴 근거 문장은 원장 제목과 테스트 문장뿐
+- 저장소 밖 파일은 열지 않았고 웹도 쓰지 않음. /Volumes/rag-answer-keys와 ai-consulting/answer-key.sha256은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/ai-consulting/golden-rules.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
+- deep/07-graphrag/experiments/scripts/check-golden-rules.py: 새로 만듦 — 골든 룰 검사 스크립트
+- deep/07-graphrag/experiments/fixtures/golden-rules-pass.json, golden-rules-fail.json, golden-rules-empty.json: 새로 만듦 — 시험 파일(원장 제목, 수행 펌, 일부러 틀린 값만)
+- deep/07-graphrag/experiments/golden-rules-test.md: 새로 만듦 — 시험 결과
+- deep/07-graphrag/ai-consulting/README.md: 수정 — 끝에 지시한 한 줄 추가
+- handoff.md: 수정 — 4절 표 E3 행 1번 칸, 5절 "1번 E3 골든 세트" 줄. 다른 줄은 고치지 않음. 4절 칸은 지시문을 쓴 뒤 커밋 b847eaf에서 "·기대 답 해시(…)"가 들어가 있어, 처음 고치기 코드가 지시문의 옛 문구를 찾지 못해 멈춤(handoff는 그때 바뀌지 않음, README와 worklog는 이미 써짐). 지시대로 " 확정" 바로 앞, 곧 기대 답 해시 링크 뒤에 골든 룰 링크를 넣음
+- worklog.md: 수정 — "정답 격리 후속" 절(에드워드가 준 문장 그대로)과 이 절 추가
+- commit·push는 하지 않음
+
+### 1번 E3 골든 룰 정정 (2026-10-14, 16:57경 마침, Claude Code)
+
+- 경위: Claude Code가 스키마 5절 "생성형 AI(LLM 포함)"와 G9 "생성형 AI"의 불일치를 찾았다. Cowork가 지시문을 쓰며 낸 실수다. 스키마는 기대 답보다 먼저 커밋됐으므로 스키마 이름을 기준으로 G9와 스크립트를 고쳤다. 같은 때 입력 오류 기준(주장 0개만으로는 오류가 아님), G4 하이픈 처리 문서화, __pycache__ 무시를 함께 정리했다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+커밋 전에 골든 룰을 고친다. 정답(디스크)은 보지 않는다. 저장소 밖 파일은 열지 않는다. 설치하지 않는다. commit·push 하지 않는다.
+
+1. golden-rules.md 세 곳만: G9의 Q3 값을 "생성형 AI(LLM 포함)"로, G4 행에 하이픈을 남긴 채 한 번 더 보는 문장 추가, 4절 입력 오류 문장을 "질문을 하나도 읽지 못하면 2로 끝낸다. 주장이 0개인 답은 G1·G2·G8로 본다."로
+2. check-golden-rules.py: AI 기술 목록과 G9 Q3 값을 "생성형 AI(LLM 포함)"로 하고 괄호를 빼던 주석과 처리를 없앤다. 종료 코드 2는 질문 0개(와 기존 파일·JSON·스키마·원장·raw 오류)에만
+3. fixtures/golden-rules-controls-only.json(T1·T3·T4, 자료에 없음, 주장 빈 목록, 요약 "테스트")을 만들고 종료 코드 0이 나와야 함
+4. 시험 파일 네 개로 다시 돌려 golden-rules-test.md 끝에 "## 4. 정정 뒤 다시 돌린 결과 (2026-10-14)" 절(고친 내용, 실행 명령, 종료 코드, 출력 그대로, 판정 표, 사람 판정은 "에드워드 확인 전"). 앞 절은 고치지 않음
+5. .gitignore 맨 끝에 "# 파이썬 실행 캐시"와 "__pycache__/" 두 줄. git status에 __pycache__가 안 나오는지 확인
+6. worklog "1번 E3 골든 룰과 검사 스크립트" 절 뒤에 이 절. 경위 줄은 그대로
+
+#### 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함
+- 다시 돌린 결과: pass 0(위반 없음), fail 1(G1~G9 하나씩, 정정 전과 같은 출력), empty 2(질문 0개), controls-only 0(위반 없음). 모두 기대대로
+- __pycache__: deep/07-graphrag/experiments/scripts/__pycache__가 있었음. 앞 절 작업에서 Claude Code가 7번 정규화를 확인하려고 스크립트를 모듈로 불러올 때 생긴 것으로 보임. .gitignore에 두 줄을 더한 뒤 `git status --short --untracked-files=all`에 __pycache__가 나오지 않음을 확인함. 폴더는 지우지 않음
+
+#### 읽은 파일
+
+- worklog.md(절 제목 목록과 끝부분), .gitignore, golden-rules.md, check-golden-rules.py, golden-rules-test.md(모두 이 대화에서 만든 파일)
+- ai-consulting/raw/는 스크립트(G4)만 읽음. 저장소 밖 파일과 디스크는 열지 않음. worklog의 "1번 E3 기대 답" 절과 answer-key.sha256은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/ai-consulting/golden-rules.md: 수정 — G9 Q3 값, G4 행 문장 추가, 4절 입력 오류 문장. 다른 곳은 고치지 않음
+- deep/07-graphrag/experiments/scripts/check-golden-rules.py: 수정 — AI 기술 목록과 G9 Q3 값을 "생성형 AI(LLM 포함)"로, 괄호 주석 지움, 입력 오류 조건을 질문 0개로(맨 위 주석의 종료 코드 설명도 맞춤)
+- deep/07-graphrag/experiments/fixtures/golden-rules-controls-only.json: 새로 만듦
+- deep/07-graphrag/experiments/golden-rules-test.md: 수정 — 끝에 4절 추가. 앞 절은 고치지 않음
+- .gitignore: 수정 — 맨 끝에 두 줄 추가. 기존 줄은 그대로
+- worklog.md: 수정 — 이 절 추가
+- 설치한 도구 없음. commit·push는 하지 않음

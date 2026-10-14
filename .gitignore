@@ -14,3 +14,5 @@ ckpts/
 deep/07-graphrag/ai-consulting/raw/
 # 2번 도메인 원문도 같은 이유로 올리지 않는다 (해시는 원장에 남긴다)
 deep/07-graphrag/oil-trade/raw/
+# 파이썬 실행 캐시
+__pycache__/

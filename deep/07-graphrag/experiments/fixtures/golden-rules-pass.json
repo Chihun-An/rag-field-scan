@@ -1,0 +1,66 @@
+[
+  {
+    "질문": "Q5",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 3,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "From call to opportunity: Entel Connect reimagines customer conversations with McKinsey and Google Cloud"
+      },
+      {
+        "원장 번호": 7,
+        "관계": "수행",
+        "값": "Bain",
+        "근거 문장": "Banca Investis Transforms Customer Dialogue with a Generative AI Engine"
+      }
+    ],
+    "요약": "테스트"
+  },
+  {
+    "질문": "Q6",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 9,
+        "관계": "수행",
+        "값": "Deloitte",
+        "근거 문장": "원장"
+      }
+    ],
+    "요약": "테스트"
+  },
+  {
+    "질문": "Q8",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 11,
+        "관계": "적용 업무",
+        "값": "기타: 테스트",
+        "근거 문장": "Seattle Mariners: Building an AI platform to win fans and fill seats"
+      }
+    ],
+    "요약": "테스트"
+  },
+  {
+    "질문": "T1",
+    "상태": "자료에 없음",
+    "주장": [],
+    "요약": "테스트"
+  },
+  {
+    "질문": "T2",
+    "상태": "전제가 틀림",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      }
+    ],
+    "요약": "테스트"
+  }
+]
