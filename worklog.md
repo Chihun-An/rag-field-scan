@@ -1567,3 +1567,5 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - handoff.md: 수정 — 4절 표 E2 행, 5절 다음 할 일
 - 확인: python csv 모듈로 sources.csv 16행·10열, excluded.csv 23행·3열을 읽음. 원장 해시와 raw 파일 해시 불일치 0. `git check-ignore`로 oil-trade/raw/ 무시 확인
 - commit·push는 하지 않음
+
+- handoff.md에 Cowork 대화에만 있던 내용(주간 기록 파일, E3 계획 안, Codex 판정 규칙 초안, Cowork 작업 방식)을 옮겼다. 내용 정리는 Cowork, 파일 작업은 Claude Code가 했다.
