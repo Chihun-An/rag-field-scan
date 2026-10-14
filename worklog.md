@@ -1919,3 +1919,26 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - handoff.md: 수정 — 4절 표 E3 행 1번 칸, 5절 "1번 E3 골든 세트" 줄 끝. 다른 줄은 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 1번 E3 판단 기록 이유 채움 (2026-10-14, 17:33경 마침, Claude Code)
+
+- 이유 문장은 Cowork가 E1 기록과 에드워드의 말을 바탕으로 낸 보기 가운데 에드워드가 고른 것(schema 1번 가·나와 2번 가, questions 가·가, golden-rules 가+나)을 Cowork가 문장으로 이었다. 스키마·질문·골든 룰의 내용은 바꾸지 않았다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 1번 도메인 세 파일의 판단 기록 이유 칸을 채운다. 다른 줄은 건드리지 않는다. 정답(디스크)과 ai-consulting/raw/, 저장소 밖 파일은 열지 않는다. commit·push 하지 않는다.
+
+1. ai-consulting/schema.md, questions.md, golden-rules.md의 판단 기록 머리줄 "작성: 에드워드, 2026-10-14. 1·2항은 Cowork가 사실을 정리함"에 ". 3항은 Cowork가 낸 보기 가운데 에드워드가 고른 것을 Cowork가 문장으로 이음"을 붙인 줄로 바꾼다
+2. 세 파일의 "그렇게 판단한 이유: 아직 적지 않음(에드워드가 채운다)." 줄을 파일마다 지시한 문장으로 바꾼다(schema: 펌이 맡는 과제가 궁금했고 5·7번은 펌이 한 일로 나눔 / questions: 종류별 비교와 MBB·Big4 비교 / golden-rules: 05 실험 경험과 사람 검토의 한계로 기계로 먼저 거름)
+3. worklog 2026-10-14 항목 끝에 이 절. 첫 줄은 그대로
+
+#### 읽은 파일
+
+- deep/07-graphrag/ai-consulting/schema.md, questions.md, golden-rules.md(고칠 두 줄을 찾는 데만), worklog.md(끝부분)
+- 디스크, ai-consulting/raw/, 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/ai-consulting/schema.md, questions.md, golden-rules.md: 수정 — 파일마다 판단 기록 머리줄과 이유 줄 두 줄만 바꿈(git diff로 파일마다 2줄 바뀐 것 확인). 다른 줄은 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
