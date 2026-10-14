@@ -1,6 +1,6 @@
 # 인수인계 (handoff)
 
-새 대화를 시작한 Claude 쪽 AI(Claude Code, Cowork)가 이 파일 하나로 과제를 이어받기 위한 문서다. 자세한 내용은 링크한 파일에 있다. 마지막 갱신: 2026-10-13, Claude Code.
+새 대화를 시작한 Claude 쪽 AI(Claude Code, Cowork)가 이 파일 하나로 과제를 이어받기 위한 문서다. 자세한 내용은 링크한 파일에 있다. 마지막 갱신: 2026-10-14, Claude Code.
 
 ## 1. 이 저장소가 무엇인가
 
@@ -49,12 +49,12 @@
   - 2번 도메인 변경은 2026-10-13 멘토가 승인했다. 무역 & 기름 실무 정보는 올리지 않는다 ([07 README](deep/07-graphrag/README.md), [AGENTS.md](AGENTS.md))
   - 방산 범위 제한(무기 성능·기술 사양·수출 통제)은 방산 도메인 규칙이라 2번에는 해당하지 않고, 대신 AGENTS.md의 무역 & 기름 실무 정보 금지가 적용된다 ([challenge.md](deep/07-graphrag/challenge.md) "꼭 지킬 것", [AGENTS.md](AGENTS.md) "공개 금지")
 
-## 4. 현재 상태 (2026-10-13)
+## 4. 현재 상태 (2026-10-14)
 
 | 단계 | 1번 AI 컨설팅 | 2번 무역 & 기름 | 근거 |
 |------|---------------|-----------------|------|
 | E0 | 완료(커밋 7b45236, 도메인 공통) | 완료(공통) | [worklog.md](worklog.md) 2026-10-12 |
-| E1 | 완료. 분류 축 "업무 유형"은 잠정 | 진행 예정(2026-10-13 멘토 승인). 2번: E1(범위·분류 축 확정, 판단 기록) → E2(원장 10건 이상, 찾았지만 못 쓴 자료도 셈) → E3 | [e1-decisions.md](deep/07-graphrag/e1-decisions.md) |
+| E1 | 완료(분류 축 확정) | 완료 | [e1-decisions.md](deep/07-graphrag/e1-decisions.md) |
 | E2 | 완료. 원장 17건, 제외 19건(커밋 0d9f7e2) | 대기 | [sources.csv](deep/07-graphrag/ai-consulting/sources.csv), [excluded.csv](deep/07-graphrag/ai-consulting/excluded.csv) |
 | E3 골든 세트 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E4 사람 그래프 vs 에이전트 그래프 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
@@ -64,7 +64,7 @@
 
 ## 5. 다음 할 일
 
-- 2번: E1(범위·분류 축 확정, 판단 기록) → E2(원장 10건 이상, 찾았지만 못 쓴 자료도 셈) → E3. 1주차 마감(10/18)까지 (2026-10-13 멘토 승인)
+- 2번 E2(원장 10건 이상, 찾았지만 못 쓴 자료도 셈) → 두 도메인 E3 골든 세트
 - 1번 E3 골든 세트: 스키마 → 질문·통제 항목 → 기대 답 → 골든 룰과 검사 스크립트 → 예측
 - [07 README](deep/07-graphrag/README.md) 폴더 구조 블록에 e1-decisions.md가 아직 없다(worklog 2026-10-13에 기록된 상태)
 
