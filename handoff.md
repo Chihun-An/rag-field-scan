@@ -1,6 +1,6 @@
 # 인수인계 (handoff)
 
-새 대화를 시작한 Claude 쪽 AI(Claude Code, Cowork)가 이 파일 하나로 과제를 이어받기 위한 문서다. 자세한 내용은 링크한 파일에 있다. 마지막 갱신: 2026-10-14, Claude Code.
+새 대화를 시작한 AI(Claude Code, Cowork, 또는 그 자리를 이어받는 다른 AI)가 이 파일 하나로 과제를 이어받기 위한 문서다. 자세한 내용은 링크한 파일에 있다. 다른 AI로 넘길 때는 8절을 먼저 읽는다. 마지막 갱신: 2026-10-15, Cowork(에드워드 요청으로 직접 고침).
 
 ## 1. 이 저장소가 무엇인가
 
@@ -49,7 +49,7 @@
   - 2번 도메인 변경은 2026-10-13 멘토가 승인했다. 무역 & 기름 실무 정보는 올리지 않는다 ([07 README](deep/07-graphrag/README.md), [AGENTS.md](AGENTS.md))
   - 방산 범위 제한(무기 성능·기술 사양·수출 통제)은 방산 도메인 규칙이라 2번에는 해당하지 않고, 대신 AGENTS.md의 무역 & 기름 실무 정보 금지가 적용된다 ([challenge.md](deep/07-graphrag/challenge.md) "꼭 지킬 것", [AGENTS.md](AGENTS.md) "공개 금지")
 
-## 4. 현재 상태 (2026-10-14)
+## 4. 현재 상태 (2026-10-15)
 
 | 단계 | 1번 AI 컨설팅 | 2번 무역 & 기름 | 근거 |
 |------|---------------|-----------------|------|
@@ -62,12 +62,26 @@
 | E6 그래프 뷰어 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E7 발견 정리 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 
+- E2·E3 경위(자세한 것은 [worklog.md](worklog.md) 2026-10-14~15):
+  - 2번 E2 후속: 원장에 "별표 자체 개정일" 칸을 더해 9·11~14·17번의 별표 자체 개정일을 적었다(2026-10-14 에드워드 결정. 6·7번 고시 별지·별표는 표시 없음). 판정이 얇은 자료 중 원장 4·5·15번은 포함 근거가 원문에 있음을 2026-10-14 Cowork가 확인했고, 같은 날 에드워드가 그대로 두기로 했다. 제외 표의 석유사업법 시행령과 2022-02-03 보도자료는 2026-10-14 에드워드가 제외로 확정했다. 원장 6·7·9번 법령 번호는 2026-10-14 에드워드가 국가법령정보센터에서 확인했다(일치). 관세율표는 원장 17번으로 넣었다. 관세율표 제27류에는 10단위 세번이 없고 호·소호와 번호 매긴 세분 항목만 있다. 관세법 본문은 품목을 세분한 관세·통계통합품목분류표를 재정경제부장관이 고시한다고 정한다(2026-10-14 Cowork가 관세법 본문에서 확인. 10단위 세번이 그 고시에 있는지는 확인 필요).
+  - 1번 E3 골든 세트: 스키마(완료, [schema.md](deep/07-graphrag/ai-consulting/schema.md)) → 질문·통제 항목(완료, [questions.md](deep/07-graphrag/ai-consulting/questions.md)) → 기대 답(완료, 해시 [answer-key.sha256](deep/07-graphrag/ai-consulting/answer-key.sha256)) → 골든 룰과 검사 스크립트(완료, [golden-rules.md](deep/07-graphrag/ai-consulting/golden-rules.md)) → 예측(완료, [predictions.md](deep/07-graphrag/ai-consulting/predictions.md))
+  - 2번 E3 골든 세트: 스키마(완료, [schema.md](deep/07-graphrag/oil-trade/schema.md)) → 질문·통제 항목(완료, [questions.md](deep/07-graphrag/oil-trade/questions.md)) → 기대 답(완료, 해시 [answer-key.sha256](deep/07-graphrag/oil-trade/answer-key.sha256)) → 골든 룰과 검사 스크립트(완료, [golden-rules.md](deep/07-graphrag/oil-trade/golden-rules.md)) → 예측(완료, [predictions.md](deep/07-graphrag/oil-trade/predictions.md))
+  - 2번 기대 답 노출 기록: 정답을 쓴 격리 대화의 마지막 보고에 정답 일부(Q9의 결과 건수, T1·T3의 근거 설명)가 들어갔고, 같은 대화가 worklog에 원문을 읽은 위치를 적었다(커밋 전에 지움). 2번은 사람 그래프가 필수가 아니어서 다시 시작하지 않고 기록만 남겼다. Q9는 질문을 바꾸지 않고 그대로 둔다(에드워드 결정). 품목 분류에 근거 두 개(원문 용어 근거, 분류 근거)를 함께 적는 방식은 [2번 골든 룰](deep/07-graphrag/oil-trade/golden-rules.md)에서 허용했다
+
 ## 5. 다음 할 일
 
-- 2번 E2 후속: 원장에 "별표 자체 개정일" 칸을 더해 9·11~14·17번의 별표 자체 개정일을 적었다(2026-10-14 에드워드 결정. 6·7번 고시 별지·별표는 표시 없음). 판정이 얇은 자료 중 원장 4·5·15번은 포함 근거가 원문에 있음을 2026-10-14 Cowork가 확인했고, 같은 날 에드워드가 그대로 두기로 했다. 제외 표의 석유사업법 시행령과 2022-02-03 보도자료는 2026-10-14 에드워드가 제외로 확정했다. 원장 6·7·9번 법령 번호는 2026-10-14 에드워드가 국가법령정보센터에서 확인했다(일치). 관세율표는 원장 17번으로 넣었다. 관세율표 제27류에는 10단위 세번이 없고 호·소호와 번호 매긴 세분 항목만 있다. 관세법 본문은 품목을 세분한 관세·통계통합품목분류표를 재정경제부장관이 고시한다고 정한다(2026-10-14 Cowork가 관세법 본문에서 확인. 10단위 세번이 그 고시에 있는지는 확인 필요).
-- 2번 E3 골든 세트: 스키마(완료, [schema.md](deep/07-graphrag/oil-trade/schema.md)) → 질문·통제 항목(완료, [questions.md](deep/07-graphrag/oil-trade/questions.md)) → 기대 답(완료, 해시 [answer-key.sha256](deep/07-graphrag/oil-trade/answer-key.sha256)) → 골든 룰과 검사 스크립트(완료, [golden-rules.md](deep/07-graphrag/oil-trade/golden-rules.md)) → 예측(완료, [predictions.md](deep/07-graphrag/oil-trade/predictions.md))
-- 1번 E3 골든 세트: 스키마(완료, [schema.md](deep/07-graphrag/ai-consulting/schema.md)) → 질문·통제 항목(완료, [questions.md](deep/07-graphrag/ai-consulting/questions.md)) → 기대 답(완료, 해시 [answer-key.sha256](deep/07-graphrag/ai-consulting/answer-key.sha256)) → 골든 룰과 검사 스크립트(완료, [golden-rules.md](deep/07-graphrag/ai-consulting/golden-rules.md)) → 예측(완료, [predictions.md](deep/07-graphrag/ai-consulting/predictions.md))
-- [07 README](deep/07-graphrag/README.md) 폴더 구조 블록에 e1-decisions.md가 아직 없다(worklog 2026-10-13에 기록된 상태)
+- 1주차 남은 일(점검 10/18(일) 21:00):
+  - progress/week-1.md 4줄: 에드워드가 쓴다(이번 주에 한 일, 발견, 막힌 점, 다음 주 계획)
+  - 리즈 저장소 상호 검토 1장: 리즈 저장소 주소가 필요하다
+- 2주차(E4·E5)에 할 일:
+  - E4 1번: 에드워드가 사람 그래프 7건([schema.md](deep/07-graphrag/ai-consulting/schema.md) 9절 대상, 7절 형식)을 에이전트 결과를 보기 전에 만들어 커밋한다. 그다음 에이전트 그래프를 2회 이상 만들고, 일치율은 [1번 예측](deep/07-graphrag/ai-consulting/predictions.md) 4절 기준으로 잰다
+  - E4 2번: 사람 그래프는 필수가 아니다. 에이전트 그래프를 기준 그래프(디스크 안)와 [2번 예측](deep/07-graphrag/oil-trade/predictions.md) 5절 기준으로 비교한다
+  - E5: 두 도메인 모두 "검색만"과 "그래프 경유"로 Q1~Q10·T1~T5에 답한다. 답 모양은 각 도메인 golden-rules.md 2절이다. 순서는 골든 룰 검사 스크립트 → 판정기(다른 계열 1회 이상, 6절 Codex 판정 격리) → 채점(디스크를 열어 기대 답과 비교)이다
+  - 기대 답 확인(에드워드): 1번은 사람 그래프를 커밋한 뒤, 2번은 아무 때나(사람 그래프 없음). 확인할 때도 아래 정답 격리 규칙대로 디스크를 연다
+- 남은 작은 일:
+  - [07 README](deep/07-graphrag/README.md) 폴더 구조 블록에 e1-decisions.md가 아직 없다(worklog 2026-10-13에 기록된 상태)
+  - 2번 통관 단계: 근거 자료를 찾으면 [2번 스키마](deep/07-graphrag/oil-trade/schema.md)에 추가한다(에드워드 예정)
+  - 한국 10단위 세번이 관세·통계통합품목분류표(재정경제부장관 고시)에 있는지 확인 필요
 - E3 정답 격리 규칙(2026-10-14 확정. 10/13~14 Cowork 대화의 계획 안을 바탕으로 함):
   - 기대 답은 암호를 건 디스크 이미지(~/Documents/rag-answer-keys.dmg, 열면 /Volumes/rag-answer-keys)에 둔다. 저장소에는 해시만 커밋한다. 이유: Codex와 Cowork 모두 에드워드 맥에 접근할 수 있어 저장소 밖에 두는 것만으로는 막을 수 없다
   - 디스크는 기대 답을 쓸 때와 채점할 때만 열고 끝나면 바로 잠근다. 열려 있는 동안 Codex, Cowork, 다른 Claude Code 대화를 쓰지 않는다
@@ -117,3 +131,26 @@
 - 규칙: [AGENTS.md](AGENTS.md) · 기록: [worklog.md](worklog.md) · 발표 요약: [README.md](README.md)
 - 05 결론: [deep/05-citation/findings.md](deep/05-citation/findings.md)
 - 3주 챌린지: [deep/07-graphrag/README.md](deep/07-graphrag/README.md), [e1-decisions.md](deep/07-graphrag/e1-decisions.md), [ai-consulting/](deep/07-graphrag/ai-consulting/README.md), [shared/](deep/07-graphrag/shared/README.md)
+
+## 8. 다른 AI로 넘길 때 (2026-10-15 추가)
+
+Claude 크레딧이 떨어지는 등으로 다른 AI가 이어받을 때 읽는다. 이 절은 에드워드 요청으로 Cowork가 썼다.
+
+- 먼저 읽을 것: 이 파일, [AGENTS.md](AGENTS.md), [worklog.md](worklog.md)의 끝부분(2026-10-14~15). 정답(기대 답)은 저장소에 없고 암호화 디스크에만 있다
+- 역할을 이어받을 때:
+  - Cowork 자리(설계, 지시문, 검토)를 맡는 AI는 6절 "Cowork 작업 방식"을 그대로 따른다
+  - Claude Code 자리(실행)를 맡는 AI는 AGENTS.md를 그대로 따른다
+  - Codex는 6절대로 판정과 감사만 맡고 백업으로 쓰지 않는다. Codex를 다른 자리에 써야 하면 에드워드가 정하고, 그 경우 E5의 다른 계열 판정기를 새로 정한다(2026-10-15 Cowork 제안)
+- 이번 주에 굳어진 일하는 순서:
+  1. Cowork가 설계를 제안하고 에드워드가 정한다. 판단 기록은 "AI가 제안한 것 / 내가 채택하거나 고친 것 / 그렇게 판단한 이유" 세 항목이고, 이유는 에드워드의 말로 쓴다(보기를 주고 고르게 하면 쉽다)
+  2. Cowork가 넣을 문장을 그대로 담은 지시문을 쓰고, 에드워드가 실행 AI에 붙여 넣는다
+  3. 실행 AI가 파일을 만들고 worklog에 남긴다. commit·push는 하지 않는다
+  4. Cowork가 저장소를 직접 열어 확인한다. 긴 문서는 지시한 문장으로 기대 파일을 만들어 실제 파일과 diff로 대조한다
+  5. 에드워드가 commit·push한다. 단계마다 따로 커밋해 커밋 시각이 작업 순서의 증거가 되게 한다
+- 정답 디스크를 열 때마다(채점, 기대 답 확인):
+  1. 다른 AI 대화(Codex, Cowork, 다른 Claude Code)를 모두 멈춘다
+  2. 터미널에서 `hdiutil attach ~/Documents/rag-answer-keys.dmg`를 실행하고 암호를 넣는다(키체인에 저장하지 않는다)
+  3. 실행 AI는 새 대화로 열고 작업 폴더를 디스크로 잡는다. 지시문 맨 앞에 "작업 폴더는 /Volumes/rag-answer-keys, 저장소는 ~/Documents/GitHub/rag-field-scan, 저장소 파일은 절대 경로로 읽고 쓴다"를 붙인다
+  4. 에드워드는 진행 내용을 읽지 않고 마지막 보고만 읽는다. 지시문에 보고 항목을 정해 두고, 보고와 worklog에 정답 내용이나 원문 위치를 쓰지 말라고 적는다(2번 기대 답 때 둘 다 새었다)
+  5. 그 대화를 삭제하고 `hdiutil detach /Volumes/rag-answer-keys`로 잠근 뒤에 다른 AI 대화를 다시 쓴다
+- 기대 답은 두 도메인 모두 이미 썼다(해시: [1번](deep/07-graphrag/ai-consulting/answer-key.sha256), [2번](deep/07-graphrag/oil-trade/answer-key.sha256)). 앞으로 디스크를 여는 때는 채점과 에드워드의 기대 답 확인뿐이다
