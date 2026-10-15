@@ -2075,3 +2075,46 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 
 - worklog.md: 수정 — "2번 E3 기대 답" 절의 "읽은 파일" 7줄을 1줄로 바꿈, 같은 절 첫 줄 바꿈, 절 앞에 "## 2026-10-15" 항목 머리 추가, 끝에 이 절 추가
 - commit·push는 하지 않음
+
+### 2번 E3 골든 룰과 검사 스크립트 (2026-10-15, 09:33경 마침, Claude Code)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 2번 도메인 골든 룰과 검사 스크립트를 만들고 시험한다.
+
+- 지킬 것: 정답(디스크)과 저장소 밖 파일은 열지 않는다. 웹을 쓰지 않는다. 설치하지 않는다(python 표준 라이브러리만). commit·push 하지 않는다. 1번 스크립트(check-golden-rules.py)와 1번 시험 파일은 고치지 않는다. 시험 파일에는 원장 제목, 원문 머리줄, 일부러 틀린 값, "테스트" 같은 문자열만 쓰고 실제 분류·요건·업무 단계 값을 원문에서 찾아 쓰지 않는다
+
+1. oil-trade/golden-rules.md를 지시문의 시작·끝 표시 사이 내용 그대로 새로 만든다(1~5절: 하는 일과 하지 않는 일, 답의 모양(주장 일곱 칸, 근거 세 칸, 근거 두 개 허용), 골든 룰 G1~G9, 검사 스크립트, 판단 기록)
+2. experiments/scripts/check-golden-rules-oil-trade.py: 맨 위 한국어 주석, G1~G9 구현, 출력·종료 코드는 4절대로 한국어로, 정규화·하이픈 처리는 1번과 같게. 스키마 목록 상수를 oil-trade/schema.md 본문과 대조해 없으면 종료 코드 2. 원장 번호는 oil-trade/sources.csv, G4는 oil-trade/raw/(없으면 종료 코드 2). 한 주장·근거에 걸린 규칙은 모두 보고
+3. experiments/fixtures/에 oil-trade-golden-rules-pass.json, -fail.json(G1~G9 하나씩), -empty.json, -controls-only.json — 항목은 지시대로, 실제 값이 필요한 자리는 "기타: 테스트"
+4. 네 파일로 돌려 experiments/golden-rules-oil-trade-test.md에 실행 명령, 종료 코드, 출력 그대로, 판정 표(사람 판정은 "에드워드 확인 전"). 기대: pass 0, fail 1, empty 2, controls-only 0. 다르면 고치고 기록
+5. oil-trade/README.md 끝에 "골든 룰(E3): [golden-rules.md](golden-rules.md)" 한 줄
+6. handoff.md 4절 표 E3 행 2번 칸의 " 확정" 앞에 골든 룰 링크, 5절 "2번 E3 골든 세트" 줄의 "골든 룰과 검사 스크립트"에 "(완료, …)"
+7. worklog 2026-10-15 항목 끝에 이 절
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 디스크가 마운트되어 있지 않음을 확인함
+- 시험 결과: pass 종료 코드 0(위반 없음), fail 1(G1~G9가 항목마다 하나씩, G7·G8만 한 항목에서 두 조건이 함께 걸림), empty 2(질문 0개), controls-only 0(위반 없음). 처음 돌린 결과가 기대와 같아 스크립트를 고치지 않음
+- 시험 파일에 쓴 값: sources.csv 4·5·8번 제목, ot-17.txt에서 글자가 있는 첫 줄(머리줄), 일부러 틀린 값, "테스트"·"기타: 테스트"·"테스트 분류 값". 실제 분류·요건·업무 단계 값은 찾아 쓰지 않음
+- 분류 체계 상수는 스키마 3절 표기 그대로 "HS(관세율표·WCO)"로 둠(1번 "생성형 AI(LLM 포함)" 정정과 같은 기준)
+- handoff: 지시문을 쓴 뒤 커밋 11e0a4c에서 4절 2번 칸에 "·기대 답 해시(…)"가 들어가 있어, 처음 고치기 코드가 옛 문구를 찾지 못해 멈춤(handoff는 그때 바뀌지 않음, README 줄은 이미 써짐). 지시대로 " 확정" 바로 앞, 곧 기대 답 해시 링크 뒤에 골든 룰 링크를 넣음
+- 1번 스크립트와 1번 시험 파일은 고치지 않음(git status에 나오지 않음)
+- 설치한 도구 없음(python 표준 라이브러리 csv, json, re, pathlib)
+
+#### 읽은 파일
+
+- handoff.md(4절 E3 행과 5절), worklog.md(끝부분), deep/07-graphrag/oil-trade/README.md, schema.md(3절 목록 줄, 스크립트가 본문 대조), sources.csv(4·5·8번 제목, 스크립트가 번호)
+- deep/07-graphrag/oil-trade/raw/ot-17.txt: 글자가 있는 첫 줄만 뽑음. raw 전체는 스크립트(G4)가 읽음. Claude Code가 원문 본문을 화면에 출력하거나 읽지는 않음
+- 디스크, oil-trade/answer-key.sha256, 저장소 밖 파일은 열지 않았고 웹도 쓰지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/oil-trade/golden-rules.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
+- deep/07-graphrag/experiments/scripts/check-golden-rules-oil-trade.py: 새로 만듦
+- deep/07-graphrag/experiments/fixtures/oil-trade-golden-rules-pass.json, -fail.json, -empty.json, -controls-only.json: 새로 만듦
+- deep/07-graphrag/experiments/golden-rules-oil-trade-test.md: 새로 만듦 — 시험 결과
+- deep/07-graphrag/oil-trade/README.md: 수정 — 끝에 지시한 한 줄 추가
+- handoff.md: 수정 — 4절 표 E3 행 2번 칸, 5절 "2번 E3 골든 세트" 줄. 다른 줄은 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음

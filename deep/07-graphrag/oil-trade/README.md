@@ -5,3 +5,4 @@
 실무 정보(거래처, 가격, 계약 조건, 받은 서류)는 이 폴더에 두지 않는다([AGENTS.md](../../../AGENTS.md) "공개 금지").
 그래프 스키마(E3): [schema.md](schema.md)
 골든 세트 질문(E3): [questions.md](questions.md)
+골든 룰(E3): [golden-rules.md](golden-rules.md)
