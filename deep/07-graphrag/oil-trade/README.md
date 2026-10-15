@@ -6,3 +6,4 @@
 그래프 스키마(E3): [schema.md](schema.md)
 골든 세트 질문(E3): [questions.md](questions.md)
 골든 룰(E3): [golden-rules.md](golden-rules.md)
+예측(E3): [predictions.md](predictions.md)

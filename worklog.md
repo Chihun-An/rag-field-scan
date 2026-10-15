@@ -2118,3 +2118,31 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - handoff.md: 수정 — 4절 표 E3 행 2번 칸, 5절 "2번 E3 골든 세트" 줄. 다른 줄은 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 2번 E3 예측 (2026-10-15, 09:39경 마침, Claude Code)
+
+- 예측 문장은 에드워드가 AI 의견 없이 썼고, Cowork는 양식과 판정 기준만 제안했다. 판정 기준은 결과를 보기 전에 정했다. 에드워드는 Q9 결과 일부를 본 뒤에 이 예측을 썼다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 2번 도메인 예측을 deep/07-graphrag/oil-trade/predictions.md로 만들고, 2번 E3를 완료로 표시한다. 그래프를 만들기 전에 커밋할 파일이다.
+
+- 지킬 것: 정답(디스크), 저장소 밖 파일은 열지 않는다. commit·push 하지 않는다
+
+1. oil-trade/predictions.md를 지시문의 시작·끝 표시 사이 내용 그대로 새로 만든다(1~5절: 질문 종류별 예측, 통제 항목 예측, E4 일치율 예측, 두 도메인 비교 예측, 판정 기준)
+2. oil-trade/README.md 끝에 "예측(E3): [predictions.md](predictions.md)" 한 줄
+3. handoff.md 4절 표 E3 행 2번 칸 맨 앞 "진행."을 "완료."로, 그 칸의 " 확정" 바로 앞에 예측 링크. 5절 "2번 E3 골든 세트" 줄 끝 " → 예측"을 " → 예측(완료, …)"으로
+4. worklog 2026-10-15 항목 끝에 이 절. 첫 줄은 그대로
+
+#### 읽은 파일
+
+- handoff.md(4절 E3 행과 5절), deep/07-graphrag/oil-trade/README.md, worklog.md(끝부분)
+- 디스크와 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/oil-trade/predictions.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
+- deep/07-graphrag/oil-trade/README.md: 수정 — 끝에 지시한 한 줄 추가
+- handoff.md: 수정 — 4절 표 E3 행 2번 칸("진행."→"완료.", " 확정" 앞에 예측 링크. 기대 답 해시·골든 룰 링크 뒤에 들어감), 5절 "2번 E3 골든 세트" 줄 끝. 다른 줄은 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
