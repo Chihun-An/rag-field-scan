@@ -2245,3 +2245,28 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - worklog.md: 수정 — 이 절 추가
 - 참고: .gitignore는 아직 추적되지 않은 파일에만 적용된다. 88afef3에 이미 올라간 human-graph-template.xlsx는 이 줄만으로는 저장소에서 빠지지 않고, 추적을 끊으려면 사람이 `git rm --cached`로 따로 처리해야 한다(확인 필요, 이번에는 git 명령을 실행하지 않음)
 - commit·push는 하지 않음
+
+### 사람 그래프 규칙 (2026-10-19, 10:57경 마침, Claude Code)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 사람 그래프를 만들기 전에 파일 이름과 고치기 규칙을 schema.md에 정해 둔다.
+
+- 지킬 것: 지시한 줄만 고친다. raw/ 원문과 저장소 밖 파일은 열지 않는다. commit·push 하지 않는다
+
+1. ai-consulting/schema.md 7절의 "사람 그래프와 에이전트 그래프는 같은 칸의 CSV로 남긴다. 파일 이름은 E4에서 정한다."를 파일 이름(human-graph.csv, agent-graph-1.csv, agent-graph-2.csv)을 정한 줄로 바꾼다
+2. 같은 파일 8절 목록 맨 끝에 "사람 그래프는 커밋한 뒤 고치지 않는다 …" 한 줄을 더한다
+3. worklog 2026-10-19 항목 끝에 이 절. 끝에 앞 절 "확인 필요"가 7e6eb88에서 해결됐다는 줄
+4. 고친 파일 목록을 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/ai-consulting/schema.md(7절·8절 해당 줄), worklog.md(끝부분)
+- raw/ 원문과 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/ai-consulting/schema.md: 수정 — 7절 한 줄 바꿈, 8절 목록 끝에 한 줄 추가. 다른 줄은 고치지 않음(git diff 1줄 삭제, 2줄 추가)
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
+- 앞 절의 '확인 필요'(Claude outputs 추적 끊기)는 7e6eb88에서 해결됨
