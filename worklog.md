@@ -2219,3 +2219,29 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - progress/review-liz-week-1.md: 수정 — 맨 끝에 빈 줄 하나와 추가 검토 절을 덧붙임. 이미 있던 26줄은 고치지 않음(git diff 삭제 0줄)
 - worklog.md: 수정 — "## 2026-10-19" 항목과 이 절 추가
 - commit·push는 하지 않음
+
+### Cowork 출력 폴더 제외 (2026-10-19, 10:54경 마침, Claude Code)
+
+- 이유: 88afef3 커밋에 Claude outputs/human-graph-template.xlsx(사람 그래프 빈 양식)가 함께 올라가서, Cowork 출력 폴더를 저장소에서 제외한다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: Cowork 출력 폴더가 저장소에 올라가지 않게 한다.
+
+- 지킬 것: 지시한 두 파일만 고친다. commit·push 하지 않는다. git 명령은 실행하지 않는다
+
+1. .gitignore 맨 끝에 "# Cowork가 만든 출력 파일은 저장소에 올리지 않는다"와 "Claude outputs/" 두 줄을 덧붙인다
+2. worklog 2026-10-19 항목 끝에 이 절을 남기고, 제외하는 이유를 한 줄 적는다
+3. 고친 파일 목록을 보고한다
+
+#### 읽은 파일
+
+- .gitignore(끝 줄바꿈만 확인), worklog.md(끝부분)
+- git 명령은 실행하지 않음. Claude outputs/ 폴더와 그 안의 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- .gitignore: 수정 — 맨 끝에 두 줄 추가. 기존 줄은 그대로
+- worklog.md: 수정 — 이 절 추가
+- 참고: .gitignore는 아직 추적되지 않은 파일에만 적용된다. 88afef3에 이미 올라간 human-graph-template.xlsx는 이 줄만으로는 저장소에서 빠지지 않고, 추적을 끊으려면 사람이 `git rm --cached`로 따로 처리해야 한다(확인 필요, 이번에는 git 명령을 실행하지 않음)
+- commit·push는 하지 않음

@@ -16,3 +16,5 @@ deep/07-graphrag/ai-consulting/raw/
 deep/07-graphrag/oil-trade/raw/
 # 파이썬 실행 캐시
 __pycache__/
+# Cowork가 만든 출력 파일은 저장소에 올리지 않는다
+Claude outputs/
