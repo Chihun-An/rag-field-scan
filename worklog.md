@@ -2370,3 +2370,31 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - deep/07-graphrag/ai-consulting/schema.md: 수정 — 8절 목록 끝에 1줄 추가
 - worklog.md: 수정 — 이 절 추가
 - predictions.md는 고치지 않음. commit·push는 하지 않음
+
+### 에이전트 그래프 설계 (2026-10-22, 11:18경 마침, Claude Code)
+
+- 범위: 에이전트는 원문 17편 전부로 그래프를 만든다. E5에 17건 전체 그래프가 필요하기 때문이다. E4 비교는 사람 그래프 대상 7건만 잘라서 잰다.
+- 격리: 회차마다 저장소 밖에 새 작업 폴더를 만들고 schema.md, sources.csv, raw/만 복사한다. human-graph.csv, predictions.md, git 기록은 넣지 않는다. Claude Code는 그 폴더에서 새 대화로, 편집 자동 승인을 끄고 연다.
+- 독립: 1회차와 2회차는 다른 폴더, 다른 대화에서 같은 지시문(experiments/agent-graph-prompt.md)으로 돌린다. 지시문은 1회차 전에 커밋한다.
+- 결정: Cowork가 세 안을 냈고 에드워드가 모두 채택했다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 에이전트 그래프 지시문을 저장소에 먼저 남기고, 설계 결정을 기록한다.
+
+- 지킬 것: human-graph.csv, raw/ 원문, 저장소 밖 파일은 열지 않는다. commit·push 하지 않는다
+
+1. deep/07-graphrag/experiments/agent-graph-prompt.md를 지시문의 시작·끝 표시 사이 내용 그대로 새로 만든다(작업 폴더, 할 일 4단계, 하지 않을 것)
+2. worklog 2026-10-22 항목 끝에 이 절과 네 줄
+3. 만든·고친 파일 목록과 agent-graph-prompt.md 줄 수를 보고한다
+
+#### 읽은 파일
+
+- worklog.md(끝부분)
+- human-graph.csv, raw/ 원문, 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/agent-graph-prompt.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
