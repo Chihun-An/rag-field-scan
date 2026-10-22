@@ -2334,3 +2334,39 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - deep/07-graphrag/ai-consulting/human-graph.csv: 이름 바꿈(human-graph-template - human-graph.csv → human-graph.csv), 값·근거 문장이 둘 다 빈 레코드 16개 지움. 다른 레코드는 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### handoff E4 상태 갱신 (2026-10-22, 10:36경 마침, Claude Code)
+
+- 받은 지시: Claude Code가 handoff 4절 표 E4 행 1번 칸을 "진행. 사람 그래프 7건 저장·형식 점검 통과" 정도로 바꿀지 묻고, 에드워드가 하라고 함
+- 읽은 파일: handoff.md(4절 표 E4 행, 맨 위 마지막 갱신 줄)
+- 만든·고친 파일: handoff.md — 4절 표 E4 행 1번 칸만 "진행. 사람 그래프 7건 저장·형식 점검 통과(human-graph.csv 링크, 커밋 전)"으로 바꿈. 2번 칸·근거 칸, 4절 제목 날짜, 맨 위 "마지막 갱신" 줄(2026-10-15, Cowork)은 묻지 않은 곳이라 고치지 않음. worklog.md — 이 절 추가
+- commit·push는 하지 않음
+
+### 기타 판정 규칙과 기록 보완 (2026-10-22, 10:48경 마침, Claude Code)
+
+- 7560fba 커밋에는 human-graph.csv가 들어가지 않았다(커밋 메시지와 다름). 사람 그래프는 065cf33에 들어갔고, 그때까지 에이전트 그래프는 만들지 않았다.
+- 사람 그래프에 "기타" 값이 5줄(사용 기술 4, 고객 산업 1) 있어, 기타를 어떻게 셀지 에이전트 그래프 전에 정했다. Cowork가 세 안(Codex 판정, 설명과 상관없이 일치, 일치율에서 제외)을 냈고 에드워드가 Codex 판정을 골랐다.
+- predictions.md 4절의 E4 일치율 정의는 고치지 않고, 기타 판정은 schema.md 8절을 따른다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 에이전트 그래프 전에 "기타" 값 판정 규칙을 정하고, handoff와 worklog 기록을 바로잡는다.
+
+- 지킬 것: 지시한 줄만 고친다. human-graph.csv, raw/ 원문, 저장소 밖 파일은 열지 않는다. predictions.md는 고치지 않는다. commit·push 하지 않는다
+
+1. handoff.md 4절 표 E4 행의 "(…human-graph.csv…, 커밋 전)"을 "(…, 커밋 065cf33)"으로 바꾼다
+2. ai-consulting/schema.md 8절 목록 맨 끝에 닫힌 목록 관계의 "기타: …" 값 판정 규칙 한 줄을 더한다
+3. worklog 2026-10-22 항목 끝에 이 절과 세 문장
+4. 고친 파일 목록과 파일별로 바뀐 줄 수를 보고한다
+
+#### 읽은 파일
+
+- handoff.md(4절 E4 행), deep/07-graphrag/ai-consulting/schema.md(8절 끝 줄), worklog.md(끝부분)
+- human-graph.csv, raw/ 원문, 저장소 밖 파일은 열지 않음. 커밋 7560fba·065cf33의 내용은 Claude Code가 확인하지 않음(받은 문장 그대로)
+
+#### 만든·고친 파일
+
+- handoff.md: 수정 — 4절 표 E4 행의 "커밋 전"을 "커밋 065cf33"으로(1줄)
+- deep/07-graphrag/ai-consulting/schema.md: 수정 — 8절 목록 끝에 1줄 추가
+- worklog.md: 수정 — 이 절 추가
+- predictions.md는 고치지 않음. commit·push는 하지 않음

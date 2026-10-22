@@ -57,7 +57,7 @@
 | E1 | 완료(분류 축 확정) | 완료 | [e1-decisions.md](deep/07-graphrag/e1-decisions.md) |
 | E2 | 완료. 원장 17건, 제외 19건(커밋 0d9f7e2) | 완료. 원장 17건, 제외 24건(커밋 5e4c595에 원장 16건·제외 23건, 2026-10-14 원장 관세율표 1건·제외 관세법 본문 1건 추가) | 1번 [sources.csv](deep/07-graphrag/ai-consulting/sources.csv), [excluded.csv](deep/07-graphrag/ai-consulting/excluded.csv) / 2번 [sources.csv](deep/07-graphrag/oil-trade/sources.csv), [excluded.csv](deep/07-graphrag/oil-trade/excluded.csv) |
 | E3 골든 세트 | 완료. 스키마([schema.md](deep/07-graphrag/ai-consulting/schema.md))·질문([questions.md](deep/07-graphrag/ai-consulting/questions.md))·기대 답 해시([answer-key.sha256](deep/07-graphrag/ai-consulting/answer-key.sha256))·골든 룰([golden-rules.md](deep/07-graphrag/ai-consulting/golden-rules.md))·예측([predictions.md](deep/07-graphrag/ai-consulting/predictions.md)) 확정 | 완료. 스키마([schema.md](deep/07-graphrag/oil-trade/schema.md))·질문([questions.md](deep/07-graphrag/oil-trade/questions.md))·기대 답 해시([answer-key.sha256](deep/07-graphrag/oil-trade/answer-key.sha256))·골든 룰([golden-rules.md](deep/07-graphrag/oil-trade/golden-rules.md))·예측([predictions.md](deep/07-graphrag/oil-trade/predictions.md)) 확정 | [challenge.md](deep/07-graphrag/challenge.md) |
-| E4 사람 그래프 vs 에이전트 그래프 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
+| E4 사람 그래프 vs 에이전트 그래프 | 진행. 사람 그래프 7건 저장·형식 점검 통과([human-graph.csv](deep/07-graphrag/ai-consulting/human-graph.csv), 커밋 065cf33) | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E5 답변 비교 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E6 그래프 뷰어 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E7 발견 정리 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
