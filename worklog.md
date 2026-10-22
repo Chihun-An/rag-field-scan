@@ -2552,3 +2552,38 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - deep/07-graphrag/experiments/e4-codex-input-run1.md, e4-codex-input-run2.md, e4-codex-key.json: 새로 만듦(스크립트 출력)
 - worklog.md: 수정 — 이 절 추가
 - 그래프 CSV는 고치지 않음. commit·push는 하지 않음
+
+### E4 Codex 판정과 열린 값 결과 (2026-10-22, 13:57경 마침, Claude Code)
+
+- Codex 판정은 Codex 앱에서 회차마다 새 대화로 했다. 프로젝트는 빈 폴더 ~/Documents/codex-judge-empty를 골랐고, 입력 파일(e4-codex-input-run1.md, run2.md)을 그대로 붙여 넣었다. 답은 에드워드가 e4-codex-output-run1.md, run2.md로 저장했다.
+- Codex 화면에 파일·명령·인터넷 사용 기록은 없었고, 답의 마지막 줄에도 사용했다는 말이 없다. 판정 번호는 run1 90개, run2 88개로 빠짐없이 들어갔다.
+- 실수 기록: run1 입력을 Codex에 보내기 전에 에드워드가 Claude Code 대화에 잘못 붙여 넣었고, Cowork 대화에도 붙여 넣었다. 그 대화들의 답은 쓰지 않았고 저장소에 남은 파일은 없다. Codex는 그 전에 이 내용을 본 적이 없다.
+- 실수 기록: run2 답을 처음 저장할 때 클립보드에 명령 글자가 들어 있어 파일이 잘못 저장됐다. 답을 다시 복사해 같은 파일에 덮어썼다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: Codex 판정으로 열린 값 결과를 계산하고 E4 1번 도메인 측정을 기록한다.
+
+- 지킬 것: 그래프 CSV와 Codex 출력 파일은 고치지 않는다. raw/ 원문과 저장소 밖 파일은 열지 않는다. commit·push 하지 않는다
+
+1. compare-graphs.py open run1과 open run2를 기본 경로로 돌린다
+2. worklog 2026-10-22 항목 끝에 이 절(회차별 열린 값 합계와 네 문장)
+3. e4-open-results-run1.md·run2.md 전체와 만든·고친 파일 목록을 보고한다
+
+#### 결과
+
+- open run1(종료 코드 0): 합계 재현율(사람 값) 36/46(78.3%), 정밀도(에이전트 값) 36/44(81.8%). 관계별 고객 7/7·7/7, 해결하려던 병목 14/18·15/17, 낸 성과 15/21·14/20. "정보 부족" 0개, 빠진 번호·읽지 못한 번호·두 번 나온 번호·열쇠에 없는 번호 없음
+- open run2(종료 코드 0): 합계 재현율 34/46(73.9%), 정밀도 35/42(83.3%). 관계별 고객 7/7·7/7, 해결하려던 병목 14/18·15/18, 낸 성과 13/21·13/17. "정보 부족" 0개, 빠진 번호 등 없음
+- 스크립트가 읽은 번호 수(사람+에이전트)는 run1 46+44=90, run2 46+42=88로 입력 파일 번호 수와 같음
+- 앞 절의 닫힌 목록 결과(run1 26/36·26/29, run2 26/36·26/30)와 합치면 E4 1번 도메인 측정이 끝났다
+
+#### 읽은 파일
+
+- worklog.md(끝부분). e4-codex-output-run1.md·run2.md와 e4-codex-key.json은 스크립트가 읽음(Claude Code가 판정 내용을 출력하거나 읽지 않음)
+- raw/ 원문과 저장소 밖 파일(~/Documents/codex-judge-empty 포함)은 열지 않음. Codex 화면 확인과 저장 경위는 받은 문장 그대로 적음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e4-open-results-run1.md, e4-open-results-run2.md: 새로 만듦(스크립트 출력)
+- worklog.md: 수정 — 이 절 추가
+- 그래프 CSV와 Codex 출력 파일은 고치지 않음. commit·push는 하지 않음
