@@ -2433,3 +2433,40 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - deep/07-graphrag/experiments/agent-graph-1-report.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - agent-graph-1.csv는 고치지 않음. commit·push는 하지 않음
+
+### 에이전트 그래프 2회차 (2026-10-22, 13:09경 마침, Claude Code)
+
+- 작업 폴더: ~/Documents/rag-agent-run-2(새 Claude Code 대화, 편집 자동 승인 끔)
+- 지시문: experiments/agent-graph-prompt.md(1b6f63b) 그대로
+- 모델: Claude Opus 5.5
+- 결과 파일: 에이전트가 저장한 agent-graph.csv를 에드워드가 deep/07-graphrag/ai-consulting/agent-graph-2.csv로 복사함
+- 에이전트 보고: deep/07-graphrag/experiments/agent-graph-2-report.md에 둠
+- 2회차 대화는 첫 보고에서 지시문 4번 항목(모델 이름, 사례별 줄 수, 판단이 어려웠던 점)을 빠뜨렸다. 에드워드가 "파일은 고치지 말고 보고를 마저 해 달라"고 한 번 더 보냈는데, 그 뒤 대화가 원문을 다시 읽고 파일을 다시 쓴 것으로 보인다(에드워드 기억으로는 쓰기 승인 창이 떴다). 다시 쓴 뒤에도 182줄, 기타 0개로 첫 보고와 같다. 2회차 대화는 1회차 결과를 보지 않았고 추출 방법에 관한 말은 덧붙이지 않았으므로, Cowork 제안대로 이 파일을 2회차로 쓴다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 에이전트 그래프 2회차 결과를 점검하고 기록한다.
+
+- 지킬 것: human-graph.csv, raw/ 원문, 저장소 밖 파일은 열지 않는다. agent-graph-2.csv는 고치지 않는다(실험 결과다). commit·push 하지 않는다
+
+1. check-graph-csv.py로 agent-graph-2.csv를 점검한다. 위반이 나와도 파일은 고치지 않고 출력만 기록한다
+2. experiments/agent-graph-2-report.md를 지시문의 시작·끝 표시 사이 내용 그대로 새로 만든다
+3. worklog 2026-10-22 항목 끝에 이 절(작업 폴더, 지시문, 모델, 복사, 점검 출력, 보고 위치, 다시 쓴 경위 문장)
+4. 점검 출력 전체와 만든·고친 파일 목록을 보고한다
+
+#### 점검 결과
+
+- 명령: `python3 deep/07-graphrag/experiments/scripts/check-graph-csv.py deep/07-graphrag/ai-consulting/agent-graph-2.csv`
+- 출력: "사례 17건, 줄 182개, 위반 0건", 종료 코드 0
+- 추가 확인(숫자만): 1회차·2회차 파일의 사례별 줄 수가 각 보고의 표와 모두 같고, "기타: "로 시작하는 값은 두 파일 모두 0개
+
+#### 읽은 파일
+
+- worklog.md(끝부분). agent-graph-1.csv·agent-graph-2.csv는 스크립트가 사례 번호와 값 머리("기타: " 여부)만 셈(Claude Code가 내용을 출력하거나 읽지 않음)
+- human-graph.csv, raw/ 원문, 저장소 밖 파일(~/Documents/rag-agent-run-2 포함)은 열지 않음. 작업 폴더·지시문 커밋·모델·다시 쓴 경위는 받은 내용 그대로 적음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/agent-graph-2-report.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- agent-graph-2.csv는 고치지 않음. commit·push는 하지 않음
