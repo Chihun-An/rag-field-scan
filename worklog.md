@@ -3165,3 +3165,9 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - deep/07-graphrag/ai-consulting/golden-rules.md, deep/07-graphrag/oil-trade/golden-rules.md: 수정 — 맨 끝에 "## 6. 변경 기록" 절 추가. 2절은 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### E5 T5 진술 넣기 (2026-10-22, 16:48경 기록, Claude Code)
+
+- 정답 디스크를 연 격리 Claude Code 대화(작업 폴더 /Volumes/rag-answer-keys, 새 대화, 편집 자동 승인 끔)가 Cowork가 쓴 지시문대로 두 도메인의 해시를 확인하고, t5-statement.md에서 진술 글만 꺼내 e5-questions-ai-consulting.md와 e5-questions-oil-trade.md의 T5 자리에 넣었다. 기대 답(틀린 부분과 바로잡은 내용)은 옮기지 않았다.
+- 바뀐 줄은 질문 파일마다 T5 한 줄씩이다. 디스크가 잠긴 것은 Cowork가 확인했다(맥에서 ls /Volumes). 격리 대화의 삭제 여부는 에드워드가 했다고 전했다.
+- 이 대화는 worklog를 쓰지 않았다. 이 절은 디스크를 잠근 뒤 저장소 대화가 썼다.
