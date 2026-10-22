@@ -2308,3 +2308,29 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - worklog.md: 수정 — "## 2026-10-22" 항목과 이 절 추가
 - human-graph.csv는 없어서 만들거나 고치지 않음
 - commit·push는 하지 않음
+
+### 사람 그래프 저장과 형식 점검 — 이어서 (2026-10-22, 10:35경 마침, Claude Code)
+
+#### 받은 지시
+
+- 에드워드가 human-graph.csv를 추가한 뒤, 앞 절("사람 그래프 저장과 형식 점검")에서 파일이 없어 하지 못한 1번(값과 근거 문장이 둘 다 빈 줄 지우기)과 4번(형식 검사)을 이어서 하라고 함. 지킬 것은 앞 절과 같음(값과 근거 문장 내용은 보고·worklog에 쓰지 않음, 값을 고치지 않음, raw/와 저장소 밖 파일은 열지 않음, commit·push 하지 않음)
+
+#### 한 일과 결과
+
+- 파일 이름: 들어온 파일은 deep/07-graphrag/ai-consulting/human-graph-template - human-graph.csv(구글 시트 내보내기 이름으로 보임)였다. schema.md 7절에서 정한 이름에 맞춰 human-graph.csv로 바꿈(`mv -n`, 내용은 그대로)
+- 파일 구조: 머리줄 "사례 번호,관계,값,근거 문장", CSV 레코드 106개(머리줄 포함), 모두 4칸. 레코드 끝은 CRLF, BOM 없음, 끝 줄바꿈 없음. 근거 문장 13곳에 따옴표로 묶인 줄바꿈(LF)이 있음
+- 1번: 값과 근거 문장이 둘 다 빈 레코드 16개를 지움(원래 CSV 레코드 순번 10, 27, 28, 42, 43, 51, 52, 58, 72, 73, 82, 88, 99, 100, 102, 103). 16개 모두 사례 번호와 관계만 채워져 있었다. CRLF 단위로 레코드를 나눠 그 16개만 빼고 다시 이었고, 남은 90개 레코드가 원본과 같음을 csv 모듈로 확인함. CRLF·BOM 없음·끝 줄바꿈 없음은 그대로 둠
+- 4번: `python3 deep/07-graphrag/experiments/scripts/check-graph-csv.py deep/07-graphrag/ai-consulting/human-graph.csv` 출력 "사례 7건, 줄 89개, 위반 0건", 종료 코드 0
+- 사례 번호는 1, 4, 6, 8, 10, 12, 15로 schema.md 9절의 사람 그래프 대상 7건과 같음
+- 참고: 스크립트의 줄 번호는 CSV 레코드 순번이다. 이 파일은 근거 문장 안에 줄바꿈이 있어 레코드 순번과 파일 줄 번호가 다르다(이번에는 위반이 없어 영향 없음)
+
+#### 읽은 파일
+
+- deep/07-graphrag/ai-consulting/human-graph.csv: 구조(칸 수, 줄바꿈, 빈 칸 여부)와 사례 번호만 스크립트로 봄. 값과 근거 문장 내용은 화면에 출력하거나 읽지 않음
+- raw/ 원문과 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/ai-consulting/human-graph.csv: 이름 바꿈(human-graph-template - human-graph.csv → human-graph.csv), 값·근거 문장이 둘 다 빈 레코드 16개 지움. 다른 레코드는 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
