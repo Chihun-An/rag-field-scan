@@ -2655,3 +2655,53 @@ AI가 제안한 것: Cowork가 1번과 같은 방식(원장 17편 전부, 2회, 
 - deep/07-graphrag/experiments/agent-graph-prompt-oil-trade.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 2번 그래프 CSV 형식 검사 스크립트 (2026-10-22, 14:37경 마침, Claude Code)
+
+- 스크립트: experiments/scripts/check-graph-csv-oil-trade.py. 1번 check-graph-csv.py와 같은 방식으로 줄 번호와 규칙 이름만 내고, 값과 근거 문장 내용은 내지 않는다.
+- 1번에 없는 검사: 근거 문장이 그 원장의 원문에 있는지 대조한다(정규화는 2번 골든 룰 검사 스크립트와 같다).
+- schema.md가 정하지 않은 모양(한 칸에 목록 값 여러 개, 업무 단계를 번호로 쓰기)은 위반이 아니라 경고로 센다. 비교 방법을 정할 때 이 숫자를 쓴다.
+- 쓸 곳은 에이전트 그래프 1·2회차다. 기준 그래프에도 돌릴지는 비교 방법을 정할 때 정한다.
+
+#### 판단 기록 — AI 제안 / 내 선택 / 이유
+
+AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검사 스크립트를 제안했다. 근거 문장이 원장 원문에 있는지 대조할지(넣기, 빼기)와, schema.md가 정하지 않은 모양(주체 여러 개, 업무 단계 번호)을 어떻게 셀지(경고, 위반, 안 보기) 보기를 냈다.
+
+내가 채택하거나 고친 것: 원문 대조를 넣고, 정하지 않은 모양은 경고로만 센다. 둘 다 Cowork 추천과 같다.
+
+그렇게 판단한 이유: 원문에 없는 문장을 근거라고 붙이면 "원문에 적힌 것만"이라는 원칙이 무너지니, 비교 전에 기계로 걸러 두고 싶다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 2번 도메인(무역 & 기름) 그래프 CSV 형식 검사 스크립트를 에이전트 그래프 1회차 전에 만들고, 지어낸 시험 파일로 확인한 뒤 결과를 .md로 남긴다.
+
+- 지킬 것: 기준 그래프와 정답 디스크를 포함해 저장소 밖 파일은 열지 않는다. oil-trade/raw/는 스크립트가 근거 문장 대조에만 쓰고, 시험 파일용으로 ot-17.txt의 글자가 있는 첫 줄만 쓴다. 시험 파일에는 그 머리줄, "테스트" 같은 문자열, 스키마 목록 이름, 일부러 틀린 값만 쓴다. 스크립트와 보고에는 값·근거 문장 내용을 출력하지 않는다. [worklog] 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. experiments/scripts/check-graph-csv-oil-trade.py: 머리줄 9칸, 목록 상수는 2번 골든 룰 검사 스크립트와 같게, 위반 규칙 9개(columns, relation, subject, empty, extra-field, closed-list, ledger, not-in-raw, duplicate), 경고 규칙 2개(multi-value, stage-number), 관계별·주어별 줄 수, 종료 코드 0·1·2
+2. 시험 파일 oil-trade-graph-csv-pass.csv, -fail.csv, -warn.csv. 머리줄이 틀린 파일은 저장소 밖 임시 폴더에서만 확인
+3. experiments/check-graph-csv-oil-trade-test.md에 실행 명령, 출력 전체, 판정 표(사람 확인은 "에드워드 확인 전"), 설치 여부
+4. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+5. 만든·고친 파일, 스크립트 줄 수, 시험 결과, fail 파일 규칙별 줄 번호, 기대와 다른 결과를 보고한다
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함
+- pass: 줄 4개, 위반 0건, 경고 0건, 종료 코드 0
+- fail: 줄 2 columns, 줄 3 relation, 줄 4 subject, 줄 5 empty, 줄 6 extra-field, 줄 7 closed-list, 줄 8 ledger, 줄 9 not-in-raw, 줄 10·11 duplicate. 줄 10개, 위반 10건, 경고 0건, 종료 코드 1
+- warn: 줄 2 경고 multi-value, 줄 3·4 경고 stage-number. 줄 3개, 위반 0건, 경고 3건, 종료 코드 0
+- 머리줄 틀린 파일(스크래치 폴더): "줄 1: header", 종료 코드 2
+- 모두 기대와 같아 스크립트를 고치지 않음. 설치한 도구 없음
+
+#### 읽은 파일
+
+- worklog.md(날짜 항목 머리와 끝부분), check-golden-rules-oil-trade.py(목록 상수와 normalize·in_raw), oil-trade/schema.md(4절 표의 번호 줄 위치만)
+- oil-trade/raw/는 스크립트가 근거 문장 대조에만 읽음. Claude Code가 원문 내용을 출력하거나 읽지 않음(시험 파일에는 ot-17.txt 머리줄만 씀, 앞 작업에서 확인한 줄)
+- 기준 그래프, 정답 디스크, 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py: 새로 만듦(181줄)
+- deep/07-graphrag/experiments/fixtures/oil-trade-graph-csv-pass.csv, -fail.csv, -warn.csv: 새로 만듦
+- deep/07-graphrag/experiments/check-graph-csv-oil-trade-test.md: 새로 만듦
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
