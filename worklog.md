@@ -2470,3 +2470,50 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - deep/07-graphrag/experiments/agent-graph-2-report.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - agent-graph-2.csv는 고치지 않음. commit·push는 하지 않음
+
+### E4 비교 방법과 스크립트 (2026-10-22, 13:36경 마침, Claude Code)
+
+- 비교 방법은 에이전트 그래프 2회를 만든 뒤, 비교 결과를 보기 전에 정했다(Cowork 제안, 에드워드 채택). 실제 그래프로는 아직 돌리지 않았다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: E4 비교 방법과 Codex 판정 규칙을 문서로 남기고, 비교 스크립트를 만들어 지어낸 데이터로만 시험한다. 실제 그래프로는 아직 돌리지 않는다.
+
+- 지킬 것: human-graph.csv, agent-graph-1.csv, agent-graph-2.csv는 이번에 열거나 스크립트로 돌리지 않는다. raw/ 원문과 저장소 밖 파일은 열지 않는다. commit·push 하지 않는다
+
+1. experiments/e4-method.md를 [방법] 내용 그대로 만든다
+2. shared/codex-judge-rules.md를 [규칙] 내용 그대로 만든다
+3. experiments/scripts/compare-graphs.py(closed, make-codex, open run1|run2, --base·--out)를 표준 라이브러리만으로 만든다
+4. fixtures/compare/에 지어낸 값으로 human-graph.csv, agent-graph-1.csv, agent-graph-2.csv, e4-codex-output-run1.md를 만들고, 손으로 계산한 기대값을 expected.md에 적은 뒤 closed, make-codex, open run1을 돌려 비교한다
+5. worklog 2026-10-22 항목 끝에 이 절
+6. 시험 결과와 만든·고친 파일 목록을 보고한다
+
+#### 한 일과 결과
+
+- 시험 순서: 지어낸 CSV 세 개와 expected.md(손 계산 기대값)를 먼저 쓰고, closed와 make-codex를 돌린 뒤, make-codex가 만든 열쇠에 맞춰 e4-codex-output-run1.md의 A/B 번호를 적고 open run1을 돌렸다
+- closed: run1·run2의 관계별·합계 일치율·정밀도, 수행 포함 참고값, 기타 줄 수(사람 1줄, Codex 판정 필요 run1 1줄·run2 0줄), 자카드 지수(전체 5/13 38.5%, 비교 대상 4/10 40.0%)가 모두 기대값과 같음. 종료 코드 0
+- make-codex: 입력 파일 두 개와 열쇠 파일이 생김. 입력 파일마다 "### 사례 N · 관계" 제목 6개, run1 값 개수가 기대와 같음. 두 입력 파일 모두 "사람"·"에이전트" 낱말 0회. 종료 코드 0
+- open run1: 관계별·합계 재현율·정밀도(합계 3/6 50.0%·3/6 50.0%), "정보 부족" 1개, 판정이 빠진 번호 2-병목-A2(에이전트 "병목 Z")가 모두 기대값과 같음. 종료 코드 0
+- 기대와 다르게 나온 것이 없어 스크립트를 고치지 않음
+
+#### 구현에서 정한 것
+
+- 닫힌 목록의 기타 값은 글자가 같아도 자동으로 일치로 세지 않고, "양쪽 모두 기타라 Codex 판정이 필요한 사람 줄"(같은 사례·관계에 에이전트 기타가 있는 사람 기타 줄)로 따로 센다. 표에서는 불일치로 셈
+- make-codex 입력 파일 맨 위에는 codex-judge-rules.md 파일 전체(제목과 "handoff.md 6절의 초안을 …" 문장 포함)를 그대로 넣었다. 고정 문장(규칙·할 일)에 "사람"·"에이전트"가 있으면 종료 코드 2로 멈춘다. 값 자체에 그 낱말이 들어 있는지는 검사하지 않는다(실제 그래프로 만들 때 확인 필요)
+- A/B는 random.Random(20261022) 하나로 run1 → run2, 사례 번호 순, 관계(고객 → 해결하려던 병목 → 낸 성과) 순으로 정한다. 값 안의 줄바꿈과 겹친 공백은 한 칸으로 줄인다
+- open: "|"로 시작하고 첫 칸이 번호 꼴인 줄만 읽는다. 판정 칸이 "같음"으로 시작하면 짝 있음, "없음"·"정보 부족"·빠진 번호·읽지 못한 판정은 짝 없음. 두 번 나온 번호는 처음 것만 쓰고 따로 적는다
+- 비교 대상 사례는 사람 그래프의 사례 번호. 자카드의 "전체"는 두 회차에 나온 모든 사례(실제 그래프에서는 17건)
+
+#### 읽은 파일
+
+- worklog.md(끝부분). 이번에 만든 fixtures/compare/ 파일과 스크립트 출력
+- human-graph.csv, agent-graph-1.csv, agent-graph-2.csv는 열지 않았고 스크립트로도 돌리지 않음. raw/ 원문과 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e4-method.md: 새로 만듦 — 받은 내용 그대로
+- deep/07-graphrag/shared/codex-judge-rules.md: 새로 만듦 — 받은 내용 그대로
+- deep/07-graphrag/experiments/scripts/compare-graphs.py: 새로 만듦
+- deep/07-graphrag/experiments/fixtures/compare/: 새로 만듦 — 지어낸 입력(human-graph.csv, agent-graph-1.csv, agent-graph-2.csv, e4-codex-output-run1.md), expected.md, 스크립트가 만든 결과(e4-closed-results.md, e4-codex-input-run1.md, e4-codex-input-run2.md, e4-codex-key.json, e4-open-results-run1.md)
+- worklog.md: 수정 — 이 절 추가
+- 설치한 도구 없음(python 표준 라이브러리 argparse, csv, json, random, re, pathlib). commit·push는 하지 않음
