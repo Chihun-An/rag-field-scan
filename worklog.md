@@ -2517,3 +2517,38 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - deep/07-graphrag/experiments/fixtures/compare/: 새로 만듦 — 지어낸 입력(human-graph.csv, agent-graph-1.csv, agent-graph-2.csv, e4-codex-output-run1.md), expected.md, 스크립트가 만든 결과(e4-closed-results.md, e4-codex-input-run1.md, e4-codex-input-run2.md, e4-codex-key.json, e4-open-results-run1.md)
 - worklog.md: 수정 — 이 절 추가
 - 설치한 도구 없음(python 표준 라이브러리 argparse, csv, json, random, re, pathlib). commit·push는 하지 않음
+
+### E4 닫힌 목록 결과와 Codex 입력 (2026-10-22, 13:38경 마침, Claude Code)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 실제 그래프로 닫힌 목록 비교를 계산하고, Codex에 줄 열린 값 입력 파일을 만든다.
+
+- 지킬 것: 그래프 CSV는 고치지 않는다. raw/ 원문과 저장소 밖 파일은 열지 않는다. commit·push 하지 않는다
+
+1. compare-graphs.py closed를 기본 경로로 돌린다
+2. compare-graphs.py make-codex를 기본 경로로 돌린다
+3. worklog 2026-10-22 항목 끝에 이 절(닫힌 목록 합계 숫자)
+4. e4-closed-results.md 전체, 입력 파일 두 개의 번호 개수, 만든 파일 목록을 보고한다
+
+#### 결과
+
+- closed(종료 코드 0), 비교 대상 사례 1, 4, 6, 8, 10, 12, 15
+  - run1 합계: 일치율(재현율) 26/36(72.2%), 정밀도 26/29(89.7%). 참고(수행 포함) 33/43(76.7%), 33/36(91.7%)
+  - run2 합계: 일치율(재현율) 26/36(72.2%), 정밀도 26/30(86.7%). 참고(수행 포함) 33/43(76.7%), 33/37(89.2%)
+  - 사람 쪽 기타 5줄, 양쪽 모두 기타라 Codex 판정이 필요한 줄은 두 회차 모두 0줄(에이전트 기타 0개). 기타 5줄은 불일치로 셈
+  - 자카드 지수(수행 제외): 전체 17건 66/74(89.2%), 비교 대상 7건 28/31(90.3%)
+- make-codex(종료 코드 0): 입력 파일마다 "### 사례 N · 관계" 제목 21개(7건 × 3관계), "(값 없음)" 0개. 번호 개수(A·B 합계) run1 90개, run2 88개
+- 낱말 확인: 고정 문장에는 "사람"·"에이전트"가 없다. 값 쪽에서 run2 입력 파일 66줄(번호 4-병목-B2)에 "사람"이 한 번 나온다. 열쇠로 보면 이 값은 에이전트 쪽(run2 사례 4 병목은 사람이 A)이고, 병목을 설명하는 말 속의 낱말이라 어느 쪽 값인지 드러내는 표기는 아니라고 보고 그대로 둠. run1 입력 파일에는 없음
+
+#### 읽은 파일
+
+- worklog.md(끝부분). human-graph.csv·agent-graph-1.csv·agent-graph-2.csv는 스크립트가 읽음. 낱말 확인 때 run2 입력 파일의 해당 줄 번호와 값 번호만 출력함
+- raw/ 원문과 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e4-closed-results.md: 새로 만듦(스크립트 출력)
+- deep/07-graphrag/experiments/e4-codex-input-run1.md, e4-codex-input-run2.md, e4-codex-key.json: 새로 만듦(스크립트 출력)
+- worklog.md: 수정 — 이 절 추가
+- 그래프 CSV는 고치지 않음. commit·push는 하지 않음
