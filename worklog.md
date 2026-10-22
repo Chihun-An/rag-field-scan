@@ -2270,3 +2270,41 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
 - 앞 절의 '확인 필요'(Claude outputs 추적 끊기)는 7e6eb88에서 해결됨
+
+## 2026-10-22
+
+### 사람 그래프 저장과 형식 점검 (2026-10-22, 10:29경 마침, Claude Code)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 사람 그래프 CSV의 빈 줄을 정리하고, 그래프 CSV 형식 검사 스크립트를 만들어 돌린다.
+
+- 지킬 것: raw/ 원문과 저장소 밖 파일은 열지 않는다. human-graph.csv의 값과 근거 문장 내용은 보고·worklog에 쓰지 않는다(줄 번호와 규칙 이름만). 값을 고치지 않는다. commit·push 하지 않는다
+
+1. ai-consulting/human-graph.csv에서 값과 근거 문장이 둘 다 빈 줄만 지우고 지운 줄 수를 센다
+2. experiments/scripts/check-graph-csv.py를 표준 라이브러리만으로 만든다(utf-8-sig로 읽음, 규칙 header·columns·case-id·relation·empty·closed-list·source-ledger·count·duplicate, 위반마다 "줄 N: 규칙 이름", 끝에 "사례 X건, 줄 Y개, 위반 Z건", 종료 코드 0·1·2)
+3. 지어낸 값으로 fixtures/graph-csv-pass.csv, graph-csv-fail.csv를 만들어 종료 코드 0과 1을 확인한다
+4. human-graph.csv에 스크립트를 돌린다
+5. worklog에 이 절. 값과 근거 문장 내용은 적지 않는다
+6. 지운 빈 줄 수, fixtures 시험 결과, human-graph.csv 점검 출력 전체, 만든·고친 파일 목록을 보고한다
+
+#### 한 일과 결과
+
+- 1번·4번은 하지 못함: deep/07-graphrag/ai-consulting/human-graph.csv가 없었다. 저장소 전체에서 이름으로 찾았을 때 비슷한 파일은 Claude outputs/human-graph-template.xlsx(빈 양식, 열지 않음) 하나뿐이었다. 지운 빈 줄 0, 점검 출력 없음. 스크립트를 이 경로로 돌리면 "파일이 없음"과 종료 코드 2가 나옴
+- 2번: check-graph-csv.py를 만듦. 줄 번호는 CSV 레코드 순번(머리줄이 1)이고, 값 안에 줄바꿈이 없으면 파일 줄 번호와 같다. count는 사례 번호가 1~17이고 관계가 7개 중 하나인 줄만 센다. duplicate는 겹친 줄을 모두 보고한다. 칸의 앞뒤 공백은 지우고 비교한다
+- 3번: graph-csv-pass.csv 종료 코드 0(사례 2건, 줄 11개, 위반 0건). graph-csv-fail.csv 종료 코드 1(줄 2 columns, 줄 3 case-id, 줄 4 relation, 줄 5 empty, 줄 6 closed-list, 줄 7 source-ledger, 줄 12·13 duplicate, 사례 3 count 고객 — 9개 규칙 모두 기대한 자리에서 걸림, 사례 2건, 줄 12개, 위반 9건). 머리줄이 틀린 파일(스크래치 폴더 임시 파일)은 "줄 1: header"와 종료 코드 2
+- 시험 파일 값은 모두 지어낸 것(테스트 고객·테스트 병목·테스트 문장 등)과 스키마 목록 이름뿐이다
+- 설치한 도구 없음(python 표준 라이브러리 csv, collections, pathlib)
+
+#### 읽은 파일
+
+- worklog.md(끝부분). 저장소 파일 이름 검색(find)과 git status·git log(읽기만)
+- raw/ 원문, Claude outputs/ 안의 파일, 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/scripts/check-graph-csv.py: 새로 만듦
+- deep/07-graphrag/experiments/fixtures/graph-csv-pass.csv, graph-csv-fail.csv: 새로 만듦
+- worklog.md: 수정 — "## 2026-10-22" 항목과 이 절 추가
+- human-graph.csv는 없어서 만들거나 고치지 않음
+- commit·push는 하지 않음
