@@ -2398,3 +2398,38 @@ AI가 제안한 것: Cowork는 방산을 유지할 때와 무역 & 기름으로 
 - deep/07-graphrag/experiments/agent-graph-prompt.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 에이전트 그래프 1회차 (2026-10-22, 12:08경 마침, Claude Code)
+
+- 작업 폴더: ~/Documents/rag-agent-run-1(새 Claude Code 대화, 편집 자동 승인 끔)
+- 지시문: experiments/agent-graph-prompt.md(1b6f63b) 그대로
+- 모델: Claude Opus 5.5
+- 결과 파일: 에이전트가 저장한 agent-graph.csv를 에드워드가 deep/07-graphrag/ai-consulting/agent-graph-1.csv로 복사함
+- 에이전트 보고: deep/07-graphrag/experiments/agent-graph-1-report.md에 둠
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 에이전트 그래프 1회차 결과를 점검하고 기록한다.
+
+- 지킬 것: human-graph.csv, raw/ 원문, 저장소 밖 파일은 열지 않는다. agent-graph-1.csv는 고치지 않는다(실험 결과다). commit·push 하지 않는다
+
+1. check-graph-csv.py로 agent-graph-1.csv를 점검한다. 위반이 나와도 파일은 고치지 않고 출력만 기록한다
+2. experiments/agent-graph-1-report.md를 지시문의 시작·끝 표시 사이 내용 그대로 새로 만든다
+3. worklog 2026-10-22 항목 끝에 이 절(작업 폴더, 지시문, 모델, 복사, 점검 출력, 보고 위치)
+4. 점검 출력 전체와 만든·고친 파일 목록을 보고한다
+
+#### 점검 결과
+
+- 명령: `python3 deep/07-graphrag/experiments/scripts/check-graph-csv.py deep/07-graphrag/ai-consulting/agent-graph-1.csv`
+- 출력: "사례 17건, 줄 192개, 위반 0건", 종료 코드 0
+
+#### 읽은 파일
+
+- worklog.md(끝부분). agent-graph-1.csv는 스크립트만 읽음(Claude Code가 내용을 출력하거나 읽지 않음)
+- human-graph.csv, raw/ 원문, 저장소 밖 파일(~/Documents/rag-agent-run-1 포함)은 열지 않음. 작업 폴더·지시문 커밋·모델은 받은 내용 그대로 적음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/agent-graph-1-report.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- agent-graph-1.csv는 고치지 않음. commit·push는 하지 않음

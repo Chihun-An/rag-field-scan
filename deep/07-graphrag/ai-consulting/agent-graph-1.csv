@@ -1,0 +1,193 @@
+사례 번호,관계,값,근거 문장
+1,수행,McKinsey,원장
+1,고객,ING,"Every week, the global bank, ING, hears from 85,000 customers by phone and online chat in the Netherlands, one of its core markets."
+1,고객 산업,금융,"Every week, the global bank, ING, hears from 85,000 customers by phone and online chat in the Netherlands, one of its core markets."
+1,적용 업무,AI 솔루션 개발·실증,A joint ING and McKinsey team worked closely together for seven weeks to build a generative AI chatbot that offered customers immediate tailored help while maintaining clear guardrails to mitigate risk.
+1,적용 업무,AI 거버넌스·리스크 관리,"In order to do this, ING risk stakeholders were brought into this process from the very start and ING-specific guardrails (to avoid giving advice on mortgages and investment products, for example) were built using out-of-the-box tools from QuantumBlack Labs, our AI and machine learning innovation hub."
+1,해결하려던 병목,"기존 챗봇이 못 푼 고객 주당 16,500명이 상담원 연결 필요","While 40 to 45 percent of those chats usually get resolved by the current classic chatbot, that still leaves another 16,500 customers a week needing to speak with a live agent for help."
+1,해결하려던 병목,근무시간에만 상담 가능해 고객 대기 시간이 길어짐,This can leave customers with potentially longer waiting times as they’re only able to get live help for non-urgent requests during working hours.
+1,사용 기술,생성형 AI(LLM 포함),A joint ING and McKinsey team worked closely together for seven weeks to build a generative AI chatbot that offered customers immediate tailored help while maintaining clear guardrails to mitigate risk.
+1,낸 성과,첫 7주 동안 긴 대기를 피한 고객 20 percent 증가,"What’s more, within the first seven weeks of use, the new chatbot was offering a better customer experience – helping 20 percent more customers avoid long wait times and offering instant gratification – compared to the previous solution."
+1,낸 성과,유럽 최초 실고객 대상 생성형 AI 챗봇 파일럿,"Since launching in September 2023, thousands of customers have interacted with the new gen AI chatbot, making it the first-of-its-kind real-life customer-facing pilot conducted in Europe."
+1,낸 성과,ten markets 확산 청사진 마련(37 million 고객 대상 잠재),The efforts helped define a blueprint to scale across ten markets with the potential to impact more than 37 million customers across 40 countries.
+2,수행,McKinsey,원장
+2,고객,Ascendum,"Ascendum is a Portugal-based global provider of machinery and equipment for the construction, infrastructure, haulage, and agriculture sectors."
+2,고객 산업,산업재,"Ascendum is a Portugal-based global provider of machinery and equipment for the construction, infrastructure, haulage, and agriculture sectors."
+2,적용 업무,AI 활용 과제 발굴·우선순위 선정,"This strategic collaboration with McKinsey and Salesforce focused on identifying and evaluating 30 potential use cases where gen AI could deliver significant value, particularly in enhancing customer service and improving first-time issue resolution."
+2,적용 업무,AI 솔루션 개발·실증,"Over the course of five weeks, McKinsey’s QuantumBlack team of data scientists and software engineers worked together to build the gen AI engine operating on the Salesforce platform that helps agents find information on how to repair customers’ machines."
+2,해결하려던 병목,"고객 DB와 14,000개 넘는 pdf 문서를 뒤져야 하는 현장 기사","Agents must navigate different customer databases and more than 14,000 pdf documents to identify customer machines and diagnose issues."
+2,해결하려던 병목,문제 진단에 최대 30분 걸림,"Diagnosing an issue can take up to 30 minutes, as service agents search for relevant customer and technical information."
+2,해결하려던 병목,기술 정보가 비정형이고 여러 형식·DB에 흩어짐,"What’s more, the technical information agents need to identify machines, diagnose issues, and pinpoint solutions is unstructured; it exists in multiple formats and databases and is frequently updated by manufacturers, making it hard to track."
+2,사용 기술,생성형 AI(LLM 포함),"Over the course of five weeks, McKinsey’s QuantumBlack team of data scientists and software engineers worked together to build the gen AI engine operating on the Salesforce platform that helps agents find information on how to repair customers’ machines."
+2,낸 성과,파일럿 4주 만에 구현,The pilot solution was implemented in just four weeks and led to significant improvements.
+2,낸 성과,첫 방문 해결률(first-time resolution) 개선,The pilot solution improved first-time resolution by streamlining access to information and providing a more accurate troubleshooting diagnosis.
+2,낸 성과,"고객의 현장 손실 시간 시간당 $5,000 to $12,000 절감","This means construction workers, freight operators, and other workers operating equipment crucial to getting their work done are losing far less time to technical delays and experiencing less disruptions of essential daily work, helping customers save between $5,000 to $12,000 an hour in otherwise lost field time."
+3,수행,McKinsey,원장
+3,고객,Entel Connect Center (ECC),"In Peru, the Entel Connect Center (ECC) hums with the rhythm of human connection."
+3,적용 업무,AI 솔루션 개발·실증,"In early 2025, McKinsey and QuantumBlack teams began designing and developing a solution that would become Agent2Sales (A2S), an AI platform designed to extract value from all call data, transforming the operation and generating sales opportunities."
+3,적용 업무,조직·인력·변화 관리,"McKinsey led the implementation, capability building, and organization change management; QuantumBlack customized AI models to Entel’s needs, and Google Cloud provided the foundation—a platform capable of processing hundreds of thousands of calls overnight while maintaining cost efficiency and reliability."
+3,해결하려던 병목,서비스 통화가 한 번의 응대로 끝나 영업 기회로 이어지지 않음,"For years, however, these conversations began and ended in a single successful service interaction, nothing more."
+3,해결하려던 병목,"월 60만 통 넘는 통화 중 1 percent 미만만 검토, 직관에 의존","With more than 600,000 calls each month, analysts could only review fewer than 1 percent of conversations and had to rely solely on human intuition."
+3,해결하려던 병목,"코칭이 개별 상호작용에만 집중, 상담원 성과 전체를 못 봄","What’s more, the large call volume meant supervisors focused coaching only on individual customer interactions versus having a more holistic view of contact center agents’ performance."
+3,사용 기술,생성형 AI(LLM 포함),“It’s a powerful example of generative AI driving growth—for the business and its employees.”
+3,낸 성과,10주 만에 인바운드 서비스 판매 40 percent 증가,"Within ten weeks, inbound service sales rose 40 percent, and contact center agents doubled their offering rates during service calls, with no negative impact on NPS (from 40.3 percent to 41.2 percent, a 0.9 p.p. improvement)."
+3,낸 성과,상담원 서비스 통화 중 제안율 2배,"Within ten weeks, inbound service sales rose 40 percent, and contact center agents doubled their offering rates during service calls, with no negative impact on NPS (from 40.3 percent to 41.2 percent, a 0.9 p.p. improvement)."
+3,낸 성과,NPS 40.3 percent에서 41.2 percent로 0.9 p.p. 개선,"Within ten weeks, inbound service sales rose 40 percent, and contact center agents doubled their offering rates during service calls, with no negative impact on NPS (from 40.3 percent to 41.2 percent, a 0.9 p.p. improvement)."
+4,수행,BCG,원장
+4,고객,Helios,"Helios, a division of Fresenius and a leading hospital chain operating throughout Germany, had already begun to work toward a comprehensive digital ambition when its team decided to also explore using Generative AI to simplify and improve some of that documentation work."
+4,고객 산업,헬스케어,"Helios, a division of Fresenius and a leading hospital chain operating throughout Germany, had already begun to work toward a comprehensive digital ambition when its team decided to also explore using Generative AI to simplify and improve some of that documentation work."
+4,적용 업무,AI 솔루션 개발·실증,"Recognizing that this was a sensitive environment, and that patient privacy was essential, BCG developed the proof of concept for the cardiology department in an on-the-premises environment."
+4,적용 업무,AI 전략·로드맵 수립,"Beyond that, BCG helped Helios identify how to scale GenAI as part of its broader digital strategy going forward, all of which could lead to an excellent prognosis for improving medical care and allowing medical personnel to focus on the most valuable part of their work—caring for their patients."
+4,해결하려던 병목,시간이 많이 드는 문서화 업무(퇴원서),The health care industry is committed to high-quality care and great outcomes for patients—and along with that mission come important but time-consuming documentation tasks.
+4,해결하려던 병목,여러 파일·시스템에 흩어진 입원 기록을 의사가 종합해야 함,"This has long been necessarily complex, given that it involves several people and the responsible doctor needs to eventually synthesize the entire hospital stay, documented across various files and systems to inform subsequent care."
+4,해결하려던 병목,병원 정보 시스템의 환자 데이터를 꺼내기 어려움,"BCG worked with Helios’ various IT teams to find ways to acquire patient data that doctors would consider before generating a discharge letter from the hospital information system, all of which was previously difficult to retrieve."
+4,사용 기술,생성형 AI(LLM 포함),"Based on real patient data and historic discharge letters, BCG fine-tuned two open-source large language models (LLMs) for the specific task in several iterations, leveraging state-of-the-art data science practices."
+4,낸 성과,생성한 퇴원서에 의료진이 매우 유망한 피드백,"Using the fine-tuned LLMs, discharge letters were generated and then validated by health care professionals, who provided very promising feedback supporting the use case’s potential to improve patient care."
+4,낸 성과,병원 프로세스에서 마찰 지점 50개 넘게 발견,BCG’s thorough examination of hospital processes found over 50 friction points that could be addressed.
+5,수행,BCG,원장
+5,고객,Allstate,"Allstate, a longtime BCG partner, recently began leveraging its new GenAI capabilities in an innovative way to improve customer experiences."
+5,적용 업무,AI 솔루션 개발·실증,"Together, Allstate and BCG developed a predictive ML model using GenAI tools within just four weeks."
+5,적용 업무,조직·인력·변화 관리,BCG also enabled Allstate’s strong internal teams to achieve new capabilities and deliver best-in-class customer service.
+5,해결하려던 병목,데이터 프라이버시·IT 거버넌스로 AI 도구를 빨리 배포하기 어려움,Allstate’s strong commitment to data privacy and IT governance made certain AI and GenAI tools challenging to deploy quickly in existing production IT systems.
+5,해결하려던 병목,고객 참여 주기가 길어 가설을 빨리 검증하기 어려움,"Also, customer engagement cycles take a long time to develop, limiting the ability to test a hypothesis quickly and optimize its learnings."
+5,사용 기술,생성형 AI(LLM 포함),"Using ChatGPT, Allstate aimed to gain a better understanding of key customer touchpoints, teaming with BCG X’s esteemed data scientists and engineers to create tools that further increase customer satisfaction in multiple areas, particularly issue resolution."
+5,사용 기술,예측·분류 머신러닝,"Together, Allstate and BCG developed a predictive ML model using GenAI tools within just four weeks."
+5,낸 성과,예측 성능 3x 향상(기존 모델 대비),"The model improved prediction performance 3x (vs. historical models), identifying customers that require additional attention and support."
+5,낸 성과,문제를 발생 전에 71% 확률로 식별,"These tools show whether signals are getting better or worse, which is extremely insightful, improving overall model performance: It is able to identify issues before they occur 71% of the time."
+5,낸 성과,4주 만에 작동하는 고객 서비스 모델 구축,"BCG and Allstate stood up a working, well-performing customer service model in four weeks."
+6,수행,Bain,원장
+6,고객,InsuranceCo,"Working with us, InsuranceCo* took a fresh approach, one that used cross-selling as a focus area, with plans to build out from there."
+6,고객 산업,금융,A leading insurance company had determined that data analytics should be a strategic priority.
+6,적용 업무,데이터·기술 기반 구축,"To support that analysis, the team created a comprehensive data lake, integrating 20 databases into a system that contained a rich 10-year history of client and external data."
+6,적용 업무,AI 솔루션 개발·실증,"The team developed a number of diﬀerent machine-learning models, of increased complexity, for two diﬀerent products, and benchmarked them against standard cross-selling methods to determine the financial impact."
+6,적용 업무,조직·인력·변화 관리,"The Bain team tackled much of the most complex coding, helping the client team refine their skills along the way, through both formal and on-the-job training."
+6,해결하려던 병목,분석 성과가 충분히 빨리 나오지 않음,But at the end of the day the tangible results were not progressing fast enough.
+6,해결하려던 병목,기회를 체계적으로 발굴·평가·우선순위화하지 않음,"For one, it had not systematically identified, evaluated and prioritized the opportunities; it delivered on small projects but didn’t tackle the richest opportunities."
+6,해결하려던 병목,분석팀이 사업부와 단절되고 운영 모델이 불명확,"Its analytics team was not adequately connected to business-unit and functional experts, and its operating model was unclear."
+6,사용 기술,예측·분류 머신러닝,"The team developed a number of diﬀerent machine-learning models, of increased complexity, for two diﬀerent products, and benchmarked them against standard cross-selling methods to determine the financial impact."
+6,낸 성과,교차판매로 약 25% 추가 매출 잠재력,By the end of the project the team had developed a detailed roadmap comprising a dozen levers anticipated to produce an approximate 25% in additional revenue potential through cross-selling.
+6,낸 성과,마케팅 성과 10x 향상 전망,The marketing insights gleaned through new machine-learning capabilities promised a 10x gain in marketing performance.
+6,낸 성과,성장 목표를 크게 상향,Early results are so promising that anticipated growth targets have been raised significantly.
+7,수행,Bain,원장
+7,고객,Banca Investis,"When Banca Investis required an innovation of its service model, generative AI oﬀered a key boost."
+7,고객 산업,금융,"With its pioneering launch, Banca Investis sets the bar as the first bank in the Italian market to rapidly deploy a comprehensive generative AI application for private customers."
+7,적용 업무,AI 신상품·신사업 기획 및 사업화,We helped the company develop and launch an AI-based investment advisory app that increases the frequency of touchpoints between customers and the bank while also improving the quality of the customer experience.
+7,적용 업무,AI 솔루션 개발·실증,We helped the company develop and launch an AI-based investment advisory app that increases the frequency of touchpoints between customers and the bank while also improving the quality of the customer experience.
+7,해결하려던 병목,서비스 모델 혁신이 필요,"When Banca Investis required an innovation of its service model, generative AI oﬀered a key boost."
+7,사용 기술,생성형 AI(LLM 포함),"To create a distinctive experience, we designed a market-first, generative AI–powered platform that plays the role of a “digital junior banker” in supporting customers and bankers."
+7,사용 기술,추천·개인화,"The NIWA app analyzes more than 500 pieces of information and research daily, including customers’ financial assets, characteristics, and preferences, to provide a hyperpersonalized experience."
+7,낸 성과,이탈리아 시장 최초로 개인 고객용 종합 생성형 AI 앱 출시,"With its pioneering launch, Banca Investis sets the bar as the first bank in the Italian market to rapidly deploy a comprehensive generative AI application for private customers."
+7,낸 성과,매일 500 pieces 넘는 정보·리서치 분석,"The NIWA app analyzes more than 500 pieces of information and research daily, including customers’ financial assets, characteristics, and preferences, to provide a hyperpersonalized experience."
+8,수행,Deloitte,원장
+8,고객,익명: a major US health care organization,"Deloitte’s client, a major US health care organization, was struggling to meet patient needs and deliver a superior experience."
+8,고객 산업,헬스케어,"Deloitte’s client, a major US health care organization, was struggling to meet patient needs and deliver a superior experience."
+8,적용 업무,AI 솔루션 개발·실증,"Based on that information, Deloitte designed and implemented an end-to-end AI-enabled personalization solution by using:"
+8,해결하려던 병목,소비자 상호작용 개인화의 어려움,"Personalizing interactions for consumers was a challenge, along with inefficient care coordination, and the lack of getting patients to adhere to medications correctly."
+8,해결하려던 병목,비효율적 진료 조정과 환자의 복약 순응 부족,"Personalizing interactions for consumers was a challenge, along with inefficient care coordination, and the lack of getting patients to adhere to medications correctly."
+8,해결하려던 병목,너무 많고 조율하기 어려운 진료 접점,"There were often too many touchpoints that consumers needed to follow to get the care they needed, and oftentimes they were difficult to coordinate."
+8,사용 기술,추천·개인화,"The new architecture gave the client insights into the health care profile of individual customers, which they used to deliver personalized messages and recommendations to refill medication, schedule a wellness checkup or follow-up care, or manage a potentially chronic disease."
+8,사용 기술,예측·분류 머신러닝,Clustering techniques to identify and categorize consumers who may have not been part of the process.
+8,낸 성과,고객 약 10%에 닿아 $100 million 넘는 매출,"The engagement touched about 10% of its customers, resulting in more than $100 million in revenue."
+8,낸 성과,개인화된 고객 경험 향상,"Through AI, the client now operates with enhanced personalized customer experience, improved medication adherence, and a reduced cost of care."
+8,낸 성과,복약 순응 개선과 진료 비용 감소,"Through AI, the client now operates with enhanced personalized customer experience, improved medication adherence, and a reduced cost of care."
+9,수행,Deloitte,원장
+9,고객,Takeda,"Takeda, a leading global R&D pharmaceutical company, was seeking to improve the accuracy of its prediction models for various disease states."
+9,고객 산업,헬스케어,"Takeda, a leading global R&D pharmaceutical company, was seeking to improve the accuracy of its prediction models for various disease states."
+9,적용 업무,데이터·기술 기반 구축,"To achieve their goals, they enlisted the help of Deloitte to create a cloud solution."
+9,적용 업무,AI 솔루션 개발·실증,"Using a small, proven real world data set on Treatment Resistant Depression and NASH, a severe form of hepatitis, Takeda and Deloitte deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models."
+9,해결하려던 병목,질병 예측 모델의 정확도 부족,"Takeda, a leading global R&D pharmaceutical company, was seeking to improve the accuracy of its prediction models for various disease states."
+9,해결하려던 병목,전통적 임상·컴퓨팅 방법으로는 대량 실세계 근거 분석 불가,"To create a better testing model and prove their hypothesis, they needed a repeatable framework for model development to analyze huge amounts of real-world evidence, which wasn’t possible with traditional clinical—or computing— methods."
+9,사용 기술,예측·분류 머신러닝,"Using a small, proven real world data set on Treatment Resistant Depression and NASH, a severe form of hepatitis, Takeda and Deloitte deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models."
+9,낸 성과,예측 정확도 53.4%에서 92%로 향상,The predictive accuracy improved from 53.4% to 92%
+9,낸 성과,기존 전통 분석보다 높은 예측 정확도,"The model proved highly accurate in its predictions, outperforming previously tested traditional analyses."
+10,수행,PwC,원장
+10,고객,익명: a leading Canadian bank,"We helped a leading Canadian bank design and deploy a generative AI solution that created measurable business value while meeting strict governance, regulatory, and security requirements."
+10,고객 산업,금융,"We helped a leading Canadian bank design and deploy a generative AI solution that created measurable business value while meeting strict governance, regulatory, and security requirements."
+10,적용 업무,AI 솔루션 개발·실증,"At a more granular level, we worked collaboratively with the bank to implement generative AI for three high-priority use cases."
+10,적용 업무,조직·인력·변화 관리,"A multi-dimensional approach to change: We prioritized more than technology change—addressing structure, process, and people dimensions simultaneously with the technology implementation to build internal capabilities, foster buy-in, and drive user adoption."
+10,해결하려던 병목,핵심 재무 프로세스가 자원 집약적이고 시간 소모적,Critical processes were resource-intensive and time-consuming.
+10,해결하려던 병목,문서 작성 방식이 제각각이라 여러 번 검토 필요,"Documentation preparation was inconsistent in style and approach, requiring multiple reviews to confirm accuracy and completeness."
+10,해결하려던 병목,보고용 데이터 추출이 복잡하고 수작업 위주,And data extraction for reporting was complex and highly manual.
+10,사용 기술,생성형 AI(LLM 포함),"We helped a leading Canadian bank design and deploy a generative AI solution that created measurable business value while meeting strict governance, regulatory, and security requirements."
+10,낸 성과,관련 업무가 더 빨리 끝나고 결과물이 더 정확해짐,"Today, related business activities are completed faster, team members can focus on higher-value work thanks to automation of previously labour-intensive tasks, and outputs are more accurate and deliver deeper insights."
+10,낸 성과,노동집약 업무 자동화로 고부가 업무에 집중,"Today, related business activities are completed faster, team members can focus on higher-value work thanks to automation of previously labour-intensive tasks, and outputs are more accurate and deliver deeper insights."
+10,낸 성과,AI 사업 가치 입증과 AI 확대 기반 마련,Our initial work enabled the bank’s finance department to demonstrate the business value associated with embracing AI tools and solutions and provided them with a strong foundation for expanding their use of AI over time.
+11,수행,PwC,원장
+11,고객,Seattle Mariners,"Every ticket sold, every fan through the gate, every order of garlic fries is shaped by a marketing decision—and for years, the Seattle Mariners were making those decisions without a complete picture."
+11,고객 산업,커뮤니케이션 서비스,Mariners Intelligence is a first-of-its-kind AI platform in professional sports.
+11,적용 업무,데이터·기술 기반 구축,"We accomplished what traditionally takes months in a manner of weeks: establishing data pipelines, developing and refining machine learning models to help drive customer insights, creating the agentic harness delivering end-user interfaces—all from scratch."
+11,적용 업무,AI 솔루션 개발·실증,"PwC brought engineering excellence and domain expertise to deliver the platform architecture, design the models, and drive execution end-to-end, while our analytics team pressure-tested the models and wired the tool into our daily operations."
+11,해결하려던 병목,넓은 팬 세그먼트와 연례 설문에 의존,They relied on broad fan segments and annual surveys.
+11,해결하려던 병목,캠페인을 일괄 발송하고 타이밍이 거의 바뀌지 않음,Campaigns went out in batches. Timing rarely varied.
+11,해결하려던 병목,데이터는 많지만 팀이 쉽게 활용할 방법이 없음,"And yet we had a trove of data across customer relationship management, ticketing and engagement systems. Our teams didn’t have a simple way to use it."
+11,사용 기술,예측·분류 머신러닝,"We used Claude Code and Azure to unify 1.15 million fan records and develop three machine-learning models based on fan demographics, past engagement behavior, and their propensity to engage."
+11,사용 기술,생성형 AI(LLM 포함),"It’s built with and powered by Anthropic, deployed on Microsoft Azure, and capable of orchestrating AI agents that analyze models and generate campaign recommendations that are ready to execute."
+11,사용 기술,추천·개인화,That speed will help us engage fans every day—not just seasonally—and in ways that feel personal and relevant.
+11,낸 성과,1.15 million 팬 기록 통합,"We used Claude Code and Azure to unify 1.15 million fan records and develop three machine-learning models based on fan demographics, past engagement behavior, and their propensity to engage."
+11,낸 성과,팬 세그먼트 6개에서 49개 마이크로세그먼트로,That allowed us to move from six broad segments to 49 actionable microsegments—a game-changer for precision targeting.
+11,낸 성과,티켓 판매 연 10% 이상 성장 기대,We expect this to fuel at least 10% growth in our ticket sales year over year.
+12,수행,EY,원장
+12,고객,Bayer Crop Science,"Bayer Crop Science has a history of providing agronomic advisors with crop production information, now they deliver it faster and broader."
+12,고객 산업,소재,"Offerings consist of a vast array of seeds and traits, crop protection products, and digital solutions for agriculture."
+12,적용 업무,AI 솔루션 개발·실증,BCS enlisted the help of Ernst & Young LLP (EY) professionals to help create a proof-of-concept (POC) GenAI system.
+12,해결하려던 병목,방대한 농학 지식을 필요에 맞게 종합하기 어려움,"As a company, we have tremendous depth and breadth of agronomic knowledge, but convenient synthesis of that knowledge to specific needs has been a challenge."
+12,해결하려던 병목,정확한 답에 수년의 전문성이나 참고 매뉴얼이 필요,"Typically, accurate answers require years of specialized expertise or consulting reference manuals,” he says."
+12,사용 기술,생성형 AI(LLM 포함),"The LLM, built in the Microsoft Azure environment, was grounded with decades of aggregated agronomy content, product research data and proprietary insights."
+12,낸 성과,90일 만에 POC 구축,"Together, the team built the POC in just 90 days."
+12,낸 성과,모든 주제에서 뛰어난 정확도로 답변,"By the end of the 90-day POC, the GenAI system was answering with outstanding accuracy across every topic building great confidence in the team and users."
+12,낸 성과,몇 달 만에 BCS 직원 a few hundred 명이 사용,"In just a few months, a few hundred BCS employees have successfully started using the GenAI system."
+13,수행,EY,원장
+13,고객,익명: a commercial bank,"With help from EY, a commercial bank leveraged machine learning and natural language processing to improve sales workforce effectiveness."
+13,고객 산업,금융,"With help from EY, a commercial bank leveraged machine learning and natural language processing to improve sales workforce effectiveness."
+13,적용 업무,데이터·기술 기반 구축,EY teams started by creating a “book of record” around the entirety of an agent’s interaction with a client.
+13,적용 업무,AI 솔루션 개발·실증,They leveraged sophisticated AI approaches to analyze conversation behaviors associated with overall progression and help identify behaviors demonstrated by top-performing agents.
+13,적용 업무,전사 확산·성과 관리,"By packaging these insights into an interactive dashboard that can be used by different stakeholders, EY professionals provided the client with a far more sophisticated foundation for performance measurement and management:"
+13,해결하려던 병목,샘플 통화 청취에 의존해 피드백이 주관적·일반적,"Performance analysis typically relies on supervisors listening to sampled calls, coupled with using surface-level metrics from small data sets. However, the feedback developed using this approach can be highly subjective and often generic."
+13,해결하려던 병목,수작업이라 느리고 확장 어려움,"Being manual, the process is slow and difficult to scale, and does not provide a comprehensive view of agent performance."
+13,해결하려던 병목,상담원 성과 추이를 파악할 수 없음,The inability to track metrics on an ongoing basis and across a full population of agent interactions makes it impossible to understand an agent’s performance trajectory.
+13,사용 기술,예측·분류 머신러닝,"With help from EY, a commercial bank leveraged machine learning and natural language processing to improve sales workforce effectiveness."
+13,낸 성과,기회 50% 이상 증가,The client identified an uplift in opportunities of upward of 50%.
+13,낸 성과,팀 리더가 개인화 코칭과 성과 추적 가능,"With full visibility of a range of successful techniques and performance drivers, team leaders now can provide highly targeted, personalized coaching, and track performance improvement over time."
+14,수행,EY,원장
+14,고객,Microsoft,Microsoft legal teams wanted to improve regulatory compliance but needed certainty in the approach.
+14,고객 산업,정보기술,"Microsoft is one of the world’s largest technology companies, with a known brand and reputation for developing, deploying and consuming innovative new technology."
+14,적용 업무,업무 프로세스 재설계,"CELA Technology & Operations together with EY Law and technology teams worked with CELA’s regulatory and product team members to design and refine a workflow POC for the regulatory space solution that could be automated to enhance efficiency, compliance monitoring and document creation."
+14,적용 업무,AI 솔루션 개발·실증,"Within weeks, the EY technology team developed the necessary skillsets for the desired automation, which cleared the way for Microsoft to move forward with a pilot implementation of the GenAI solution in the legal department."
+14,해결하려던 병목,규정 검토·정책 정합성 판단·자문 전달에 큰 수작업,"These responsibilities demanded considerable manual effort from CELA lawyers to review regulations, determine their alignment with Microsoft policy and communicate advice to internal and external stakeholders."
+14,해결하려던 병목,여러 관할권의 규정 변화를 계속 따라가야 함,"Like other multinational corporations, Microsoft must keep abreast of changes in regulations across the jurisdictions where it operates."
+14,해결하려던 병목,법률가들 사이에 빠르게 바뀌는 신기술 도입이 어려움,"While AI had the potential to alleviate much of this manual effort, CELA’s leadership team recognized the challenges inherent in driving adoption of rapidly evolving, new and emerging technology among legal professionals."
+14,사용 기술,생성형 AI(LLM 포함),"This tool is powered by Microsoft Azure Open AI and Microsoft Semantic Kernel, stemming from the alliance between the EY organization and Microsoft that allowed EY technology teams to gain early access to emerging Microsoft Azure AI capabilities."
+14,낸 성과,몇 시간 걸리던 이행 지침 작성을 몇 분으로,"Impact: This automation allows lawyers to quickly understand the regulation's implications for Microsoft, transforming a task that previously took hours to minutes."
+14,낸 성과,확장 가능한 GenAI 스킬셋 4개 확보,"The work also resulted in four primary, scalable GenAI skillsets that can be applied to fast-track deployment of further Microsoft Azure-driven solutions for different use cases within the legal department."
+14,낸 성과,CELA 사용자·경영진의 GenAI 도입 신뢰 강화,The teams maintained a growth mindset over four months of development and multiple sprints of rapid iteration with user feedback which helped to bolster confidence among users and leadership in the potential for GenAI adoption across CELA.
+15,수행,KPMG,원장
+15,고객,익명: a leading global footwear retailer and innovator,"Our client, a leading global footwear retailer and innovator, was intrigued by the dynamic potential of generative artificial intelligence (GenAI)."
+15,고객 산업,경기소비재,"Our client, a leading global footwear retailer and innovator, was intrigued by the dynamic potential of generative artificial intelligence (GenAI)."
+15,적용 업무,데이터·기술 기반 구축,Setting up a cloud-based test environment that leverages GenAI modeling tools and other services
+15,적용 업무,AI 솔루션 개발·실증,"Selecting four initial pilot use cases for development, and then configuring the LLM prompts to optimize the GenAI model and outputs for each use case:"
+15,적용 업무,전사 확산·성과 관리,"Piloted 12 additional use cases in the production environment to support e-commerce, finance, product, and sales functions"
+15,해결하려던 병목,‘혁신’이라는 이름으로 기술만 좇는 것은 이기는 전략이 아님,But the company knew that chasing technology in the name of “innovation” was not a winning strategy.
+15,사용 기술,생성형 AI(LLM 포함),Final selection of the GenAI text-to-text and text-to-image LLMs best suited for the company’s needs
+15,낸 성과,"직원 4,500명 넘게 쓰는 보안 GenAI 플랫폼 배포","Deployed secure GenAI platform and user interface for more than 4,500 employees"
+15,낸 성과,사업 부문 전반에 GenAI 솔루션 over a dozen 출시,"Launched over a dozen transformative GenAI solutions across business functions, with more in pipeline"
+15,낸 성과,AI 혁신·거버넌스·가치 실현 방법 수립,"Established methods for AI innovation, governance, and value realization"
+16,수행,KPMG,원장
+16,고객,익명: a leading health services company,"With more than 25,000 calls to its 1-800 customer care number each day — and with each call costing upwards of $12 — a leading health services company recognized a huge opportunity to both reduce costs and greatly improve the customer experience."
+16,고객 산업,헬스케어,"With more than 25,000 calls to its 1-800 customer care number each day — and with each call costing upwards of $12 — a leading health services company recognized a huge opportunity to both reduce costs and greatly improve the customer experience."
+16,적용 업무,AI 솔루션 개발·실증,"We helped implement an IBM Watson conversational AI system that uses real-time natural language processing (NLP), speech-to-text and text-to-speech technologies to understand and respond to customers in a personalized, contextually-sensitive, conversational manner."
+16,적용 업무,조직·인력·변화 관리,"Because we have both technical and business skills, we were able to help design and implement an operating model that would balance the customer experience, resourcing, oversight, funding and other requirements to help the project succeed long term."
+16,해결하려던 병목,"하루 25,000통 넘는 콜, 통당 $12 넘는 비용","With more than 25,000 calls to its 1-800 customer care number each day — and with each call costing upwards of $12 — a leading health services company recognized a huge opportunity to both reduce costs and greatly improve the customer experience."
+16,해결하려던 병목,고정된 결정 트리를 따르는 레거시 IVR 시스템,"KPMG was chosen to modernize the client’s legacy interactive voice response (IVR) system, where customers followed predefined prompts along a fixed decision tree, to a conversational AI system that uses real-time natural language processing (NLP), speech-to-text and text-to-speech technologies to understand and respond to callers’ spoken requests."
+16,사용 기술,음성 인식·합성,"We helped implement an IBM Watson conversational AI system that uses real-time natural language processing (NLP), speech-to-text and text-to-speech technologies to understand and respond to customers in a personalized, contextually-sensitive, conversational manner."
+16,사용 기술,예측·분류 머신러닝,"Various intent recognition (Skills) models were trained to classify the intents, language-based speech model customization and customization of speech synthesis."
+16,낸 성과,$100 million+ 절감 예측,A prescription for $100 million+ forecasted savings
+16,낸 성과,상담원 대기 없이 복잡한 음성 상호작용으로 정보 획득,"Our client now has a highly-secure, easy-to-customize conversational AI system that enables its customers to engage in complex voice interactions to get the information they need without having to wait for a human agent."
+16,낸 성과,6개월 안에 솔루션 제공,"With a series of two-week sprints, we were able to deliver the solution in under six months."
+17,수행,KPMG,원장
+17,고객,익명: U.S.-based mortgage originator and underwriter,U.S.-based mortgage originator and underwriter
+17,고객 산업,금융,Our client is a financial services organization that works with mortgage lenders to buy single- and multi-family mortgages across the United States.
+17,적용 업무,데이터·기술 기반 구축,"The KPMG and client team collaborated to select the cloud platform, architect technology platform components, and construct the virtual agent through a series of Agile development sprints to operate on their Amazon Web Services cloud platform."
+17,적용 업무,AI 솔루션 개발·실증,The KPMG team worked with the client to build a conversational virtual assistant proof of concept to demonstrate the capabilities of artificial intelligence.
+17,해결하려던 병목,콜센터 모델이 고객이 기대하는 서비스 수준에 못 미침,This company's leaders realized its contact center model wasn’t delivering the level of service its customers expected.
+17,해결하려던 병목,복잡한 법률 절차 문서를 계속 참조하는 노동집약적 반복 업무,"As contact center agents deal with customers each day, they constantly referenced complex, legal process documents, such as seller servicer guides, a labor-intensive and repetitive task that kept them from more strategic work."
+17,낸 성과,가상 비서 PoC와 훈련 로드맵 개발,"For this client, the KPMG team developed a virtual assistant proof of concept to demonstrate the capabilities of artificial intelligence and a roadmap for training it over time."
