@@ -2705,3 +2705,115 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - deep/07-graphrag/experiments/check-graph-csv-oil-trade-test.md: 새로 만듦
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 2번 E4 비교 방법 (2026-10-22, 14:49경 마침, Claude Code)
+
+- 비교 방법을 에이전트 그래프 1회차 전에 정했다: experiments/e4-method-oil-trade.md. 판단 기록은 그 파일 끝에 있다.
+- 기준 그래프와 짝을 지을 때 Codex 판정 대신 근거 문장으로 짝짓는다. predictions.md 5절과 방법이 달라진 이유는 그 파일 "predictions.md 5절과 다른 점"에 적었다.
+- 비교 스크립트는 다음 단계에서 이 방법대로 만든다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 2번 도메인(무역 & 기름) E4 비교 방법을 에이전트 그래프 1회차 전에 저장소에 남긴다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 oil-trade/raw/는 열지 않는다. [파일]·[worklog] 문장은 글자 하나 바꾸지 않고 넣는다. commit·push 하지 않는다
+
+1. experiments/e4-method-oil-trade.md를 [파일 시작]~[파일 끝] 내용 그대로 새로 만든다(대상, 비교 전 형식 검사, 짝짓기, 닫힌 목록 일치율, 참고값, 회차끼리 일관성, 정답 격리, predictions.md 5절과 다른 점, 판단 기록)
+2. worklog "## 2026-10-22" 항목 맨 끝에 [worklog 시작]~[worklog 끝] 내용과 받은 지시·읽은 파일·만든·고친 파일
+3. 만든·고친 파일 목록, 방법 파일 줄 수, worklog에 더한 줄 수를 보고한다
+
+#### 읽은 파일
+
+- worklog.md(날짜 항목 머리와 끝부분)
+- 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 oil-trade/raw/는 열지 않음. 방법 파일에 적힌 기준 그래프 줄 수(139줄)는 Claude Code가 확인하지 않고 받은 그대로 적음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e4-method-oil-trade.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
+
+### 2번 E4 비교 스크립트 (2026-10-22, 14:54경 마침, Claude Code)
+
+- experiments/scripts/compare-graphs-oil-trade.py를 experiments/e4-method-oil-trade.md대로 만들었다. 기준 대 에이전트, 1회차 대 2회차를 같은 스크립트로 잰다.
+- 방법 파일에 없던 경우 하나를 정했다: 닫힌 목록 칸이 한쪽만 비면 불일치, 양쪽 모두 비면 비교에서 빼고 따로 센다.
+- 시험 파일의 기대 출력은 실행 전에 손으로 계산해 적었다.
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함
+- 순서: 방법 파일을 읽고 스크립트(177줄)와 시험 파일 a.csv·b.csv를 만든 뒤, 실행 전에 compare-graphs-oil-trade-test.md에 경우별 기대와 세 비교의 기대 출력 전체를 손으로 계산해 적었다. 그다음 돌렸다
+- a 대 b, b 대 a, a 대 a 출력이 기대 출력과 글자 단위로 같음(python으로 대조). a 대 b는 짝 7, 닫힌 목록 일치율 4/9(44.4%), 재현율·정밀도 7/10, 자카드 7/13(53.8%). a 대 a는 짝 10 = 줄 10, 모두 100.0%. 세 번 모두 종료 코드 0
+- 요건 2줄씩 엇갈린 경우(a6·a7 대 b6·b7)는 값이 비슷한 쪽끼리 짝지어졌고, 닫힌 목록 칸이 짝 고르기에 쓰이지 않았음이 칸별 일치율로 드러남
+- 머리줄이 틀린 파일과 없는 파일(스크래치 폴더): 둘 다 "입력 오류: …", 종료 코드 2
+- 실수: 처음 세 비교를 zsh 반복문 `set -- $p`로 돌려 낱말이 나뉘지 않았고, 파일 이름이 "a b.csv"처럼 들어가 "입력 오류: 파일이 없음"이 세 번 났다(Claude Code 오류, 2026-10-14에 적은 것과 같은 실수). bash로 다시 돌림
+- 방법 파일과 다르게 구현한 곳: 없음. 다만 방법 파일 그대로 구현하면 정규화한 근거 문장(또는 원문 용어·품목 분류의 값)이 빈 줄이 같은 주어·관계·원장 번호의 모든 줄의 후보가 된다(빈 문자열은 어느 문자열에도 들어 있음). 형식 검사의 empty 위반으로 먼저 드러나므로 방법 파일은 고치지 않고 시험 문서 4절에 적음
+- 설치한 도구 없음(python 표준 라이브러리 csv, difflib, re, pathlib)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 2번 도메인 E4 비교 스크립트를 experiments/e4-method-oil-trade.md대로 만들고, 지어낸 시험 파일로 확인한다. 에이전트 그래프 1회차 전이다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 oil-trade/raw/는 열지 않는다. 시험 파일에는 "테스트"로 시작하는 문자열, 스키마 목록 이름, "기타: 테스트"만 쓴다. 스크립트는 값·근거 문장·주어 이름을 출력하지 않는다. 방법 파일과 다르게 구현해야 할 곳은 고치지 말고 보고에 적는다. [worklog] 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. e4-method-oil-trade.md를 읽는다
+2. experiments/scripts/compare-graphs-oil-trade.py(A CSV, B CSV, 짝짓기·일치율·참고값·자카드, 닫힌 칸 비교 규칙과 빈 칸 처리, 출력 순서, 종료 코드 0·2)
+3. fixtures/compare-oil-trade/a.csv·b.csv(지정한 경우 모두)
+4. 실행 전에 compare-graphs-oil-trade-test.md에 손 계산 기대 출력을 적고, a 대 b·b 대 a·a 대 a를 돌려 실행 명령·출력 전체·확인 표(사람 확인 "에드워드 확인 전")를 덧붙인다. 머리줄 틀린 파일·없는 파일은 저장소 밖에서 종료 코드 2만 확인
+5. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+6. 만든·고친 파일, 스크립트 줄 수, 기대와 실제가 같은지, 방법 파일과 다르게 구현한 곳을 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/experiments/e4-method-oil-trade.md, worklog.md(날짜 항목 머리와 끝부분)
+- 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 oil-trade/raw/는 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py: 새로 만듦(177줄)
+- deep/07-graphrag/experiments/fixtures/compare-oil-trade/a.csv, b.csv: 새로 만듦
+- deep/07-graphrag/experiments/compare-graphs-oil-trade-test.md: 새로 만듦(1절 기대는 실행 전에, 2~4절은 실행 뒤에 씀)
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
+
+### 2번 E4 비교 스크립트 고침 — 빈 칸 후보 (2026-10-22, 14:59경 마침, Claude Code)
+
+- 앞 절에서 Claude Code가 보고한 구멍(빈 근거 문장·빈 값이 같은 주어·관계·원장 번호의 모든 줄의 후보가 됨)을 Cowork가 직접 시험해 확인했다. 전혀 다른 요건이 짝이 되어 재현율이 부풀었다.
+- 에드워드가 빈 줄을 후보에서 빼기로 정했다. 방법 파일은 아직 커밋 전이어서 짝짓기 5번으로 더했다. 에이전트 그래프 1회차 전이다.
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함
+- 방법 파일: "## 짝짓기" 4번 뒤에 5번 한 줄, 맨 끝에 빈 줄과 "추가(2026-10-22, 1회차 전) …" 문단을 넣음(57줄 → 60줄). 방법 파일이 아직 커밋 전(추적되지 않는 파일)이라 `git diff --stat`에는 나오지 않아 줄 수로 셈
+- 스크립트: 고치기 직전 판을 스크래치 폴더에 복사해 둔 뒤, is_candidate에 빈 근거 문장 검사와 원문 용어·품목 분류의 빈 값 검사를 넣고 맨 위 주석 "정한 것"에 한 줄을 더함. 다른 곳은 고치지 않음
+- 빈 칸 시험(empty-a 대 empty-b): 실행 전에 기대 출력을 시험 문서 5절에 적은 뒤 돌림. 출력이 기대와 글자 단위로 같음(짝 1, 재현율·정밀도 1 / 4, 자카드 1 / 7). 종료 코드 0
+- 대조: 고치기 전 판으로 같은 파일을 돌리면 (가)~(다)가 모두 짝이 되어 짝 4, 재현율·정밀도·자카드 100.0%가 나옴(구멍 재현)
+- a 대 b, b 대 a, a 대 a를 고친 스크립트로 다시 돌린 출력이 1절 기대와 셋 모두 글자 단위로 같음. 앞 시험의 기대 칸은 고치지 않음
+- 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 비교 스크립트 시험에서 찾은 구멍(빈 근거 문장·빈 값이 모든 줄의 후보가 됨)을 막는다. 방법 파일에 규칙을 더하고, 스크립트를 고치고, 시험을 더한다. 에이전트 그래프 1회차 전이다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 oil-trade/raw/는 열지 않는다. 시험 파일에는 "테스트"로 시작하는 문자열과 스키마 목록 이름만 쓴다. [ ] 표시 사이 문장은 그대로 넣는다. 앞 시험의 기대 칸은 고치지 않는다. commit·push 하지 않는다
+
+1. e4-method-oil-trade.md: 짝짓기 4번 뒤에 5번(빈 근거 문장·빈 값은 후보가 아님), 맨 끝에 "추가(2026-10-22, 1회차 전)" 문단
+2. compare-graphs-oil-trade.py: is_candidate에서 빈 근거 문장, 원문 용어·품목 분류의 빈 값이면 False. 맨 위 주석 "정한 것"에 한 줄. 다른 곳은 고치지 않음
+3. fixtures/compare-oil-trade/empty-a.csv·empty-b.csv((가)~(라))
+4. 시험 문서 맨 끝에 "## 5. 빈 칸 시험" 절(실행 전 기대 출력, 실행 명령과 출력, a·b 다시 돌린 결과, 확인 표, 고치기 전에는 짝이 되었다는 줄)
+5. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+6. 만든·고친 파일, 방법 파일에서 바뀐 줄 수, 빈 칸 시험과 a·b 시험 결과를 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/experiments/e4-method-oil-trade.md, compare-graphs-oil-trade.py, compare-graphs-oil-trade-test.md(1절 기대 출력), worklog.md(끝부분)
+- 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 oil-trade/raw/는 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e4-method-oil-trade.md: 수정 — 짝짓기 5번 한 줄, 맨 끝 빈 줄과 추가 문단(3줄 늘어 60줄)
+- deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py: 수정 — is_candidate와 맨 위 주석(177줄 → 183줄)
+- deep/07-graphrag/experiments/fixtures/compare-oil-trade/empty-a.csv, empty-b.csv: 새로 만듦
+- deep/07-graphrag/experiments/compare-graphs-oil-trade-test.md: 수정 — 맨 끝에 5절 추가. 1~4절은 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- 고치기 전 스크립트 복사본은 Claude Code 스크래치 폴더(저장소 밖)에만 있음. commit·push는 하지 않음
