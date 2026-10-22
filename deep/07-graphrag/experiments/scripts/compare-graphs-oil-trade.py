@@ -10,6 +10,7 @@
 #
 # 정한 것(방법 파일에 없던 경우): 닫힌 목록 칸이 한쪽만 비면 불일치, 양쪽 모두 비면 비교에서 빼고 "양쪽 빈 칸"으로 센다.
 #   빈 근거 문장(원문 용어·품목 분류는 빈 값도)인 줄은 후보가 되지 않는다(방법 파일 짝짓기 5번).
+#   근거 문장과 값은 정규화한 뒤 공백을 모두 지우고 비교한다(방법 파일 짝짓기 6번).
 # 실행: python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py <A CSV> <B CSV>
 
 import csv
@@ -62,8 +63,8 @@ def load(path):
             bad += 1
             continue
         d = dict(zip(HEADER, (x.strip() for x in r)))
-        d["_ev"] = normalize(d["근거 문장"])
-        d["_val"] = normalize(d["값"])
+        d["_ev"] = re.sub(r"\s+", "", normalize(d["근거 문장"]))
+        d["_val"] = re.sub(r"\s+", "", normalize(d["값"]))
         good.append(d)
     return good, bad
 

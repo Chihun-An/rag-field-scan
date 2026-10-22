@@ -1,7 +1,9 @@
 # 2번 무역 & 기름 그래프 CSV 형식 검사 스크립트 (E4)
 #
 # 하는 일: 에이전트 그래프 CSV(oil-trade/schema.md 5절 기록 형식)가 형식 규칙을 지키는지 검사한다.
-#   근거 문장이 그 원장의 원문에 있는지도 대조한다. 값이 맞는지(기준 그래프와 비교)는 보지 않는다.
+#   근거 문장이 그 원장의 원문에 있는지도 대조한다. 공백을 모두 지워야만 원문에 있는 근거 문장은
+#   위반(not-in-raw)이 아니라 경고(space-only)로 센다(원문이 PDF 추출이라 낱말 중간에 공백이 있음).
+#   값이 맞는지(기준 그래프와 비교)는 보지 않는다.
 #   python 표준 라이브러리만 쓴다.
 # 입력: 명령줄 인자 1개 — 검사할 CSV 파일(utf-8-sig, 머리줄 "주어,관계,값,분류 체계,업무 단계,주체,원장 번호,위치,근거 문장")
 #   원장 번호 목록은 deep/07-graphrag/oil-trade/sources.csv, 원문은 deep/07-graphrag/oil-trade/raw/ot-NN.txt(스크립트 위치 기준)
@@ -12,7 +14,7 @@
 #   2 입력 오류(파일 없음, 머리줄 틀림, sources.csv나 raw/ 폴더가 없음, 근거로 든 원장의 원문 파일이 없음).
 #
 # 위반 규칙: columns, relation, subject, empty, extra-field, closed-list, ledger, not-in-raw, duplicate
-# 경고 규칙(위반 수에 넣지 않음): multi-value, stage-number
+# 경고 규칙(위반 수에 넣지 않음): multi-value, stage-number, space-only
 # 목록 상수와 정규화(normalize·in_raw)는 check-golden-rules-oil-trade.py와 같다.
 # 실행: python3 deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py <csv 경로>
 
@@ -59,6 +61,11 @@ def in_raw(sentence, raw_text):
     return bool(s2) and s2 in normalize(raw_text, join_hyphen=False)
 
 
+def nospace(text):
+    # 따옴표를 바꾼 뒤 공백을 모두 지운다(space-only 경고용)
+    return re.sub(r"\s+", "", text.translate(QUOTES))
+
+
 def input_error(msg):
     print(f"입력 오류: {msg}")
     sys.exit(2)
@@ -96,6 +103,7 @@ def main():
         ledger = {int(r["번호"]) for r in csv.DictReader(f)}
 
     raw_cache = {}
+    raw_nospace_cache = {}
 
     def raw_text(n):
         if n not in raw_cache:
@@ -104,6 +112,11 @@ def main():
                 input_error(f"원문 파일이 없음: {p}")
             raw_cache[n] = p.read_text(encoding="utf-8")
         return raw_cache[n]
+
+    def raw_nospace(n):
+        if n not in raw_nospace_cache:
+            raw_nospace_cache[n] = nospace(raw_text(n))
+        return raw_nospace_cache[n]
 
     found = []  # (줄 번호, 경고인지, 규칙)
     rel_count = Counter()
@@ -156,7 +169,11 @@ def main():
         if num_s and not num_ok:
             hits.append("ledger")
         if num_ok and ev and not in_raw(ev, raw_text(int(num_s))):
-            hits.append("not-in-raw")
+            ns = nospace(ev)
+            if ns and ns in raw_nospace(int(num_s)):
+                warns.append("space-only")
+            else:
+                hits.append("not-in-raw")
 
         seen[(subj, rel, val, num_s, loc)].append(ln)
         found += [(ln, False, h) for h in hits]

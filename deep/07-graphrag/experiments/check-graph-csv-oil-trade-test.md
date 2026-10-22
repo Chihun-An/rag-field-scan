@@ -82,3 +82,105 @@ python3 deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py deep/0
 - extra-field는 지시 문구대로 관계가 스키마에 없는 줄에도 적용한다(그런 줄에서 분류 체계·업무 단계·주체가 채워져 있으면 relation과 함께 걸린다)
 - 경고 모양(multi-value, stage-number)에 맞으면 closed-list로 세지 않는다. stage-number는 업무 단계 칸에만 본다
 - "주어별 줄 수"의 "그 밖의 주어"에는 빈 주어도 들어간다. 칸이 9개가 아닌 줄은 관계별·주어별 줄 수에 넣지 않는다
+
+## 공백 경고 시험 (space-only를 더한 뒤)
+
+원문 파일이 PDF 추출이라 낱말 중간에 공백이 끼어 있어, 1회차 그래프에서 공백만 다른 근거 문장이 not-in-raw 위반 20건으로 나왔다(worklog 2026-10-22). 스크립트에 경고 space-only를 더했다: in_raw로 원문에 없을 때, 따옴표를 바꾼 뒤 공백을 모두 지운 근거 문장이 같은 방식으로 공백을 지운 원문에 들어 있으면 위반 대신 경고를 낸다.
+
+- 시험 파일: [oil-trade-graph-csv-space.csv](fixtures/oil-trade-graph-csv-space.csv). ot-17.txt 머리줄에서 공백만 뺀 "■관세법[별표]<개정2022.12.31.>", "테스트" 문자열만 썼다.
+- 아래 기대는 실행 전에 적었다.
+
+### space.csv 기대
+
+| 줄 | 넣은 것 | 기대 |
+|----|---------|------|
+| 2 | 원문 용어, 원장 17, 근거 문장 = 머리줄에서 공백만 뺀 글자 | 경고 space-only |
+| 3 | 원문 용어, 원장 17, 근거 문장 "이 문장은 원문에 없는 테스트 문장이다" | 위반 not-in-raw |
+
+```
+줄 2: 경고: space-only
+줄 3: not-in-raw
+관계별 줄 수: 원문 용어 2, 품목 분류 0, 요건 0
+주어별 줄 수: UMO 0, ULO 0, PPO 2, 그 밖의 주어 0
+줄 2개, 위반 1건, 경고 1건
+```
+
+종료 코드 1. pass·fail·warn 세 파일은 결과가 앞과 같아야 한다(공백만 다른 근거 문장이 없다).
+
+### 실행과 출력
+
+모두 저장소 맨 위에서 bash로 돌렸다. 설치한 도구 없음.
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py deep/07-graphrag/experiments/fixtures/oil-trade-graph-csv-space.csv
+```
+
+종료 코드: 1
+
+```
+줄 2: 경고: space-only
+줄 3: not-in-raw
+관계별 줄 수: 원문 용어 2, 품목 분류 0, 요건 0
+주어별 줄 수: UMO 0, ULO 0, PPO 2, 그 밖의 주어 0
+줄 2개, 위반 1건, 경고 1건
+```
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py deep/07-graphrag/experiments/fixtures/oil-trade-graph-csv-pass.csv
+```
+
+종료 코드: 0
+
+```
+관계별 줄 수: 원문 용어 1, 품목 분류 1, 요건 2
+주어별 줄 수: UMO 0, ULO 1, PPO 1, 그 밖의 주어 2
+줄 4개, 위반 0건, 경고 0건
+```
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py deep/07-graphrag/experiments/fixtures/oil-trade-graph-csv-fail.csv
+```
+
+종료 코드: 1
+
+```
+줄 2: columns
+줄 3: relation
+줄 4: subject
+줄 5: empty
+줄 6: extra-field
+줄 7: closed-list
+줄 8: ledger
+줄 9: not-in-raw
+줄 10: duplicate
+줄 11: duplicate
+관계별 줄 수: 원문 용어 5, 품목 분류 2, 요건 1
+주어별 줄 수: UMO 0, ULO 2, PPO 5, 그 밖의 주어 2
+줄 10개, 위반 10건, 경고 0건
+```
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py deep/07-graphrag/experiments/fixtures/oil-trade-graph-csv-warn.csv
+```
+
+종료 코드: 0
+
+```
+줄 2: 경고: multi-value
+줄 3: 경고: stage-number
+줄 4: 경고: stage-number
+관계별 줄 수: 원문 용어 0, 품목 분류 0, 요건 3
+주어별 줄 수: UMO 0, ULO 0, PPO 0, 그 밖의 주어 3
+줄 3개, 위반 0건, 경고 3건
+```
+
+- pass·fail·warn 세 파일의 출력은 1절 출력과 글자 단위로 같다(결과가 바뀌지 않음)
+
+### 확인 표 (공백 경고 시험)
+
+| 시험 파일 | 넣은 것 | 기대 | 스크립트 결과 | 사람 확인 |
+|-----------|---------|------|---------------|-----------|
+| space | 줄 2 공백만 뺀 머리줄 / 줄 3 원문에 없는 테스트 문장 | 줄 2 경고 space-only, 줄 3 위반 not-in-raw. 위반 1, 경고 1, 종료 코드 1 | 기대와 글자 단위로 같음, 종료 코드 1 | 에드워드 확인 전 |
+| pass·fail·warn (다시) | 1절과 같은 파일 | 1절 출력과 같음 | 셋 모두 같음(종료 코드 0, 1, 0) | 에드워드 확인 전 |
+
+- 기대와 다른 결과: 없음

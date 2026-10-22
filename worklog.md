@@ -2817,3 +2817,126 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - deep/07-graphrag/experiments/compare-graphs-oil-trade-test.md: 수정 — 맨 끝에 5절 추가. 1~4절은 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - 고치기 전 스크립트 복사본은 Claude Code 스크래치 폴더(저장소 밖)에만 있음. commit·push는 하지 않음
+
+### 2번 에이전트 그래프 1회차 (2026-10-22, 15:22경 마침, Claude Code)
+
+- 작업 폴더: ~/Documents/rag-agent-oil-run-1(새 Claude Code 대화, 편집 자동 승인 끔). 지시문은 experiments/agent-graph-prompt-oil-trade.md(커밋 aa185a4)를 그대로 썼다. 모델은 Claude Opus 5.5다.
+- 결과 agent-graph.csv는 에드워드가 oil-trade/agent-graph-1.csv로 복사했고, 마지막 보고는 experiments/agent-graph-oil-trade-1-report.md로 남겼다. 1회차 대화에서 추가 질문이나 보충 요청은 하지 않았다.
+- E7 발견 후보: 에이전트는 세 제품을 바젤 코드나 수출입 폐기물 구분에 잇는 문장을 찾지 못해, 무역 법령(원장 4·5)과 바젤협약의 요건을 한 줄도 넣지 않았다. 요건 12줄이 모두 업무 단계 7(처리·재활용)이다. 문서 두 개를 엮어야 하는 연결은 추론으로 보고 잇지 않았다(보고 판단 1·2번).
+
+#### 한 일과 결과
+
+- 형식 검사: `python3 deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py deep/07-graphrag/oil-trade/agent-graph-1.csv`, 종료 코드 1. 출력 전체:
+
+```
+줄 4: not-in-raw
+줄 5: not-in-raw
+줄 8: not-in-raw
+줄 15: not-in-raw
+줄 16: not-in-raw
+줄 17: not-in-raw
+줄 18: not-in-raw
+줄 19: not-in-raw
+줄 20: not-in-raw
+줄 21: not-in-raw
+줄 22: not-in-raw
+줄 23: not-in-raw
+줄 26: not-in-raw
+줄 27: not-in-raw
+줄 28: not-in-raw
+줄 29: not-in-raw
+줄 30: not-in-raw
+줄 31: not-in-raw
+줄 32: not-in-raw
+줄 34: not-in-raw
+관계별 줄 수: 원문 용어 9, 품목 분류 13, 요건 12
+주어별 줄 수: UMO 7, ULO 13, PPO 5, 그 밖의 주어 9
+줄 34개, 위반 20건, 경고 0건
+```
+
+- 위반은 not-in-raw 20건뿐이고(columns·relation·subject·empty·extra-field·closed-list·ledger·duplicate 0건, 경고 0건), 관계별 줄 수는 에이전트 보고(원문 용어 9, 품목 분류 13, 요건 12)와 같다. 주어별의 "그 밖의 주어 9"는 보고의 폐윤활유 4·폐유 4·폐기계유·폐작동유 1의 합과 같다
+- 에이전트 보고는 "근거 문장 34개를 모두 원문과 대조해 글자가 일치"라고 했으나, 형식 검사의 원문 대조(2번 골든 룰 검사 스크립트와 같은 정규화)에서는 20줄이 원문에 없다고 나왔다. 원인은 확인하지 않았다(raw/는 검사 스크립트만 읽는다는 지시). CSV만 보고 숫자로 센 것: 위반 20줄의 원장 번호는 11번 11줄, 14번 8줄, 2번 1줄(통과 14줄은 2·3·13·14·16·17번). 위반 줄 근거 문장 가운데 12줄에 낫표(「」), 11줄에 가운뎃점(·, U+00B7)이 들어 있고, 통과 줄에는 낫표 0줄, 가운뎃점 3줄이다. 11·14번은 PDF에서 뽑은 별표라, PDF 줄바꿈이나 문장부호가 원문 파일과 에이전트가 옮긴 문장 사이에서 다를 수 있다(확인 필요)
+- e4-method-oil-trade.md "비교 전 형식 검사"대로, not-in-raw 줄도 비교에는 넣는다(칸 수가 틀린 줄만 뺌)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 2번 도메인 에이전트 그래프 1회차 결과를 기록하고 형식 검사를 돌린다.
+
+- 지킬 것: 저장소 밖 파일(~/Documents/rag-agent-oil-run-1, /Volumes/rag-answer-keys 포함)과 oil-trade/raw/는 열지 않는다(raw/는 검사 스크립트만 읽는다). agent-graph-1.csv는 고치지 않는다. 값과 근거 문장 내용은 보고·worklog에 쓰지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. experiments/agent-graph-oil-trade-1-report.md를 [머리]와 [보고] 내용 그대로 새로 만든다
+2. check-graph-csv-oil-trade.py로 agent-graph-1.csv를 검사하고 출력 전체를 worklog "한 일과 결과"에 적는다
+3. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+4. 만든·고친 파일, 형식 검사 출력 마지막 세 줄과 종료 코드, 위반·경고 줄 번호와 규칙 이름을 보고한다
+
+#### 읽은 파일
+
+- worklog.md(끝부분). agent-graph-1.csv는 검사 스크립트가 읽고, Claude Code는 CSV에서 원장 번호와 특정 문장부호가 있는지만 셈(값과 근거 문장 내용은 출력하지 않음)
+- oil-trade/raw/는 검사 스크립트만 읽음. 저장소 밖 파일(~/Documents/rag-agent-oil-run-1, /Volumes/rag-answer-keys 포함)은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/agent-graph-oil-trade-1-report.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- agent-graph-1.csv는 고치지 않음. commit·push는 하지 않음
+
+### 2번 원문 공백 차이 바로잡기 (2026-10-22, 15:28경 마침, Claude Code)
+
+- 1회차 형식 검사의 not-in-raw 20건을 Cowork가 원문과 맞대 보니, 모두 원문 낱말 중간의 공백(PDF 추출)을 에이전트가 붙여 쓴 차이였다. 공백을 지우면 20줄 모두 원문에 있었다. 에이전트가 근거를 지어낸 것은 아니다.
+- 에드워드가 비교 스크립트(공백을 지우고 짝짓기)와 형식 검사(공백만 다르면 경고 space-only)를 함께 고치기로 정했다. 방법 파일에 비교 전 형식 검사 셋째 줄과 짝짓기 6번을 더했다. 1회차 커밋 뒤, 기준 그래프와 비교하기 전이다.
+- 남은 일: E5의 골든 룰 G4(check-golden-rules-oil-trade.py)도 같은 정규화를 쓴다. E5 답에서도 같은 일이 생길 수 있어 E5 전에 정한다.
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함
+- 방법 파일: 비교 전 형식 검사 셋째 줄, 짝짓기 6번, 맨 끝 빈 줄과 추가 문단을 넣음(60줄 → 64줄)
+- check-graph-csv-oil-trade.py: in_raw로 원문에 없을 때 따옴표를 바꾸고 공백을 모두 지운 근거 문장이 공백을 지운 원문에 있으면 경고 space-only, 아니면 위반 not-in-raw. nospace 함수와 공백을 지운 원문 캐시를 더하고 맨 위 주석(하는 일, 경고 규칙 목록)을 고침(181줄 → 198줄)
+- compare-graphs-oil-trade.py: _ev·_val을 normalize한 뒤 공백을 모두 지운 글자로 바꾸고 맨 위 주석 "정한 것"에 한 줄을 더함(183줄 → 184줄). 후보 조건·빈 칸 판정·유사도 모두 이 글자로 봄
+- 시험: 기대를 실행 전에 시험 문서 두 개에 적은 뒤 돌림
+  - oil-trade-graph-csv-space.csv: 줄 2 경고 space-only, 줄 3 not-in-raw, 위반 1건·경고 1건, 종료 코드 1. 기대와 같음
+  - pass·fail·warn: 1절 출력과 같음(종료 코드 0, 1, 0). 바뀌지 않음
+  - space-a 대 space-b: 짝 2, 닫힌 목록 2 / 2, 재현율·정밀도 2 / 3, 자카드 2 / 4. 기대와 같음
+  - a 대 b, b 대 a, a 대 a, empty-a 대 empty-b: 앞 기대와 모두 같음. 바뀌지 않음
+- agent-graph-1.csv 형식 검사 다시(종료 코드 0). 출력 마지막 세 줄:
+
+```
+관계별 줄 수: 원문 용어 9, 품목 분류 13, 요건 12
+주어별 줄 수: UMO 7, ULO 13, PPO 5, 그 밖의 주어 9
+줄 34개, 위반 0건, 경고 20건
+```
+
+- 경고 20건은 모두 space-only이고, 줄 번호가 앞 검사의 not-in-raw 20줄과 같음. not-in-raw는 0건
+- 설치한 도구 없음. 앞 시험의 기대 칸과 시험 파일(pass, fail, warn, a, b, empty-a, empty-b)은 고치지 않음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 원문 파일의 낱말 중간 공백(PDF 추출) 때문에 생기는 차이를 바로잡는다. 비교 스크립트는 공백을 지우고 짝짓고, 형식 검사는 공백만 다른 근거 문장을 위반이 아니라 경고로 센다. 1회차 뒤, 기준 그래프와 비교하기 전이다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-agent-oil-run-* 포함)은 열지 않는다. oil-trade/raw/는 스크립트만 읽는다. 시험 파일에는 ot-17.txt 머리줄(공백을 뺀 모양 포함), "테스트" 문자열, 스키마 목록 이름만 쓴다. 앞 시험의 기대 칸과 시험 파일은 고치지 않는다. agent-graph-1.csv는 고치지 않고 값과 근거 문장 내용은 쓰지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. e4-method-oil-trade.md: 비교 전 형식 검사 셋째 줄, 짝짓기 6번, 맨 끝 추가 문단
+2. check-graph-csv-oil-trade.py: space-only 경고. 맨 위 주석에 더함
+3. fixtures/oil-trade-graph-csv-space.csv((가) 경고, (나) 위반)
+4. check-graph-csv-oil-trade-test.md 맨 끝에 "## 공백 경고 시험" 절(실행 전 기대, 네 파일 출력, 확인 표)
+5. compare-graphs-oil-trade.py: _ev·_val을 공백을 지운 글자로. 맨 위 주석 "정한 것"에 더함
+6. fixtures/compare-oil-trade/space-a.csv·space-b.csv((가)~(다))
+7. compare-graphs-oil-trade-test.md 맨 끝에 "## 6. 공백 시험" 절(실행 전 기대, 다섯 비교 출력, 확인 표)
+8. agent-graph-1.csv 형식 검사 다시
+9. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+10. 만든·고친 파일, 시험별 결과, 앞 시험 변화, agent-graph-1.csv 검사 결과를 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/experiments/e4-method-oil-trade.md, check-graph-csv-oil-trade.py, compare-graphs-oil-trade.py, 두 시험 문서(앞 기대 출력), worklog.md(끝부분)
+- oil-trade/raw/와 agent-graph-1.csv는 스크립트만 읽음(Claude Code가 내용을 출력하거나 읽지 않음). 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e4-method-oil-trade.md: 수정 — 세 곳 추가(64줄)
+- deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py: 수정 — space-only 경고(198줄)
+- deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py: 수정 — 공백을 지운 비교(184줄)
+- deep/07-graphrag/experiments/fixtures/oil-trade-graph-csv-space.csv: 새로 만듦
+- deep/07-graphrag/experiments/fixtures/compare-oil-trade/space-a.csv, space-b.csv: 새로 만듦
+- deep/07-graphrag/experiments/check-graph-csv-oil-trade-test.md, compare-graphs-oil-trade-test.md: 수정 — 맨 끝에 절 추가. 앞 절은 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- agent-graph-1.csv는 고치지 않음. commit·push는 하지 않음
