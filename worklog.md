@@ -3005,3 +3005,50 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - deep/07-graphrag/experiments/agent-graph-oil-trade-2-report.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - agent-graph-2.csv는 고치지 않음. commit·push는 하지 않음
+
+### 2번 짝짓기 7번(값 일치)과 회차끼리 일관성 (2026-10-22, 15:56경 마침, Claude Code)
+
+- Cowork가 1회차 대 2회차 비교를 미리 돌려 보니 품목 분류가 13줄 중 4줄만 짝이 됐다. 같은 분류를 뽑고도 근거로 고른 문장이 달랐다.
+- 에드워드가 원문 용어·품목 분류는 값이 완전히 같으면 짝으로 보기로 정했다. 방법 파일에 짝짓기 7번을 더하고 비교 스크립트를 고쳤다. 2회차 커밋(ae3734a) 뒤, 기준 그래프와 비교하기 전이다.
+- 회차끼리 일관성 결과는 experiments/e4-runs-consistency-oil-trade.md에 남겼다.
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함
+- 방법 파일: 짝짓기 7번 한 줄, 맨 끝 빈 줄과 추가 문단을 넣음(64줄 → 67줄)
+- 스크립트: is_candidate 맨 앞에 "원문 용어·품목 분류이고 주어·관계가 같고 양쪽 _val이 비어 있지 않고 완전히 같으면 True"를 넣고, 맨 위 주석 "정한 것"에 한 줄을 더함(184줄 → 188줄)
+- 규칙끼리 부딪치는 곳(확인 필요): 짝짓기 7번은 "근거 문장과 원장 번호는 보지 않는다"고 해서, 짝짓기 5번("정규화한 근거 문장이 빈 줄은 어느 줄의 후보도 되지 않는다")보다 먼저 적용된다. 그래서 근거 문장이 빈 원문 용어·품목 분류 줄도 값이 같으면 짝이 된다. 지시대로 7번을 맨 앞에 두었고, 방법 파일에서 두 규칙의 순서를 정해야 한다
+- 시험(기대는 실행 전에 시험 문서 7절에 적음): value-a 대 value-b, a 대 b, b 대 a, a 대 a, empty-a 대 empty-b, space-a 대 space-b 여섯 비교가 모두 새 기대와 글자 단위로 같음(종료 코드 0)
+- 짝짓기 7번 때문에 바뀐 앞 시험: a 대 b·b 대 a 짝 7 → 8(a3–b3, 원장 번호만 다른 원문 용어 줄), empty-a 대 empty-b 짝 1 → 2((다) 양쪽 근거 문장이 빈 품목 분류 줄, 위 부딪침), space-a 대 space-b 짝 2 → 3((다) 근거 문장 글자만 다른 원문 용어 줄). a 대 a는 그대로. 앞 절의 기대 칸은 고치지 않음
+- 1회차 대 2회차(종료 코드 0): 짝 30, 후보가 둘 이상이었던 줄 A 3·B 2, 닫힌 목록 일치율 31 / 31(100.0%), A(1회차) 재현율 30 / 34(88.2%), B(2회차) 정밀도 30 / 38(78.9%), 자카드 30 / 42(71.4%). 짝짓기 7번 전 Cowork 결과(짝 23, 자카드 46.9%)보다 짝이 7개 늘었다. 품목 분류는 1회차 기준 11 / 13
+- 설치한 도구 없음
+- 짝짓기 5번과 7번이 부딪쳐(근거 문장이 빈 줄이 값 일치로 짝이 됨), 에드워드가 방법 파일 문장대로 5번을 먼저 적용하기로 정했다. 스크립트만 고쳤고 1회차 대 2회차 결과는 바뀌지 않았다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 원문 용어·품목 분류 줄은 값이 완전히 같으면 근거 문장이 달라도 짝으로 보게 방법과 비교 스크립트를 고치고, 1회차 대 2회차 일관성을 기록한다. 2회차 뒤, 기준 그래프와 비교하기 전이다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-agent-oil-run-* 포함)과 oil-trade/raw/는 열지 않는다. 시험 파일에는 "테스트" 문자열과 스키마 목록 이름만 쓴다. 앞 시험의 시험 파일과 기대 칸은 고치지 않는다. agent-graph-1.csv·2.csv는 고치지 않고 값과 근거 문장 내용은 쓰지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. e4-method-oil-trade.md: 짝짓기 7번, 맨 끝 추가 문단
+2. compare-graphs-oil-trade.py: is_candidate에 값 일치 조건, 맨 위 주석에 한 줄
+3. fixtures/compare-oil-trade/value-a.csv·value-b.csv((가)~(라))
+4. 시험 문서 맨 끝에 "## 7. 값 일치 시험" 절(실행 전 기대 여섯 개, 바뀌는 앞 시험 설명, 출력, 확인 표)
+5. 1회차 대 2회차를 돌려 experiments/e4-runs-consistency-oil-trade.md(머리, 결과, 명령, 출력 전체)
+6. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+7. 만든·고친 파일, 시험 결과, 바뀐 앞 시험 결과, 1회차 대 2회차 출력 전체를 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/experiments/e4-method-oil-trade.md, compare-graphs-oil-trade.py, compare-graphs-oil-trade-test.md(앞 기대), 앞 시험 파일(a, b, empty-a, empty-b, space-a, space-b), worklog.md(끝부분)
+- agent-graph-1.csv·2.csv는 비교 스크립트만 읽음(Claude Code가 내용을 출력하거나 읽지 않음). 저장소 밖 파일과 oil-trade/raw/는 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e4-method-oil-trade.md: 수정 — 짝짓기 7번, 맨 끝 추가 문단(67줄)
+- deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py: 수정 — is_candidate와 맨 위 주석(188줄)
+- deep/07-graphrag/experiments/fixtures/compare-oil-trade/value-a.csv, value-b.csv: 새로 만듦
+- deep/07-graphrag/experiments/compare-graphs-oil-trade-test.md: 수정 — 맨 끝에 7절 추가. 앞 절은 고치지 않음
+- deep/07-graphrag/experiments/e4-runs-consistency-oil-trade.md: 새로 만듦
+- worklog.md: 수정 — 이 절 추가
+- agent-graph-1.csv·2.csv는 고치지 않음. commit·push는 하지 않음

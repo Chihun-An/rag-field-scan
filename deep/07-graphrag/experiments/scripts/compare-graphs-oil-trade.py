@@ -11,6 +11,7 @@
 # 정한 것(방법 파일에 없던 경우): 닫힌 목록 칸이 한쪽만 비면 불일치, 양쪽 모두 비면 비교에서 빼고 "양쪽 빈 칸"으로 센다.
 #   빈 근거 문장(원문 용어·품목 분류는 빈 값도)인 줄은 후보가 되지 않는다(방법 파일 짝짓기 5번).
 #   근거 문장과 값은 정규화한 뒤 공백을 모두 지우고 비교한다(방법 파일 짝짓기 6번).
+#   원문 용어·품목 분류는 주어·관계가 같고 공백을 지운 값이 완전히 같으면 근거 문장·원장 번호와 상관없이 후보다(방법 파일 짝짓기 7번). 단, 근거 문장이 빈 줄은 5번대로 후보가 되지 않는다.
 # 실행: python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py <A CSV> <B CSV>
 
 import csv
@@ -74,6 +75,11 @@ def contains_either(x, y):
 
 
 def is_candidate(a, b):
+    if not a["_ev"] or not b["_ev"]:
+        return False
+    if (a["관계"] in ("원문 용어", "품목 분류") and (a["주어"], a["관계"]) == (b["주어"], b["관계"])
+            and a["_val"] and b["_val"] and a["_val"] == b["_val"]):
+        return True
     if (a["주어"], a["관계"], a["원장 번호"]) != (b["주어"], b["관계"], b["원장 번호"]):
         return False
     if not a["_ev"] or not b["_ev"]:
