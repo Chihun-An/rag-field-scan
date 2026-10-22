@@ -2940,3 +2940,68 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - deep/07-graphrag/experiments/check-graph-csv-oil-trade-test.md, compare-graphs-oil-trade-test.md: 수정 — 맨 끝에 절 추가. 앞 절은 고치지 않음
 - worklog.md: 수정 — 이 절 추가
 - agent-graph-1.csv는 고치지 않음. commit·push는 하지 않음
+
+### 2번 에이전트 그래프 2회차 (2026-10-22, 15:49경 마침, Claude Code)
+
+- 작업 폴더: ~/Documents/rag-agent-oil-run-2(새 Claude Code 대화, 편집 자동 승인 끔). 지시문은 experiments/agent-graph-prompt-oil-trade.md(커밋 aa185a4)를 그대로 썼다. 모델은 Claude Opus 5.5다.
+- 결과 agent-graph.csv는 에드워드가 oil-trade/agent-graph-2.csv로 복사했고, 마지막 보고는 experiments/agent-graph-oil-trade-2-report.md로 남겼다. 그래프를 만드는 동안 2회차 대화에 추가 질문이나 보충 요청은 하지 않았다. 에드워드는 승인 화면마다 한 번만 허용을 골랐다.
+- 실수 기록: 마지막 보고를 받은 뒤, 이 기록용 지시문(끝부분이 잘린 것)을 저장소 대화가 아니라 2회차 대화에 잘못 붙여 넣었다. 2회차 대화는 아무 작업도 하지 않고, 지시문이 잘렸다는 점과 작업 폴더가 다르다는 점을 들어 저장소 폴더의 새 대화에서 하라고 답했다. agent-graph.csv는 그 전에 저장된 것이고, 그 뒤 2회차 대화는 쓰지 않았다. 붙여 넣은 지시문에는 정답 내용이 없었다.
+- E7 발견 후보: 2회차도 1회차와 같이 무역법(원장 4·5), 품목 고시(6·7), 바젤협약(1)에서 요건을 한 줄도 넣지 않았다. 같은 지시문의 두 회차에서 같은 결론이 재현됐다.
+- 1회차와 다른 점: 원문의 떨어진 칸을 " / "로 이어 붙인 근거 문장이 있다(보고 판단 4·5번). 보고는 4개라고 했으나 파일에서 " / "가 든 근거 문장은 3개이고, 형식 검사의 not-in-raw 3건이 이 3줄이다(Cowork 확인). 근거 문장 1개는 맨 앞 글머리 기호를 지웠다(보고 판단 9번, 남은 글이 원문에 그대로 있어 형식 검사에 걸리지 않음). "기타" 값이 2개다(1회차 0개).
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함
+- 형식 검사: `python3 deep/07-graphrag/experiments/scripts/check-graph-csv-oil-trade.py deep/07-graphrag/oil-trade/agent-graph-2.csv`, 종료 코드 1. 출력 전체:
+
+```
+줄 2: 경고: space-only
+줄 8: 경고: space-only
+줄 9: 경고: space-only
+줄 10: 경고: space-only
+줄 14: 경고: space-only
+줄 15: 경고: space-only
+줄 19: 경고: space-only
+줄 20: not-in-raw
+줄 21: 경고: space-only
+줄 24: 경고: space-only
+줄 25: 경고: space-only
+줄 26: 경고: space-only
+줄 27: 경고: space-only
+줄 28: 경고: space-only
+줄 29: 경고: space-only
+줄 30: 경고: space-only
+줄 31: 경고: space-only
+줄 38: not-in-raw
+줄 39: not-in-raw
+관계별 줄 수: 원문 용어 12, 품목 분류 14, 요건 12
+주어별 줄 수: UMO 8, ULO 15, PPO 6, 그 밖의 주어 9
+줄 38개, 위반 3건, 경고 16건
+```
+
+- 관계별 줄 수는 에이전트 보고(원문 용어 12, 품목 분류 14, 요건 12)와 같다. "그 밖의 주어 9"는 보고의 폐윤활유 4·폐유 4·재활용의무 대상 제품·포장재 1의 합과 같다
+- 위반 not-in-raw 3건(줄 20, 38, 39): CSV만 보고 센 결과, 세 줄 모두 근거 문장에 " / "가 들어 있다(줄 20 원장 13 요건, 줄 38·39 원장 17 품목 분류). 에이전트가 원문의 떨어진 칸을 " / "로 이어 붙였다고 밝힌 줄들이다(보고 판단 4·5번). 다만 보고는 이런 근거 문장이 4개라고 했는데, CSV에서 " / "가 들어 있는 줄은 이 3줄뿐이다(1개 차이, 원인 확인 안 함)
+- 경고 space-only 16건(공백만 다르면 원문에 있음). 글머리 기호 "□"를 지운 근거 문장(보고 판단 9번)은 위반으로 나오지 않았다
+- e4-method-oil-trade.md "비교 전 형식 검사"대로 not-in-raw 줄도 비교에 넣는다
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 2번 도메인 에이전트 그래프 2회차 결과를 기록하고 형식 검사를 돌린다.
+
+- 지킬 것: 저장소 밖 파일(~/Documents/rag-agent-oil-run-*, /Volumes/rag-answer-keys 포함)은 열지 않는다. oil-trade/raw/는 검사 스크립트만 읽는다. agent-graph-2.csv는 고치지 않고 값과 근거 문장 내용은 쓰지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. experiments/agent-graph-oil-trade-2-report.md를 [머리]와 [보고] 내용 그대로 새로 만든다
+2. check-graph-csv-oil-trade.py로 agent-graph-2.csv를 검사하고 출력 전체를 worklog에 적는다
+3. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+4. 만든·고친 파일, 형식 검사 출력 전체와 종료 코드를 보고한다
+
+#### 읽은 파일
+
+- worklog.md(끝부분). agent-graph-2.csv는 검사 스크립트가 읽고, Claude Code는 CSV에서 줄 번호·원장 번호·관계와 " / "가 있는지만 셈(값과 근거 문장 내용은 출력하지 않음)
+- oil-trade/raw/는 검사 스크립트만 읽음. 저장소 밖 파일(~/Documents/rag-agent-oil-run-*, /Volumes/rag-answer-keys 포함)은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/agent-graph-oil-trade-2-report.md: 새로 만듦 — 받은 내용 그대로. 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- agent-graph-2.csv는 고치지 않음. commit·push는 하지 않음
