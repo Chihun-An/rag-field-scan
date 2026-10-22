@@ -1,6 +1,6 @@
 # 인수인계 (handoff)
 
-새 대화를 시작한 AI(Claude Code, Cowork, 또는 그 자리를 이어받는 다른 AI)가 이 파일 하나로 과제를 이어받기 위한 문서다. 자세한 내용은 링크한 파일에 있다. 다른 AI로 넘길 때는 8절을 먼저 읽는다. 마지막 갱신: 2026-10-15, Cowork(에드워드 요청으로 직접 고침).
+새 대화를 시작한 AI(Claude Code, Cowork, 또는 그 자리를 이어받는 다른 AI)가 이 파일 하나로 과제를 이어받기 위한 문서다. 자세한 내용은 링크한 파일에 있다. 다른 AI로 넘길 때는 8절을 먼저 읽는다. 마지막 갱신: 2026-10-22, Claude Code(Cowork 지시문).
 
 ## 1. 이 저장소가 무엇인가
 
@@ -49,7 +49,7 @@
   - 2번 도메인 변경은 2026-10-13 멘토가 승인했다. 무역 & 기름 실무 정보는 올리지 않는다 ([07 README](deep/07-graphrag/README.md), [AGENTS.md](AGENTS.md))
   - 방산 범위 제한(무기 성능·기술 사양·수출 통제)은 방산 도메인 규칙이라 2번에는 해당하지 않고, 대신 AGENTS.md의 무역 & 기름 실무 정보 금지가 적용된다 ([challenge.md](deep/07-graphrag/challenge.md) "꼭 지킬 것", [AGENTS.md](AGENTS.md) "공개 금지")
 
-## 4. 현재 상태 (2026-10-15)
+## 4. 현재 상태 (2026-10-22)
 
 | 단계 | 1번 AI 컨설팅 | 2번 무역 & 기름 | 근거 |
 |------|---------------|-----------------|------|
@@ -57,7 +57,7 @@
 | E1 | 완료(분류 축 확정) | 완료 | [e1-decisions.md](deep/07-graphrag/e1-decisions.md) |
 | E2 | 완료. 원장 17건, 제외 19건(커밋 0d9f7e2) | 완료. 원장 17건, 제외 24건(커밋 5e4c595에 원장 16건·제외 23건, 2026-10-14 원장 관세율표 1건·제외 관세법 본문 1건 추가) | 1번 [sources.csv](deep/07-graphrag/ai-consulting/sources.csv), [excluded.csv](deep/07-graphrag/ai-consulting/excluded.csv) / 2번 [sources.csv](deep/07-graphrag/oil-trade/sources.csv), [excluded.csv](deep/07-graphrag/oil-trade/excluded.csv) |
 | E3 골든 세트 | 완료. 스키마([schema.md](deep/07-graphrag/ai-consulting/schema.md))·질문([questions.md](deep/07-graphrag/ai-consulting/questions.md))·기대 답 해시([answer-key.sha256](deep/07-graphrag/ai-consulting/answer-key.sha256))·골든 룰([golden-rules.md](deep/07-graphrag/ai-consulting/golden-rules.md))·예측([predictions.md](deep/07-graphrag/ai-consulting/predictions.md)) 확정 | 완료. 스키마([schema.md](deep/07-graphrag/oil-trade/schema.md))·질문([questions.md](deep/07-graphrag/oil-trade/questions.md))·기대 답 해시([answer-key.sha256](deep/07-graphrag/oil-trade/answer-key.sha256))·골든 룰([golden-rules.md](deep/07-graphrag/oil-trade/golden-rules.md))·예측([predictions.md](deep/07-graphrag/oil-trade/predictions.md)) 확정 | [challenge.md](deep/07-graphrag/challenge.md) |
-| E4 사람 그래프 vs 에이전트 그래프 | 진행. 사람 그래프 7건 저장·형식 점검 통과([human-graph.csv](deep/07-graphrag/ai-consulting/human-graph.csv), 커밋 065cf33) | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
+| E4 사람 그래프 vs 에이전트 그래프 | 측정 완료. 사람 그래프 7건(065cf33), 에이전트 그래프 2회(b173c20, ed2203d). 닫힌 목록 일치율 72.2%(두 회차 같음, 예측 85%), 열린 값 재현율 78.3%·73.9%([방법](deep/07-graphrag/experiments/e4-method.md), [닫힌 목록](deep/07-graphrag/experiments/e4-closed-results.md), [열린 값 1회차](deep/07-graphrag/experiments/e4-open-results-run1.md), [2회차](deep/07-graphrag/experiments/e4-open-results-run2.md)) | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E5 답변 비교 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E6 그래프 뷰어 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
 | E7 발견 정리 | 대기 | 대기 | [challenge.md](deep/07-graphrag/challenge.md) |
@@ -68,16 +68,23 @@
   - 2번 E3 골든 세트: 스키마(완료, [schema.md](deep/07-graphrag/oil-trade/schema.md)) → 질문·통제 항목(완료, [questions.md](deep/07-graphrag/oil-trade/questions.md)) → 기대 답(완료, 해시 [answer-key.sha256](deep/07-graphrag/oil-trade/answer-key.sha256)) → 골든 룰과 검사 스크립트(완료, [golden-rules.md](deep/07-graphrag/oil-trade/golden-rules.md)) → 예측(완료, [predictions.md](deep/07-graphrag/oil-trade/predictions.md))
   - 2번 기대 답 노출 기록: 정답을 쓴 격리 대화의 마지막 보고에 정답 일부(Q9의 결과 건수, T1·T3의 근거 설명)가 들어갔고, 같은 대화가 worklog에 원문을 읽은 위치를 적었다(커밋 전에 지움). 2번은 사람 그래프가 필수가 아니어서 다시 시작하지 않고 기록만 남겼다. Q9는 질문을 바꾸지 않고 그대로 둔다(에드워드 결정). 품목 분류에 근거 두 개(원문 용어 근거, 분류 근거)를 함께 적는 방식은 [2번 골든 룰](deep/07-graphrag/oil-trade/golden-rules.md)에서 허용했다
 
+- E4 경위(자세한 것은 [worklog.md](worklog.md) 2026-10-19~22):
+  - 사람 그래프: 에드워드가 AI 없이 구글 시트에서 만들었다. 커밋한 뒤 고치지 않는다([schema.md](deep/07-graphrag/ai-consulting/schema.md) 8절). 7560fba는 커밋 메시지와 달리 human-graph.csv가 빠졌고, 실제 파일은 065cf33에 들어갔다
+  - "기타" 값: 양쪽 모두 기타면 Codex가 판정하고, 한쪽만 기타면 불일치다(schema.md 8절, 에이전트 그래프 전에 정함)
+  - 에이전트 그래프: Claude Code를 추출기로 썼다. 지시문은 [agent-graph-prompt.md](deep/07-graphrag/experiments/agent-graph-prompt.md)로 1회차 전에 커밋했다(1b6f63b). 회차마다 저장소 밖 새 폴더(~/Documents/rag-agent-run-1, -2)에 schema.md·sources.csv·raw/만 복사하고, 새 대화에서 편집 자동 승인을 끄고 돌렸다. 17건 전부를 뽑고 비교는 7건만 했다. 2회차는 보고 보충을 요청한 뒤 파일을 다시 썼다(worklog에 기록)
+  - 비교: 닫힌 목록은 [compare-graphs.py](deep/07-graphrag/experiments/scripts/compare-graphs.py), 열린 값은 Codex 판정이다. Codex에는 사람·에이전트를 A/B로 섞어 주고(열쇠는 e4-codex-key.json), Codex 앱에서 빈 폴더(~/Documents/codex-judge-empty)를 프로젝트로 골라 회차마다 새 대화로 했다. 판정 규칙은 [codex-judge-rules.md](deep/07-graphrag/shared/codex-judge-rules.md)
+  - E7에 쓸 발견 후보: 에이전트는 "기타"를 쓰지 않았다(사람은 5줄, 그중 사용 기술 4줄). 정밀도가 재현율보다 높다. 성과가 가장 흔들린다. 같은 지시문이어도 닫힌 값의 10% 정도가 회차마다 달라진다(자카드 89.2%)
+
 ## 5. 다음 할 일
 
-- 1주차 남은 일(점검 10/18(일) 21:00):
-  - progress/week-1.md 4줄: 에드워드가 쓴다(이번 주에 한 일, 발견, 막힌 점, 다음 주 계획)
-  - 리즈 저장소 상호 검토 1장: 리즈 저장소 주소가 필요하다
+- 새 Cowork 대화는 이 파일을 읽고 E4 2번 설계부터 시작한다. 10/15~22 Cowork 대화에는 2번 기대 답 일부가 샌 보고가 남아 있고 대화가 길어져, 2026-10-22에 새 대화로 넘겼다
+- 1주차: 완료. [week-1.md](progress/week-1.md)(f3253e2), 리즈 저장소 상호 검토 [review-liz-week-1.md](progress/review-liz-week-1.md)(63f37fb, 10/19 추가 검토 88afef3)
 - 2주차(E4·E5)에 할 일:
-  - E4 1번: 에드워드가 사람 그래프 7건([schema.md](deep/07-graphrag/ai-consulting/schema.md) 9절 대상, 7절 형식)을 에이전트 결과를 보기 전에 만들어 커밋한다. 그다음 에이전트 그래프를 2회 이상 만들고, 일치율은 [1번 예측](deep/07-graphrag/ai-consulting/predictions.md) 4절 기준으로 잰다
-  - E4 2번: 사람 그래프는 필수가 아니다. 에이전트 그래프를 기준 그래프(디스크 안)와 [2번 예측](deep/07-graphrag/oil-trade/predictions.md) 5절 기준으로 비교한다
+  - E4 1번: 측정 완료(4절 E4 경위). 결과는 E7에서 쓴다
+  - E4 2번(다음 차례): 사람 그래프는 필수가 아니다. 에이전트 그래프를 기준 그래프(디스크 안)와 [2번 예측](deep/07-graphrag/oil-trade/predictions.md) 5절 기준으로 비교한다. 1번과 같은 방식(지시문과 비교 방법을 먼저 커밋, 저장소 밖 격리 폴더, 새 대화)으로 만들고, 비교는 아래 정답 격리 규칙대로 디스크를 연 격리 대화에서 하고 수치만 보고받는다
   - E5: 두 도메인 모두 "검색만"과 "그래프 경유"로 Q1~Q10·T1~T5에 답한다. 답 모양은 각 도메인 golden-rules.md 2절이다. 순서는 골든 룰 검사 스크립트 → 판정기(다른 계열 1회 이상, 6절 Codex 판정 격리) → 채점(디스크를 열어 기대 답과 비교)이다
   - 기대 답 확인(에드워드): 1번은 사람 그래프를 커밋한 뒤, 2번은 아무 때나(사람 그래프 없음). 확인할 때도 아래 정답 격리 규칙대로 디스크를 연다
+  - progress/week-2.md 4줄: 에드워드가 쓴다(10/25(일) 21:00 전)
 - 남은 작은 일:
   - [07 README](deep/07-graphrag/README.md) 폴더 구조 블록에 e1-decisions.md가 아직 없다(worklog 2026-10-13에 기록된 상태)
   - 2번 통관 단계: 근거 자료를 찾으면 [2번 스키마](deep/07-graphrag/oil-trade/schema.md)에 추가한다(에드워드 예정)
@@ -125,6 +132,8 @@
   - Cowork는 에드워드 허락 없이 저장소 파일을 직접 고치지 않는다. 고칠 내용은 Claude Code 지시문으로 넘긴다
   - 지시문에는 넣을 문장을 그대로 적는다. "위 내용 그대로" 같은 자리표시를 쓰지 않는다
   - Claude Code 보고를 그대로 믿지 않고, Cowork가 저장소 파일·커밋·배포 사이트를 직접 열어 확인한다
+  - 에드워드가 "ㄱ"만 보내면 저장소를 직접 확인하라는 뜻이다(2026-10-22)
+  - 사람 그래프·기준 그래프처럼 비교의 기준이 되는 파일은 Cowork가 내용을 열지 않고 숫자(줄 수, 위반 수)만 확인한다
 
 ## 7. 더 볼 곳
 
