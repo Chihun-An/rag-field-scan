@@ -170,3 +170,109 @@ python3 deep/07-graphrag/experiments/scripts/check-golden-rules.py deep/07-graph
 
 - pass·fail 출력은 정정 전(1절)과 같다. 바뀐 것은 empty의 오류 문구와, 정정 전에는 입력 오류가 되었을 controls-only가 통과한 것이다
 - 시험 파일에는 이번에도 공개 정보(원장 제목, 수행 펌)와 일부러 틀린 값, "테스트"만 썼다
+
+## G4 공백 경고 시험 (2026-10-22, E5 답 전)
+
+e5-method.md 4절대로 G4를 고쳤다: in_raw로 원문에 없을 때, 따옴표를 바꾼 뒤 공백을 모두 지운 근거 문장이 같은 방식으로 공백을 지운 원문에 있으면 위반 대신 "G4 경고(space-only)"로 모은다. 경고가 있으면 위반 목록(또는 "위반 없음") 뒤에 "경고 N건"과 같은 칸의 표를 낸다. 종료 코드는 위반으로만 정한다.
+
+- 시험 파일: [golden-rules-space.json](fixtures/golden-rules-space.json). golden-rules-pass.json의 Q5 첫 주장(원장 3번 수행 McKinsey, 근거 문장 = 3번 제목)에서 근거 문장의 공백만 뺀 주장 1과, 근거 문장이 "이 문장은 원문에 없는 테스트 문장이다"인 주장 2를 담았다.
+- 아래 기대는 실행 전에 적었다.
+
+### space 기대 출력
+
+```
+검사한 질문 1개, 주장 2개
+위반 1건
+질문	주장	규칙	이유
+Q5	2	G4	근거 문장이 원장 3번 원문에 없음
+경고 1건
+질문	주장	규칙	이유
+Q5	1	G4 경고(space-only)	공백을 모두 지우면 원장 3번 원문에 있음
+```
+
+종료 코드 1. 기존 시험 파일(pass, fail, empty, controls-only)은 공백만 다른 근거 문장이 없어 4절(정정 뒤) 출력과 같아야 한다.
+
+### 실행과 출력
+
+모두 저장소 맨 위에서 bash로 돌렸다. 설치한 도구 없음.
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/check-golden-rules.py deep/07-graphrag/experiments/fixtures/golden-rules-space.json
+```
+
+종료 코드: 1
+
+```
+검사한 질문 1개, 주장 2개
+위반 1건
+질문	주장	규칙	이유
+Q5	2	G4	근거 문장이 원장 3번 원문에 없음
+경고 1건
+질문	주장	규칙	이유
+Q5	1	G4 경고(space-only)	공백을 모두 지우면 원장 3번 원문에 있음
+```
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/check-golden-rules.py deep/07-graphrag/experiments/fixtures/golden-rules-pass.json
+```
+
+종료 코드: 0
+
+```
+검사한 질문 5개, 주장 5개
+위반 없음
+```
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/check-golden-rules.py deep/07-graphrag/experiments/fixtures/golden-rules-fail.json
+```
+
+종료 코드: 1
+
+```
+검사한 질문 9개, 주장 8개
+위반 10건
+질문	주장	규칙	이유
+Q10	-	G1	"요약" 칸이 없음
+Q5	-	G2	상태가 답함인데 주장이 없음
+Q6	1	G3	원장에 없는 번호: 18
+Q8	1	G4	근거 문장이 원장 3번 원문에 없음
+Q9	1	G5	스키마 6절에 없는 관계: '협력'
+Q10	1	G6	"적용 업무"의 목록에 없는 값: '인수합병 자문'
+Q6	1	G7	원장 3번의 펌은 McKinsey인데 값은 'BCG'
+T1	-	G8	상태가 "자료에 없음"이 아님: '답함'
+T1	-	G8	주장이 0개가 아님: 1개
+Q1	1	G9	Q1의 주장은 원장 2번이어야 하는데 3
+```
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/check-golden-rules.py deep/07-graphrag/experiments/fixtures/golden-rules-empty.json
+```
+
+종료 코드: 2
+
+```
+입력 오류: 질문을 하나도 읽지 못함(질문 0개)
+```
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/check-golden-rules.py deep/07-graphrag/experiments/fixtures/golden-rules-controls-only.json
+```
+
+종료 코드: 0
+
+```
+검사한 질문 3개, 주장 0개
+위반 없음
+```
+
+- 기존 시험 파일(pass, fail, empty, controls-only)의 출력은 4절(정정 뒤) 출력과 글자 단위로 같다(종료 코드 0, 1, 2, 0). 결과가 바뀌지 않았다
+
+### 확인 표 (G4 공백 경고)
+
+| 시험 파일 | 넣은 것 | 기대 | 스크립트 결과 | 사람 확인 |
+|-----------|---------|------|---------------|-----------|
+| space | 공백만 뺀 근거 문장 주장 1, 원문에 없는 테스트 문장 주장 2 | 경고 1건(G4 경고(space-only)), 위반 1건(G4), 종료 코드 1 | 기대와 글자 단위로 같음, 종료 코드 1 | 에드워드 확인 전 |
+| pass·fail·empty·controls-only (다시) | 앞과 같은 파일 | 4절(정정 뒤) 출력과 같음 | 넷 모두 같음 | 에드워드 확인 전 |
+
+- 기대와 다른 결과: 없음

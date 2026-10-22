@@ -1,0 +1,21 @@
+[
+  {
+    "질문": "Q5",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 3,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "Fromcalltoopportunity:EntelConnectreimaginescustomerconversationswithMcKinseyandGoogleCloud"
+      },
+      {
+        "원장 번호": 3,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "이 문장은 원문에 없는 테스트 문장이다"
+      }
+    ],
+    "요약": "테스트"
+  }
+]

@@ -10,6 +10,9 @@
 #   - deep/07-graphrag/oil-trade/sources.csv: 원장 번호(G3)
 #   - deep/07-graphrag/oil-trade/raw/ot-NN.txt: 원문(G4)
 # 출력: 표준 출력에 검사한 질문 수, 주장 수, 근거 수와 위반 목록(질문, 주장 순번, 근거 순번, 규칙, 이유)을 한국어로 쓴다.
+#   경고가 있으면 그 뒤에 "경고 N건"과 같은 칸의 경고 목록을 쓴다.
+# 경고 규칙: G4 경고(space-only) — 공백을 모두 지워야만 원문에 있는 근거 문장은 G4 위반이 아니라 경고로 센다
+#   (원문이 PDF에서 뽑은 글자라 낱말 중간에 공백이 있음, experiments/e5-method.md 4절). 경고는 종료 코드에 넣지 않는다.
 # 종료 코드: 0 위반 없음, 1 위반 있음, 2 입력 오류(질문을 하나도 읽지 못한 경우 포함. 주장 0개만으로는 오류가 아님).
 #
 # 실행(저장소 맨 위에서): python3 deep/07-graphrag/experiments/scripts/check-golden-rules-oil-trade.py <답 JSON 파일>
@@ -92,6 +95,11 @@ def normalize(text, join_hyphen=True):
     return re.sub(r"\s+", " ", text).strip()
 
 
+def nospace(text):
+    # 따옴표를 바꾼 뒤 공백을 모두 지운다(G4 경고 space-only용)
+    return re.sub(r"\s+", "", text.translate(QUOTES))
+
+
 def in_raw(sentence, raw_text):
     s = normalize(sentence)
     if s and s in normalize(raw_text):
@@ -127,6 +135,7 @@ def main():
     raw = load_raw(ledger)
 
     violations = []  # (질문, 주장 순번, 근거 순번, 규칙, 이유)
+    warnings = []    # 같은 칸. G4 경고(space-only)
     n_items = n_claims = n_ev = 0
 
     for idx, item in enumerate(data, 1):
@@ -255,7 +264,10 @@ def main():
                 # G4 근거 문장이 원문에 있다
                 if num_ok and not empty(sent):
                     if not isinstance(sent, str) or not in_raw(sent, raw[num]):
-                        violations.append((ql, ci, ei, "G4", f"근거 문장이 원장 {num}번 원문에 없음"))
+                        if isinstance(sent, str) and nospace(sent) and nospace(sent) in nospace(raw[num]):
+                            warnings.append((ql, ci, ei, "G4 경고(space-only)", f"공백을 모두 지우면 원장 {num}번 원문에 있음"))
+                        else:
+                            violations.append((ql, ci, ei, "G4", f"근거 문장이 원장 {num}번 원문에 없음"))
 
                 # G9 Q1의 근거는 원장 4번 제7조
                 if q == "Q1":
@@ -270,14 +282,19 @@ def main():
     print(f"검사한 질문 {n_items}개, 주장 {n_claims}개, 근거 {n_ev}개")
     if not violations:
         print("위반 없음")
-        return 0
-    order = {f"G{i}": i for i in range(1, 10)}
-    violations.sort(key=lambda v: order[v[3]])
-    print(f"위반 {len(violations)}건")
-    print("질문\t주장\t근거\t규칙\t이유")
-    for v in violations:
-        print("\t".join(str(x) for x in v))
-    return 1
+    else:
+        order = {f"G{i}": i for i in range(1, 10)}
+        violations.sort(key=lambda v: order[v[3]])
+        print(f"위반 {len(violations)}건")
+        print("질문\t주장\t근거\t규칙\t이유")
+        for v in violations:
+            print("\t".join(str(x) for x in v))
+    if warnings:
+        print(f"경고 {len(warnings)}건")
+        print("질문\t주장\t근거\t규칙\t이유")
+        for w in warnings:
+            print("\t".join(str(x) for x in w))
+    return 1 if violations else 0
 
 
 if __name__ == "__main__":

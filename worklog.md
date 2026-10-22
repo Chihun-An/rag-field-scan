@@ -3124,3 +3124,44 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - deep/07-graphrag/experiments/e5-answer-shape-ai-consulting.md(13줄), e5-answer-shape-oil-trade.md(14줄): 새로 만듦 — 스크립트로 옮김
 - worklog.md: 수정 — 이 절 추가
 - questions.md, golden-rules.md, predictions.md는 고치지 않음. commit·push는 하지 않음
+
+### E5 골든 룰 G4 공백 경고 (2026-10-22, 16:42경 마침, Claude Code)
+
+- e5-method.md 4절대로 두 도메인 골든 룰 검사 스크립트의 G4를 고쳤다. 공백을 모두 지워야만 원문에 있는 근거 문장은 위반이 아니라 경고(space-only)로 센다. 종료 코드는 위반으로만 정한다.
+- 두 golden-rules.md 끝에 변경 기록 절을 더했다. 답 모양(2절)은 고치지 않았으므로 e5-answer-shape-*.md는 그대로다.
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함
+- 두 스크립트: nospace 함수(따옴표를 바꾼 뒤 공백을 모두 지움)를 더하고, G4에서 in_raw로 원문에 없을 때 공백을 지운 근거 문장이 공백을 지운 원문에 있으면 "G4 경고(space-only)"로 warnings에 모음. 위반 목록(또는 "위반 없음") 뒤에 경고가 있으면 "경고 N건"과 같은 칸의 표를 냄. 종료 코드는 위반이 있으면 1, 없으면 0. 맨 위 주석의 출력과 경고 규칙을 고침(1번 252줄, 2번 301줄)
+- 시험 파일 두 개를 기존 pass 시험 파일의 문자열로 만듦: 1번은 원장 3번 제목(공백 뺌), 2번은 ot-17.txt 머리줄(공백 뺌). 둘 다 "이 문장은 원문에 없는 테스트 문장이다" 주장을 하나씩 더함
+- 결과(기대는 실행 전에 시험 기록에 적음): 1번·2번 space 모두 경고 1건, 위반 1건(G4), 종료 코드 1로 기대와 글자 단위로 같음. 기존 시험 파일 pass·fail·empty·controls-only는 두 도메인 모두 앞 출력과 글자 단위로 같음(종료 코드 0, 1, 2, 0). 바뀐 결과 없음
+- 두 golden-rules.md의 2절이 e5-answer-shape-*.md와 여전히 글자 단위로 같음을 확인함
+- 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 두 도메인 골든 룰 검사 스크립트의 G4를 고친다. 공백을 모두 지워야만 원문에 있는 근거 문장은 위반이 아니라 경고(space-only)로 센다(experiments/e5-method.md 4절). E5 답을 만들기 전이다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys 포함)은 열지 않는다. raw/는 스크립트만 읽는다. 시험 파일에는 기존 pass 시험 파일에 이미 쓴 문자열과 "테스트" 문자열만 쓴다. 기존 시험 파일과 시험 기록의 앞 내용은 고치지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. check-golden-rules.py·check-golden-rules-oil-trade.py: G4 경고(space-only), 경고 출력, 종료 코드는 위반으로만, 맨 위 주석
+2. 시험 파일 golden-rules-space.json, oil-trade-golden-rules-space.json(경고 1·위반 1·종료 코드 1)
+3. 시험 기록 두 파일 맨 끝에 "## G4 공백 경고 시험 (2026-10-22, E5 답 전)" 절(실행 전 기대, space와 기존 네 파일 출력, 바뀐 결과, 확인 표)
+4. 두 golden-rules.md 맨 끝에 [변경] 절. 2절은 고치지 않음
+5. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+6. 만든·고친 파일, 시험 결과, 기존 시험 결과 변화를 보고한다
+
+#### 읽은 파일
+
+- check-golden-rules.py, check-golden-rules-oil-trade.py, golden-rules-pass.json, oil-trade-golden-rules-pass.json, 두 시험 기록(앞 출력), 두 golden-rules.md, e5-answer-shape-*.md, worklog.md(끝부분)
+- raw/는 스크립트만 읽음. 저장소 밖 파일(/Volumes/rag-answer-keys 포함)은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/scripts/check-golden-rules.py, check-golden-rules-oil-trade.py: 수정
+- deep/07-graphrag/experiments/fixtures/golden-rules-space.json, oil-trade-golden-rules-space.json: 새로 만듦
+- deep/07-graphrag/experiments/golden-rules-test.md, golden-rules-oil-trade-test.md: 수정 — 맨 끝에 절 추가. 앞 내용은 고치지 않음
+- deep/07-graphrag/ai-consulting/golden-rules.md, deep/07-graphrag/oil-trade/golden-rules.md: 수정 — 맨 끝에 "## 6. 변경 기록" 절 추가. 2절은 고치지 않음
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
