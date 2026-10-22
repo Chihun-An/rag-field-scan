@@ -3052,3 +3052,33 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - deep/07-graphrag/experiments/e4-runs-consistency-oil-trade.md: 새로 만듦
 - worklog.md: 수정 — 이 절 추가
 - agent-graph-1.csv·2.csv는 고치지 않음. commit·push는 하지 않음
+
+### 2번 E4 기준 그래프 비교 (2026-10-22, 16:20경 기록, Claude Code)
+
+- 정답 디스크를 연 격리 Claude Code 대화(작업 폴더 /Volumes/rag-answer-keys, 새 대화, 편집 자동 승인 끔)가 Cowork가 쓴 지시문대로 해시 확인, 기준 그래프 형식 검사, 기준 대 1회차·2회차 비교를 돌리고, 결과를 experiments/e4-reference-results-oil-trade.md에 숫자만 남겼다. 그 대화는 기준 그래프를 열지 않고 스크립트에 경로만 넘겼으며, worklog는 쓰지 않았다.
+- 디스크가 잠긴 것은 Cowork가 확인했다(맥에서 ls /Volumes, rag-answer-keys 없음). 격리 대화의 마지막 보고 내용과 그 대화를 삭제했는지는 확인하지 못했다(확인 필요). 결과 파일에는 지시한 네 명령의 출력만 있다.
+- 결과: 해시 세 파일 OK. 기준 그래프 형식 검사 위반 0, 경고 11(space-only). 기준 대 1회차는 짝 18, 닫힌 목록 일치율 15/15(100%), 재현율 18/139(12.9%), 정밀도 18/34(52.9%). 기준 대 2회차는 짝 21, 17/17(100%), 21/139(15.1%), 21/38(55.3%). 요건 재현율은 두 회차 모두 5/105(4.8%).
+- 예측(predictions.md 3절, 80%)과의 비교와 해석은 E7에서 한다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 2번 E4 기준 그래프 비교 결과를 worklog에 기록하고 handoff.md를 갱신한다. 정답 디스크는 잠긴 상태다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-agent-oil-run-* 포함)과 oil-trade/raw/는 열지 않는다. e4-reference-results-oil-trade.md는 고치지 않는다. [ ] 표시 사이 문장은 그대로 넣고 지시한 곳 말고는 고치지 않는다. commit·push 하지 않는다
+
+1. 시작 전에 `ls /Volumes`로 rag-answer-keys가 없는지 확인한다(있으면 멈춤)
+2. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+3. handoff.md 다섯 곳: 4절 표 E4 행 2번 칸, 4절 E4 경위 끝에 2번 경위 다섯 줄, 5절 첫 줄(E5 설계부터), 5절 "E4 2번" 줄(측정 완료), 5절 남은 작은 일에 두 줄
+4. 고친 파일, handoff.md 바뀐 줄 수, 1번 확인 결과를 보고한다
+
+#### 읽은 파일
+
+- handoff.md(4절 표 E4 행, E4 경위, 5절 해당 줄), worklog.md(날짜 항목 머리와 끝부분)
+- `ls /Volumes` 결과: Macintosh HD, The CEO Staff 2.9.0. rag-answer-keys 없음(디스크 잠김 확인)
+- e4-reference-results-oil-trade.md는 열지 않았고 고치지 않음. 이 절의 결과 숫자와 커밋 번호는 받은 문장 그대로이고 Claude Code가 결과 파일·git으로 확인하지 않음. 저장소 밖 파일과 oil-trade/raw/는 열지 않음
+
+#### 만든·고친 파일
+
+- handoff.md: 수정 — 지시한 다섯 곳만 고침
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
