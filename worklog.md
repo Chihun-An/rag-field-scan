@@ -3082,3 +3082,45 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - handoff.md: 수정 — 지시한 다섯 곳만 고침
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### E5 방법과 지시문 (2026-10-22, 16:38경 마침, Claude Code)
+
+- E5 측정 방법을 답을 만들기 전에 정했다: experiments/e5-method.md. 판단 기록은 그 파일 8절에 있다.
+- 답 지시문(e5-prompt-search.md, e5-prompt-graph.md), 질문 파일(e5-questions-*.md), 답 모양 파일(e5-answer-shape-*.md)을 만들었다. 질문 파일과 답 모양 파일은 questions.md·golden-rules.md에서 스크립트로 옮겼다. 통제 항목의 기대 행동과 골든 룰은 답하는 대화에 주지 않으려고 뺐다.
+- T5 진술은 아직 자리만 있다. 디스크를 연 격리 대화가 다음 단계에서 넣는다.
+
+#### 한 일과 결과
+
+- 시작 전에 `ls /Volumes`로 rag-answer-keys가 마운트되어 있지 않음을 확인함
+- 옮기기 스크립트는 저장소 밖(Claude Code 스크래치 폴더의 make-e5-files.py)에 두고 돌림. questions.md의 "## 3. 질문 10개"·"## 4. 통제 항목 5개" 표에서 머리줄로 "#"·"질문" 칸 위치를 찾아 그 두 칸만 읽고, 번호가 Q1~Q10·T1~T5 순서인지 확인한 뒤 씀. T5는 표의 글 대신 지시한 자리 문장. golden-rules.md는 "## 2. 답의 모양" 줄부터 "## 3." 줄 바로 앞까지 그대로 옮김
+- 확인: 질문 파일 두 개 모두 17줄, "- Q" 10줄·"- T" 5줄. "기대", "자료에 없음", "전제가 틀림", "바로잡는다"가 T5 줄을 빼고 0회(T5 줄에도 0회). Q1~T4 질문 글이 각 questions.md에 글자 그대로 있음. 답 모양 파일 두 개가 각 golden-rules.md 안에 글자 그대로 있음(1번 13줄, 2번 14줄)
+- 참고: 2번 답 모양 파일(golden-rules.md 2절 그대로)에는 "2번 기대 답을 쓸 때 이 방식을 썼고 … 두 근거가 실제로 이어지는지는 판정기(층위 2)가 본다"는 문장이 들어 있다. 기대 답의 내용은 아니지만, 답하는 대화가 기대 답과 판정기가 있다는 것을 알게 된다. 지시대로 2절을 그대로 옮겼다
+- 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: E5 측정 방법, 답 지시문 두 개, 도메인별 질문 파일과 답 모양 파일을 답을 만들기 전에 저장소에 남긴다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 raw/는 열지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. 질문 글과 답 모양은 스크립트로 원래 파일에서 그대로 옮긴다. questions.md, golden-rules.md, predictions.md는 고치지 않는다. commit·push 하지 않는다
+
+1. experiments/e5-method.md를 [방법] 그대로
+2. experiments/e5-prompt-search.md를 [검색 지시문] 그대로
+3. experiments/e5-prompt-graph.md를 [그래프 지시문] 그대로
+4. 질문 파일 두 개(e5-questions-ai-consulting.md, e5-questions-oil-trade.md)를 저장소 밖 스크립트로 "#"·"질문" 칸만 옮겨 만들고 T5는 [T5] 문장
+5. 답 모양 파일 두 개(e5-answer-shape-*.md)를 golden-rules.md 2절에서 그대로 옮김
+6. 질문 파일 줄 수, "- Q"·"- T" 줄 수, 기대 행동 낱말이 없는지 확인
+7. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+8. 만든·고친 파일과 줄 수, 6번 확인 결과를 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/ai-consulting/questions.md·golden-rules.md, deep/07-graphrag/oil-trade/questions.md·golden-rules.md(스크립트가 옮길 부분만 읽음), worklog.md(끝부분)
+- 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 raw/는 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e5-method.md(57줄), e5-prompt-search.md(22줄), e5-prompt-graph.md(22줄): 새로 만듦 — 받은 내용 그대로
+- deep/07-graphrag/experiments/e5-questions-ai-consulting.md(17줄), e5-questions-oil-trade.md(17줄): 새로 만듦 — 스크립트로 옮김
+- deep/07-graphrag/experiments/e5-answer-shape-ai-consulting.md(13줄), e5-answer-shape-oil-trade.md(14줄): 새로 만듦 — 스크립트로 옮김
+- worklog.md: 수정 — 이 절 추가
+- questions.md, golden-rules.md, predictions.md는 고치지 않음. commit·push는 하지 않음
