@@ -3435,3 +3435,35 @@ Codex 표본: 40개
 - deep/07-graphrag/experiments/e5-human-judge-results.md: 새로 만듦(44줄)
 - worklog.md: 수정 — 이 절 추가
 - e5-human-judge.md, e5-judge-claude.json, e5-codex-output.md, e5-codex-key.json, e5-judge-units.json은 고치지 않음. commit·push는 하지 않음
+
+### 디스크 세션 준비 — E5 A/B 사본과 E4 저울 점검 방법 (2026-10-26, 17:08경 마침, Claude Code)
+
+- E5 채점용 A/B 사본을 스크립트(experiments/scripts/make-e5-blind.py)로 만들었다. 어느 쪽이 A인지는 고정 씨앗(20261026)으로 정했고, 그래프 경유 답의 요약에 "그래프"가 들어 있어 두 답 모두에서 "그래프"와 "graph.csv"를 "[가림]"으로 바꿨다. 사본과 열쇠는 커밋하지 않는 Claude outputs/e5-blind/에 두고, 채점이 끝난 뒤 열쇠를 공개한다.
+- 1·2주차 멘토 점검(2026-10-26 받음)에서 두 도메인의 저울이 다르다는 지적을 받아, 2번 E4 저울 점검 방법을 디스크를 열기 전에 정했다: experiments/e4-scale-check-oil-trade-method.md.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 디스크를 여는 세션(E5 채점, E4 2번 저울 점검) 전에 필요한 것을 준비한다. E5 답의 A/B 사본과 열쇠를 만들고, E4 저울 점검 방법을 저장소에 남긴다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-e5-* 포함)은 열지 않는다. 답 JSON 원본 네 개는 고치지 않는다. A/B 사본과 열쇠는 "Claude outputs/e5-blind/"에만 두고, 보고에 어느 쪽이 A인지 쓰지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. experiments/scripts/make-e5-blind.py(씨앗 20261026으로 A 정하기, 모든 문자열 값에서 "graph.csv"·"그래프"를 "[가림]"으로, 사본 네 개와 key.json, 표준 출력은 파일 이름과 "완료"만)
+2. 스크립트를 돌리고 두 사본에 "그래프"와 "graph.csv"가 남아 있지 않은지 확인(개수만 보고)
+3. experiments/e4-scale-check-oil-trade-method.md를 [방법] 그대로 새로 만든다
+4. worklog "## 2026-10-26" 항목 맨 끝에 이 절
+5. 만든·고친 파일 목록과 2번 확인 결과(개수만)를 보고한다. 어느 쪽이 A인지는 쓰지 않는다
+
+#### 읽은 파일
+
+- 답 JSON 네 개(들여쓰기와 칸 이름만 확인, 내용은 스크립트가 읽음), .gitignore("Claude outputs/"가 들어 있음을 확인), worklog.md(끝부분)
+- key.json은 열지 않았고, 어느 쪽이 A인지 보지 않았다. 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/scripts/make-e5-blind.py: 새로 만듦(64줄). 실행 종료 코드 0
+- Claude outputs/e5-blind/ai-consulting-A.json, ai-consulting-B.json, oil-trade-A.json, oil-trade-B.json, key.json: 새로 만듦(스크립트 출력, 커밋되지 않는 폴더)
+  - 확인: 사본 네 개 모두 "그래프" 0개, "graph.csv" 0개. 네 사본 모두 질문 15개, 칸 이름(질문·상태·주장·요약)은 원본과 같음
+  - 참고: 영어 "graph"가 들어간 낱말은 네 사본을 합쳐 "paragraph" 35개, "demographics" 8개만 남음(근거 문장과 위치의 일반 낱말이라 바꾸지 않음. 사본별 개수는 세지 않음)
+- deep/07-graphrag/experiments/e4-scale-check-oil-trade-method.md: 새로 만듦(28줄)
+- worklog.md: 수정 — 이 절 추가
+- 답 JSON 원본 네 개는 고치지 않음. commit·push는 하지 않음
