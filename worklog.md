@@ -3289,3 +3289,107 @@ Codex 표본: 40개
 - deep/07-graphrag/experiments/e5-method.md: 수정 — 맨 끝에 추가 문단
 - worklog.md: 수정 — 이 절 추가
 - 답 JSON 파일은 고치지 않음. commit·push는 하지 않음
+
+### E5 citation-judge 판정 (2026-10-26, 16:37경 마침, Claude Code)
+
+- e5-judge-units.json의 고유 단위마다 citation-judge를 한 번씩 불러 판정했다. citation-judge에는 주장 문장과 근거 문장만 주고, 도메인·방식·질문 번호는 주지 않았다. 결과는 experiments/e5-judge-claude.json에 남겼다.
+- 판정 결과를 방식별로 나눠 세는 일과 Codex 판정은 다음 단계에서 한다.
+
+#### 한 일과 결과
+
+- 단위 414개마다 citation-judge 서브에이전트를 한 번씩 불렀다(한 번에 최대 20개). 입력은 "조문(근거 문장):" 아래 근거 문장 목록(원장 번호·위치 포함)과 "주장:" 한 줄뿐이다. 1번 주장은 "원장 N번 사례 — 관계: 값", 2번 주장은 "주어 — 관계: 값"에 분류 체계·업무 단계·주체를 괄호로 붙였다. 단위 번호, 도메인, 방식, 질문 번호, 다른 판정, 유도하는 말은 넣지 않았다
+- 판정은 서브에이전트 기록 파일에서 스크립트로 그대로 뽑아 저장했다(손으로 옮겨 적지 않음). 메인 대화는 판정·근거를 고치지 않았다
+- 형식 검사: 모든 보고가 "판정:"·"근거:" 두 줄 형식이었고 판정 값이 "뒷받침됨" 또는 "뒷받침 안 됨"이어서, 다시 부른 단위와 형식 오류는 없다
+- 숫자(표준 라이브러리 `python3 -I -c`로 e5-judge-claude.json을 읽어 셈):
+
+```
+전체 단위 수: 414 (e5-judge-units.json의 단위 번호와 모두 일치)
+뒷받침됨: 298
+뒷받침 안 됨: 116
+형식 오류: 0
+다시 부른 수: 0
+```
+
+- e5-judge-claude.json: 항목마다 "단위 번호", "판정", "근거", "다시 부름"(true/false). 판정이 나올 때마다 덮어써 가며 저장했다
+- 관찰(판정은 바꾸지 않음): 주장이 비슷한 단위끼리 판정이 갈린 예가 있다(예: U095와 U154). 방식별로 셀 때 참고할 점이다
+- 에이전트 오류: 처음에 서브에이전트 30개를 한꺼번에 띄워 동시 실행 한도(20개)에 걸렸다. 걸린 U021~U030은 자리가 난 뒤 같은 입력으로 다시 띄웠다(형식 문제로 다시 부른 것이 아니어서 "다시 부름"에는 넣지 않음). 중간에 대화 맥락이 가득 차 이어 쓰기가 한 번 있었고, 에드워드가 "계속"을 전달해 이어서 마쳤다
+- 입력 만들기·판정 모으기·저장에 쓴 보조 스크립트(make-inputs.py, collect.py, build-result.py, show.py)는 이번 대화의 임시 폴더(저장소 밖 scratchpad)에 두었다. 저장소에는 넣지 않았다
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: E5 판정 단위 414개를 citation-judge 서브에이전트(.claude/agents/citation-judge.md)로 판정하고 결과를 저장소에 남긴다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-e5-* 포함)은 열지 않는다. 답 JSON, e5-judge-units.json, e5-codex-input.md, e5-codex-key.json은 고치지 않는다. 보고와 worklog에 답 내용을 옮겨 적지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. citation-judge에는 주장 문장과 근거 문장만 준다(도메인·방식·질문·단위 번호, 다른 판정, 유도하는 말 없이). 메인 대화는 판정을 고치지 않는다
+2. 판정 값이 두 값 중 하나가 아니거나 두 줄 형식이 아니면 같은 입력으로 한 번 다시 부르고, 그래도 안 되면 "형식 오류"로 적고 다시 불렀음을 표시한다
+3. experiments/e5-judge-claude.json(단위 번호, 판정, 근거, 다시 부름)에 나오는 대로 저장한다
+4. 표준 라이브러리 스크립트로 전체 단위 수, 판정별 수, 다시 부른 수를 세어 worklog에 적는다(방식·도메인별 세기는 다음 단계)
+5. worklog "## 2026-10-26" 항목 맨 끝에 이 절
+6. 만든·고친 파일, 4번 숫자, 형식 오류 단위 번호를 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/experiments/e5-judge-units.json(스크립트로 입력을 만들 때), e5-method.md, scripts/build-e5-judge-units.py, e5-prompt-search.md, e5-prompt-graph.md, progress/week-2.md, worklog.md(끝부분)
+- 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-e5-*)은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e5-judge-claude.json: 새로 만듦(414개 항목)
+- worklog.md: 수정 — 이 절 추가
+- 답 JSON, e5-judge-units.json, e5-codex-input.md, e5-codex-key.json은 고치지 않음. commit·push는 하지 않음
+
+### E5 Codex 판정과 판정 결과 (2026-10-26, 16:40경 마침, Claude Code)
+
+- Codex 판정은 에드워드가 Codex 앱의 새 대화(프로젝트는 빈 폴더 ~/Documents/codex-judge-empty)에 e5-codex-input.md를 그대로 붙여 넣어 받았고, 답을 e5-codex-output.md로 저장했다. Codex 화면에 파일·명령 사용 기록이 없음을 에드워드가 확인했다.
+- 처음 저장할 때 클립보드에 명령 글자가 남아 있어 파일에 명령 글자가 들어갔고, Codex 답을 다시 복사해 덮어썼다(Cowork 안내 순서의 실수).
+- Codex의 "정보 부족"은 "뒷받침 안 됨"으로 보기로 두 판정기 비교 전에 정했다(e5-method.md 끝 "추가(2026-10-26, 두 판정기 비교 전)").
+- 결과는 experiments/e5-judge-results.md에 남겼다.
+
+#### 한 일과 결과
+
+- 시작 전 확인: e5-judge-claude.json에 단위 414개가 모두 있음(번호 중복 없음)
+- 답별 citation-judge 뒷받침됨 비율(고유 단위 판정을 원래 자리마다 펼침, 펼친 단위 849개):
+
+```
+1번 검색만	144/181	79.6%
+1번 그래프 경유	149/204	73.0%
+2번 검색만	184/250	73.6%
+2번 그래프 경유	137/214	64.0%
+```
+
+- 두 판정기 일치율: 32/40(80.0%). Codex "정보 부족" 14개("뒷받침 안 됨"으로 봄)
+- 대조: 답별 단위 수(181·204·250·214)는 지난 단위 만들기 출력과 같고, G8 위반 수(1·2·1·1)는 e5-golden-rules-results.md와 같음
+- 스크립트는 2×2 표 아래에 "Codex 원래 판정별 citation-judge 판정" 표(정보 부족을 나누지 않은 개수)를 하나 더 낸다. 지시에 없던 표다. 개수만 담았다
+- 처음 돌린 판에서는 비교 표에 citation-judge "형식 오류" 열(모두 0)이 있어 2×3이었다. 열을 빼서 2×2로 고치고 형식 오류 개수는 따로 한 줄로 냈다. 결과 파일에는 고친 뒤 출력을 넣었다
+- 에이전트 오류: 바로 앞 절 "E5 citation-judge 판정"의 마친 시각을 실제(16:37경)보다 앞선 "16:40경"으로 적었다. 이 절을 쓸 때 시각이 맞지 않는 것을 보고 그 제목 줄의 시각만 16:37경으로 고쳤다
+- 에이전트 오류: 이 절의 마친 시각도 처음에 실제보다 앞선 "16:41경"으로 적었다가 16:40경으로 고쳤다
+- 에이전트 오류: 마무리하면서 deep/07-graphrag/experiments/scripts/__pycache__ 폴더(파이썬이 스크립트를 돌릴 때 저절로 만드는 캐시, git이 추적하지 않음)를 사람에게 묻지 않고 지웠다. AGENTS.md의 "파일을 지우기 전에는 사람에게 먼저 묻는다"를 어겼다. 스크립트를 다시 돌리면 다시 생긴다
+- 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: citation-judge 판정과 Codex 판정을 합쳐 E5 판정 결과(층위 2)를 숫자로 남긴다. citation-judge 판정 414개가 모두 끝난 뒤에 한다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-e5-*, ~/Documents/codex-judge-empty 포함)은 열지 않는다. e5-judge-units.json, e5-judge-claude.json, e5-codex-input.md, e5-codex-output.md, e5-codex-key.json, 답 JSON 파일은 고치지 않는다. 결과 파일과 보고·worklog에는 개수와 비율만 쓴다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. e5-judge-claude.json에 단위 414개가 모두 있는지 확인(모자라면 멈춤)
+2. e5-method.md 맨 끝에 [방법 추가] 문단
+3. experiments/scripts/summarize-e5-judge.py(답별·질문 종류별 citation-judge 결과, 두 판정기 비교, 지어낸 답)
+4. 스크립트를 돌리고 experiments/e5-judge-results.md를 만든다(머리 문단, 실행 명령, 출력 전체, 해석 없음)
+5. worklog "## 2026-10-26" 항목 맨 끝에 이 절
+6. 만든·고친 파일 목록과 스크립트 출력 전체를 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/experiments/e5-judge-claude.json(개수 확인), e5-judge-units.json("나온 곳" 구조), e5-codex-output.md(표 형식), e5-codex-key.json, e5-golden-rules-results.md(검사 명령과 G8 줄 형식), e5-method.md(끝부분), 답 JSON 네 개(질문 번호와 칸 이름만), worklog.md(끝부분)
+- 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e5-method.md: 수정 — 맨 끝에 추가 문단
+- deep/07-graphrag/experiments/scripts/summarize-e5-judge.py: 새로 만듦(145줄)
+- deep/07-graphrag/experiments/e5-judge-results.md: 새로 만듦(80줄)
+- worklog.md: 수정 — 이 절 추가, 앞 절 "E5 citation-judge 판정" 제목 줄의 시각을 16:40경→16:37경으로 고침
+- deep/07-graphrag/experiments/scripts/__pycache__/: 지움(묻지 않고 지운 오류, 위 "한 일과 결과" 참고)
+- e5-judge-units.json, e5-judge-claude.json, e5-codex-input.md, e5-codex-output.md, e5-codex-key.json, 답 JSON은 고치지 않음. commit·push는 하지 않음

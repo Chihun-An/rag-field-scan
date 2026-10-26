@@ -1,0 +1,2486 @@
+[
+  {
+    "단위 번호": "U001",
+    "판정": "뒷받침됨",
+    "근거": "\"identifying and evaluating 30 potential use cases where gen AI could deliver significant value\"는 AI 활용 과제를 찾고(발굴) 그 가치를 평가하는 업무를 말한다. 다만 조문에는 \"evaluating\"만 있고, 순위를 매기거나 고른다는 표현은 직접 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U002",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에서 엔진이 쓰이는 업무는 \"helps agents find information on how to repair customers' machines\"(상담원의 수리 정보 검색)이고, \"worked together to build\"는 엔진을 만든 과정일 뿐이며 '실증'에 해당하는 표현도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U003",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"The pilot solution was implemented in just four weeks\"는 파일럿 솔루션을 구현했다는 말일 뿐 AI라는 표현이 없어 'AI 솔루션 개발·실증'이라는 적용 업무까지 뒷받침하지 못함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U004",
+    "판정": "뒷받침됨",
+    "근거": "조문 첫머리 \"Allstate, a longtime BCG partner\"에서 Allstate를 BCG의 오랜 파트너(고객사)로 직접 밝히고 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U005",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"data privacy and IT governance made certain AI and GenAI tools challenging to deploy quickly in existing production IT systems\"라고 되어 있어, 프라이버시·거버넌스 때문에 운영 시스템에 빨리 배포하기 어려웠다는 주장 내용과 맞음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U006",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"customer engagement cycles take a long time to develop, limiting the ability to test a hypothesis quickly and optimize its learnings\"라고 말하고, 주장은 이 내용을 그대로 옮겼다(참여 주기가 길다, 가설을 빨리 시험하기 어렵다, 배운 것을 살리기 어렵다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U007",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"build a generative AI chatbot\"이라고 적혀 있어 생성형 AI를 쓴 사례임이 드러남. 조문에 LLM이라는 말은 없으므로, \"(LLM 포함)\"을 분류 이름의 일부로 읽었을 때만 뒷받침됨.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U008",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"build the gen AI engine\"이라고 적혀 있어 생성형 AI를 쓴 것이 확인된다. 괄호 안의 \"LLM 포함\"은 분류 이름으로 보고 판정했다. LLM을 썼다는 표현은 조문에 따로 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U009",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"generative AI driving growth\"라고 생성형 AI를 쓴 사례라고 직접 나온다. \"(LLM 포함)\"은 분류 이름에 붙은 설명으로 읽었다. 이 사례가 LLM을 썼다는 주장으로 보면 조문에는 LLM이라는 말이 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U010",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"fine-tuned two open-source large language models (LLMs)\"라고 되어 있어, 사례가 LLM을 썼다는 점이 직접 확인되고 이는 주장의 분류 \"생성형 AI(LLM 포함)\"에 들어간다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U011",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"using GenAI tools\"가 사용 기술이 생성형 AI 범주라는 주장과 맞는다. \"(LLM 포함)\"은 LLM을 실제로 썼다는 말이 아니라 범주 이름으로 읽었다. 조문에 LLM은 따로 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U012",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"generative AI–powered platform\"이라고 적혀 있어 생성형 AI 사용이 뒷받침된다. LLM이라는 말은 조문에 없으므로, 괄호 속 \"LLM 포함\"은 분류 이름의 일부로 보았다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U013",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"a generative AI solution\"이라고만 쓰고 LLM은 언급하지 않는다. 생성형 AI 부분은 맞지만, 주장의 \"(LLM 포함)\"은 입력된 조문에 없는 내용이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U014",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"draft marketing copy\"라는 기능만 말하고 생성형 AI나 LLM이라는 기술 이름은 쓰지 않으므로, 사용 기술을 생성형 AI로 확정할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U015",
+    "판정": "뒷받침됨",
+    "근거": "\"The LLM ... was grounded with ...\"에서 LLM을 사용했다고 명시하며, LLM은 생성형 AI 기술이므로 \"생성형 AI(LLM 포함)\"라는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U016",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"pilot implementation of the GenAI solution\"이라고 적혀 있어 생성형 AI를 쓴 사실을 뒷받침한다(다만 LLM이라는 표현은 조문에 없다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U017",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"leveraging GenAI LLMs\"가 생성형 AI(LLM 포함)를 사용 기술로 쓴다는 주장과 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U018",
+    "판정": "뒷받침됨",
+    "근거": "\"worked closely together for seven weeks to build a generative AI chatbot\"라는 표현은 AI 솔루션(챗봇)을 개발한 사례로 읽힌다. 다만 '실증' 부분은 조문에 직접 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U019",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"began designing and developing a solution\"까지만 말하고 실증 단계는 언급하지 않으며, AI를 적용한 업무로는 \"extract value from all call data… generating sales opportunities\"(통화 데이터 활용·영업 기회 발굴)를 들고 있어 주장과 맞지 않음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U020",
+    "판정": "뒷받침됨",
+    "근거": "\"fine-tuned two open-source large language models (LLMs) for the specific task in several iterations\"에서 특정 업무용 AI 모델을 여러 차례 반복해 개발했음을 알 수 있다. \"Based on real patient data\"는 실제 데이터를 썼다는 뜻이지만, 따로 실증까지 했다는 표현은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U021",
+    "판정": "뒷받침됨",
+    "근거": "\"developed a predictive ML model using GenAI tools within just four weeks\"는 AI 모델을 개발했다는 서술로, 적용 업무 '개발' 부분과 맞는다. '실증'은 조문에 따로 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U022",
+    "판정": "뒷받침됨",
+    "근거": "\"developed a number of different machine-learning models\"는 개발을, \"benchmarked them against standard cross-selling methods to determine the financial impact\"는 실증을 뒷받침한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U023",
+    "판정": "뒷받침됨",
+    "근거": "\"designed and implemented an end-to-end AI-enabled personalization solution\"이 AI 솔루션을 설계하고 구현했다는 뜻이므로 '개발'과 맞는다. 다만 '실증(검증)' 부분을 직접 말하는 표현은 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U024",
+    "판정": "뒷받침됨",
+    "근거": "\"deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models\"라는 표현이 AI 솔루션을 만들어 배포하고 소규모 실데이터로 시험했다는 내용이어서 'AI 솔루션 개발·실증'과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U025",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"implement generative AI for three high-priority use cases\"라고 되어 있어 업무에 생성형 AI 솔루션을 구현한 사례로 읽히고, 이는 \"AI 솔루션 개발·실증\" 유형에 해당함(단, '실증'은 조문에 명시된 표현이 아님)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U026",
+    "판정": "뒷받침됨",
+    "근거": "\"develop three machine-learning models\"라는 표현이 머신러닝 모델, 즉 AI 솔루션을 개발한 업무를 직접 서술한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U027",
+    "판정": "뒷받침됨",
+    "근거": "\"help create a proof-of-concept (POC) GenAI system\"이라는 표현은 GenAI 시스템을 만들고 실증(POC)하는 일이므로, 적용 업무가 'AI 솔루션 개발·실증'이라는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U028",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"packaged into an interactive dashboard ... for ongoing performance review\"로 성과 검토용 대시보드 제공만 말하고, AI 솔루션 개발이나 실증을 언급하는 표현은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U029",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"pilot implementation of the GenAI solution in the legal department\"라고만 쓴다. AI가 적용된 업무는 법무 부서의 업무이고, 개발·실증은 프로젝트를 진행한 방식일 뿐이어서 '적용 업무: AI 솔루션 개발·실증'과 맞지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U030",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Selecting four initial pilot use cases for development\"와 \"configuring the LLM prompts to optimize the GenAI model\"이 AI 솔루션을 개발하고 파일럿으로 실증하는 업무를 서술한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U031",
+    "판정": "뒷받침됨",
+    "근거": "\"We helped implement an IBM Watson conversational AI system\"이라는 표현은 AI 솔루션을 구축하고 도입했다는 서술이므로 'AI 솔루션 개발·실증' 업무 분류와 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U032",
+    "판정": "뒷받침됨",
+    "근거": "\"build a conversational virtual assistant proof of concept to demonstrate the capabilities of artificial intelligence\"는 AI 솔루션(가상 비서)을 개발하고 PoC로 실증한 업무라는 주장과 들어맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U033",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"organization change management\"는 McKinsey가 맡은 도입 지원 역할로 쓰였고, AI가 실제로 처리한 일은 \"processing hundreds of thousands of calls\"(통화 처리)이므로 이 문장을 적용 업무가 조직·인력·변화 관리라는 근거로 볼 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U034",
+    "판정": "뒷받침됨",
+    "근거": "\"helped Helios identify how to scale GenAI as part of its broader digital strategy going forward\"는 앞으로 GenAI를 어떻게 확대할지 전략을 세운 일을 말하므로 AI 전략·로드맵 수립에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U035",
+    "판정": "뒷받침됨",
+    "근거": "\"created a comprehensive data lake, integrating 20 databases into a system\"라는 표현은 데이터 기반을 구축한 일을 직접 서술한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U036",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"tackled much of the most complex coding\"와 \"formal and on-the-job training\"은 코딩 작업과 고객 팀 교육만 말할 뿐, 조직·인력·변화 관리 업무에 적용했다는 표현은 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U037",
+    "판정": "뒷받침됨",
+    "근거": "\"helped the company develop and launch an AI-based investment advisory app\"는 AI 기반 신상품을 개발해 출시까지 도운 사례이므로 'AI 신상품 기획 및 사업화'와 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U038",
+    "판정": "뒷받침됨",
+    "근거": "\"enlisted the help of Deloitte to create a cloud solution\"은 클라우드 솔루션을 만드는 일로, 기술 기반을 구축하는 업무에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U039",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"addressing structure, process, and people dimensions\"와 \"A multi-dimensional approach to change\", \"foster buy-in, and drive user adoption\"이 각각 조직, 인력, 변화 관리를 직접 서술한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U040",
+    "판정": "뒷받침 안 됨",
+    "근거": "문장은 \"deliver the platform architecture, design the models\"와 \"wired the tool into our daily operations\"로 누가 무엇을 맡았는지만 말한다. 도구가 어느 업무에 쓰였는지는 나오지 않고, 그 업무가 데이터·기술 기반 구축이라는 말도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U041",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Setting up a cloud-based test environment that leverages GenAI modeling tools and other services\"는 GenAI를 쓰기 위한 클라우드 테스트 환경, 곧 기술 기반을 구축하는 일이므로 \"데이터·기술 기반 구축\"에 해당함(다만 데이터 쪽 언급은 조문에 없음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U042",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문의 \"rolled out ... for the company's more than 4,500 global corporate staff\"와 \"enhance and scale the platform\"은 전사 확산을 뒷받침하지만, '성과 관리'에 해당하는 표현은 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U043",
+    "판정": "뒷받침됨",
+    "근거": "\"design and implement an operating model that would balance ... resourcing, oversight\"는 운영 모델(조직)과 인력 배치를 설계한 일이라 조직·인력 범주에 들어간다. 다만 변화 관리는 조문에 직접 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U044",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"developed a predictive ML model\"이라고 나와 있어 예측 머신러닝을 썼다는 주장과 맞는다. 다만 조문은 \"분류\"를 따로 말하지 않으므로, 주장의 \"예측·분류\"는 범주 이름으로 읽었다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U045",
+    "판정": "뒷받침됨",
+    "근거": "\"applying machine-learning algorithms ... to continually refine predictions about which product a customer was likely to buy next\"는 머신러닝으로 고객이 다음에 살 제품을 예측한다는 뜻이고, 여러 제품 중 하나를 고르는 예측이므로 '예측·분류 머신러닝'과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U046",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"to provide a hyperpersonalized experience\"와 \"customers' financial assets, characteristics, and preferences\"를 분석한다는 표현이 개인화 기술을 쓴다는 주장과 맞는다. 다만 조문에 '추천'이라는 말은 직접 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U047",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"deliver personalized messages and recommendations\"라고 적혀 있어, 이 사례가 추천·개인화를 쓴다는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U048",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"data and insights derived from machine learning models\"는 머신러닝 사용을 직접 밝히고, \"automatically determining how, when, and which content to deliver\"는 채널·시점·콘텐츠를 고르는 예측·분류형 결정에 해당한다(다만 \"예측·분류\"라는 표현 자체는 조문에 없다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U049",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"machine learning solution called Deep Miner to rapidly test predictive models\"라고 적혀 있어 예측 머신러닝이 맞다. 주장의 \"예측·분류\"는 하나의 범주 이름으로 보고 판정했고, \"분류\"라는 말 자체는 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U050",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"develop three machine-learning models based on fan demographics, past engagement behavior, and their propensity to engage\"는 참여 성향(propensity)을 다루는 머신러닝 모델을 말하며, 이는 예측·분류 머신러닝 범주에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U051",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문의 \"generate campaign recommendations\"는 AI 에이전트가 캠페인 권고안을 만든다는 뜻이고, 추천 시스템 기술을 썼다는 말이 아니다. 개인화(personalization)를 가리키는 표현도 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U052",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"machine learning and natural language processing\"만 나오고, 예측이나 분류에 쓴 머신러닝이라는 표현은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U053",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"speech-to-text and text-to-speech technologies\"를 쓴다고 적혀 있다. speech-to-text는 음성 인식, text-to-speech는 음성 합성에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U054",
+    "판정": "뒷받침됨",
+    "근거": "\"intent recognition (Skills) models were trained to classify the intents\"는 의도를 분류하도록 모델을 학습시켰다는 뜻이므로 분류 머신러닝에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U055",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"the global bank, ING\"라는 표현에서 고객사 ING가 은행, 곧 금융 산업이라는 점이 드러난다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U056",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"40 to 45 percent of those chats usually get resolved by the current classic chatbot, that still leaves another 16,500 customers a week needing to speak with a live agent\"가 '기존 챗봇으로 해결되지 않아 매주 16,500명이 상담원을 찾아야 한다'는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U057",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"only able to get live help for non-urgent requests during working hours\"와 \"potentially longer waiting times\"는 근무 시간에만 상담원 도움을 받을 수 있어 대기가 길어진다는 주장과 같다. 조문에 있는 \"non-urgent\"라는 한정이 주장에는 빠져 있지만, 병목을 서술한 내용 자체는 조문과 어긋나지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U058",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"A leading insurance company\"에서 고객이 보험사로 나오며, 보험은 금융 산업에 속하므로 \"고객 산업: 금융\"과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U059",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"the tangible results were not progressing fast enough\"가 주장의 \"가시적 성과가 충분히 빨리 나오지 않음\"과 같은 뜻이다. 다만 조문에는 이것을 '해결하려던 병목'이라고 부르는 표현이 따로 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U060",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"had not systematically identified, evaluated and prioritized the opportunities; it delivered on small projects but didn't tackle the richest opportunities\"가 주장의 '체계적 발굴·평가·우선순위화 부재로 작은 과제만 함'과 내용이 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U061",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"analytics team was not adequately connected to business-unit and functional experts\"는 분석팀이 현업 전문가와 단절되었다는 주장과 맞고, \"its operating model was unclear\"는 운영 모델이 불분명하다는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U062",
+    "판정": "뒷받침됨",
+    "근거": "조문이 Banca Investis를 \"the first bank in the Italian market\"이라고 밝히므로 고객이 은행, 곧 금융 산업이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U063",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"When Banca Investis required an innovation of its service model\"이 주장의 병목인 '서비스 모델의 혁신이 필요함'과 직접 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U064",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"a leading Canadian bank\"라고 적혀 있어, 고객이 은행, 곧 금융 산업이라는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U065",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Critical processes were resource-intensive and time-consuming\"이 주장의 \"핵심 프로세스가 자원 집약적이고 시간 소모적\"과 그대로 대응한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U066",
+    "판정": "뒷받침됨",
+    "근거": "\"Documentation preparation was inconsistent in style and approach, requiring multiple reviews\"가 주장의 \"문서 작성이 제각각이라 여러 번 검토해야 함\"과 그대로 대응한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U067",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"data extraction for reporting was complex and highly manual\"이 주장의 \"보고용 데이터 추출이 복잡하고 수작업 위주\"와 그대로 일치한다. 이 내용을 \"해결하려던 병목\"으로 부른 것도 조문의 문제 서술과 어긋나지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U068",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"a commercial bank\"(상업은행)가 고객으로 나오고, 은행은 금융 산업에 속하므로 \"고객 산업: 금융\"과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U069",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"supervisors listening to sampled calls\"와 \"surface-level metrics from small data sets\"가 주장의 '표본 통화 청취'와 '소규모 표면 지표에 의존한 성과 분석'과 일치하고, 이를 병목으로 본 해석도 \"typically relies on\"이라는 서술과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U070",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Being manual, the process is slow and difficult to scale\"는 '수작업이라 느리고 확장이 어려움'에, \"does not provide a comprehensive view of agent performance\"는 '상담원 성과를 전체로 보지 못함'에 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U071",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"a financial services organization\" 표현이 고객 산업이 금융이라는 주장과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U072",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"contact center model wasn't delivering the level of service its customers expected\"가 주장 내용(컨택센터 모델이 고객 기대 서비스 수준에 못 미침)과 그대로 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U073",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"constantly referenced complex, legal process documents\"와 \"a labor-intensive and repetitive task that kept them from more strategic work\"가 주장 속 상담원이 복잡한 법률 절차 문서를 반복해서 참조하는 노동집약 작업이 병목이었다는 내용과 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U074",
+    "판정": "뒷받침됨",
+    "근거": "조문이 Ascendum을 \"provider of machinery and equipment\"(건설·인프라·운송·농업용 기계·장비 공급사)라고 쓰고 있어, 고객 산업을 산업재로 분류할 수 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U075",
+    "판정": "뒷받침됨",
+    "근거": "조문이 Helios를 \"a leading hospital chain operating throughout Germany\"라고 소개하는데, 병원 체인이면 헬스케어 산업에 속한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U076",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"a major US health care organization\"이 고객을 헬스케어 조직이라고 밝히고 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U077",
+    "판정": "뒷받침됨",
+    "근거": "조문이 고객을 \"pharmaceutical company\"로 쓰고, 이 고객이 \"disease states\" 예측 모델을 개선하려 했다고 적고 있어 헬스케어 산업에 해당한다. 다만 조문에 \"healthcare\"라는 낱말은 직접 나오지 않는다. 제약을 헬스케어로 묶은 것은 단어의 일반적인 뜻에 기댄 분류다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U078",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"Sports\"라는 표현만 있고, 주장의 \"커뮤니케이션 서비스\"라는 고객 산업 분류는 조문 어디에도 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U079",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"seeds and traits, crop protection products, and digital solutions for agriculture\"로 농업 분야 제품만 말하고, '소재' 산업이라는 표현은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U080",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"one of the world's largest technology companies\"는 고객(Microsoft)이 기술 기업이라고 직접 밝히며, 이것이 주장한 '정보기술' 산업과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U081",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"Consumer and retail\"(소비재·유통)이라고만 쓰고 있다. 이것을 경기소비재라는 좁은 업종 분류로 바꿔 쓴 것은 조문에 없는 구분이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U082",
+    "판정": "뒷받침됨",
+    "근거": "조문에 고객이 \"a leading health services company\"로 적혀 있어 고객 산업을 헬스케어로 볼 수 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U083",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"within the first seven weeks of use\"와 \"helping 20 percent more customers avoid long wait times\"가 있어, 첫 7주 동안 고객 20% 더 긴 대기 시간을 피했다는 주장과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U084",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"helping customers save between $5,000 to $12,000 an hour in otherwise lost field time\"이 주장의 금액, 시간당 단위, 현장 손실 시간 절감과 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U085",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Within ten weeks, inbound service sales rose 40 percent\", \"doubled their offering rates\", \"from 40.3 percent to 41.2 percent\"가 주장의 세 수치와 모두 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U086",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"processing each call costs less than a cent\"라고 써서, 통화 1건 처리 비용이 1센트 미만이라는 성과를 직접 밝힌다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U087",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"improved prediction performance 3x (vs. historical models)\"가 주장의 '예측 성능 3x 향상(기존 모델 대비)'과 수치·비교 대상까지 그대로 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U088",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"It is able to identify issues before they occur 71% of the time\"라고 적혀 있어, 문제가 생기기 전에 71%를 식별한다는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U089",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"anticipated to produce an approximate 25% in additional revenue potential through cross-selling\"라고 쓴다. 주장의 \"교차판매로 약 25% 추가 매출 잠재력\"이 이 표현과 맞고, 조문의 \"anticipated\"를 \"(예상)\"으로 밝혀 두어 실현된 성과로 잘못 서술하지 않았다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U090",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"promised a 10x gain in marketing performance\"라고 되어 있다. 이는 이미 낸 성과가 아니라 약속된 성과이고, 주장도 \"(전망)\"이라고 밝혀 그 성격을 맞게 적었다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U091",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"analyzes more than 500 pieces of information and research daily\"가 주장의 '매일 500건 넘는 정보·리서치 분석'과 대상(NIWA app), 빈도(daily), 수치(more than 500)까지 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U092",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"touched about 10% of its customers\"와 \"resulting in more than $100 million in revenue\"가 주장하는 고객 약 10%, $100 million 넘는 매출과 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U093",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"The predictive accuracy improved from 53.4% to 92%\"라고 적혀 있어서, 주장의 '예측 정확도 53.4%→92%'와 수치와 대상이 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U094",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Accuracy jumped almost 40%\"가 주장의 \"정확도 almost 40% 상승\"과 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U095",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"six broad segments to 49 actionable microsegments\"로 6개→49개 숫자는 맞지만, 조문 어디에도 '팬' 세그먼트라는 표현이 없어 주장의 '팬' 부분은 조문으로 확인할 수 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U096",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문의 \"We expect this to fuel at least 10% growth\"는 앞으로 바라는 전망일 뿐 이미 낸 성과가 아닌데, 주장은 이를 '낸 성과'로 분류했다(10% 이상 성장이라는 수치는 조문과 맞음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U097",
+    "판정": "뒷받침됨",
+    "근거": "근거 문장의 \"In most cases, the answers have been 100% correct\"가 주장의 \"대부분 답이 100% correct\"와 같은 내용이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U098",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"an uplift in opportunities of upward of 50%\"가 기회의 50% 이상 증가라는 주장과 맞는다(조문에는 \"opportunities\"만 있고 \"영업\"이라는 한정어는 없다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U099",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Deployed secure GenAI platform and user interface for more than 4,500 employees\"가 주장의 '직원 4,500명 넘게 쓰는 보안 GenAI 플랫폼 배포'와 내용이 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U100",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Launched over a dozen ... GenAI solutions across business functions\"는 업무 기능 전반에 12개 넘게 출시했다는 주장과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U101",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"$100 million+ forecasted savings (원장 16번)\"이 주장의 \"원장 16번 … $100 million+ 절감 예상\"과 금액, 예상치라는 성격, 사례 번호까지 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U102",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"commitment to data privacy and IT governance made certain AI and GenAI tools challenging to deploy quickly\"라고 되어 있어, 데이터 프라이버시와 IT 거버넌스 때문에 AI 도구를 빨리 배포하기 어려웠다는 주장 내용과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U103",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"customer engagement cycles take a long time to develop, limiting the ability to test a hypothesis quickly\"가 주장의 '고객 참여 주기가 길어 가설을 빨리 검증하기 어려움'과 같은 내용임",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U104",
+    "판정": "뒷받침됨",
+    "근거": "근거 문장의 \"generative AI driving growth\"가 사례 3의 사용 기술이 생성형 AI라고 직접 말한다. \"(LLM 포함)\"은 분류 이름에 붙은 설명으로 보고 판정했다. 이 문장 자체에 LLM이라는 말은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U105",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"Using ChatGPT\"라고 사용 기술이 명시되어 있고, ChatGPT는 생성형 AI(LLM)에 해당한다. 다만 조문에 \"generative AI\"나 \"LLM\"이라는 단어는 직접 나오지 않으므로, ChatGPT를 그 범주로 분류한 것은 일반 상식에 기댄 판단이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U106",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"powered by Anthropic\"과 \"orchestrating AI agents\"만 있고 생성형 AI나 LLM이라는 표현이 없다. Anthropic이 LLM 회사라는 것은 입력 밖의 지식이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U107",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"powered by Microsoft Azure Open AI\"라고 적혀 있어 이 도구가 OpenAI 계열 생성형 AI(LLM)로 돌아간다고 볼 수 있다. 다만 조문에 \"generative\"나 \"LLM\"이라는 말이 직접 나오지는 않으므로, Azure OpenAI가 LLM 서비스라는 일반 상식에 기댄 판정이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U108",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"GenAI text-to-text and text-to-image LLMs\"의 최종 선정을 언급하므로, 사용 기술이 생성형 AI(LLM 포함)라는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U109",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문의 \"developed the proof of concept\"는 개발·실증을 뒷받침하지만, 그 대상이 AI 솔루션이라는 표현은 조문 어디에도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U110",
+    "판정": "뒷받침됨",
+    "근거": "\"develop and launch an AI-based investment advisory app\"에서 AI 솔루션(앱)을 개발해 실제로 출시했다고 적혀 있어 '개발·실증' 업무에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U111",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"deliver the platform architecture, design the models\"와 \"wired the tool into our daily operations\"만 서술해 AI라는 말도, 어떤 업무에 적용했는지도 밝히지 않으므로 'AI 솔루션 개발·실증'을 적용 업무로 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U112",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"analyze conversation behaviors\"와 \"identify behaviors demonstrated by top-performing agents\"라고만 쓴다. AI로 대화 행동을 분석했다는 내용이고, AI 솔루션을 개발하거나 실증했다는 표현은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U113",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문의 \"ING risk stakeholders were brought into this process\"와 \"guardrails (to avoid giving advice on mortgages and investment products)\"는 AI를 만들 때 리스크를 관리한 과정을 말할 뿐이고, AI를 적용한 업무 자체가 거버넌스·리스크 관리라는 표현은 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U114",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"enabled Allstate's strong internal teams to achieve new capabilities and deliver best-in-class customer service\"라고만 하며, 조직 개편이나 인력 운영, 변화 관리를 적용 업무로 직접 말하지 않는다. 결과로 내세운 것도 고객 서비스다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U115",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"establishing data pipelines, developing and refining machine learning models ... creating the agentic harness ... all from scratch\"는 데이터 파이프라인, 모델, 하네스를 처음부터 만든 일을 말하므로 데이터·기술 기반 구축에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U116",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"creating a 'book of record' around the entirety of an agent's interaction with a client\"라고 에이전트와 고객의 상호작용 전체를 기록한다는 내용만 말할 뿐, 적용 업무가 \"데이터·기술 기반 구축\"이라는 표현은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U117",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"performance measurement and management\"는 성과 관리를 뒷받침하지만, 전사 확산에 해당하는 표현은 \"used by different stakeholders\"뿐이고 조직 전체로 넓혔다는 말은 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U118",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"design and refine a workflow POC for the regulatory space solution\"이라고만 쓴다. 이것은 규제 분야에 쓸 자동화 워크플로 POC를 새로 설계했다는 뜻이고, 적용 업무로 든 것은 \"efficiency, compliance monitoring and document creation\"이다. 기존 업무 프로세스를 재설계했다는 표현은 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U119",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"Piloted 12 additional use cases ... to support e-commerce, finance, product, and sales functions\"만 있어 시범 적용과 그 대상 업무만 나오며, 주장이 말하는 전사 확산이나 성과 관리를 가리키는 표현은 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U120",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"select the cloud platform, architect technology platform components\"는 클라우드와 기술 플랫폼 구성요소를 직접 구축한 업무를 서술하므로 '기술 기반 구축'에 해당한다(단, 결과물이 virtual agent라서 적용 업무를 에이전트의 용도로 볼 여지도 있음).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U121",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"a number of different machine-learning models\"를 만들어 비교했다고만 하고, 그 모델이 예측이나 분류를 한다는 표현은 없어 \"예측·분류\"라는 한정이 뒷받침되지 않음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U122",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문이 밝힌 기술은 \"Clustering techniques\"(군집화)뿐이며, 예측 기법이나 분류 머신러닝은 언급하지 않는다. \"categorize\"는 군집화로 묶는다는 뜻이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U123",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"in ways that feel personal and relevant\"는 팬 참여를 어떻게 하겠다는 목표를 말할 뿐이고, 조문에는 추천이나 개인화 기술을 쓴다는 표현이 없으며 \"That speed\"가 무엇을 가리키는지도 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U124",
+    "판정": "뒷받침됨",
+    "근거": "\"that still leaves another 16,500 customers a week needing to speak with a live agent\"는 기존 챗봇(current classic chatbot)이 해결하지 못한 고객 주당 16,500명이 상담원 연결이 필요하다는 주장과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U125",
+    "판정": "뒷받침됨",
+    "근거": "\"longer waiting times as they're only able to get live help ... during working hours\"가 근무시간에만 상담 가능해 대기가 길어진다는 주장과 맞는다(조문은 \"non-urgent requests\"로 범위를 좁히는데 주장에는 이 한정이 빠졌지만, 내용을 잘못 서술한 정도는 아니다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U126",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"tangible results were not progressing fast enough\"만 있습니다. 성과가 '분석' 성과라는 말도, 이것이 해결하려던 '병목'이라는 말도 없습니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U127",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"it had not systematically identified, evaluated and prioritized the opportunities\"가 주장의 \"기회를 체계적으로 발굴·평가·우선순위화하지 않음\"과 그대로 맞는다. 다만 조문은 이것을 문제점으로 서술할 뿐이고, 이를 해결하려 했다는 의도까지는 직접 말하지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U128",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"not adequately connected to business-unit and functional experts\"와 \"operating model was unclear\"라고 쓴다. 이는 주장의 '사업부와 단절'과 '운영 모델 불명확'에 그대로 대응한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U129",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Banca Investis required an innovation of its service model\"가 주장의 \"서비스 모델 혁신이 필요\"와 그대로 맞는다. 여기에 생성형 AI가 \"key boost\"를 준 대상이 이 필요라고 하므로, 해결하려던 과제로 읽을 수 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U130",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"Critical processes\"만 있고 '재무'라는 말은 없습니다. 그래서 주장의 '핵심 재무 프로세스'는 입력에 없는 한정어를 덧붙인 것입니다. \"resource-intensive and time-consuming\" 부분은 주장과 맞습니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U131",
+    "판정": "뒷받침됨",
+    "근거": "\"Documentation preparation was inconsistent in style and approach, requiring multiple reviews\"가 주장의 \"문서 작성 방식이 제각각이라 여러 번 검토 필요\"와 그대로 대응한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U132",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"relies on supervisors listening to sampled calls\"와 \"feedback ... can be highly subjective and often generic\"이 샘플 통화 청취에 의존해서 생긴 피드백의 주관성·일반성 문제를 직접 서술함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U133",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Being manual, the process is slow and difficult to scale\"가 주장의 \"수작업이라 느리고 확장 어려움\"과 그대로 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U134",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"makes it impossible to understand an agent's performance trajectory\"가 주장의 '상담원 성과 추이를 파악할 수 없음'이라는 병목과 같은 내용이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U135",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"its contact center model wasn’t delivering the level of service its customers expected\"가 주장의 \"콜센터 모델이 고객이 기대하는 서비스 수준에 못 미침\"과 같은 내용이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U136",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"constantly referenced complex, legal process documents\"라는 표현과 \"a labor-intensive and repetitive task that kept them from more strategic work\"라는 표현이 있어, 주장의 '복잡한 법률 절차 문서를 계속 참조하는 노동집약적 반복 업무'라는 병목과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U137",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"AI platform in professional sports\"라고만 하고, 고객 산업이 커뮤니케이션 서비스라는 표현은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U138",
+    "판정": "뒷받침됨",
+    "근거": "근거 문장이 고객을 \"leading global footwear retailer\"로 설명한다. 신발 소매업은 경기소비재에 들어가므로 주장과 맞는다. 다만 \"경기소비재\"라는 말은 원문에 없다. 업종 분류는 원문을 해석해서 얻은 결과다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U139",
+    "판정": "뒷받침됨",
+    "근거": "\"within the first seven weeks of use ... helping 20 percent more customers avoid long wait times\"라는 표현이 첫 7주 동안 긴 대기를 피한 고객이 20 percent 늘었다는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U140",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"helped define a blueprint to scale across ten markets with the potential to impact more than 37 million customers\"가 주장의 '10개 시장 확산 청사진 마련, 3,700만 고객 대상 잠재'와 일치함 (조문은 \"more than\"이라 했으나 주장이 이를 틀리게 쓰지는 않음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U141",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"The pilot solution was implemented in just four weeks\"가 주장의 \"파일럿 4주 만에 구현\"과 일치하고, \"just\"라는 표현이 이를 성과로 읽을 수 있게 한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U142",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"helping customers save between $5,000 to $12,000 an hour in otherwise lost field time\"이 주장의 금액·단위(시간당)·대상(현장 손실 시간)과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U143",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Within ten weeks, inbound service sales rose 40 percent\"가 주장의 \"10주 만에 인바운드 서비스 판매 40 percent 증가\"와 기간·대상·수치 모두 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U144",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"contact center agents doubled their offering rates during service calls\"가 주장의 \"상담원 서비스 통화 중 제안율 2배\"와 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U145",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"with no negative impact on NPS (from 40.3 percent to 41.2 percent, a 0.9 p.p. improvement)\"가 주장의 수치와 개선 방향과 정확히 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U146",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"found over 50 friction points\"가 주장의 \"병원 프로세스에서 마찰 지점 50개 넘게 발견\"과 같은 내용이다. 조문은 이를 \"thorough examination of hospital processes\"의 결과로 적고 있으므로, 주장이 이것을 낸 성과로 부른 것도 조문 내용과 어긋나지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U147",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"It is able to identify issues before they occur 71% of the time\"가 주장의 \"문제를 발생 전에 71% 확률로 식별\"과 내용이 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U148",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"stood up a working, well-performing customer service model in four weeks\"가 주장의 '4주 만에 작동하는 고객 서비스 모델 구축'과 그대로 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U149",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"an approximate 25% in additional revenue potential through cross-selling\"이라고 적혀 있어 주장의 \"교차판매로 약 25% 추가 매출 잠재력\"과 일치함(조문상으로는 로드맵이 예상한 수치임)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U150",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"promised a 10x gain in marketing performance\"가 주장의 \"마케팅 성과 10x 향상 전망\"과 맞는다. '전망'이라는 표현이 promised(약속·예상)의 뜻을 살리고 있어서, 실제로 거둔 성과로 잘못 쓴 것은 아니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U151",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"analyzes more than 500 pieces of information and research daily\"는 개인화 경험을 제공하려고 앱이 하는 일을 설명한 문장이고, 앱이 낸 성과라는 말은 없다. 숫자는 맞지만 \"낸 성과\"라는 분류가 조문 내용과 다르다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U152",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"The predictive accuracy improved from 53.4% to 92%\"가 주장의 \"예측 정확도 53.4%에서 92%로 향상\"과 수치·방향이 모두 같다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U153",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"to unify 1.15 million fan records\"가 1.15 million 팬 기록 통합이라는 주장과 수치·내용 모두 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U154",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"move from six broad segments to 49 actionable microsegments\"라고 해서 세그먼트 6개가 마이크로세그먼트 49개로 바뀐 성과를 그대로 말한다. 다만 조문에는 \"fan\"이라는 말이 없어서 '팬'이라는 수식어는 조문으로 확인되지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U155",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"the team built the POC in just 90 days\"가 주장의 \"90일 만에 POC 구축\"과 내용이 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U156",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"In just a few months, a few hundred BCS employees have successfully started using the GenAI system\"이 몇 달 만에 BCS 직원 a few hundred 명이 사용했다는 주장과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U157",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"an uplift in opportunities of upward of 50%\"가 주장의 \"기회 50% 이상 증가\"와 같은 내용이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U158",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"resulted in four primary, scalable GenAI skillsets\" 표현이 '확장 가능한 GenAI 스킬셋 4개 확보'라는 성과와 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U159",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Launched over a dozen transformative GenAI solutions across business functions\"가 주장의 \"사업 부문 전반에 GenAI 솔루션 over a dozen 출시\"와 일치한다. 주장은 \"transformative\"만 뺐고, 이 생략으로 뜻이 바뀌지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U160",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"$100 million+ forecasted savings\"는 주장의 \"$100 million+ 절감 예측\"과 금액과 '예측(forecasted)' 성격 모두 맞음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U161",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"we were able to deliver the solution in under six months\"가 주장의 '6개월 안에 솔루션 제공'과 같은 내용이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U162",
+    "판정": "뒷받침됨",
+    "근거": "법 제7조제1항이 \"수출허가…를 받은 자는…수출이동서류…를 작성하여야 한다\"고 정하고, \"내용을 변경할 때에도 또한 같다\"고 해 변경 시 작성 의무까지 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U163",
+    "판정": "뒷받침됨",
+    "근거": "법 제7조제2항의 \"수출허가를 받은 자가 … 수출하지 아니하게 되었을 때에는 … 해당 수출이동서류를 첨부하여 기후에너지환경부장관에게 신고하여야 한다\"가 주장의 요건과 주체(수출자)에 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U164",
+    "판정": "뒷받침됨",
+    "근거": "가목에 \"사용한 윤활유\"라는 원문 용어가 그대로 있다(웨이스트 오일 예시 중 하나). 다만 \"ULO\"라는 약어는 조문에 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U165",
+    "판정": "뒷받침됨",
+    "근거": "조문에 제2710호의 \"웨이스트 오일(waste oil)\"에 '사용한 윤활유'가 포함된다고 적혀 있어, ULO(사용한 윤활유)를 제2710호 웨이스트 오일로 분류한 주장과 맞는다. 다만 'ULO'라는 약어는 조문에 나오지 않는다. ULO를 '사용한 윤활유'로 풀어 읽은 것을 전제로 한 판정이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U166",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"2710.91 폴리염소화 비페닐(PCBs), 폴리염소화 테르페닐(PCTs)이나 폴리브롬화 비페닐(PBBs)을 함유하는 것\"과 \"소호 2710.91 및 2710.99의 5. 조유·윤활유·윤활유 기유의 것\"이 주장의 분류와 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U167",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"소호 2710.91 및 2710.99의 5\"에 \"조유·윤활유·윤활유 기유의 것\"을 두지만, 소호 2710.99는 그냥 \"기타\"라고만 적혀 있어 주장의 \"웨이스트 오일 중 기타\"라는 설명은 조문에 없음.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U168",
+    "판정": "뒷받침됨",
+    "근거": "법 제6조제1항 \"수출하려는 자는…기후에너지환경부장관의 허가를 받아야 한다. 허가받은 사항을 변경하려는 경우에도 또한 같다\"와 시행령 제3조제1항 \"수출허가신청서에…서류를…첨부하여…제출해야 한다\"가 주장의 요건과 주체에 들어맞음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U169",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"다음 각 호의 어느 하나에 해당하는 경우에만 이를 허가할 수 있다\"라는 말만 있고 각 호 내용은 입력에 없다. 그래서 \"국내 처리 기술·시설이 없거나 수입국 재활용 원료로 필요한 경우\"라는 요건은 이 조문으로 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U170",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"기후에너지환경부장관은 제2항에 따른 수출허가를 하려는 경우에는 … 수입국 및 경유국의 동의를 받아야 한다\"고 되어 있어 요건과 주체(국내 주무관청)가 주장과 맞는다. 단서인 \"대통령령으로 정하는 경우에는 동의 없이 허가할 수 있다\"는 예외일 뿐이고, 주장이 이 예외와 어긋나지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U171",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음 각 호의 어느 하나에 해당하는 경우\" 5일 이내 발급한다고만 하고, 각 호 내용이 입력에 없어 주장의 요건인 \"동의서 접수\"를 조문에서 확인할 수 없음.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U172",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"한꺼번에 허가를 받은 자는 … 수출할 때마다 「관세법」 제241조에 따른 신고일의 10일 전까지 … 자료를 … 제출하여야 한다\"가 주장 내용(포괄허가, 수출마다, 신고일 10일 전, 자료 제출, 수출자)과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U173",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"수출허가 또는 변경허가를 받은 자는 다른 자에게 자기의 명의나 상호를 사용하여 … 수출하게 하거나 … 수출허가서 또는 변경허가서를 빌려주어서는 아니 된다\"고 되어 있어, 주장의 주체(허가받은 수출자)와 금지 내용(명의·상호 사용, 허가서 대여)과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U174",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출하려는 자는 「폐기물관리법」 제13조에 따른 폐기물의 처리 기준ㆍ방법에 따라 수출입규제폐기물을 처리하여야 한다\"는 표현이 주장의 주체(수출자)와 요건(제13조 처리 기준·방법에 따른 처리)에 맞는다. 업무 단계 '허가·신고'는 조문에 직접 쓰여 있지 않지만, 조문이 \"제1항에 따라 수출하려는 자\"라고 적고 있어 주장 내용과 어긋나지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U175",
+    "판정": "뒷받침 안 됨",
+    "근거": "수수료 납부와 영수증 제출(\"수수료를 내야 한다\", \"그 납부영수증을…제출하여야 한다\")은 조문에 있지만, 주장의 산식 \"F.O.B.×1/1,000\"은 두 조문 어디에도 없다. 조문은 \"제1항에 따라…산출\"이라고만 하고 그 제1항 내용은 입력되지 않았다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U176",
+    "판정": "뒷받침됨",
+    "근거": "법 제10조제1항의 \"수입하려는 자는 … 기후에너지환경부장관의 허가를 받아야 한다. 허가받은 사항을 변경하려는 경우에도 또한 같다\"와 시행령 제9조제1항의 \"수입허가신청서에 다음 각 호의 서류를 … 첨부하여 … 제출해야 한다\"가 주장의 허가·변경허가와 신청서·서류 제출 요건에 그대로 대응한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U177",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"다음 각 호의 어느 하나에 해당하는 경우에만 이를 허가할 수 있다\"까지만 있고, 각 호의 내용이 빠져 있다. 그래서 \"처리 기술·시설 보유 또는 재활용 원료 사용\"이라는 요건은 입력된 조문에서 확인되지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U178",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"기후에너지환경부장관은 … 수출국의 주무관청으로부터 해당 폐기물의 수입 동의 요청이 없는 경우에는 수입을 허가하여서는 아니 된다\"가 주장의 요건, 수입허가 단계, 국내 주무관청이라는 주체와 맞는다. 단서의 예외를 주장이 빠뜨렸지만 내용을 잘못 쓴 것은 아니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U179",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수입 동의 요청을 하였을 때에는 … 동의 여부를 결정하여 수출국에 통지하여야 한다\"가 주장의 요건과 같고, 그 의무를 지는 \"기후에너지환경부장관\"은 \"수출국의 주무관청\"과 대비되는 국내 행정청이므로 주체 표기와도 맞음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U180",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출국의 주무관청에 수입동의통지를 한 경우에는 … 지체없이 … 수입허가서를 발급하여야 한다\"는 주장의 요건과 맞고, 발급하는 주체인 \"기후에너지환경부장관\"은 국내 주무관청에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U181",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 '한꺼번에 허가를 받은 자에 대해서는 제6조제6항을 준용한다'라고만 나오고, 주장의 핵심인 '수입마다 자료 제출'은 입력 조문 어디에도 없어서 확인할 수 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U182",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수입허가 또는 변경허가를 받은 자는 다른 자에게 자기의 명의나 상호를 사용하여 … 수입하게 하거나 … 수입허가서 또는 변경허가서를 빌려주어서는 아니 된다\"가 주장의 주체(수입자)와 금지 요건에 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U183",
+    "판정": "뒷받침됨",
+    "근거": "\"제1항에 따라 수출입규제폐기물을 수입하려는 자는 「폐기물관리법」 제13조에 따른 폐기물의 처리 기준ㆍ방법에 따라 … 처리하여야 한다\"는 문장에 주장의 주체(수입자)와 요건(처리 기준·방법에 따른 처리)이 그대로 있음. 업무 단계 '허가·신고'는 조문에 명시되어 있지 않아 '수입하려는 자'라는 표현으로 미루어 본 것임.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U184",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"수수료를 내야 한다\"와 \"납부영수증을 … 제출하여야 한다\"까지만 있고, 주장에 들어간 수수료 금액 산식 \"C.I.F.×1/1,000\"은 입력된 두 조문 어디에도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U185",
+    "판정": "뒷받침됨",
+    "근거": "법 제18조의2제1항이 \"수출하거나 수입하려는 자는 … 그 폐기물의 종류ㆍ양 및 처리계획 등이 포함된 서류를 첨부하여 기후에너지환경부장관에게 신고하여야 한다\"고 규정하고 있어 주장의 요건·주체(수출자)·신고 행위와 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U186",
+    "판정": "뒷받침됨",
+    "근거": "제18조의2제1항의 \"수출하거나 수입하려는 자는 … 그 폐기물의 종류ㆍ양 및 처리계획 등이 포함된 서류를 첨부하여 기후에너지환경부장관에게 신고하여야 한다\"가 수입자의 신고 요건과 첨부 서류 내용에 들어맞음.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U187",
+    "판정": "뒷받침됨",
+    "근거": "법 제18조의2제2항의 \"신고한 사항 중 대통령령으로 정하는 중요한 사항을 변경하려면 변경신고를 하여야 한다\"와 시행령 제17조의2제6항의 \"수출입관리폐기물 수출변경신고서\"가 수출자의 중요 사항 변경신고 의무를 직접 서술한다(같은 조문에 수입변경신고서도 있어 수입자도 대상이나, 주장은 수출자만 대상이라고 하지 않았다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U188",
+    "판정": "뒷받침됨",
+    "근거": "법 제18조의2제2항의 \"신고한 사항 중 대통령령으로 정하는 중요한 사항을 변경하려면 변경신고를 하여야 한다\"가 요건을 직접 말하고, 시행령 제17조의2제6항이 \"수출입관리폐기물 수입변경신고서\"를 제출 서식으로 들고 있어 수입자도 이 의무를 지는 것으로 읽힌다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U189",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"한꺼번에 신고를 한 자에 대해서는 제6조제6항을 준용한다\"고만 적고 있고, 그 조항이 \"수출마다 자료 제출\"을 요구한다는 내용은 입력된 조문 어디에도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U190",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"한꺼번에 신고를 한 자에 대해서는 제6조제6항을 준용한다\"라고만 하고, 준용되는 내용이 \"수입마다 자료 제출\"이라는 말은 조문에 없다. 또 조문은 \"수출하거나 수입하려는 경우\"를 함께 다루는데, 주장은 주체를 수입자로만 좁혔다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U191",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"신고를 받은 날부터 10일 이내에 신고의 수리 여부를 신고한 자에게 통지하여야 한다\"고 되어 있고, 통지하는 쪽은 기후에너지환경부장관(국내 주무관청)이다. 다만 조문 자체에 \"수출입관리폐기물\"이라는 말은 없고 \"제1항 또는 제2항에 따라\"라고만 되어 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U192",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"신고 내용을 확인한 후 … 수출신고증명서 또는 … 수입신고증명서를 신고인에게 발급하여야 한다\"와 \"시ㆍ도지사 또는 시장ㆍ군수ㆍ구청장에게 그 내용을 통지하여야 한다\"를 기후에너지환경부장관(국내 주무관청)의 의무로 정하고 있어, 주장과 내용이 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U193",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출신고…를 한 자는 … 자기의 명의나 상호를 사용하여 … 수출 … 하게 하거나 수출입관리폐기물 수출신고증명서 … 를 빌려주어서는 아니 된다\"가 주장의 금지 요건과 수출자 주체에 맞는다. 주장은 조문에 함께 적힌 수입 쪽을 빼고 말했을 뿐이고, 잘못 쓴 부분은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U194",
+    "판정": "뒷받침됨",
+    "근거": "\"수출신고ㆍ수입신고 또는 그 변경신고를 한 자는 … 명의나 상호를 사용하여 … 수입하게 하거나 … 수입신고증명서를 빌려주어서는 아니 된다\"는 수입신고를 한 자(수입자)에게 명의·상호 사용과 수입신고증명서 대여를 금지하는 내용으로 주장과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U195",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 \"「폐기물관리법」 제13조에 따른 폐기물의 처리 기준ㆍ방법에 따라 … 처리하여야 한다\"는 요건은 있으나, 조문은 \"제1항에 따라\"라고만 할 뿐 허가·신고라는 말이 없고 내용도 처리 의무라서 업무 단계 '허가·신고'는 근거가 없음(주체도 \"수출하거나 수입하려는 자\"인데 주장은 수출자만 적음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U196",
+    "판정": "뒷받침됨",
+    "근거": "\"수출하거나 수입하려는 자는 「폐기물관리법」 제13조에 따른 폐기물의 처리 기준ㆍ방법에 따라 … 처리하여야 한다\"에서 요건과 주체(수입자 포함)가 확인된다. 업무 단계 '허가·신고'는 조문에 나오지 않아 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U197",
+    "판정": "뒷받침됨",
+    "근거": "법 제12조제1항에 \"처리하는 자는 해당 수입이동서류 및 … 수출국발행이동서류와 제18조의5에 따른 인계ㆍ인수에 관한 내용을 출력한 서류를 지녀야 하며\", \"인도하는 경우에는 … 적고 서명하여야 한다\"라고 되어 있어, 주장의 주체·소지 서류 세 가지·인도 시 기재·서명과 들어맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U198",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수입허가를 받은 수출입규제폐기물을 처리하는 자는 수입이동서류에 적힌 내용을 준수하여야 한다\"가 주장의 요건(이동서류 내용 준수)과 주체(처리자)에 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U199",
+    "판정": "뒷받침됨",
+    "근거": "\"수출, 수입 또는 처리할 때마다 그 폐기물의 인계ㆍ인수에 관한 사항과 … 폐기물처리현장정보 … 를 전자정보처리프로그램에 입력하여야 한다\"는 표현이 주장의 요건과 맞음(다만 주체는 조문에 \"각 호의 어느 하나에 해당하는 자\"로만 나오고 각 호가 입력에 없어서 '처리자'인지는 확인하지 못함)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U200",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"수입폐기물을 처리하는 자는 「폐기물관리법」 제13조에 따른 폐기물의 처리 기준ㆍ방법과 같은 법 제13조의2에 따른 폐기물의 재활용 원칙 및 준수사항에 따라 수입폐기물을 처리하여야 한다\"라고 되어 있어 주장의 주체(처리자)와 요건(처리 기준·방법 + 재활용 원칙·준수사항)이 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U201",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 시험 결과 \"다음의 기준에 적합해야 한다\"고만 하고 기준 항목은 적지 않았다. 남은 탄소·수분·회분·황분·중금속이라는 항목은 입력된 조문 어디에도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U202",
+    "판정": "뒷받침됨",
+    "근거": "(1)의 \"폐합성고분자화합물 … 열분해 등의 방법으로 가스ㆍ유류 등을 제조하는 경우\"와 (2)의 \"제조한 유류는 … 정제연료유의 기준에 적합하여야 한다\"를 합치면 주장의 요건과 같다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U203",
+    "판정": "뒷받침됨",
+    "근거": "조문 (가)에 \"폐윤활유는 … 기준에 맞게 정제한 후 용제추출 또는 수첨반응 등의 처리를 해야 한다\"는 표현이 있고, 적용 조건이 \"윤활기유의 원료물질로 재활용하려는 경우\"여서 주장의 요건과 맞다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U204",
+    "판정": "뒷받침됨",
+    "근거": "\"윤활유의 품질기준에 적합하여야 하며\"와 \"판매하는 경우에는 폐윤활유를 재활용한 제품임을 소비자가 알 수 있도록 표시해야 한다\"가 주장의 요건과 맞음(주체 '처리자'는 조문에 명시돼 있지 않지만, 조문과 충돌하지는 않음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U205",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음의 기준에 따라 제조되어야 한다\"고만 해서 폐유를 정제연료유로 재활용할 때 기준을 지켜야 한다는 뼈대는 맞지만, 주장이 내세운 \"시험결과 기준(남은 탄소·황분 등)\"과 주체 \"처리자\"는 입력된 조문 어디에도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U206",
+    "판정": "뒷받침됨",
+    "근거": "시행령 제15조의 \"처리를 완료한 날부터 10일 이내에 … 수령 및 처리결과를 수출국의 주무관청과 수출한 자에게 송부하고 그 사본을 기후에너지환경부장관에게 제출하여야 한다\"가 주장의 기한, 수신처, 사본 제출, 주체(처리를 완료한 자)와 모두 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U207",
+    "판정": "뒷받침됨",
+    "근거": "법 제21조의2의 \"장부를 갖추고, 폐기물의 수출입ㆍ처리 상황 등을 기록하고, 3년간 보존\"과 시행령 제19조제1항제3호의 \"수입폐기물을 처리한 자(처리를 위탁받은 자만 해당한다)… 수입폐기물 수탁처리 관리대장\"을 합치면 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U208",
+    "판정": "뒷받침됨",
+    "근거": "법 제21조의3제1항이 \"매년 폐기물의 수출입 및 처리에 관한 보고서를 다음 연도 2월 말일까지\" 제출하라고 정하고, 시행령 제19조의2제1항제3호는 \"수입폐기물을 처리한 자(처리를 위탁받은 자만 해당한다)\"가 낼 보고서를 \"수입폐기물 수탁처리 실적보고서\"로 정해, 두 조문을 함께 읽으면 주장 내용이 된다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U209",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에서 1월 31일까지 서면으로 자료를 내야 하는 쪽은 \"폐기물의 처리를 위탁한 자\"(요구를 받은 자)이고, 요구하는 쪽이 \"보고서를 제출하여야 하는 자\"이다. 주장은 제출 주체를 \"위탁받아 처리한 자\"로 뒤바꿔 적었다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U210",
+    "판정": "뒷받침됨",
+    "근거": "\"require that the disposer inform both the exporter and the competent authority of the State of export of receipt ... and ... of the completion of disposal\"가 처리자가 수령과 처리 완료를 수출자와 수출국 주무관청에 알린다는 주장과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U211",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출ㆍ수입 또는 처리하는 자는 … 위해가 발생하였을 때에는 이를 제거하는 데에 필요한 모든 조치를 하여야 한다\"가 주장의 주체(처리자)와 요건(위해 발생 시 제거에 필요한 모든 조치)을 그대로 담고 있다. 다만 조문의 주체는 수출·수입하는 자까지 포함하는데, 주장은 처리자만 적었다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U212",
+    "판정": "뒷받침됨",
+    "근거": "\"다음 각 호의 어느 하나에 해당하는 자를 제외하고는 폐기물을 수출하여서는 아니 된다\"라고 하고 각 호로 \"폐기물취급자\"와 \"사업장폐기물배출자\"를 든다. 이 두 자만 폐기물을 수출할 수 있다는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U213",
+    "판정": "뒷받침됨",
+    "근거": "\"폐기물취급자를 제외하고는 폐기물을 수입하여서는 아니 된다\"는 폐기물취급자만 폐기물을 수입할 수 있다는 요건과 같은 뜻이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U214",
+    "판정": "뒷받침됨",
+    "근거": "\"폐기물을 수출하거나 수입하려는 자는 … 수출허가 … 또는 … 수출신고ㆍ수입신고 이전에\" 제1호 \"보증금 예탁\" 또는 제2호 \"보증하는 보험 가입\" 중 하나를 하라고 정하고 있어, 주장의 주체(수출자), 시점(허가·신고 전), 요건(보증금 예탁 또는 보증보험 가입)과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U215",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"수입하려는 자는\" \"제10조제1항에 따른 수입허가… 또는 제18조의2제1항에 따른… 수입신고 이전에\" 제1호 \"보증금 예탁\"이나 제2호 \"수입을 보증하는 보험 가입\" 가운데 하나를 하도록 정하고 있어 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U216",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"보증금 예탁기관을 지정한 경우에는 그 사실을 기후에너지환경부의 인터넷 홈페이지에 게시해야 한다\"라고 되어 있고, 게시 의무를 지는 주체가 기후에너지환경부장관(국내 주무관청)으로 적혀 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U217",
+    "판정": "뒷받침됨",
+    "근거": "\"수출허가신청의 내용이 적합하다고 인정되면 신청을 받은 날부터 5일 이내에 수입국 또는 경유국의 주무관청에 … 동의를 요청하여야 한다\"가 주장의 요건과 같고, 동의를 요청하는 주체도 국내 주무관청인 기후에너지환경부장관이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U218",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수입동의요청을 받은 때에는 그 요청을 받은 날부터 8일 이내에 … 동의, 조건부 동의, 불허 또는 추가정보 요청 등의 통지를 하여야 한다\"가 주장의 기한과 통지 내용과 일치하고, 통지하는 쪽인 기후에너지환경부장관은 \"수출국의 주무관청\"과 대비되는 국내 쪽 주체다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U219",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"기후에너지환경부장관은 … 수출국의 주무관청을 통하여 … 생산자 또는 수출자가 수입동의요청을 한 경우에는 … 수입동의요청을 받은 것으로 본다\"라고 되어 있어, 주장의 요건과 국내 주무관청이라는 주체가 조문과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U220",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"국내 경유의 동의를 요청하였을 때에는 그 경유에 관한 동의 여부를 결정하여 수출국에 통지하여야 한다\"고 한다. 조문이 정한 주체는 기후에너지환경부장관이고, 주장은 이를 국내 주무관청으로 바꿔 썼다. 이 표현 차이는 판정을 바꿀 정도의 오서술은 아니라고 봤다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U221",
+    "판정": "뒷받침됨",
+    "근거": "\"국내를 경유하여 수출입규제폐기물을 다른 국가로 수출하려는 자는 제1항에 따른 동의를 받지 아니하고는 국내를 경유할 수 없다\"가 수출하려는 자에게 동의 없는 국내 경유를 금지하는 요건과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U222",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"The State of export shall notify, or shall require the generator or exporter to notify, in writing ... the competent authority of the States concerned\"가 주장의 요건(수출국이 관련국 주무관청에 서면 통지 또는 수출자에게 통지 요구)과 일치한다. 다만 조문에는 통지만 있고 동의(consent)라는 말은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U223",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"The State of import shall respond to the notifier in writing, consenting ... with or without conditions, denying permission ..., or requesting additional information\"이 주장의 요건(수입국이 서면으로 동의, 조건부 동의, 불허, 추가정보 요청 중 하나로 회신)과 그대로 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U224",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"A copy of the final response of the State of import shall be sent to the competent authorities of the States concerned which are Parties\"가 주장의 요건 '수입국 최종 회신 사본을 관련 당사국 주무관청에 송부'와 그대로 맞는다. 조문은 수동태라 보내는 쪽을 밝히지 않지만, 주장의 주체 표기 '상대국·경유국 정부'와 부딪히지는 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U225",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"shall not allow ... to commence ... until it has received written confirmation that:\"에서 끊겨, 무엇을 확인받는지(수입국 서면 동의·처리계약)가 나와 있지 않습니다. \"hazardous wastes or other wastes\"라는 표현도 조문에 없습니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U226",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"shall promptly acknowledge to the notifier receipt of the notification\"(통지 접수를 즉시 확인)만 있고, 주장에 들어간 \"60일 내 서면 회신 가능\"은 조문 어디에도 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U227",
+    "판정": "뒷받침됨",
+    "근거": "\"The State of export shall not allow the transboundary movement to commence until it has received the written consent of the State of transit\"는 요건 내용과 일치한다. 다만 조문의 주체는 \"State of export\"이고 \"주무관청\"이나 \"hazardous wastes\" 표현은 입력 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U228",
+    "판정": "뒷받침됨",
+    "근거": "법 제11조는 \"수입허가를 받은 자는 … 수입하였을 때에는 … 수입이동서류를 작성하여야 한다\"고 하고, 시행령 제12조제2항은 \"보세구역 … 또는 … 자유무역지역으로부터 … 반출할 때에 작성하여야 한다\"고 정해, 주장의 주체·시점·요건과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U229",
+    "판정": "뒷받침됨",
+    "근거": "\"기후에너지환경부장관은 … 수출입폐기물의 인계ㆍ인수에 관한 내용 등을 전산처리할 수 있는 전자정보처리프로그램 … 을 구축ㆍ운영하여야 한다\"가 주장의 요건, 주체(장관 = 국내 주무관청), 대상과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U230",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"기후에너지환경부장관은 … 수출입폐기물의 인계ㆍ인수에 관한 내용을 3년간 보존하여야 한다\"가 주장의 요건(입력된 인계·인수 내용을 3년간 보존)과 일치하고, 의무를 지는 쪽이 장관이므로 주체를 \"국내 주무관청\"으로 쓴 것과도 어긋나지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U231",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출, 수입 또는 처리할 때마다 그 폐기물의 인계ㆍ인수에 관한 사항과 … 폐기물처리현장정보를 … 전자정보처리프로그램에 입력하여야 한다\"가 주장의 요건과 맞음. 다만 주체를 열거한 \"각 호\"는 입력에 없어서, 주체가 \"수출자\"라는 부분은 \"수출할 때마다\"라는 표현에서 추론한 것임.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U232",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"수출, 수입 또는 처리할 때마다 … 인계ㆍ인수에 관한 사항과 … 폐기물처리현장정보를 … 입력하여야 한다\"는 요건과는 맞지만, 의무를 지는 사람이 \"다음 각 호의 어느 하나에 해당하는 자\"로만 적혀 있고 각 호가 입력에 없어서 주장의 주체 \"수입자\"는 조문으로 확인되지 않음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U233",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"기후에너지환경부장관은 … 수출허가서를 발급하거나 … 수출 통관을 확인하였을 때에는 그 내용을 … 전자정보처리프로그램 … 에 입력하여야 한다\"고 되어 있어, 주장의 요건(발급·통관 확인 시 전산 입력)과 주체(국내 주무관청)가 조문과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U234",
+    "판정": "뒷받침됨",
+    "근거": "\"기후에너지환경부장관은 … 수입허가서를 발급하거나 … 수입 통관을 확인하였을 때에는 그 내용을 전자정보처리프로그램에 입력하여야 한다\"가 주장의 요건과 주체(국내 주무관청)에 들어맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U235",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"기후에너지환경부장관은 … 수출신고증명서 또는 수입신고증명서를 발급하거나 … 수출입 통관을 확인하였을 때에는 해당 내용을 전자정보처리프로그램에 입력하여야 한다\"고 되어 있어, 국내 주무관청의 전산 입력 요건과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U236",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"each person who takes charge of a transboundary movement ... sign the movement document either upon delivery or receipt\"는 이동을 맡은 자가 인도나 수령 때 이동서류에 서명해야 한다는 주장 내용과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U237",
+    "판정": "뒷받침 안 됨",
+    "근거": "법 제8조제1항은 \"인도일과 그 밖에 대통령령으로 정하는 사항\"만 적고, 시행령 제6조는 \"다음 각 호의 사항\"에서 끊겨 있어 주장의 '운반자·운송수단' 기재는 입력 조문에서 확인되지 않음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U238",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출허가를 받은 수출입규제폐기물을 운반하는 자는 수출이동서류에 적힌 내용을 준수하여야 한다\"가 주장의 주체(운반자)와 요건(수출이동서류 내용 준수)에 맞음(반입명령에 따른 반입은 예외지만 주장과 어긋나지 않음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U239",
+    "판정": "뒷받침됨",
+    "근거": "법 제17조는 \"수출하거나 수입하려는 자는 … 포장 및 표지 부착 등을 하여야 한다\"고 정하고, 시행령 제17조는 그 방법이 \"별표 1의 기준에 따른다\"고 정한다. 따라서 수출자가 지는 요건으로 읽을 수 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U240",
+    "판정": "뒷받침됨",
+    "근거": "법 제17조 \"수출하거나 수입하려는 자는 … 포장 및 표지 부착 등을 하여야 한다\"가 주체에 수입자를 포함하고, 시행령 제17조 \"별표 1의 기준에 따른다\"가 기준을 정함(다른 법령의 규정이 있는 경우를 빼는 단서는 생략됐지만, 생략일 뿐 틀린 서술은 아님).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U241",
+    "판정": "뒷받침 안 됨",
+    "근거": "요건과 주체(기후에너지환경부장관이 \"수출허가 또는 수입허가를 할 때\" 해양수산부장관과 협의해 항구를 지정하거나 구역을 제한)는 조문과 맞지만, 조문은 이 조치를 허가 단계에 묶어 두고 있고 포장·표지·운반이라는 업무 단계는 조문에 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U242",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"국내 경유에 동의할 때에는 … 경유항구 또는 경유지역을 제한할 수 있다\"가 주장의 핵심 내용과 맞고, 이 권한을 쓰는 사람은 기후에너지환경부장관(국내 관청)이다. 다만 조문에는 \"할 수 있다\"고 되어 있어 재량이지 의무 요건이 아니다. 주장에서 빠진 해양수산부장관과의 협의도 덧붙여 둔다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U243",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"스스로 처리하거나 다음 각 호의 어느 하나에 해당하는 자에게 위탁\"이라고만 하며 각 호 목록이 입력에 없어 위탁 대상이 \"폐기물취급자\"라는 부분을 확인할 수 없고, 조문에 \"처리\"만 있을 뿐 \"재활용\"은 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U244",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"운반하는 자\"가 \"운반하는 중에\" \"인계번호를 숙지\"하고 \"요구할 때에는 인계번호를 알려주어야\" 한다는 점은 주장과 맞지만, 조문은 운반 단계만 말하고 있어 주장의 업무 단계 \"처리·재활용\"은 조문에서 뒷받침되지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U245",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"수입할 당시의 성질과 상태 그대로 수출하여서는 아니 된다\"고 해 핵심 요건과 일치하고, \"누구든지\"는 수출하는 사람을 포함하나, 업무 단계 '처리·재활용'은 조문에 명시되어 있지 않다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U246",
+    "판정": "뒷받침됨",
+    "근거": "법 제21조의2의 \"장부를 갖추고, 폐기물의 수출입ㆍ처리 상황 등을 기록하고, 3년간 보존하여야 한다\"와 시행령 제19조제1항제1호의 \"수출허가를 받은 자 또는 … 수출신고를 한 자: … 수출폐기물 관리대장\"이 주장의 주체(수출자), 장부 이름, 기록 내용, 보존 기간과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U247",
+    "판정": "뒷받침됨",
+    "근거": "법 제21조의2에 \"장부를 갖추고, 폐기물의 수출입ㆍ처리 상황 등을 기록하고, 3년간 보존\"이라고 되어 있고, 시행령 제19조제1항제2호가 수입허가를 받거나 수입신고를 한 자의 장부를 \"수입폐기물 관리대장\"으로 정하고 있어 주장 내용과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U248",
+    "판정": "뒷받침됨",
+    "근거": "법 제21조의3①의 \"매년 … 보고서를 다음 연도 2월 말일까지 … 제출하여야 한다\"와 시행령 제19조의2①1의 \"수출허가를 받은 자 또는 … 수출신고를 한 자: … 수출실적보고서. 이 경우 수출허가를 받은 자는 수출이동서류 사본 또는 … 처리완료 통지서 사본을 첨부\"가 주장의 기한·서식·첨부 요건과 맞는다. 다만 첨부 의무는 수출허가를 받은 자에게만 있고, 주장은 이를 \"수출자\"로 넓혀 쓰고 \"등\"으로 얼버무렸다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U249",
+    "판정": "뒷받침됨",
+    "근거": "법 조문의 \"매년 폐기물의 수출입 및 처리에 관한 보고서를 다음 연도 2월 말일까지 … 제출하여야 한다\"와 시행령 조문의 \"수입허가를 받은 자 또는 … 수입신고를 한 자: 별지 제12호서식의 수입처리실적보고서\"를 합치면 주장과 맞는다(단, 제21조의2 각 호가 수입자를 포함한다는 점은 입력에 직접 나오지 않는다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U250",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"the competent authority of the State of export or the exporter shall so notify the State of import\"가 주장 속 통지 의무(누가 누구에게 알리는지)와 맞고, \"If no such information is received\"가 주장의 조건과 맞는다. 다만 \"such information\"이 무엇인지는 조문 안에 없어서, 주장에서 그 정보를 '처리' 통보라고 한 부분은 이 조문만으로는 확인되지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U251",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출ㆍ수입 또는 처리하는 자는 … 위해가 발생하였을 때에는 이를 제거하는 데에 필요한 모든 조치를 하여야 한다\"에 수출자가 포함되고 요건 서술도 일치함. 다만 이 조문의 주체에는 수입자와 처리자도 들어가는데 주장은 수출자만 적었음.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U252",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"폐기물을 수출ㆍ수입 또는 처리하는 자는 … 위해가 발생하였을 때에는 이를 제거하는 데에 필요한 모든 조치를 하여야 한다\"에 수입자와 그 조치 의무가 모두 들어 있다(조문의 주체는 수출자·처리자까지 포함해 주장보다 넓다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U253",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 장관이 수출·수입허가를 \"취소할 수 있다\"는 것과 \"다음 각 호의 어느 하나에 해당할 때\"라는 문구만 있고, 각 호가 입력에 없어서 주장이 든 취소 사유(\"거짓 허가·조건 불이행\")를 조문에서 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U254",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음 각 호의 어느 하나에 해당할 때\" 신고 수리를 취소할 수 있고, \"제1호, 제3호 또는 제6호에 해당할 때에는 … 취소하여야 한다\"고만 적고 있어 이 부분은 맞다. 하지만 각 호의 내용은 입력에 없어서, 주장이 사유로 든 \"거짓 신고\"는 입력된 조문으로 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U255",
+    "판정": "뒷받침됨",
+    "근거": "법 제19조제1항의 \"긴급한 조치가 필요한 사유가 발생하였을 때에는 … 기간을 정하여 폐기물의 수출 또는 수입을 금지하거나 제한할 수 있다\"와 시행령 제18조제1항의 \"대상품목ㆍ제한방법ㆍ제한기간등을 명시하여 이를 고시하여야 한다\"가 주장의 요건(긴급 시 기간 정해 금지·제한, 품목·방법·기간 고시)과 일치하고, 이를 하는 주체도 장관(국내 주무관청)으로 되어 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U256",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"사람의 건강과 환경에 위해를 줄 우려가 있는 폐기물은 수출하거나 수입할 수 없다\"에 주장의 '위해 우려 폐기물 수출 금지'가 들어 있다(수입 금지는 주장에서 빠졌지만 틀린 서술은 아님).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U257",
+    "판정": "뒷받침됨",
+    "근거": "법 제19조제2항의 \"사람의 건강과 환경에 위해를 줄 우려가 있는 폐기물은 … 수입할 수 없다\"가 주장의 핵심인 수입 금지와 그대로 맞는다. 다만 괄호 속 \"재활용 금지·제한 폐기물 등\"은 입력 조문에 없다. 시행령 제18조제3항의 \"다음 각 호\" 내용이 빠져 있어서 이 부분은 확인하지 못했다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U258",
+    "판정": "뒷받침 안 됨",
+    "근거": "법 제19조제3항의 \"적정하게 처리할 능력이 없는 국가에는 … 수출할 수 없다\"는 주장과 맞는다. 하지만 시행령 제18조의2는 \"다음 각호의 국가를 제외한 국가\"라고만 하고 각호의 목록이 입력에 없다. 그래서 주장의 예외 국가(협정당사국·OECD·EU·리히텐슈타인)는 조문으로 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U259",
+    "판정": "뒷받침 안 됨",
+    "근거": "입력된 조문은 사유를 \"다음 각 호의 어느 하나에 해당할 때\"로만 적고 각 호는 싣지 않았다. 그래서 주장의 요건인 \"무허가·무신고 수출입\"은 조문에서 확인되지 않는다. 명령 내용(\"반입 또는 반출을 명하거나 적정한 방법으로 관리할 것을 명할 수 있다\")만 조문과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U260",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"요청을 받았을 때에는 … 적절한 조치를 한 후 그 결과를 해당 행정기관의 장에게 통보하여야 한다\"는 표현이 있어 주장의 핵심 요건인 '요청 시 조치 후 결과 통보'와 맞고, 의무 주체인 '기후에너지환경부장관'도 국내 주무관청에 해당한다. 다만 '폐기물'이라는 분야 표시는 조문 문장에 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U261",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"제20조제1항에 따른 명령\"을 이행하지 않으면 대집행하고 비용을 징수한다고만 쓰고 있다. 그 명령이 '반입명령'이라는 말은 입력된 조문 어디에도 없어서, 주장의 요건 부분은 이 조문만으로 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U262",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"the State of export shall ensure ... taken back ... by the exporter ... within 90 days\"를 말하지만, 반입 의무는 \"if alternative arrangements cannot be made for their disposal in an environmentally sound manner\"라는 조건이 붙을 때만 생긴다. 주장은 이 조건을 빼고 입력 조문에 없는 계약 불이행을 조건으로 세웠으며, 주체도 조문의 \"State of export\"가 아니라 \"국내 주무관청\"으로 적었다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U263",
+    "판정": "뒷받침됨",
+    "근거": "\"the State of export and any Party of transit shall not oppose, hinder or prevent the return of those wastes to the State of export\"는 수출국과 경유국이 폐기물 재반입을 막지 않는다는 요건과 일치한다(주체 칸의 \"상대국\"이 무엇을 가리키는지는 입력만으로 확인할 수 없다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U264",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 \"내연 기관용 윤활유\"라는 말은 있지만, 폐기물 분류명인 \"폐윤활유\"를 정의하는 괄호 안에서 기어유와 함께 재활용의무 대상 제품으로만 나옵니다. 조문 어디에도 UMO가 없어서, UMO의 원문 용어가 \"내연기관용 윤활유\"라는 대응은 조문만으로 확인되지 않습니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U265",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 \"engine lubricating oil\"이라는 표현은 있지만 \"UMO\"라는 용어는 없고, 둘을 같은 것으로 정의하는 표현도 없습니다. 조문은 \"used and waste oils\"와 함께 \"recycling of engine lubricating oil from vehicle fleets\"를 말할 뿐입니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U266",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 제2710호 \"waste oils\"에 \"used lubricating oils\"(사용한 윤활유)가 포함된다는 데까지만 말하고, 주장이 내세운 소호 2710.91·2710.99는 입력된 조문 어디에도 없음.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U267",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"1. 지정폐기물의 세부분류\" 아래 \"06 폐유 > 06-01 폐광물유 > 06-01-01 폐윤활유\"로 적고 있고, 폐윤활유를 \"기어유 및 내연기관용 윤활유\"로 정의해 주장의 분류번호와 계층이 그대로 맞는다. 다만 \"UMO\"라는 약어는 조문에 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U268",
+    "판정": "뒷받침됨",
+    "근거": "[별표 1] 제6호는 \"6. 폐유\"이고 \"폴리클로리네이티드비페닐(PCBs)함유 폐기물\"을 제외한다고 적혀 있다. [별표 4]의 \"1. 지정폐기물의 세부분류 06 폐유\" 아래에는 \"내연기관용 윤활유\"인 폐윤활유(06-01-01)가 들어 있어, 지정폐기물 6. 폐유라는 분류와 PCBs 제외 내용이 주장과 맞다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U269",
+    "판정": "뒷받침됨",
+    "근거": "원장 1번 \"Annex VIII List A, A3020 Waste mineral oils unfit for their originally intended use\"와 원장 6번 국문 \"원래 의도한 용도에 부적합한 폐광물 유류(바젤협약 폐기물 목록A A3020)\"가 주장의 분류 체계, 목록, 코드, 품목명과 글자 그대로 일치한다. 단, \"UMO\"라는 표현은 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U270",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 'UMO'라는 표현이 없어, UMO가 '폐윤활유'나 '원래 의도한 용도에 부적합한 폐광물 유류'에 해당한다는 연결은 입력 밖의 지식이 있어야만 성립함(별지 제목 '수출입규제폐기물의 품목'만으로는 UMO가 그 품목이라는 근거가 안 됨)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U271",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"06-01-01 폐윤활유(…기어유 및 내연기관용 윤활유를 말한다)\"라고 주장이 원문 용어로 든 '폐윤활유'가 그대로 나온다(다만 약어 'ULO'는 조문에 없어서 ULO와 같은 말인지는 조문만으로 확인할 수 없다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U272",
+    "판정": "뒷받침됨",
+    "근거": "Note 3(a)는 27.10의 \"waste oils\"에 \"used lubricating oils\"가 들어간다고 하고, Heading 27.10 원문은 Waste oils를 \"Containing polychlorinated biphenyls (PCBs), polychlorinated terphenyls (PCTs) or polybrominated biphenyls (PBBs)\"와 \"Other\"로 나눈다. 이 구분은 주장의 2710.91과 2710.99에 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U273",
+    "판정": "뒷받침됨",
+    "근거": "조문 제1호 \"지정폐기물의 세부분류 및 분류번호\"에 \"06 폐유 > 06-01 폐광물유 > 06-01-01 폐윤활유\"가 그대로 있어 주장의 번호·명칭·상위 분류와 일치한다(다만 조문은 \"ULO\"라는 표현을 쓰지 않고, 폐윤활유를 재활용의무 대상인 기어유·내연기관용 윤활유로 한정한다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U274",
+    "판정": "뒷받침됨",
+    "근거": "[별표 4]에 \"지정폐기물의 세부분류 06 폐유 > 06-01-01 폐윤활유\"가 있어 폐윤활유(ULO)가 지정폐기물 폐유에 속함을 보여주고, [별표 1] 제6호 \"폐유[...폴리클로리네이티드비페닐(PCBs)함유 폐기물...은 제외한다]\"가 '6. 폐유'라는 번호와 PCBs 제외 단서를 확인해 준다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U275",
+    "판정": "뒷받침됨",
+    "근거": "원장 1번 \"Annex VIII List A, A3020 Waste mineral oils unfit for their originally intended use\"와 원장 6번 \"바젤협약 부속서Ⅷ … A3020 원래 의도한 용도에 부적합한 폐광물 유류\"가 주장의 분류 번호·명칭·분류 체계와 글자 그대로 일치함(단, 조문에는 'ULO'라는 표현이 없음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U276",
+    "판정": "뒷받침됨",
+    "근거": "원장 11번은 폐윤활유를 \"06-01 폐광물유\" 아래에 두고, 원장 6번 [별지] \"수출입규제폐기물의 품목\"은 \"(2) 원래 의도한 용도에 부적합한 폐광물 유류\"를 싣고 있어 폐윤활유(ULO)가 수출입규제폐기물 품목에 해당한다는 주장과 이어짐",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U277",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 \"폐플라스틱 열분해유\"라는 표현은 있지만 \"PPO\"라는 약어는 없고, 둘이 같은 말이라는 서술도 없어서 PPO가 이 원문 용어에 해당한다는 대응을 조문만으로는 확인할 수 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U278",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"폐합성고분자화합물 등을 열분해하여 생산한 열분해유\"가 글자 그대로 나오므로, 주장이 내세운 원문 용어는 확인된다. 다만 약칭 \"PPO\"는 조문에 나오지 않아, 이 약칭이 그 용어를 가리키는지는 조문으로 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U279",
+    "판정": "뒷받침됨",
+    "근거": "\"수출허가(변경허가를 포함한다)를 받은 자는 … 수출이동서류를 작성하여야 한다. 수출이동서류의 내용을 변경할 때에도 또한 같다\"는 표현이 주장의 요건과 같다. 주장의 \"변경 시도\"는 \"변경 시에도\"의 오타로 보고 판정했다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U280",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"수출허가를 받은 자가 … 수출하지 아니하게 되었을 때에는 … 해당 수출이동서류를 첨부하여 기후에너지환경부장관에게 신고하여야 한다\"라고 적고 있다. 주장의 요건과 주체(수출자 = 수출허가를 받은 자)가 이 문장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U281",
+    "판정": "뒷받침됨",
+    "근거": "제27류 주 제3호 가목은 웨이스트 오일에 \"사용한 윤활유\"(ULO)가 포함된다고 하고, 제2710호 품명에 \"웨이스트 오일(waste oil)\"이 들어 있어 ULO를 2710으로 분류한다는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U282",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에서 \"제2710.9호 품명 웨이스트 오일\"과 그 정의에 \"사용한 윤활유\"가 들어간다는 것은 확인되지만, \"ULO\"라는 말은 조문 어디에도 없고 ULO가 무엇인지도 나오지 않아 ULO가 이 호에 분류된다는 연결을 조문만으로는 세울 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U283",
+    "판정": "뒷받침 안 됨",
+    "근거": "주 제3호 가목은 \"사용한 윤활유\"를 웨이스트 오일로 보지만, 제2710.91호에 들려면 \"PCBs·PCTs·PBBs를 함유하는 것\"이어야 하고, 입력 조문 어디에도 ULO가 이를 함유한다는 내용이 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U284",
+    "판정": "뒷받침 안 됨",
+    "근거": "주 제3호 가목은 \"사용한 윤활유\"를 \"웨이스트 오일\"로 정의할 뿐입니다. 제2710.99호 5는 \"조유·윤활유·윤활유 기유의 것\"이라고만 적고 있습니다. 두 조문 어디에도 웨이스트 오일이나 사용한 윤활유를 제2710.99호 5에 분류한다는 표현이 없습니다. 그래서 ULO를 이 세번에 분류한다는 연결 고리는 입력 조문만으로는 확인되지 않습니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U285",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출하려는 자는 … 기후에너지환경부장관의 허가를 받아야 한다. 허가받은 사항을 변경하려는 경우에도 또한 같다\"가 수출자, 장관 허가, 변경허가 포함을 모두 담고 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U286",
+    "판정": "뒷받침됨",
+    "근거": "제6조제2항이 \"다음 각 호의 어느 하나에 해당하는 경우에만 이를 허가할 수 있다\"고 정하고, 그 요건으로 제1호(국내 처리 기술·시설 없음)와 제2호(수입국 재활용 산업의 원료로 필요)를 둔다. 허가권자도 국내 주무관청인 기후에너지환경부장관이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U287",
+    "판정": "뒷받침됨",
+    "근거": "\"수출허가를 하려는 경우에는 … 수입국 및 경유국의 동의를 받아야 한다\"는 표현이 주장의 요건과 일치한다. 단서 \"대통령령으로 정하는 경우에는 동의 없이 허가할 수 있다\"는 예외를 두는 것일 뿐이고, 원칙 요건을 뒤집지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U288",
+    "판정": "뒷받침됨",
+    "근거": "\"제2항에 따라 허가를 하는 경우에는 필요한 조건을 붙일 수 있다\"는 표현이 주무관청인 장관이 허가에 조건을 붙일 수 있다는 주장과 맞는다. 다만 조문에는 그 허가가 수출허가라는 말이 없어서, '수출' 부분은 이 조문만으로는 확인되지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U289",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"같은 세관…같은 자에게 두 번 이상 수출하는 경우에는 12개월의 범위에서…한꺼번에 허가할 수 있다\"가 있다. 허가 주체도 기후에너지환경부장관이라 주장과 맞다. 다만 주장은 \"물리적ㆍ화학적 특성이 같은\" 폐기물이라는 요건을 빠뜨렸다. 조문과 어긋나지는 않지만 요건을 다 담지 못한 요약이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U290",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"한꺼번에 허가를 받은 자는 … 수출할 때마다 「관세법」 제241조에 따른 신고일의 10일 전까지 … 자료를 … 제출하여야 한다\"가 주장의 '포괄허가자, 수출 때마다, 관세법 신고일 10일 전까지 자료 제출'과 맞음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U291",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"수출허가 또는 변경허가를 받은 자는 다른 자에게 자기의 명의나 상호를 사용하여 … 수출하게 하거나 … 수출허가서 또는 변경허가서를 빌려주어서는 아니 된다\"고 되어 있어, 주장이 말하는 허가를 받은 수출자에 대한 명의·상호 사용 수출 금지와 허가서 대여 금지에 들어맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U292",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출입규제폐기물을 수출하려는 자는 「폐기물관리법」 제13조에 따른 폐기물의 처리 기준ㆍ방법에 따라 … 처리하여야 한다\"가 주장의 요건과 주체(수출자)에 그대로 맞는다. 다만 업무 단계 \"허가·신고\"는 조문에 직접 쓰여 있지 않고 \"제1항에 따라\"로만 이어져 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U293",
+    "판정": "뒷받침됨",
+    "근거": "\"수입하려는 자는 … 기후에너지환경부장관의 허가를 받아야 한다. 허가받은 사항을 변경하려는 경우에도 또한 같다\"는 문장이 수입자의 허가 요건과 변경허가를 모두 담고 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U294",
+    "판정": "뒷받침됨",
+    "근거": "장관은 \"다음 각 호의 어느 하나에 해당하는 경우에만 이를 허가할 수 있다\"고 하고, 각 호로 \"필요한 기술과 시설을 가지고 있는 경우\"와 \"재활용을 위한 산업의 원료로 사용되는 경우\"를 든다. 주장의 요건, 허가 단계, 주관청 주체와 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U295",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출국의 주무관청으로부터 해당 폐기물의 수입 동의 요청이 없는 경우에는 수입을 허가하여서는 아니 된다\"가 주장의 요건(수출국 주무관청의 동의 요청 없으면 수입허가 불가)과 일치하고, 허가하는 주체도 \"기후에너지환경부장관\"(국내 주무관청)으로 맞다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U296",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출국의 주무관청이 … 수입 동의 요청을 하였을 때에는 … 동의 여부를 결정하여 수출국에 통지하여야 한다\"가 주장 요건과 일치하고, 주체인 기후에너지환경부장관은 국내 주무관청에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U297",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"제2항에 따라 허가를 하는 경우에는 필요한 조건을 붙일 수 있다\"고만 쓰고 있어 조건 부가 가능은 맞지만, 제2항의 허가가 '수입허가'라는 내용은 입력된 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U298",
+    "판정": "뒷받침됨",
+    "근거": "\"같은 세관…을 통하여 같은 자가 두 번 이상 수입하는 경우에는 12개월의 범위에서…한꺼번에 허가할 수 있다\"에서 장관이 허가 주체로 나옴(주장은 \"물리적ㆍ화학적 특성이 같은\" 요건을 빼고 요약했지만 내용을 잘못 쓰지는 않음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U299",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"수입허가 또는 변경허가를 받은 자는 … 자기의 명의나 상호를 사용하여 … 수입하게 하거나 … 수입허가서 … 빌려주어서는 아니 된다\"라고 정하고 있어, 주장의 명의·상호 사용 수입 금지, 허가서 대여 금지, 허가 단계, 수입자 주체와 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U300",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출입규제폐기물을 수입하려는 자는 「폐기물관리법」 제13조에 따른 폐기물의 처리 기준ㆍ방법에 따라 … 처리하여야 한다\"가 주장의 요건, 주체(수입자)와 맞는다. 다만 업무 단계 \"허가·신고\"는 조문에 직접 쓰여 있지 않다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U301",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출하거나 수입하려는 자는 … 종류ㆍ양 및 처리계획 등이 포함된 서류를 첨부하여 … 장관에게 신고하여야 한다\"가 요건과 신고 단계에 맞는다. 다만 조문의 주체는 수입하려는 자도 포함하므로 주체를 '수출자'로만 적은 것은 일부만 적은 것이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U302",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"수출하거나 수입하려는 자는 … 종류ㆍ양 및 처리계획 등이 포함된 서류를 첨부하여 기후에너지환경부장관에게 신고하여야 한다\"고 정하므로, 주장이 말하는 서류 첨부, 장관에 대한 신고, 수입자를 주체로 본 점이 모두 조문과 맞는다(조문은 수출자도 포함한다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U303",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 \"중요한 사항을 변경하려면 변경신고를 하여야 한다\"는 요건은 있지만, 주장이 내세우는 대상 \"수출입관리폐기물\"과 주체 \"수출자\"는 조문에 없고, 이 둘은 입력되지 않은 제1항에 달려 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U304",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"중요한 사항을 변경하려면 변경신고를 하여야 한다\"까지만 말하고 대상(수출입관리폐기물)과 주체(수입자)는 적지 않는다. 주체는 \"제1항에 따라 신고한\" 자로만 나와 있어 주장의 대상·주체를 조문에서 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U305",
+    "판정": "뒷받침됨",
+    "근거": "\"같은 세관…같은 자에게 두 번 이상 수출하거나 수입하려는 경우…12개월의 범위에서…한꺼번에 신고할 수 있다\"가 주장과 일치하고 수출자도 주체에 포함된다(단, 주장은 물리적 성질·화학적 성분 동일 요건을 빠뜨렸다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U306",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"같은 세관 … 같은 자에게 두 번 이상 수출하거나 수입하려는 경우\" \"12개월의 범위에서 … 한꺼번에 신고할 수 있다\"고 하며, 여기서 '수입하려는' 자도 대상이므로 주체를 수입자로 본 것도 맞다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U307",
+    "판정": "뒷받침됨",
+    "근거": "\"신고를 받은 날부터 10일 이내에 신고의 수리 여부를 신고한 자에게 통지하여야 한다\"는 표현과 주체인 기후에너지환경부장관이 주장의 요건·주체와 일치한다. 다만 '수출입관리폐기물'이라는 대상은 조문에 직접 나오지 않고 \"제1항 또는 제2항에 따라\" 받은 신고로만 쓰여 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U308",
+    "판정": "뒷받침됨",
+    "근거": "\"수출신고ㆍ수입신고 또는 그 변경신고를 한 자는 … 명의나 상호를 사용하여 … 수출 또는 수입하게 하거나 … 신고증명서 … 빌려주어서는 아니 된다\"에서 금지 내용이 주장과 맞고, 의무를 지는 사람에 수출신고를 한 자가 들어간다(조문은 수입신고를 한 자도 포함하므로 주장의 주체 \"수출자\"는 조문보다 좁음).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U309",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출신고ㆍ수입신고 또는 그 변경신고를 한 자는 … 명의나 상호를 사용하여 … 수출 또는 수입하게 하거나 … 수입신고증명서를 빌려주어서는 아니 된다\"는 수입신고를 한 자(수입자)에게 명의·상호 사용 허용과 신고증명서 대여를 금지하는 내용과 맞는다. 다만 조문은 수출자에게도 똑같이 적용되므로, 주장의 주체(수입자)는 적용 대상의 일부만 적은 것이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U310",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출하거나 수입하려는 자는 「폐기물관리법」 제13조에 따른 폐기물의 처리 기준ㆍ방법에 따라 … 처리하여야 한다\"가 주장의 요건 및 수출자 주체와 맞음(업무 단계 '허가·신고'는 조문에 명시 없음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U311",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출하거나 수입하려는 자는 「폐기물관리법」 제13조에 따른 폐기물의 처리 기준ㆍ방법에 따라 … 처리하여야 한다\"가 주장의 요건과 맞고, 주체인 수입자도 여기에 포함된다. 다만 업무 단계 '허가·신고'는 조문에 나오지 않는다. \"제1항에 따라\"가 가리키는 제1항 내용은 입력에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U312",
+    "판정": "뒷받침됨",
+    "근거": "\"수출허가 또는 … 수입허가를 받으려는 자는 수수료를 내야 한다\"는 표현이 '허가를 받으려면 수수료 납부'라는 요건과 맞음(조문의 주체는 \"받으려는 자\"로 수입허가 신청자까지 포함하므로, 주체를 '수출자'로만 적은 것은 범위가 좁음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U313",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문의 주체는 \"수출허가 또는 수입허가를 받으려는 자\"인데, 주장은 수출허가까지 포함한 요건의 주체를 \"수입자\"로만 적어 주체를 잘못 서술했다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U314",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출허가를 받으려는 자는 … 수출허가신청서에 다음 각 호의 서류를 1부씩 첨부하여 … 제출해야 한다\"가 주장의 요건(신청서에 각 호 서류 1부씩 첨부해 제출), 단계(허가), 주체(수출허가를 받으려는 자, 곧 수출자)와 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U315",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"본선인도가격(F.O.B.)으로 명시된 수출계약서 또는 주문서 사본\"이라는 서류 항목만 적고 있고, \"수출허가 신청 시 첨부\"라는 절차나 \"수출자\"라는 주체는 입력된 조문 어디에도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U316",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수입국 또는 경유국에서 요구하는 경우에는 협약 제6조제11항의 규정에 의한 보험증서 또는 그 밖의 보증서\"가 주장의 요건과 그대로 맞는다. 다만 '첨부', '수출자', '허가·신고'는 조문 문장에 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U317",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"다음 각 호의 어느 하나에 해당하는 경우에는 5일 이내에… 수출허가서를 발급하여야 한다\"까지만 있고, 각 호의 내용은 입력에 없습니다. 그래서 주장이 요건으로 든 \"동의서 접수\"는 조문으로 확인할 수 없습니다. 기한(5일), 발급 주체(장관), 수출허가서 발급은 조문과 맞습니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U318",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 \"자료 제출일 이전 30일 이내에 촬영한\" 사진은 있지만 \"포괄수출\"이라는 말은 없고 \"법 제6조제6항에 따른 자료\"라고만 적혀 있어, 주장의 \"포괄수출 자료\"는 입력 조문으로 확인할 수 없다(수출자·허가·신고도 조문에 나오지 않는다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U319",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음 각 호의 서류를 1부씩 첨부하여\" 제출한다고만 하고 각 호 내용이 입력에 없어, 주장의 \"허가서 원본\"을 조문에서 확인할 수 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U320",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수입허가를 받으려는 자는 … 수입허가신청서에 다음 각 호의 서류를 1부씩 첨부하여 … 제출해야 한다\"가 주장의 주체(수입자), 단계(허가), 요건(각 호 서류 1부씩 첨부·제출)과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U321",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출국의 주무관청에 수입동의통지를 한 경우에는 … 지체없이 … 수입허가서를 발급하여야 한다\"가 요건과 일치하고, 발급 주체 \"기후에너지환경부장관\"은 국내 주무관청이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U322",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 수입 때마다 \"다음 각 호의 자료\"를 제출하라는 말만 있고 각 호의 내용이 빠져 있어서, 주장의 '사진' 같은 구체적 자료는 조문에서 확인할 수 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U323",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음 각 호의 서류를 1부씩 첨부하여\" 제출한다고만 쓰고 각 호의 내용은 입력에 없어서, 주장이 말한 \"허가서 원본\"이 첨부 서류인지 조문만으로는 확인되지 않음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U324",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출신고를 하려는 자는 … 수출신고서에 다음 각 호의 서류를 1부씩 첨부하여 … 제출해야 한다\"가 주장의 요건, 신고 단계, 주체(수출신고를 하려는 자)와 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U325",
+    "판정": "뒷받침됨",
+    "근거": "\"수입신고를 하려는 자는 … 수입신고서에 다음 각 호의 서류를 1부씩 첨부하여 … 제출해야 한다\"는 표현이 주장의 주체(수입자), 단계(신고), 요건(각 호 서류 1부씩 첨부·제출)과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U326",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"그 신고 내용을 확인한 후 … 수출입관리폐기물 수출신고증명서 또는 … 수입신고증명서를 신고인에게 발급하여야 한다\"가 주장의 요건 '신고 내용 확인 후 수출·수입신고증명서 발급'과 일치하고, 주체가 \"기후에너지환경부장관\"이라 국내 주무관청에 해당하며, \"신고를 받으면\"이라는 표현으로 보아 업무 단계도 허가·신고에 맞다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U327",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음 각 호의 서류를 첨부하여\" 제출하라고만 할 뿐 각 호의 내용(변경 증명서류·신고증명서 원본)이 입력에 없고, 주체도 수출자로 한정하지 않고 \"변경신고를 하려는 자\"(수출·수입변경신고서 모두)로 되어 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U328",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음 각 호의 서류를 첨부하여\"라고만 하고 각 호의 목록은 입력에 없어서, 주장이 말하는 \"변경 증명서류·신고증명서 원본\"은 조문에서 확인되지 않음.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U329",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 한꺼번에 신고한 자가 수출입할 때마다 내야 하는 자료가 \"다음 각 호의 구분에 따른 자료\"라고만 적혀 있고 각 호 내용이 없어서 '사진'을 확인할 수 없음. 또 주체가 '수출자'가 아니라 '한꺼번에 신고한 자'(수출입 모두)임.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U330",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 한꺼번에 신고한 자가 \"다음 각 호의 구분에 따른 자료\"를 수출입할 때마다 낸다고만 하고, 사진은 언급하지 않으며, 주체도 수입자로 한정하지 않고 \"수출입관리폐기물을 한꺼번에 신고한 자\"로 적고 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U331",
+    "판정": "뒷받침됨",
+    "근거": "\"수출 또는 수입하려는 자\"(수출자 포함)는 \"외국환업무를 취급하는 은행에 납부\"하고 \"수출입허가를 신청할 때 그 납부영수증을\" 제출해야 한다는 표현이 주장의 요건과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U332",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"수출 또는 수입하려는 자\"가 수수료를 \"외국환업무를 취급하는 은행에 납부\"하고, 허가를 신청할 때 \"그 납부영수증을…제출하여야 한다\"고 정한다. 수입자도 이 주체에 들어가므로 주장한 요건과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U333",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"처리하는 자는 수입이동서류 및 … 수출국발행이동서류와 … 인계ㆍ인수에 관한 내용을 출력한 서류를 지녀야 하며\", 인도할 때는 \"수입이동서류에 인도일과 … 사항을 적고 서명하여야 한다\"고 정한다. 이 내용이 주장의 주체(처리자)와 요건(서류 3종 소지, 인도 시 적고 서명)에 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U334",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"수입허가를 받은 수출입규제폐기물을 처리하는 자는 수입이동서류에 적힌 내용을 준수하여야 한다\"고 정해 두어, 처리자에게 수입이동서류 내용을 지키라는 요건을 그대로 담고 있다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U335",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"처리를 완료한 자는 … 수령 및 처리 결과를 적은 서류를 수출국의 주무관청과 그 수출입규제폐기물을 수출한 자에게 보내고, 그 사본을 기후에너지환경부장관에게 제출하여야 한다\"가 주장의 주체(처리자), 서류 송부, 사본 제출 내용과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U336",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수입폐기물을 처리하는 자는 … 폐기물의 처리 기준ㆍ방법과 … 재활용 원칙 및 준수사항에 따라 수입폐기물을 처리하여야 한다\"가 주장의 주체(처리자), 요건, 업무 단계와 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U337",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"수출, 수입 또는 처리할 때마다 … 인계ㆍ인수에 관한 사항과 … 폐기물처리현장정보 … 입력하여야 한다\"는 요건과 맞지만, 의무를 지는 사람은 \"다음 각 호의 어느 하나에 해당하는 자\"로만 나오고 각 호가 입력에 없어 주체가 '처리자'라는 부분은 조문으로 확인되지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U338",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"장부를 갖추고, 폐기물의 수출입ㆍ처리 상황 등을 기록하고, 3년간 보존\"이라는 요건은 맞다. 하지만 조문은 주체를 \"다음 각 호의 어느 하나에 해당하는 자\"라고만 쓰고 그 각 호는 입력에 없다. 그래서 주체를 '처리자'로 좁힌 부분은 조문으로 확인되지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U339",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"매년 폐기물의 수출입 및 처리에 관한 보고서를 다음 연도 2월 말일까지 … 제출하여야 한다\"가 주장의 요건과 그대로 맞는다. 다만 주체는 조문에 \"제21조의2 각 호의 어느 하나에 해당하는 자\"라고만 되어 있어, 주장의 \"처리자\"는 입력만으로는 확인할 수 없다(조문과 어긋나지는 않음).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U340",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"법 제12조제1항에서 대통령령으로 정하는 사항\"으로 운반자 상호·소재지·연락처와 운송 수단만 나온다. 주장의 나머지 요소인 '인도 시', '수입이동서류에 기재', 주체 '처리자'는 입력 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U341",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"처리를 완료한 자는 그 처리를 완료한 날부터 10일 이내에 … 수령 및 처리결과를 … 송부하고 그 사본을 기후에너지환경부장관에게 제출하여야 한다\"고 되어 있어, 주장의 주체(처리자), 기한(10일), 할 일(결과 송부·사본 제출)이 모두 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U342",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"수입폐기물을 처리한 자(처리를 위탁받은 자만 해당한다)\"에게 \"수입폐기물 수탁처리 관리대장\"을 지정하고, 이는 주장의 주체(위탁받은 처리자)와 장부 요건과 맞는다. 다만 인용된 부분에는 \"보존\"이라는 말이 직접 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U343",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"수입폐기물을 처리한 자(처리를 위탁받은 자만 해당한다)\"에게 \"수입폐기물 수탁처리 실적보고서\"를 연결해 두고 있다. 주장의 주체(위탁받은 처리자)와 대상 문서가 이와 맞다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U344",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"the disposer inform both the exporter and the competent authority of the State of export of receipt ... and ... of the completion of disposal\"라고 되어 있어, 처분자가 수령과 처분 완료를 수출자와 수출국 주무관청에 알려야 한다는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U345",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"이 표에 따른 폐기물의 종류별 재활용 가능 유형\"으로 재활용해야 한다는 일반 의무만 말하며, 폐윤활유라는 폐기물이나 R-3-3, R-4-6, R-9-2, R-10이라는 유형 코드는 입력된 조문에 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U346",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"이 표에 따른 폐기물의 종류별 재활용 가능 유형\"으로 재활용하라는 일반 의무만 말하고, 폐기계유·폐작동유나 R-3-1, R-3-2, R-4-6, R-9-2, R-10 같은 구체 유형은 입력 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U347",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"폐윤활유는 … 정제한 후 용제추출 또는 수첨반응 등의 처리를 해야 한다\"가 주장의 요건과 일치한다. 다만 주장에 붙은 \"윤활기유 원료로 재활용 시\"와 \"처리자\"는 조문에 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U348",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"재생윤활유는 … 고시된 윤활유의 품질기준에 적합하여야 하며\"가 주장의 요건(재생윤활유를 품질기준에 맞게 제조)과 일치하고, 주장이 표시 의무를 빠뜨린 것은 내용을 틀리게 쓴 것이 아니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U349",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"재생윤활유를 판매하는 경우에는 폐윤활유를 재활용한 제품임을 소비자가 알 수 있도록 표시해야 한다\"가 주장의 요건과 일치한다(주체 '처리자'는 조문에 명시되지 않았으나 조문과 어긋나지도 않음).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U350",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음의 기준에 따라 제조하여야 하며\"라고만 쓰고 시험 방법은 장관이 고시할 수 있다고 정할 뿐, 주장이 내세우는 \"30일 이상 균일 유화 유지\"나 \"함수율 15% 이하\" 같은 수치는 입력된 조문 어디에도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U351",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음의 기준에 따라 제조되어야 한다\"라고만 하고, 탄소·수분·회분·황분·중금속·인화점 같은 구체 기준 항목은 입력된 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U352",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"폐유가 아닌 지정폐기물\"에 관한 것이고 \"다음의 용도로만 사용할 수 있다\"에서 끊겨 구체적 용도가 없으므로, 폐유를 대상으로 '소성로 보조연료·고온소각용'을 요건으로 든 주장은 조문에서 확인되지 않음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U353",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"다음의 기준에 적합하여야 한다\"고만 할 뿐, 그 기준이 무엇인지는 입력에 없습니다. 주장이 꼽은 발열량·황·중금속·염소는 조문에 나오지 않고, 주체가 처리자라는 점도 조문에 없습니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U354",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 열분해유가 \"다음의 기준에 적합해야 한다\"고만 하고 그 기준 항목은 적지 않았다. 그래서 주장에 나온 남은 탄소·수분·회분·황분·중금속은 입력된 조문에서 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U355",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"유류를 제조하는 경우 제조한 유류는 … 정제연료유의 기준에 적합하여야 한다\"는 제조 방법을 한정하지 않으므로 열분해로 만든 유류에도 적용된다(조문에 '열분해'라는 말과 주체 '처리자'는 직접 나오지 않음).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U356",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"열분해유 회수기준을 투입된 폐플라스틱 중량의 50% 이상으로 설정\"한다고 되어 있고 열분해시설을 \"재활용시설로 변경\"한다고 했으므로, 처리·재활용 단계의 요건이라는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U357",
+    "판정": "뒷받침됨",
+    "근거": "별표 4의 06-01-01 항목이 \"폐윤활유\"이고 \"내연기관용 윤활유\"까지 포함한다고 정의하고 있어, 폐 엔진오일(UMO)을 국내 폐기물 분류상 폐윤활유로 분류한다는 주장과 맞는다. 다만 조문에 'UMO'라는 말은 없다. UMO가 폐 엔진오일이라는 풀이는 조문 밖의 일반 용어 지식이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U358",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"06-01-01 폐윤활유(…기어유 및 내연기관용 윤활유)\"만 있고 \"폐광물유\"라는 분류명이나 UMO라는 표현은 없으며, 상위 항목 06-01의 이름도 입력에 나오지 않아 \"폐광물유\"로 분류된다는 점을 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U359",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 06-01-01을 \"폐윤활유\"(기어유·내연기관용 윤활유)로 정의하고 상위 항목이 \"06\"이라고만 적었다. 06이 \"폐유\"라는 분류명은 조문에 없고, UMO라는 표현도 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U360",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"별표 4 제1호(지정폐기물의 세부분류) 06-01-01 폐윤활유\"에 \"내연기관용 윤활유\"를 넣고 있어서, 폐윤활유(UMO)를 지정폐기물로 분류한 것과 맞는다. 다만 UMO가 폐윤활유라는 대응은 조문에 적혀 있지 않고 약어 뜻을 알아야 연결된다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U361",
+    "판정": "뒷받침됨",
+    "근거": "제27류 주 제3호 가목이 제2710호의 \"웨이스트 오일\"에 \"사용한 윤활유\"가 포함된다고 정하고, 별표 4의 06-01-01은 폐윤활유에 \"내연기관용 윤활유\"가 들어간다고 적고 있어 사용한 엔진오일(UMO)을 2710(웨이스트 오일)로 분류하는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U362",
+    "판정": "뒷받침됨",
+    "근거": "원장 1번 Annex I Y8이 \"Waste mineral oils unfit for their originally intended use\"라고 적고 있어, 폐광물유인 UMO를 바젤 부속서 Annex I의 Y8로 분류한 주장과 맞는다. 단, 입력 조문에는 \"UMO\"라는 표현이 없어서 UMO가 폐광물유라는 점은 약어 해석에 기댔다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U363",
+    "판정": "뒷받침됨",
+    "근거": "원장 1번 \"A3020 Waste mineral oils unfit for their originally intended use (Annex VIII A3020)\"에서 폐광물유(UMO)는 Annex VIII의 A3020 품목입니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U364",
+    "판정": "뒷받침 안 됨",
+    "근거": "[별지] 제2호다목(2)에는 \"원래 의도한 용도에 부적합한 폐광물 유류\"라는 품목명만 있고, 주장의 \"수출입규제폐기물\" 구분과 코드 \"A3020\"은 두 조문 어디에도 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U365",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"For the purposes of heading 27.10\"에서 waste oils를 정의하고, 그 예로 \"used lubricating oils\"를 든다. 따라서 ULO(used lubricating oil)가 27.10에 들어간다는 주장과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U366",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"제2710호에서 웨이스트 오일\"에 \"사용한 윤활유\"가 포함된다고 하므로, ULO를 사용한 윤활유로 읽으면 2710 분류를 뒷받침한다(ULO라는 약어는 조문에 없음).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U367",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"제2710.91호(웨이스트 오일 중 PCBs·PCTs·PBBs 함유)\" 아래의 \"윤활유[신전유는 제외]의 것\"이라는 세분만 정한다. 'ULO'라는 표현은 조문에 없고, PCBs 등 함유라는 조건 없이 ULO를 2710.91로 분류한다는 내용도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U368",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"제2710.99호(웨이스트 오일 중 기타)\" 아래에 \"윤활유…의 것\"을 두고 있어, 폐윤활유(ULO)를 2710.99로 분류한다는 주장과 맞는다. 다만 ULO가 폐윤활유의 약자라는 점은 조문에 나오지 않고 약어 해석에 기댄 것이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U369",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 \"06-01-01 폐윤활유\" 항목은 있지만 \"ULO\"라는 말은 없다. 게다가 조문은 폐윤활유를 \"재활용의무 대상 제품·포장재인 기어유 및 내연기관용 윤활유\"로 좁게 정의한다. 그래서 ULO가 이 품목으로 분류된다는 연결은 조문에서 확인되지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U370",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에는 \"06-01-01 폐윤활유(…기어유 및 내연기관용 윤활유)\"와 상위 항목 번호 \"06-01\"만 있고, 주장이 말하는 품목 분류 \"폐광물유\"라는 표현은 조문 어디에도 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U371",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 나오는 분류명은 \"06-01-01 폐윤활유\"(기어유·내연기관용 윤활유)뿐입니다. 상위 06은 번호만 있고 이름이 없어서, 품목 분류가 \"폐유\"라는 점은 입력에 나오지 않습니다. ULO가 이 항목에 해당한다는 표현도 없습니다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U372",
+    "판정": "뒷받침됨",
+    "근거": "조문이 '별표 4 제1호(지정폐기물의 세부분류)' 06-01-01에 '폐윤활유'를 올려 두었으므로, 폐윤활유(ULO)는 지정폐기물로 분류된다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U373",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"06-01-03 폐기계유·폐작동유\"라는 분류와 그 예시(공업용 기계유 등)만 정의하고, ULO는 어디에도 나오지 않는다. ULO를 이 분류에 넣으려면 조문에 없는 지식이 필요하다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U374",
+    "판정": "뒷받침됨",
+    "근거": "별표 4는 폐윤활유를 \"06-01 폐광물유\" 아래에 두고, Annex I Y8은 \"Waste mineral oils unfit for their originally intended use\"이므로 폐윤활유는 Y8에 들어간다(단, 입력 어디에도 ULO=폐윤활유라는 정의는 없다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U375",
+    "판정": "뒷받침됨",
+    "근거": "원장 1번 Annex VIII A3020이 \"Waste mineral oils unfit for their originally intended use\"이고, 원장 11번이 폐윤활유를 \"06-01 폐광물유\" 아래에 두므로 폐윤활유(ULO)는 바젤 부속서 A3020에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U376",
+    "판정": "뒷받침 안 됨",
+    "근거": "별지 제2호다목(2)는 \"원래 의도한 용도에 부적합한 폐광물 유류\"라는 품목명만 적고 있고, 주장에 나온 \"A3020\" 코드와 \"수출입규제폐기물\"이라는 구분은 입력된 조문 어디에도 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U377",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 \"폐윤활유\"라는 용어는 있지만 \"ULO\"라는 표기는 어디에도 없어, ULO가 폐윤활유에 해당한다는 대응은 조문만으로 확인할 수 없음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U378",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"다음 각 호의 어느 하나에 해당하는 자를 제외하고는 폐기물을 수출하여서는 아니 된다\"라고 하고, 각 호로 \"폐기물취급자\"와 \"사업장폐기물배출자\"를 든다. 주장의 요건과 주체(수출자)가 이 내용과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U379",
+    "판정": "뒷받침됨",
+    "근거": "\"폐기물을 수출하거나 수입하려는 자는 … 수출허가 … 수출신고ㆍ수입신고 이전에\" 보증금 예탁(제1호) 또는 보증보험 가입(제2호) 중 하나를 하라고 정하고 있어, 수출자에게 이 요건이 적용된다(조문은 수입자에게도 같은 의무를 지우지만, 그렇다고 주장이 틀린 것은 아님).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U380",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"shall be covered by insurance, bond or other guarantee as may be required by the State of import or any State of transit which is a Party\"가 수입국·경유국이 요구하는 보험·보증으로 이동을 보장해야 한다는 주장과 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U381",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"The State of export shall notify, or shall require the generator or exporter to notify, in writing ... the competent authority of the States concerned of any proposed transboundary movement\"가 주장의 요건(수출국이 서면으로 직접 통지하거나 수출자에게 통지를 요구)과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U382",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"내용이 적합하다고 인정되면 신청을 받은 날부터 5일 이내에 수입국 또는 경유국의 주무관청에 수입 또는 경유에 대한 동의를 요청하여야 한다\"라고 되어 있고, 요청하는 주체는 \"기후에너지환경부장관\"(국내 주무관청)이어서 주장의 요건·단계·주체와 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U383",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"수입국 또는 경유국의 수입 또는 경유동의서를 제출한 경우에는 제2항에 따른 동의를 요청하지 않는다\"고 되어 있고, 요청하지 않는 주체도 \"기후에너지환경부장관\"으로 적혀 있어 주장의 요건과 주체(국내 주무관청)가 조문과 맞음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U384",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"Each State of transit ... shall promptly acknowledge ... receipt of the notification\"과 \"may subsequently respond ... in writing, within 60 days\"가 주장의 '경유국 통지 접수 즉시 확인, 60일 내 서면 회신 가능'과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U385",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"60일(…협정에 가입한 국가인 경우에는 30일)이내에 경유국의 회신이 없을 때\"라는 요건만 담고 있다. 그 결과인 \"동의 없이 허가\"와 주체인 \"국내 주무관청\"은 입력된 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U386",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"The State of export shall not allow ... to commence the transboundary movement until it has received written confirmation that ... written consent of the State of import ... existence of a contract\"가 주장 내용과 맞다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U387",
+    "판정": "뒷받침됨",
+    "근거": "조문에 \"shall not allow the transboundary movement to commence until it has received the written consent of the State of transit\"라고 되어 있어 요건과 맞음. 다만 조문의 주체는 \"State of export\"이고 \"주무관청\"이라는 말은 조문에 없음.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U388",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출이동서류는 별지 제2호서식과 같다\"가 주장의 요건 \"수출이동서류는 별지 제2호서식\"과 그대로 일치한다. 다만 주체 \"수출자\"와 분야 \"수출입규제폐기물\"은 조문에 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U389",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"법 제7조제2항의 규정에 의한 신고는 별지 제3호서식에 의한다\"라고만 해서 서식 번호만 맞고, 그 신고가 \"미수출 신고\"라는 점과 주체가 \"수출자\"라는 점은 조문에 나오지 않음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U390",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"인도하는 경우\"의 사항으로 \"운반자의 상호, 사업장 소재지 및 연락처\", \"운송 수단\"을 나열할 뿐, \"수출이동서류에 기재\"한다는 표현이 없고 운반자를 의무 주체로 정하지도 않음(운반자는 기재될 정보의 대상일 뿐임)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U391",
+    "판정": "뒷받침됨",
+    "근거": "조문은 \"기후에너지환경부장관은 … 수출입폐기물 … 인계ㆍ인수에 관한 내용 등을 전산처리할 수 있는 전자정보처리프로그램 … 을 구축ㆍ운영하여야 한다\"고 규정한다. 주장의 요건(인계·인수 내용을 전산처리하는 프로그램의 구축·운영)과 주체(장관, 곧 국내 주무관청)가 이 표현과 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U392",
+    "판정": "뒷받침 안 됨",
+    "근거": "입력 조문에서 의무 주체는 \"다음 각 호의 어느 하나에 해당하는 자\"이고 각 호는 주어지지 않았다. \"수출, 수입 또는 처리할 때마다\"라는 표현은 수입하는 자와 처리하는 자까지 포함하므로, 주체를 \"수출자\"로 못박은 주장은 입력만으로 확인할 수 없다(요건 내용 자체는 조문과 맞는다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U393",
+    "판정": "뒷받침 안 됨",
+    "근거": "요건 부분은 \"accompanied by a movement document from the point at which a transboundary movement commences to the point of disposal\"과 맞지만, 조문은 \"Require\"로 시작할 뿐 누가 요구하는지 밝히지 않아 주장의 주체 \"국내 주무관청\"은 조문에 근거가 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U394",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"each person who takes charge of a transboundary movement ... sign the movement document either upon delivery or receipt\"가 주장의 요건(이동을 맡는 각 사람은 인도·수령 때 이동서류에 서명)과 그대로 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U395",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문의 의무 주체는 \"수출하거나 수입하려는 자\"로 수입자도 포함하는데, 주장은 '수출·수입 시' 의무의 주체를 수출자로만 적었다. 또 조문은 \"포장 및 표지 부착 등\"만 말하고 '운반'은 언급하지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U396",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"다른 법령의 규정이 있는 경우를 제외하고는 별표 1의 기준에 따른다\"는 요건과 맞지만, 조문은 주체를 정하지 않고 \"수출입규제폐기물\"이라고만 써서 주장의 \"주체: 수출자\"는 조문에 없고, \"운반\"도 조문에 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U397",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"be packaged, labelled, and transported in conformity with generally accepted and recognized international rules and standards\"는 요건 부분을 뒷받침하지만, 조문은 주어 없이 \"Require that\"으로 시작하고 주무관청(competent authority)이라는 말이 없어 주장의 주체 \"국내 주무관청\"은 근거가 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U398",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"운반하는 자는 … 수출이동서류를 지녀야 하며\", \"인도하는 경우에는 … 인도일과 그 밖에 대통령령으로 정하는 사항을 적고 서명하여야 한다\"가 주장의 주체(운반자)와 요건(서류 소지, 인도 시 인도일 등 기재·서명)에 그대로 대응함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U399",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"수출허가를 받은 수출입규제폐기물을 운반하는 자는 수출이동서류에 적힌 내용을 준수하여야 한다\"가 주장의 주체(운반자)와 요건(수출이동서류에 적힌 내용 준수)과 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U400",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"기후에너지환경부장관은 … 선적 또는 하역 항구를 지정하거나 선적 또는 하역 구역을 제한할 수 있다\"가 주장의 요건(항구 지정·구역 제한 가능)과 주체(국내 주무관청)에 맞는다. 다만 조문은 이 조치를 \"수출허가 또는 수입허가를 할 때\"로 정하고 있어서, 업무 단계를 '포장·표지·운반'으로 분류한 것은 조문이 직접 받쳐 주지는 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U401",
+    "판정": "뒷받침 안 됨",
+    "근거": "\"장부를 갖추고, 폐기물의 수출입ㆍ처리 상황 등을 기록하고, 3년간 보존\"은 요건과 맞지만, 의무 주체가 \"다음 각 호의 어느 하나에 해당하는 자\"로만 되어 있고 각 호 목록이 입력에 없어 주체가 \"수출자\"라는 점은 조문에서 확인되지 않음",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U402",
+    "판정": "뒷받침됨",
+    "근거": "조문이 \"수출허가를 받은 자 또는 수출신고를 한 자\"(수출자)에게 \"별지 제8호서식의 수출폐기물 관리대장\"을 연결해 주체와 서식이 주장과 맞는다. 다만 \"기록·보존\"이라는 동사는 입력된 호 문구에 직접 나오지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U403",
+    "판정": "뒷받침 안 됨",
+    "근거": "매년 \"다음 연도 2월 말일까지\" 보고서를 내야 한다는 요건은 조문에 있지만, 조문이 정한 주체는 \"제21조의2 각 호의 어느 하나에 해당하는 자\"뿐이고 이 사람이 '수출자'라는 말은 입력된 조문에 없어 주장의 주체를 확인할 수 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U404",
+    "판정": "뒷받침됨",
+    "근거": "\"수출허가를 받은 자 또는 … 수출신고를 한 자: … 수출실적보고서\", \"수출허가를 받은 자는 수출이동서류 사본 또는 … 처리완료 통지서 사본을 첨부하여야 한다\"가 주장의 요건·주체(수출자)·첨부 조건과 일치함(단, '폐기물' 분야 표시는 조문 문구에 직접 나오지 않음)",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U405",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"사람의 건강과 환경에 위해를 줄 우려가 있는 폐기물은 수출하거나 수입할 수 없다\"가 주장의 요건 '건강·환경 위해 우려 폐기물 수출·수입 불가'와 그대로 맞는다(조문은 주체를 명시하지 않지만, 주체를 수출자로 본다고 해서 조문 내용과 어긋나지는 않는다).",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U406",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"적정하게 처리할 능력이 없는 국가에는 폐기물을 수출할 수 없다\"가 주장의 요건(적정 처리 능력 없는 국가에 수출 불가)과 금지 성격에 그대로 맞고, 수출을 금지당하는 쪽은 수출하는 자이므로 주체(수출자)와도 어긋나지 않는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U407",
+    "판정": "뒷받침됨",
+    "근거": "제18조의2 본문에 \"제2조제1항제1호에 따른 폐기물을 수출할 수 없는 국가는 다음 각호의 국가를 제외한 국가\"라고 되어 있고, 제외되는 국가로 제1호 \"협약 제11조…협정당사국가\"와 제2호 \"경제협력개발기구의 회원국가, 유럽연합의 회원국가 및 리히텐슈타인\"을 든다. 이 내용이 주장의 수출 금지 요건과 일치한다. 주체인 수출자는 조문에 명시되지 않았고, '수출할 수 없는'이라는 표현에서 미루어 본 것이다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U408",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"긴급한 조치가 필요한 사유가 발생하였을 때에는 … 기간을 정하여 폐기물의 수출 또는 수입을 금지하거나 제한할 수 있다\"가 주장의 요건과 같고, 주체인 \"기후에너지환경부장관\"은 국내 주무관청에 해당한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U409",
+    "판정": "뒷받침됨",
+    "근거": "조문의 \"기후에너지환경부장관은 … 수출허가 또는 수입허가를 받은 자가 다음 각 호의 어느 하나에 해당할 때에는 그 허가를 취소할 수 있다\"가 '사유 해당 시 국내 주무관청의 수출·수입허가 취소'와 일치함",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U410",
+    "판정": "뒷받침됨",
+    "근거": "\"기후에너지환경부장관은 ... 다음 각 호의 어느 하나에 해당할 때에는 ... 반입 또는 반출을 명하거나 적정한 방법으로 관리할 것을 명할 수 있다\"가 주장의 사유 해당 시 명령 요건, 사후 조치 성격, 국내 주무관청 주체와 맞는다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U411",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문은 \"if alternative arrangements cannot be made for their disposal in an environmentally sound manner\"일 때만 되가져가게 하는데 주장은 이 조건을 빼고 무조건 반입 의무처럼 썼고, 의무 주체도 조문은 \"the State of export\"인데 주장은 '국내 주무관청'이라 조문에 없는 주체다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U412",
+    "판정": "뒷받침됨",
+    "근거": "\"any Party of transit shall not oppose, hinder or prevent the return of those wastes to the State of export\"가 경유국이 수출국으로의 반송을 막지 않아야 한다는 요건과 일치한다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U413",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문의 항목 용어는 \"폐윤활유\"이고 \"내연기관용 윤활유\"는 괄호 속 정의에 \"기어유\"와 함께 나오는 재활용의무 대상 제품일 뿐이며, 조문 어디에도 UMO가 없어 UMO를 내연기관용 윤활유에 대응시킬 근거가 없다.",
+    "다시 부름": false
+  },
+  {
+    "단위 번호": "U414",
+    "판정": "뒷받침 안 됨",
+    "근거": "조문에 \"폐플라스틱 열분해유\"라는 표현은 있지만 \"PPO\"라는 약칭이나 둘이 같다는 서술은 없어서, 주장의 핵심인 PPO와의 대응은 조문만으로 확인되지 않는다.",
+    "다시 부름": false
+  }
+]
