@@ -3171,3 +3171,44 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - 정답 디스크를 연 격리 Claude Code 대화(작업 폴더 /Volumes/rag-answer-keys, 새 대화, 편집 자동 승인 끔)가 Cowork가 쓴 지시문대로 두 도메인의 해시를 확인하고, t5-statement.md에서 진술 글만 꺼내 e5-questions-ai-consulting.md와 e5-questions-oil-trade.md의 T5 자리에 넣었다. 기대 답(틀린 부분과 바로잡은 내용)은 옮기지 않았다.
 - 바뀐 줄은 질문 파일마다 T5 한 줄씩이다. 디스크가 잠긴 것은 Cowork가 확인했다(맥에서 ls /Volumes). 격리 대화의 삭제 여부는 에드워드가 했다고 전했다.
 - 이 대화는 worklog를 쓰지 않았다. 이 절은 디스크를 잠근 뒤 저장소 대화가 썼다.
+
+### E5 답 네 개와 골든 룰 검사 (2026-10-22, 17:43경 마침, Claude Code)
+
+- 답 네 개는 e5-method.md 2절대로 저장소 밖 격리 폴더(~/Documents/rag-e5-<도메인>-<방식>)에서 새 Claude Code 대화로 만들었다. 지시문은 e5-prompt-search.md, e5-prompt-graph.md(커밋 09af470)를 그대로 썼고 모델은 Claude Opus 5.5다. 네 대화 모두 추가 질문이나 보충 요청은 하지 않았다.
+- 폴더는 Cowork가 쓴 스크립트(Claude outputs/setup-e5-folders.sh)로 만들었다. 원문 폴더에 맥의 .DS_Store가 따라 들어갔고, 1번 검색만 대화는 그 파일을 열지 않았다고 보고했다.
+- 답 파일은 에드워드가 각 도메인 폴더의 e5-answers-search.json, e5-answers-graph.json으로 복사했다. 마지막 보고는 experiments/e5-report-*.md로 남겼다.
+- 그래프 경유에서 쓴 자료(보고 기준): 1번은 15문항 중 "그래프만" 11, "그래프+원문" 4. 2번은 "그래프만" 1(T4, 실제로는 schema.md만 봄), "그래프+원문" 8, "원문만" 6.
+- 골든 룰 검사 결과는 experiments/e5-golden-rules-results.md에 남겼다.
+
+#### 한 일과 결과
+
+- 1번 검색만: 위반 1건, 경고 0건, 종료 코드 1
+- 1번 그래프 경유: 위반 2건, 경고 2건, 종료 코드 1
+- 2번 검색만: 위반 5건, 경고 0건, 종료 코드 1
+- 2번 그래프 경유: 위반 2건, 경고 45건, 종료 코드 1
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: E5 답 네 개를 저장소에 기록하고, 두 도메인 골든 룰 검사(층위 1)를 돌린다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-e5-* 포함)은 열지 않는다(답 파일은 에드워드가 복사해 둠). 답 JSON 파일은 고치지 않고, 보고·worklog에 답 내용(주장 값, 근거 문장, 요약)을 쓰지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. 답 파일 네 개가 있는지 확인(없으면 멈춤)
+2. "Claude outputs/e5-reports/"의 보고 네 개를 스크립트로 그대로 옮기고 맨 앞에 [머리]를 붙여 experiments/e5-report-<도메인>-<방식>.md로
+3. 골든 룰 검사 네 번, experiments/e5-golden-rules-results.md(명령, 출력 전체, 종료 코드만)
+4. worklog "## 2026-10-22" 항목 맨 끝에 이 절
+5. 만든 파일, 답별 마지막 줄과 종료 코드를 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/ai-consulting/e5-answers-search.json·e5-answers-graph.json, oil-trade/e5-answers-search.json·e5-answers-graph.json: 있는지와 크기만 확인했고, 내용은 검사 스크립트가 읽음
+- Claude outputs/e5-reports/ai-consulting-search.md, ai-consulting-graph.md, oil-trade-search.md, oil-trade-graph.md(저장소 안, 커밋하지 않는 폴더): 스크립트로 옮김(Claude Code가 화면에 출력하지 않음)
+- 검사 출력: 규칙 이름별로 세었고, 이유 칸은 따옴표 안 값을 가린 틀로만 봄. 이유 칸에 들어가는 값은 G8의 상태 값과 2번 검색만 Q1 근거의 "위치" 칸뿐이다(출력 전체는 결과 파일에 지시대로 넣음)
+- 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-e5-* 포함)과 raw/는 열지 않음(raw/는 검사 스크립트가 읽음)
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e5-report-ai-consulting-search.md, e5-report-ai-consulting-graph.md, e5-report-oil-trade-search.md, e5-report-oil-trade-graph.md: 새로 만듦 — 머리 + 원본 그대로
+- deep/07-graphrag/experiments/e5-golden-rules-results.md: 새로 만듦
+- worklog.md: 수정 — 이 절 추가
+- 답 JSON 파일은 고치지 않음. commit·push는 하지 않음

@@ -1,0 +1,1742 @@
+[
+  {
+    "질문": "Q1",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 2,
+        "관계": "적용 업무",
+        "값": "AI 활용 과제 발굴·우선순위 선정",
+        "근거 문장": "This strategic collaboration with McKinsey and Salesforce focused on identifying and evaluating 30 potential use cases where gen AI could deliver significant value, particularly in enhancing customer service and improving first-time issue resolution."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Over the course of five weeks, McKinsey’s QuantumBlack team of data scientists and software engineers worked together to build the gen AI engine operating on the Salesforce platform that helps agents find information on how to repair customers’ machines."
+      }
+    ],
+    "요약": "원장 2번(McKinsey, 고객 Ascendum)에서 펌이 낸 산출물은 두 가지다. ① gen AI가 가치를 낼 수 있는 후보 과제 30개를 찾아 평가한 목록 → 'AI 활용 과제 발굴·우선순위 선정'. ② Salesforce 플랫폼에서 돌아가며 현장 기사가 기계 수리 정보를 찾도록 돕는 gen AI 엔진(파일럿) → 'AI 솔루션 개발·실증'."
+  },
+  {
+    "질문": "Q2",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 5,
+        "관계": "고객",
+        "값": "Allstate",
+        "근거 문장": "Allstate, a longtime BCG partner, recently began leveraging its new GenAI capabilities in an innovative way to improve customer experiences."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "해결하려던 병목",
+        "값": "데이터 프라이버시·IT 거버넌스로 AI 도구를 빨리 배포하기 어려움",
+        "근거 문장": "Allstate’s strong commitment to data privacy and IT governance made certain AI and GenAI tools challenging to deploy quickly in existing production IT systems."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "해결하려던 병목",
+        "값": "고객 참여 주기가 길어 가설을 빨리 검증하기 어려움",
+        "근거 문장": "Also, customer engagement cycles take a long time to develop, limiting the ability to test a hypothesis quickly and optimize its learnings."
+      }
+    ],
+    "요약": "원장 5번(BCG)의 고객은 Allstate다. 해결하려던 병목은 ① 데이터 프라이버시·IT 거버넌스를 중시해 AI·GenAI 도구를 기존 운영 IT 시스템에 빨리 배포하기 어려웠던 점, ② 고객 참여 주기가 길어 가설을 빨리 검증하고 배운 것을 반영하기 어려웠던 점이다."
+  },
+  {
+    "질문": "Q3",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 1,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "A joint ING and McKinsey team worked closely together for seven weeks to build a generative AI chatbot that offered customers immediate tailored help while maintaining clear guardrails to mitigate risk."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 2,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Over the course of five weeks, McKinsey’s QuantumBlack team of data scientists and software engineers worked together to build the gen AI engine operating on the Salesforce platform that helps agents find information on how to repair customers’ machines."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 3,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "“It’s a powerful example of generative AI driving growth—for the business and its employees.”"
+      },
+      {
+        "원장 번호": 4,
+        "관계": "수행",
+        "값": "BCG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 4,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Based on real patient data and historic discharge letters, BCG fine-tuned two open-source large language models (LLMs) for the specific task in several iterations, leveraging state-of-the-art data science practices."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "수행",
+        "값": "BCG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 5,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Using ChatGPT, Allstate aimed to gain a better understanding of key customer touchpoints, teaming with BCG X’s esteemed data scientists and engineers to create tools that further increase customer satisfaction in multiple areas, particularly issue resolution."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "수행",
+        "값": "Bain",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 7,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "To create a distinctive experience, we designed a market-first, generative AI–powered platform that plays the role of a “digital junior banker” in supporting customers and bankers."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "수행",
+        "값": "PwC",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 10,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "We helped a leading Canadian bank design and deploy a generative AI solution that created measurable business value while meeting strict governance, regulatory, and security requirements."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "수행",
+        "값": "PwC",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 11,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "It’s built with and powered by Anthropic, deployed on Microsoft Azure, and capable of orchestrating AI agents that analyze models and generate campaign recommendations that are ready to execute."
+      },
+      {
+        "원장 번호": 12,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 12,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "The LLM, built in the Microsoft Azure environment, was grounded with decades of aggregated agronomy content, product research data and proprietary insights."
+      },
+      {
+        "원장 번호": 14,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 14,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "This tool is powered by Microsoft Azure Open AI and Microsoft Semantic Kernel, stemming from the alliance between the EY organization and Microsoft that allowed EY technology teams to gain early access to emerging Microsoft Azure AI capabilities."
+      },
+      {
+        "원장 번호": 15,
+        "관계": "수행",
+        "값": "KPMG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 15,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Final selection of the GenAI text-to-text and text-to-image LLMs best suited for the company’s needs"
+      }
+    ],
+    "요약": "생성형 AI를 쓴 사례는 11건: 1번(McKinsey), 2번(McKinsey), 3번(McKinsey), 4번(BCG), 5번(BCG), 7번(Bain), 10번(PwC), 11번(PwC), 12번(EY), 14번(EY), 15번(KPMG). 펌별로 McKinsey 3건, BCG 2건, Bain 1건, PwC 2건, EY 2건, KPMG 1건이며 Deloitte 사례(8·9번)에는 없다."
+  },
+  {
+    "질문": "Q4",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "A joint ING and McKinsey team worked closely together for seven weeks to build a generative AI chatbot that offered customers immediate tailored help while maintaining clear guardrails to mitigate risk."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Over the course of five weeks, McKinsey’s QuantumBlack team of data scientists and software engineers worked together to build the gen AI engine operating on the Salesforce platform that helps agents find information on how to repair customers’ machines."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "In early 2025, McKinsey and QuantumBlack teams began designing and developing a solution that would become Agent2Sales (A2S), an AI platform designed to extract value from all call data, transforming the operation and generating sales opportunities."
+      },
+      {
+        "원장 번호": 4,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Recognizing that this was a sensitive environment, and that patient privacy was essential, BCG developed the proof of concept for the cardiology department in an on-the-premises environment."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Together, Allstate and BCG developed a predictive ML model using GenAI tools within just four weeks."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "The team developed a number of diﬀerent machine-learning models, of increased complexity, for two diﬀerent products, and benchmarked them against standard cross-selling methods to determine the financial impact."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "We helped the company develop and launch an AI-based investment advisory app that increases the frequency of touchpoints between customers and the bank while also improving the quality of the customer experience."
+      },
+      {
+        "원장 번호": 8,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Based on that information, Deloitte designed and implemented an end-to-end AI-enabled personalization solution by using:"
+      },
+      {
+        "원장 번호": 9,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Using a small, proven real world data set on Treatment Resistant Depression and NASH, a severe form of hepatitis, Takeda and Deloitte deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "At a more granular level, we worked collaboratively with the bank to implement generative AI for three high-priority use cases."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "PwC brought engineering excellence and domain expertise to deliver the platform architecture, design the models, and drive execution end-to-end, while our analytics team pressure-tested the models and wired the tool into our daily operations."
+      },
+      {
+        "원장 번호": 12,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "BCS enlisted the help of Ernst & Young LLP (EY) professionals to help create a proof-of-concept (POC) GenAI system."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "They leveraged sophisticated AI approaches to analyze conversation behaviors associated with overall progression and help identify behaviors demonstrated by top-performing agents."
+      },
+      {
+        "원장 번호": 14,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Within weeks, the EY technology team developed the necessary skillsets for the desired automation, which cleared the way for Microsoft to move forward with a pilot implementation of the GenAI solution in the legal department."
+      },
+      {
+        "원장 번호": 15,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Selecting four initial pilot use cases for development, and then configuring the LLM prompts to optimize the GenAI model and outputs for each use case:"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "We helped implement an IBM Watson conversational AI system that uses real-time natural language processing (NLP), speech-to-text and text-to-speech technologies to understand and respond to customers in a personalized, contextually-sensitive, conversational manner."
+      },
+      {
+        "원장 번호": 17,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "The KPMG team worked with the client to build a conversational virtual assistant proof of concept to demonstrate the capabilities of artificial intelligence."
+      }
+    ],
+    "요약": "원장 17건 모두(1~17번)가 'AI 솔루션 개발·실증'에 해당한다. McKinsey 1·2·3, BCG 4·5, Bain 6·7, Deloitte 8·9, PwC 10·11, EY 12·13·14, KPMG 15·16·17."
+  },
+  {
+    "질문": "Q5",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "A joint ING and McKinsey team worked closely together for seven weeks to build a generative AI chatbot that offered customers immediate tailored help while maintaining clear guardrails to mitigate risk."
+      },
+      {
+        "원장 번호": 1,
+        "관계": "적용 업무",
+        "값": "AI 거버넌스·리스크 관리",
+        "근거 문장": "In order to do this, ING risk stakeholders were brought into this process from the very start and ING-specific guardrails (to avoid giving advice on mortgages and investment products, for example) were built using out-of-the-box tools from QuantumBlack Labs, our AI and machine learning innovation hub."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "적용 업무",
+        "값": "AI 활용 과제 발굴·우선순위 선정",
+        "근거 문장": "This strategic collaboration with McKinsey and Salesforce focused on identifying and evaluating 30 potential use cases where gen AI could deliver significant value, particularly in enhancing customer service and improving first-time issue resolution."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Over the course of five weeks, McKinsey’s QuantumBlack team of data scientists and software engineers worked together to build the gen AI engine operating on the Salesforce platform that helps agents find information on how to repair customers’ machines."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "In early 2025, McKinsey and QuantumBlack teams began designing and developing a solution that would become Agent2Sales (A2S), an AI platform designed to extract value from all call data, transforming the operation and generating sales opportunities."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "McKinsey led the implementation, capability building, and organization change management; QuantumBlack customized AI models to Entel’s needs, and Google Cloud provided the foundation—a platform capable of processing hundreds of thousands of calls overnight while maintaining cost efficiency and reliability."
+      },
+      {
+        "원장 번호": 4,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Recognizing that this was a sensitive environment, and that patient privacy was essential, BCG developed the proof of concept for the cardiology department in an on-the-premises environment."
+      },
+      {
+        "원장 번호": 4,
+        "관계": "적용 업무",
+        "값": "AI 전략·로드맵 수립",
+        "근거 문장": "Beyond that, BCG helped Helios identify how to scale GenAI as part of its broader digital strategy going forward, all of which could lead to an excellent prognosis for improving medical care and allowing medical personnel to focus on the most valuable part of their work—caring for their patients."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Together, Allstate and BCG developed a predictive ML model using GenAI tools within just four weeks."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "BCG also enabled Allstate’s strong internal teams to achieve new capabilities and deliver best-in-class customer service."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "To support that analysis, the team created a comprehensive data lake, integrating 20 databases into a system that contained a rich 10-year history of client and external data."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "The team developed a number of diﬀerent machine-learning models, of increased complexity, for two diﬀerent products, and benchmarked them against standard cross-selling methods to determine the financial impact."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "The Bain team tackled much of the most complex coding, helping the client team refine their skills along the way, through both formal and on-the-job training."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "적용 업무",
+        "값": "AI 신상품·신사업 기획 및 사업화",
+        "근거 문장": "We helped the company develop and launch an AI-based investment advisory app that increases the frequency of touchpoints between customers and the bank while also improving the quality of the customer experience."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "We helped the company develop and launch an AI-based investment advisory app that increases the frequency of touchpoints between customers and the bank while also improving the quality of the customer experience."
+      },
+      {
+        "원장 번호": 8,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Based on that information, Deloitte designed and implemented an end-to-end AI-enabled personalization solution by using:"
+      },
+      {
+        "원장 번호": 9,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "To achieve their goals, they enlisted the help of Deloitte to create a cloud solution."
+      },
+      {
+        "원장 번호": 9,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Using a small, proven real world data set on Treatment Resistant Depression and NASH, a severe form of hepatitis, Takeda and Deloitte deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "At a more granular level, we worked collaboratively with the bank to implement generative AI for three high-priority use cases."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "A multi-dimensional approach to change: We prioritized more than technology change—addressing structure, process, and people dimensions simultaneously with the technology implementation to build internal capabilities, foster buy-in, and drive user adoption."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "We accomplished what traditionally takes months in a manner of weeks: establishing data pipelines, developing and refining machine learning models to help drive customer insights, creating the agentic harness delivering end-user interfaces—all from scratch."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "PwC brought engineering excellence and domain expertise to deliver the platform architecture, design the models, and drive execution end-to-end, while our analytics team pressure-tested the models and wired the tool into our daily operations."
+      },
+      {
+        "원장 번호": 12,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "BCS enlisted the help of Ernst & Young LLP (EY) professionals to help create a proof-of-concept (POC) GenAI system."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "EY teams started by creating a “book of record” around the entirety of an agent’s interaction with a client."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "They leveraged sophisticated AI approaches to analyze conversation behaviors associated with overall progression and help identify behaviors demonstrated by top-performing agents."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "적용 업무",
+        "값": "전사 확산·성과 관리",
+        "근거 문장": "By packaging these insights into an interactive dashboard that can be used by different stakeholders, EY professionals provided the client with a far more sophisticated foundation for performance measurement and management:"
+      },
+      {
+        "원장 번호": 14,
+        "관계": "적용 업무",
+        "값": "업무 프로세스 재설계",
+        "근거 문장": "CELA Technology & Operations together with EY Law and technology teams worked with CELA’s regulatory and product team members to design and refine a workflow POC for the regulatory space solution that could be automated to enhance efficiency, compliance monitoring and document creation."
+      },
+      {
+        "원장 번호": 14,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Within weeks, the EY technology team developed the necessary skillsets for the desired automation, which cleared the way for Microsoft to move forward with a pilot implementation of the GenAI solution in the legal department."
+      },
+      {
+        "원장 번호": 15,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "Setting up a cloud-based test environment that leverages GenAI modeling tools and other services"
+      },
+      {
+        "원장 번호": 15,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Selecting four initial pilot use cases for development, and then configuring the LLM prompts to optimize the GenAI model and outputs for each use case:"
+      },
+      {
+        "원장 번호": 15,
+        "관계": "적용 업무",
+        "값": "전사 확산·성과 관리",
+        "근거 문장": "Piloted 12 additional use cases in the production environment to support e-commerce, finance, product, and sales functions"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "We helped implement an IBM Watson conversational AI system that uses real-time natural language processing (NLP), speech-to-text and text-to-speech technologies to understand and respond to customers in a personalized, contextually-sensitive, conversational manner."
+      },
+      {
+        "원장 번호": 16,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "Because we have both technical and business skills, we were able to help design and implement an operating model that would balance the customer experience, resourcing, oversight, funding and other requirements to help the project succeed long term."
+      },
+      {
+        "원장 번호": 17,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "The KPMG and client team collaborated to select the cloud platform, architect technology platform components, and construct the virtual agent through a series of Agile development sprints to operate on their Amazon Web Services cloud platform."
+      },
+      {
+        "원장 번호": 17,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "The KPMG team worked with the client to build a conversational virtual assistant proof of concept to demonstrate the capabilities of artificial intelligence."
+      }
+    ],
+    "요약": "업무 유형별 사례 수: AI 전략·로드맵 수립 1건(4); AI 활용 과제 발굴·우선순위 선정 1건(2); 사업성·투자 타당성 분석 0건; 데이터·기술 기반 구축 6건(6,9,11,13,15,17); AI 신상품·신사업 기획 및 사업화 1건(7); 업무 프로세스 재설계 1건(14); AI 솔루션 개발·실증 17건; 전사 확산·성과 관리 2건(13,15); AI 거버넌스·리스크 관리 1건(1); 조직·인력·변화 관리 5건(3,5,6,10,16). 가장 많은 유형은 'AI 솔루션 개발·실증'(17건, 전 사례). 0건인 '사업성·투자 타당성 분석'을 빼면 가장 적은 유형은 1건으로 공동인 'AI 전략·로드맵 수립', 'AI 활용 과제 발굴·우선순위 선정', 'AI 신상품·신사업 기획 및 사업화', '업무 프로세스 재설계', 'AI 거버넌스·리스크 관리' 5개다."
+  },
+  {
+    "질문": "Q6",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 1,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "A joint ING and McKinsey team worked closely together for seven weeks to build a generative AI chatbot that offered customers immediate tailored help while maintaining clear guardrails to mitigate risk."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 2,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Over the course of five weeks, McKinsey’s QuantumBlack team of data scientists and software engineers worked together to build the gen AI engine operating on the Salesforce platform that helps agents find information on how to repair customers’ machines."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 3,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "“It’s a powerful example of generative AI driving growth—for the business and its employees.”"
+      },
+      {
+        "원장 번호": 4,
+        "관계": "수행",
+        "값": "BCG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 4,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Based on real patient data and historic discharge letters, BCG fine-tuned two open-source large language models (LLMs) for the specific task in several iterations, leveraging state-of-the-art data science practices."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "수행",
+        "값": "BCG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 5,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Using ChatGPT, Allstate aimed to gain a better understanding of key customer touchpoints, teaming with BCG X’s esteemed data scientists and engineers to create tools that further increase customer satisfaction in multiple areas, particularly issue resolution."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "Together, Allstate and BCG developed a predictive ML model using GenAI tools within just four weeks."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "수행",
+        "값": "Bain",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 6,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "The team developed a number of diﬀerent machine-learning models, of increased complexity, for two diﬀerent products, and benchmarked them against standard cross-selling methods to determine the financial impact."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "수행",
+        "값": "Bain",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 7,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "To create a distinctive experience, we designed a market-first, generative AI–powered platform that plays the role of a “digital junior banker” in supporting customers and bankers."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "사용 기술",
+        "값": "추천·개인화",
+        "근거 문장": "The NIWA app analyzes more than 500 pieces of information and research daily, including customers’ financial assets, characteristics, and preferences, to provide a hyperpersonalized experience."
+      },
+      {
+        "원장 번호": 8,
+        "관계": "수행",
+        "값": "Deloitte",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 8,
+        "관계": "사용 기술",
+        "값": "추천·개인화",
+        "근거 문장": "The new architecture gave the client insights into the health care profile of individual customers, which they used to deliver personalized messages and recommendations to refill medication, schedule a wellness checkup or follow-up care, or manage a potentially chronic disease."
+      },
+      {
+        "원장 번호": 8,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "Clustering techniques to identify and categorize consumers who may have not been part of the process."
+      },
+      {
+        "원장 번호": 9,
+        "관계": "수행",
+        "값": "Deloitte",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 9,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "Using a small, proven real world data set on Treatment Resistant Depression and NASH, a severe form of hepatitis, Takeda and Deloitte deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "수행",
+        "값": "PwC",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 10,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "We helped a leading Canadian bank design and deploy a generative AI solution that created measurable business value while meeting strict governance, regulatory, and security requirements."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "수행",
+        "값": "PwC",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 11,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "We used Claude Code and Azure to unify 1.15 million fan records and develop three machine-learning models based on fan demographics, past engagement behavior, and their propensity to engage."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "It’s built with and powered by Anthropic, deployed on Microsoft Azure, and capable of orchestrating AI agents that analyze models and generate campaign recommendations that are ready to execute."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "사용 기술",
+        "값": "추천·개인화",
+        "근거 문장": "That speed will help us engage fans every day—not just seasonally—and in ways that feel personal and relevant."
+      },
+      {
+        "원장 번호": 12,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 12,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "The LLM, built in the Microsoft Azure environment, was grounded with decades of aggregated agronomy content, product research data and proprietary insights."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 13,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "With help from EY, a commercial bank leveraged machine learning and natural language processing to improve sales workforce effectiveness."
+      },
+      {
+        "원장 번호": 14,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 14,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "This tool is powered by Microsoft Azure Open AI and Microsoft Semantic Kernel, stemming from the alliance between the EY organization and Microsoft that allowed EY technology teams to gain early access to emerging Microsoft Azure AI capabilities."
+      },
+      {
+        "원장 번호": 15,
+        "관계": "수행",
+        "값": "KPMG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 15,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Final selection of the GenAI text-to-text and text-to-image LLMs best suited for the company’s needs"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "수행",
+        "값": "KPMG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "사용 기술",
+        "값": "음성 인식·합성",
+        "근거 문장": "We helped implement an IBM Watson conversational AI system that uses real-time natural language processing (NLP), speech-to-text and text-to-speech technologies to understand and respond to customers in a personalized, contextually-sensitive, conversational manner."
+      },
+      {
+        "원장 번호": 16,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "Various intent recognition (Skills) models were trained to classify the intents, language-based speech model customization and customization of speech synthesis."
+      },
+      {
+        "원장 번호": 17,
+        "관계": "수행",
+        "값": "KPMG",
+        "근거 문장": "원장"
+      }
+    ],
+    "요약": "펌별 AI 기술 종류: McKinsey 1종(생성형 AI(LLM 포함)); BCG 2종(생성형 AI(LLM 포함), 예측·분류 머신러닝); Bain 3종(생성형 AI(LLM 포함), 예측·분류 머신러닝, 추천·개인화); Deloitte 2종(예측·분류 머신러닝, 추천·개인화); PwC 3종(생성형 AI(LLM 포함), 예측·분류 머신러닝, 추천·개인화); EY 2종(생성형 AI(LLM 포함), 예측·분류 머신러닝); KPMG 3종(생성형 AI(LLM 포함), 예측·분류 머신러닝, 음성 인식·합성). 가장 다양한 기술을 쓴 펌은 3종으로 공동인 Bain, PwC, KPMG이다. 17번(KPMG)은 그래프에 사용 기술이 없다."
+  },
+  {
+    "질문": "Q7",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "Every week, the global bank, ING, hears from 85,000 customers by phone and online chat in the Netherlands, one of its core markets."
+      },
+      {
+        "원장 번호": 1,
+        "관계": "해결하려던 병목",
+        "값": "기존 챗봇이 못 푼 고객 주당 16,500명이 상담원 연결 필요",
+        "근거 문장": "While 40 to 45 percent of those chats usually get resolved by the current classic chatbot, that still leaves another 16,500 customers a week needing to speak with a live agent for help."
+      },
+      {
+        "원장 번호": 1,
+        "관계": "해결하려던 병목",
+        "값": "근무시간에만 상담 가능해 고객 대기 시간이 길어짐",
+        "근거 문장": "This can leave customers with potentially longer waiting times as they’re only able to get live help for non-urgent requests during working hours."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "A leading insurance company had determined that data analytics should be a strategic priority."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "해결하려던 병목",
+        "값": "분석 성과가 충분히 빨리 나오지 않음",
+        "근거 문장": "But at the end of the day the tangible results were not progressing fast enough."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "해결하려던 병목",
+        "값": "기회를 체계적으로 발굴·평가·우선순위화하지 않음",
+        "근거 문장": "For one, it had not systematically identified, evaluated and prioritized the opportunities; it delivered on small projects but didn’t tackle the richest opportunities."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "해결하려던 병목",
+        "값": "분석팀이 사업부와 단절되고 운영 모델이 불명확",
+        "근거 문장": "Its analytics team was not adequately connected to business-unit and functional experts, and its operating model was unclear."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "With its pioneering launch, Banca Investis sets the bar as the first bank in the Italian market to rapidly deploy a comprehensive generative AI application for private customers."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "해결하려던 병목",
+        "값": "서비스 모델 혁신이 필요",
+        "근거 문장": "When Banca Investis required an innovation of its service model, generative AI oﬀered a key boost."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "We helped a leading Canadian bank design and deploy a generative AI solution that created measurable business value while meeting strict governance, regulatory, and security requirements."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "해결하려던 병목",
+        "값": "핵심 재무 프로세스가 자원 집약적이고 시간 소모적",
+        "근거 문장": "Critical processes were resource-intensive and time-consuming."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "해결하려던 병목",
+        "값": "문서 작성 방식이 제각각이라 여러 번 검토 필요",
+        "근거 문장": "Documentation preparation was inconsistent in style and approach, requiring multiple reviews to confirm accuracy and completeness."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "해결하려던 병목",
+        "값": "보고용 데이터 추출이 복잡하고 수작업 위주",
+        "근거 문장": "And data extraction for reporting was complex and highly manual."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "With help from EY, a commercial bank leveraged machine learning and natural language processing to improve sales workforce effectiveness."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "해결하려던 병목",
+        "값": "샘플 통화 청취에 의존해 피드백이 주관적·일반적",
+        "근거 문장": "Performance analysis typically relies on supervisors listening to sampled calls, coupled with using surface-level metrics from small data sets. However, the feedback developed using this approach can be highly subjective and often generic."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "해결하려던 병목",
+        "값": "수작업이라 느리고 확장 어려움",
+        "근거 문장": "Being manual, the process is slow and difficult to scale, and does not provide a comprehensive view of agent performance."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "해결하려던 병목",
+        "값": "상담원 성과 추이를 파악할 수 없음",
+        "근거 문장": "The inability to track metrics on an ongoing basis and across a full population of agent interactions makes it impossible to understand an agent’s performance trajectory."
+      },
+      {
+        "원장 번호": 17,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "Our client is a financial services organization that works with mortgage lenders to buy single- and multi-family mortgages across the United States."
+      },
+      {
+        "원장 번호": 17,
+        "관계": "해결하려던 병목",
+        "값": "콜센터 모델이 고객이 기대하는 서비스 수준에 못 미침",
+        "근거 문장": "This company's leaders realized its contact center model wasn’t delivering the level of service its customers expected."
+      },
+      {
+        "원장 번호": 17,
+        "관계": "해결하려던 병목",
+        "값": "복잡한 법률 절차 문서를 계속 참조하는 노동집약적 반복 업무",
+        "근거 문장": "As contact center agents deal with customers each day, they constantly referenced complex, legal process documents, such as seller servicer guides, a labor-intensive and repetitive task that kept them from more strategic work."
+      }
+    ],
+    "요약": "금융 산업 고객 사례는 1·6·7·10·13·17번 6건이다. 병목: 1번(ING) 기존 챗봇이 못 푼 고객 주당 16,500명이 상담원 연결 필요 / 근무시간에만 상담 가능해 대기 시간이 길어짐. 6번(InsuranceCo) 분석 성과가 충분히 빨리 나오지 않음 / 기회를 체계적으로 발굴·평가·우선순위화하지 않음 / 분석팀이 사업부와 단절되고 운영 모델이 불명확. 7번(Banca Investis) 서비스 모델 혁신이 필요. 10번(캐나다 은행) 핵심 재무 프로세스가 자원 집약적이고 시간 소모적 / 문서 작성 방식이 제각각이라 여러 번 검토 필요 / 보고용 데이터 추출이 복잡하고 수작업 위주. 13번(상업은행) 샘플 통화 청취에 의존해 피드백이 주관적·일반적 / 수작업이라 느리고 확장 어려움 / 상담원 성과 추이를 파악할 수 없음. 17번(모기지 회사) 콜센터 모델이 고객이 기대하는 서비스 수준에 못 미침 / 복잡한 법률 절차 문서를 계속 참조하는 노동집약적 반복 업무. 둘 이상 사례에 공통된 병목 묶음: (가) 수작업·노동집약적이라 시간이 드는 업무 — 10번(자원 집약·시간 소모, 수작업 데이터 추출), 13번(수작업이라 느리고 확장 어려움), 17번(노동집약적 반복 업무). (나) 고객 상담이 고객 기대에 못 미침 — 1번(상담원 연결 필요·긴 대기), 17번(콜센터 서비스 수준 미달). 6번과 7번의 병목은 다른 사례와 겹치지 않는다."
+  },
+  {
+    "질문": "Q8",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "Every week, the global bank, ING, hears from 85,000 customers by phone and online chat in the Netherlands, one of its core markets."
+      },
+      {
+        "원장 번호": 1,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "A joint ING and McKinsey team worked closely together for seven weeks to build a generative AI chatbot that offered customers immediate tailored help while maintaining clear guardrails to mitigate risk."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "고객 산업",
+        "값": "산업재",
+        "근거 문장": "Ascendum is a Portugal-based global provider of machinery and equipment for the construction, infrastructure, haulage, and agriculture sectors."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Over the course of five weeks, McKinsey’s QuantumBlack team of data scientists and software engineers worked together to build the gen AI engine operating on the Salesforce platform that helps agents find information on how to repair customers’ machines."
+      },
+      {
+        "원장 번호": 4,
+        "관계": "고객 산업",
+        "값": "헬스케어",
+        "근거 문장": "Helios, a division of Fresenius and a leading hospital chain operating throughout Germany, had already begun to work toward a comprehensive digital ambition when its team decided to also explore using Generative AI to simplify and improve some of that documentation work."
+      },
+      {
+        "원장 번호": 4,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Based on real patient data and historic discharge letters, BCG fine-tuned two open-source large language models (LLMs) for the specific task in several iterations, leveraging state-of-the-art data science practices."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "A leading insurance company had determined that data analytics should be a strategic priority."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "The team developed a number of diﬀerent machine-learning models, of increased complexity, for two diﬀerent products, and benchmarked them against standard cross-selling methods to determine the financial impact."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "With its pioneering launch, Banca Investis sets the bar as the first bank in the Italian market to rapidly deploy a comprehensive generative AI application for private customers."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "To create a distinctive experience, we designed a market-first, generative AI–powered platform that plays the role of a “digital junior banker” in supporting customers and bankers."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "사용 기술",
+        "값": "추천·개인화",
+        "근거 문장": "The NIWA app analyzes more than 500 pieces of information and research daily, including customers’ financial assets, characteristics, and preferences, to provide a hyperpersonalized experience."
+      },
+      {
+        "원장 번호": 8,
+        "관계": "고객 산업",
+        "값": "헬스케어",
+        "근거 문장": "Deloitte’s client, a major US health care organization, was struggling to meet patient needs and deliver a superior experience."
+      },
+      {
+        "원장 번호": 8,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "Clustering techniques to identify and categorize consumers who may have not been part of the process."
+      },
+      {
+        "원장 번호": 8,
+        "관계": "사용 기술",
+        "값": "추천·개인화",
+        "근거 문장": "The new architecture gave the client insights into the health care profile of individual customers, which they used to deliver personalized messages and recommendations to refill medication, schedule a wellness checkup or follow-up care, or manage a potentially chronic disease."
+      },
+      {
+        "원장 번호": 9,
+        "관계": "고객 산업",
+        "값": "헬스케어",
+        "근거 문장": "Takeda, a leading global R&D pharmaceutical company, was seeking to improve the accuracy of its prediction models for various disease states."
+      },
+      {
+        "원장 번호": 9,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "Using a small, proven real world data set on Treatment Resistant Depression and NASH, a severe form of hepatitis, Takeda and Deloitte deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "We helped a leading Canadian bank design and deploy a generative AI solution that created measurable business value while meeting strict governance, regulatory, and security requirements."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "We helped a leading Canadian bank design and deploy a generative AI solution that created measurable business value while meeting strict governance, regulatory, and security requirements."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "고객 산업",
+        "값": "커뮤니케이션 서비스",
+        "근거 문장": "Mariners Intelligence is a first-of-its-kind AI platform in professional sports."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "It’s built with and powered by Anthropic, deployed on Microsoft Azure, and capable of orchestrating AI agents that analyze models and generate campaign recommendations that are ready to execute."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "We used Claude Code and Azure to unify 1.15 million fan records and develop three machine-learning models based on fan demographics, past engagement behavior, and their propensity to engage."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "사용 기술",
+        "값": "추천·개인화",
+        "근거 문장": "That speed will help us engage fans every day—not just seasonally—and in ways that feel personal and relevant."
+      },
+      {
+        "원장 번호": 12,
+        "관계": "고객 산업",
+        "값": "소재",
+        "근거 문장": "Offerings consist of a vast array of seeds and traits, crop protection products, and digital solutions for agriculture."
+      },
+      {
+        "원장 번호": 12,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "The LLM, built in the Microsoft Azure environment, was grounded with decades of aggregated agronomy content, product research data and proprietary insights."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "고객 산업",
+        "값": "금융",
+        "근거 문장": "With help from EY, a commercial bank leveraged machine learning and natural language processing to improve sales workforce effectiveness."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "With help from EY, a commercial bank leveraged machine learning and natural language processing to improve sales workforce effectiveness."
+      },
+      {
+        "원장 번호": 14,
+        "관계": "고객 산업",
+        "값": "정보기술",
+        "근거 문장": "Microsoft is one of the world’s largest technology companies, with a known brand and reputation for developing, deploying and consuming innovative new technology."
+      },
+      {
+        "원장 번호": 14,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "This tool is powered by Microsoft Azure Open AI and Microsoft Semantic Kernel, stemming from the alliance between the EY organization and Microsoft that allowed EY technology teams to gain early access to emerging Microsoft Azure AI capabilities."
+      },
+      {
+        "원장 번호": 15,
+        "관계": "고객 산업",
+        "값": "경기소비재",
+        "근거 문장": "Our client, a leading global footwear retailer and innovator, was intrigued by the dynamic potential of generative artificial intelligence (GenAI)."
+      },
+      {
+        "원장 번호": 15,
+        "관계": "사용 기술",
+        "값": "생성형 AI(LLM 포함)",
+        "근거 문장": "Final selection of the GenAI text-to-text and text-to-image LLMs best suited for the company’s needs"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "고객 산업",
+        "값": "헬스케어",
+        "근거 문장": "With more than 25,000 calls to its 1-800 customer care number each day — and with each call costing upwards of $12 — a leading health services company recognized a huge opportunity to both reduce costs and greatly improve the customer experience."
+      },
+      {
+        "원장 번호": 16,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "Various intent recognition (Skills) models were trained to classify the intents, language-based speech model customization and customization of speech synthesis."
+      }
+    ],
+    "요약": "고객 산업이 그래프에 있는 사례만 비교했다(3·5번은 고객 산업이 없어 뺐고, 17번은 사용 기술이 없다). 산업: 1·6·7·10·13·17 금융, 2 산업재, 4·8·9·16 헬스케어, 11 커뮤니케이션 서비스, 12 소재, 14 정보기술, 15 경기소비재. 생성형 AI(LLM 포함) 33쌍: 1-2, 1-4, 1-11, 1-12, 1-14, 1-15, 2-4, 2-7, 2-10, 2-11, 2-12, 2-14, 2-15, 4-7, 4-10, 4-11, 4-12, 4-14, 4-15, 7-11, 7-12, 7-14, 7-15, 10-11, 10-12, 10-14, 10-15, 11-12, 11-14, 11-15, 12-14, 12-15, 14-15 / 예측·분류 머신러닝 11쌍: 6-8, 6-9, 6-11, 6-16, 8-11, 8-13, 9-11, 9-13, 11-13, 11-16, 13-16 / 추천·개인화 3쌍: 7-8, 7-11, 8-11. 기술별로 세면 47쌍, 사례 쌍 기준으로 겹친 것을 한 번만 세면 45쌍이다(7-11은 생성형 AI·추천, 8-11은 예측 ML·추천을 함께 공유). 음성 인식·합성은 16번 1건뿐이라 쌍이 없다."
+  },
+  {
+    "질문": "Q9",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 1,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "A joint ING and McKinsey team worked closely together for seven weeks to build a generative AI chatbot that offered customers immediate tailored help while maintaining clear guardrails to mitigate risk."
+      },
+      {
+        "원장 번호": 1,
+        "관계": "적용 업무",
+        "값": "AI 거버넌스·리스크 관리",
+        "근거 문장": "In order to do this, ING risk stakeholders were brought into this process from the very start and ING-specific guardrails (to avoid giving advice on mortgages and investment products, for example) were built using out-of-the-box tools from QuantumBlack Labs, our AI and machine learning innovation hub."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 2,
+        "관계": "적용 업무",
+        "값": "AI 활용 과제 발굴·우선순위 선정",
+        "근거 문장": "This strategic collaboration with McKinsey and Salesforce focused on identifying and evaluating 30 potential use cases where gen AI could deliver significant value, particularly in enhancing customer service and improving first-time issue resolution."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Over the course of five weeks, McKinsey’s QuantumBlack team of data scientists and software engineers worked together to build the gen AI engine operating on the Salesforce platform that helps agents find information on how to repair customers’ machines."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 3,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "In early 2025, McKinsey and QuantumBlack teams began designing and developing a solution that would become Agent2Sales (A2S), an AI platform designed to extract value from all call data, transforming the operation and generating sales opportunities."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "McKinsey led the implementation, capability building, and organization change management; QuantumBlack customized AI models to Entel’s needs, and Google Cloud provided the foundation—a platform capable of processing hundreds of thousands of calls overnight while maintaining cost efficiency and reliability."
+      },
+      {
+        "원장 번호": 4,
+        "관계": "수행",
+        "값": "BCG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 4,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Recognizing that this was a sensitive environment, and that patient privacy was essential, BCG developed the proof of concept for the cardiology department in an on-the-premises environment."
+      },
+      {
+        "원장 번호": 4,
+        "관계": "적용 업무",
+        "값": "AI 전략·로드맵 수립",
+        "근거 문장": "Beyond that, BCG helped Helios identify how to scale GenAI as part of its broader digital strategy going forward, all of which could lead to an excellent prognosis for improving medical care and allowing medical personnel to focus on the most valuable part of their work—caring for their patients."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "수행",
+        "값": "BCG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 5,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Together, Allstate and BCG developed a predictive ML model using GenAI tools within just four weeks."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "BCG also enabled Allstate’s strong internal teams to achieve new capabilities and deliver best-in-class customer service."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "수행",
+        "값": "Bain",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 6,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "To support that analysis, the team created a comprehensive data lake, integrating 20 databases into a system that contained a rich 10-year history of client and external data."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "The team developed a number of diﬀerent machine-learning models, of increased complexity, for two diﬀerent products, and benchmarked them against standard cross-selling methods to determine the financial impact."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "The Bain team tackled much of the most complex coding, helping the client team refine their skills along the way, through both formal and on-the-job training."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "수행",
+        "값": "Bain",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 7,
+        "관계": "적용 업무",
+        "값": "AI 신상품·신사업 기획 및 사업화",
+        "근거 문장": "We helped the company develop and launch an AI-based investment advisory app that increases the frequency of touchpoints between customers and the bank while also improving the quality of the customer experience."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "We helped the company develop and launch an AI-based investment advisory app that increases the frequency of touchpoints between customers and the bank while also improving the quality of the customer experience."
+      },
+      {
+        "원장 번호": 8,
+        "관계": "수행",
+        "값": "Deloitte",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 8,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Based on that information, Deloitte designed and implemented an end-to-end AI-enabled personalization solution by using:"
+      },
+      {
+        "원장 번호": 9,
+        "관계": "수행",
+        "값": "Deloitte",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 9,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "To achieve their goals, they enlisted the help of Deloitte to create a cloud solution."
+      },
+      {
+        "원장 번호": 9,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Using a small, proven real world data set on Treatment Resistant Depression and NASH, a severe form of hepatitis, Takeda and Deloitte deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "수행",
+        "값": "PwC",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 10,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "At a more granular level, we worked collaboratively with the bank to implement generative AI for three high-priority use cases."
+      },
+      {
+        "원장 번호": 10,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "A multi-dimensional approach to change: We prioritized more than technology change—addressing structure, process, and people dimensions simultaneously with the technology implementation to build internal capabilities, foster buy-in, and drive user adoption."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "수행",
+        "값": "PwC",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 11,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "We accomplished what traditionally takes months in a manner of weeks: establishing data pipelines, developing and refining machine learning models to help drive customer insights, creating the agentic harness delivering end-user interfaces—all from scratch."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "PwC brought engineering excellence and domain expertise to deliver the platform architecture, design the models, and drive execution end-to-end, while our analytics team pressure-tested the models and wired the tool into our daily operations."
+      },
+      {
+        "원장 번호": 12,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 12,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "BCS enlisted the help of Ernst & Young LLP (EY) professionals to help create a proof-of-concept (POC) GenAI system."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 13,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "EY teams started by creating a “book of record” around the entirety of an agent’s interaction with a client."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "They leveraged sophisticated AI approaches to analyze conversation behaviors associated with overall progression and help identify behaviors demonstrated by top-performing agents."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "적용 업무",
+        "값": "전사 확산·성과 관리",
+        "근거 문장": "By packaging these insights into an interactive dashboard that can be used by different stakeholders, EY professionals provided the client with a far more sophisticated foundation for performance measurement and management:"
+      },
+      {
+        "원장 번호": 14,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 14,
+        "관계": "적용 업무",
+        "값": "업무 프로세스 재설계",
+        "근거 문장": "CELA Technology & Operations together with EY Law and technology teams worked with CELA’s regulatory and product team members to design and refine a workflow POC for the regulatory space solution that could be automated to enhance efficiency, compliance monitoring and document creation."
+      },
+      {
+        "원장 번호": 14,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Within weeks, the EY technology team developed the necessary skillsets for the desired automation, which cleared the way for Microsoft to move forward with a pilot implementation of the GenAI solution in the legal department."
+      },
+      {
+        "원장 번호": 15,
+        "관계": "수행",
+        "값": "KPMG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 15,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "Setting up a cloud-based test environment that leverages GenAI modeling tools and other services"
+      },
+      {
+        "원장 번호": 15,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Selecting four initial pilot use cases for development, and then configuring the LLM prompts to optimize the GenAI model and outputs for each use case:"
+      },
+      {
+        "원장 번호": 15,
+        "관계": "적용 업무",
+        "값": "전사 확산·성과 관리",
+        "근거 문장": "Piloted 12 additional use cases in the production environment to support e-commerce, finance, product, and sales functions"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "수행",
+        "값": "KPMG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "We helped implement an IBM Watson conversational AI system that uses real-time natural language processing (NLP), speech-to-text and text-to-speech technologies to understand and respond to customers in a personalized, contextually-sensitive, conversational manner."
+      },
+      {
+        "원장 번호": 16,
+        "관계": "적용 업무",
+        "값": "조직·인력·변화 관리",
+        "근거 문장": "Because we have both technical and business skills, we were able to help design and implement an operating model that would balance the customer experience, resourcing, oversight, funding and other requirements to help the project succeed long term."
+      },
+      {
+        "원장 번호": 17,
+        "관계": "수행",
+        "값": "KPMG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 17,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "The KPMG and client team collaborated to select the cloud platform, architect technology platform components, and construct the virtual agent through a series of Agile development sprints to operate on their Amazon Web Services cloud platform."
+      },
+      {
+        "원장 번호": 17,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "The KPMG team worked with the client to build a conversational virtual assistant proof of concept to demonstrate the capabilities of artificial intelligence."
+      }
+    ],
+    "요약": "MBB 7건(1~7번): AI 솔루션 개발·실증 7, 조직·인력·변화 관리 3, AI 전략·로드맵 수립 1, AI 활용 과제 발굴·우선순위 선정 1, 데이터·기술 기반 구축 1, AI 신상품·신사업 기획 및 사업화 1, AI 거버넌스·리스크 관리 1. Big4 10건(8~17번): AI 솔루션 개발·실증 10, 데이터·기술 기반 구축 5, 전사 확산·성과 관리 2, 조직·인력·변화 관리 2, 업무 프로세스 재설계 1. 그룹별 1위는 둘 다 'AI 솔루션 개발·실증'으로 같다(MBB 7/7건, Big4 10/10건). 차이는 그 다음에 있다. MBB는 2위가 '조직·인력·변화 관리'(3건)이고 'AI 전략·로드맵 수립', 'AI 활용 과제 발굴·우선순위 선정', 'AI 신상품·신사업 기획 및 사업화', 'AI 거버넌스·리스크 관리'가 MBB에만 있다. Big4는 2위가 '데이터·기술 기반 구축'(5건, MBB는 1건)이고 '전사 확산·성과 관리', '업무 프로세스 재설계'가 Big4에만 있다."
+  },
+  {
+    "질문": "Q10",
+    "상태": "답함",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 1,
+        "관계": "낸 성과",
+        "값": "첫 7주 동안 긴 대기를 피한 고객 20 percent 증가",
+        "근거 문장": "What’s more, within the first seven weeks of use, the new chatbot was offering a better customer experience – helping 20 percent more customers avoid long wait times and offering instant gratification – compared to the previous solution."
+      },
+      {
+        "원장 번호": 1,
+        "관계": "낸 성과",
+        "값": "ten markets 확산 청사진 마련(37 million 고객 대상 잠재)",
+        "근거 문장": "The efforts helped define a blueprint to scale across ten markets with the potential to impact more than 37 million customers across 40 countries."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 2,
+        "관계": "낸 성과",
+        "값": "파일럿 4주 만에 구현",
+        "근거 문장": "The pilot solution was implemented in just four weeks and led to significant improvements."
+      },
+      {
+        "원장 번호": 2,
+        "관계": "낸 성과",
+        "값": "고객의 현장 손실 시간 시간당 $5,000 to $12,000 절감",
+        "근거 문장": "This means construction workers, freight operators, and other workers operating equipment crucial to getting their work done are losing far less time to technical delays and experiencing less disruptions of essential daily work, helping customers save between $5,000 to $12,000 an hour in otherwise lost field time."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 3,
+        "관계": "낸 성과",
+        "값": "10주 만에 인바운드 서비스 판매 40 percent 증가",
+        "근거 문장": "Within ten weeks, inbound service sales rose 40 percent, and contact center agents doubled their offering rates during service calls, with no negative impact on NPS (from 40.3 percent to 41.2 percent, a 0.9 p.p. improvement)."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "낸 성과",
+        "값": "상담원 서비스 통화 중 제안율 2배",
+        "근거 문장": "Within ten weeks, inbound service sales rose 40 percent, and contact center agents doubled their offering rates during service calls, with no negative impact on NPS (from 40.3 percent to 41.2 percent, a 0.9 p.p. improvement)."
+      },
+      {
+        "원장 번호": 3,
+        "관계": "낸 성과",
+        "값": "NPS 40.3 percent에서 41.2 percent로 0.9 p.p. 개선",
+        "근거 문장": "Within ten weeks, inbound service sales rose 40 percent, and contact center agents doubled their offering rates during service calls, with no negative impact on NPS (from 40.3 percent to 41.2 percent, a 0.9 p.p. improvement)."
+      },
+      {
+        "원장 번호": 4,
+        "관계": "수행",
+        "값": "BCG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 4,
+        "관계": "낸 성과",
+        "값": "병원 프로세스에서 마찰 지점 50개 넘게 발견",
+        "근거 문장": "BCG’s thorough examination of hospital processes found over 50 friction points that could be addressed."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "수행",
+        "값": "BCG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 5,
+        "관계": "낸 성과",
+        "값": "예측 성능 3x 향상(기존 모델 대비)",
+        "근거 문장": "The model improved prediction performance 3x (vs. historical models), identifying customers that require additional attention and support."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "낸 성과",
+        "값": "문제를 발생 전에 71% 확률로 식별",
+        "근거 문장": "These tools show whether signals are getting better or worse, which is extremely insightful, improving overall model performance: It is able to identify issues before they occur 71% of the time."
+      },
+      {
+        "원장 번호": 5,
+        "관계": "낸 성과",
+        "값": "4주 만에 작동하는 고객 서비스 모델 구축",
+        "근거 문장": "BCG and Allstate stood up a working, well-performing customer service model in four weeks."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "수행",
+        "값": "Bain",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 6,
+        "관계": "낸 성과",
+        "값": "교차판매로 약 25% 추가 매출 잠재력",
+        "근거 문장": "By the end of the project the team had developed a detailed roadmap comprising a dozen levers anticipated to produce an approximate 25% in additional revenue potential through cross-selling."
+      },
+      {
+        "원장 번호": 6,
+        "관계": "낸 성과",
+        "값": "마케팅 성과 10x 향상 전망",
+        "근거 문장": "The marketing insights gleaned through new machine-learning capabilities promised a 10x gain in marketing performance."
+      },
+      {
+        "원장 번호": 7,
+        "관계": "수행",
+        "값": "Bain",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 7,
+        "관계": "낸 성과",
+        "값": "매일 500 pieces 넘는 정보·리서치 분석",
+        "근거 문장": "The NIWA app analyzes more than 500 pieces of information and research daily, including customers’ financial assets, characteristics, and preferences, to provide a hyperpersonalized experience."
+      },
+      {
+        "원장 번호": 8,
+        "관계": "수행",
+        "값": "Deloitte",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 8,
+        "관계": "낸 성과",
+        "값": "고객 약 10%에 닿아 $100 million 넘는 매출",
+        "근거 문장": "The engagement touched about 10% of its customers, resulting in more than $100 million in revenue."
+      },
+      {
+        "원장 번호": 9,
+        "관계": "수행",
+        "값": "Deloitte",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 9,
+        "관계": "낸 성과",
+        "값": "예측 정확도 53.4%에서 92%로 향상",
+        "근거 문장": "The predictive accuracy improved from 53.4% to 92%"
+      },
+      {
+        "원장 번호": 11,
+        "관계": "수행",
+        "값": "PwC",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 11,
+        "관계": "낸 성과",
+        "값": "1.15 million 팬 기록 통합",
+        "근거 문장": "We used Claude Code and Azure to unify 1.15 million fan records and develop three machine-learning models based on fan demographics, past engagement behavior, and their propensity to engage."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "낸 성과",
+        "값": "팬 세그먼트 6개에서 49개 마이크로세그먼트로",
+        "근거 문장": "That allowed us to move from six broad segments to 49 actionable microsegments—a game-changer for precision targeting."
+      },
+      {
+        "원장 번호": 11,
+        "관계": "낸 성과",
+        "값": "티켓 판매 연 10% 이상 성장 기대",
+        "근거 문장": "We expect this to fuel at least 10% growth in our ticket sales year over year."
+      },
+      {
+        "원장 번호": 12,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 12,
+        "관계": "낸 성과",
+        "값": "90일 만에 POC 구축",
+        "근거 문장": "Together, the team built the POC in just 90 days."
+      },
+      {
+        "원장 번호": 12,
+        "관계": "낸 성과",
+        "값": "몇 달 만에 BCS 직원 a few hundred 명이 사용",
+        "근거 문장": "In just a few months, a few hundred BCS employees have successfully started using the GenAI system."
+      },
+      {
+        "원장 번호": 13,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 13,
+        "관계": "낸 성과",
+        "값": "기회 50% 이상 증가",
+        "근거 문장": "The client identified an uplift in opportunities of upward of 50%."
+      },
+      {
+        "원장 번호": 14,
+        "관계": "수행",
+        "값": "EY",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 14,
+        "관계": "낸 성과",
+        "값": "확장 가능한 GenAI 스킬셋 4개 확보",
+        "근거 문장": "The work also resulted in four primary, scalable GenAI skillsets that can be applied to fast-track deployment of further Microsoft Azure-driven solutions for different use cases within the legal department."
+      },
+      {
+        "원장 번호": 15,
+        "관계": "수행",
+        "값": "KPMG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 15,
+        "관계": "낸 성과",
+        "값": "직원 4,500명 넘게 쓰는 보안 GenAI 플랫폼 배포",
+        "근거 문장": "Deployed secure GenAI platform and user interface for more than 4,500 employees"
+      },
+      {
+        "원장 번호": 15,
+        "관계": "낸 성과",
+        "값": "사업 부문 전반에 GenAI 솔루션 over a dozen 출시",
+        "근거 문장": "Launched over a dozen transformative GenAI solutions across business functions, with more in pipeline"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "수행",
+        "값": "KPMG",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "낸 성과",
+        "값": "$100 million+ 절감 예측",
+        "근거 문장": "A prescription for $100 million+ forecasted savings"
+      },
+      {
+        "원장 번호": 16,
+        "관계": "낸 성과",
+        "값": "6개월 안에 솔루션 제공",
+        "근거 문장": "With a series of two-week sprints, we were able to deliver the solution in under six months."
+      }
+    ],
+    "요약": "성과 값에 수치가 들어 있는 사례를 세면 펌별로 McKinsey 3건, BCG 2건, Bain 2건, Deloitte 2건, PwC 1건, EY 3건, KPMG 2건, 모두 15건이다(McKinsey 1·2·3, BCG 4·5, Bain 6·7, Deloitte 8·9, PwC 11, EY 12·13·14, KPMG 15·16). 10번(PwC)과 17번(KPMG)은 수치 없는 성과만 있다. 단, 4번(마찰 지점 50개 넘게 발견), 7번(매일 500 pieces 넘는 정보 분석), 14번(GenAI 스킬셋 4개)은 숫자가 효과 크기가 아니라 개수라서, 이 셋을 빼면 McKinsey 3, BCG 1, Bain 1, Deloitte 2, PwC 1, EY 2, KPMG 2로 모두 12건이다."
+  },
+  {
+    "질문": "T1",
+    "상태": "전제가 틀림",
+    "주장": [],
+    "요약": "원장 17건을 수행한 펌은 McKinsey, BCG, Bain, Deloitte, PwC, EY, KPMG뿐이고 Accenture가 수행한 사례는 없다. 그래서 Accenture 사례의 AI 기술은 답할 수 없다."
+  },
+  {
+    "질문": "T2",
+    "상태": "전제가 틀림",
+    "주장": [
+      {
+        "원장 번호": 1,
+        "관계": "수행",
+        "값": "McKinsey",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 1,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "A joint ING and McKinsey team worked closely together for seven weeks to build a generative AI chatbot that offered customers immediate tailored help while maintaining clear guardrails to mitigate risk."
+      },
+      {
+        "원장 번호": 1,
+        "관계": "적용 업무",
+        "값": "AI 거버넌스·리스크 관리",
+        "근거 문장": "In order to do this, ING risk stakeholders were brought into this process from the very start and ING-specific guardrails (to avoid giving advice on mortgages and investment products, for example) were built using out-of-the-box tools from QuantumBlack Labs, our AI and machine learning innovation hub."
+      }
+    ],
+    "요약": "원장 1번 사례는 KPMG가 아니라 McKinsey가 수행했다(고객 ING). McKinsey가 낸 산출물은 ING와 7주 동안 함께 만든 생성형 AI 챗봇('AI 솔루션 개발·실증')과, QuantumBlack Labs 도구로 만든 ING 전용 가드레일('AI 거버넌스·리스크 관리')이다."
+  },
+  {
+    "질문": "T3",
+    "상태": "자료에 없음",
+    "주장": [],
+    "요약": "17건 어느 사례에도 프로젝트 계약 금액이 나오지 않는다. 그래프 스키마에 계약 금액 칸이 없고, 원문 17개에서 계약·수수료·예산 관련 표현을 찾아봐도 계약 금액은 없었다. 원문의 금액($100 million 매출, $100 million+ 절감 예측 등)은 고객이 얻은 성과이지 계약 금액이 아니다."
+  },
+  {
+    "질문": "T4",
+    "상태": "전제가 틀림",
+    "주장": [],
+    "요약": "스키마 4절 업무 유형 10개(AI 전략·로드맵 수립, AI 활용 과제 발굴·우선순위 선정, 사업성·투자 타당성 분석, 데이터·기술 기반 구축, AI 신상품·신사업 기획 및 사업화, 업무 프로세스 재설계, AI 솔루션 개발·실증, 전사 확산·성과 관리, AI 거버넌스·리스크 관리, 조직·인력·변화 관리)에 '인수합병 자문'은 없고, 그래프에도 '기타' 값으로 잡힌 업무 유형이 없다. 그래서 해당 사례가 없다."
+  },
+  {
+    "질문": "T5",
+    "상태": "전제가 틀림",
+    "주장": [
+      {
+        "원장 번호": 9,
+        "관계": "수행",
+        "값": "Deloitte",
+        "근거 문장": "원장"
+      },
+      {
+        "원장 번호": 9,
+        "관계": "고객",
+        "값": "Takeda",
+        "근거 문장": "Takeda, a leading global R&D pharmaceutical company, was seeking to improve the accuracy of its prediction models for various disease states."
+      },
+      {
+        "원장 번호": 9,
+        "관계": "적용 업무",
+        "값": "AI 솔루션 개발·실증",
+        "근거 문장": "Using a small, proven real world data set on Treatment Resistant Depression and NASH, a severe form of hepatitis, Takeda and Deloitte deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models."
+      },
+      {
+        "원장 번호": 9,
+        "관계": "사용 기술",
+        "값": "예측·분류 머신러닝",
+        "근거 문장": "Using a small, proven real world data set on Treatment Resistant Depression and NASH, a severe form of hepatitis, Takeda and Deloitte deployed a scalable, AWS cloud-based machine learning solution called Deep Miner to rapidly test predictive models."
+      },
+      {
+        "원장 번호": 9,
+        "관계": "낸 성과",
+        "값": "예측 정확도 53.4%에서 92%로 향상",
+        "근거 문장": "The predictive accuracy improved from 53.4% to 92%"
+      },
+      {
+        "원장 번호": 9,
+        "관계": "적용 업무",
+        "값": "데이터·기술 기반 구축",
+        "근거 문장": "Running on AWS, Deep Miner offers software and services to accelerate insight generation and knowledge management."
+      }
+    ],
+    "요약": "한 곳이 틀렸다. Deep Miner는 Microsoft Azure가 아니라 AWS 클라우드 기반 머신러닝 솔루션이다(원문: 'AWS cloud-based machine learning solution called Deep Miner', 'Running on AWS'). 나머지 — Deloitte가 Takeda와 함께, 치료 저항성 우울증(TRD)과 NASH 데이터로 예측 모델을 시험한 것, 예측 정확도가 53.4%에서 92%로 오른 것 — 은 원문과 같다. 바로잡은 진술: 원장 9번 사례에서 Deloitte는 Takeda와 함께 AWS 클라우드 기반 머신러닝 솔루션 Deep Miner를 써서 TRD와 NASH의 예측 모델을 시험했고, 예측 정확도는 53.4%에서 92%로 올랐다."
+  }
+]
