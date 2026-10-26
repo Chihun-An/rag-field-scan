@@ -3239,3 +3239,53 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - progress/week-2.md: 새로 만듦 — 받은 내용 그대로(8줄)
 - worklog.md: 수정 — "## 2026-10-26" 항목과 이 절 추가
 - commit·push는 하지 않음
+
+### E5 판정 단위와 Codex 표본 (2026-10-26, 13:45경 마침, Claude Code)
+
+- 판정 전에 판정 단위와 Codex 표본을 스크립트(experiments/scripts/build-e5-judge-units.py)로 만들었다. 같은 주장과 같은 근거는 한 번만 판정하고 결과를 모든 자리에 적용한다(e5-method.md 끝 "추가(2026-10-26, 판정 전)").
+- 아직 아무것도 판정하지 않았다.
+
+#### 한 일과 결과
+
+- `python3 deep/07-graphrag/experiments/scripts/build-e5-judge-units.py`, 종료 코드 0. 표준 출력 전체:
+
+```
+ai-consulting search: 단위 181개
+ai-consulting graph: 단위 204개
+oil-trade search: 단위 250개
+oil-trade graph: 단위 214개
+ai-consulting 고유 단위: 161개
+oil-trade 고유 단위: 253개
+전체 고유 단위: 414개
+Codex 표본: 40개
+```
+
+- Cowork가 미리 센 값(답 파일별 181·204·250·214, 고유 단위 1번 161·2번 253·전체 414)과 모두 같음
+- e5-codex-input.md: 213줄, 항목 40개. 단위 번호(U…)·도메인·방식 이름이 들어가지 않았음을 확인함
+- 1번 답 JSON에는 근거의 "위치" 칸이 없어, 1번 항목의 근거 문장 뒤에는 "(원장 N번)"만 붙음
+- citation-judge는 부르지 않았고 어떤 판정도 하지 않음. 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: E5 판정(층위 2)을 하기 전에 판정 단위와 Codex 표본을 스크립트로 만들어 저장소에 남긴다. 아직 아무것도 판정하지 않는다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-e5-* 포함)은 열지 않는다. 답 JSON 파일 네 개는 고치지 않는다. citation-judge를 부르지 않고 어떤 판정도 하지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. experiments/scripts/build-e5-judge-units.py(판정 단위, 겹침 합치기, 번호, e5-judge-units.json, Codex 표본, e5-codex-input.md, e5-codex-key.json, 표준 출력)
+2. 스크립트를 돌리고 표준 출력을 Cowork가 센 값과 대조
+3. e5-method.md 맨 끝에 [방법 추가] 문단
+4. worklog "## 2026-10-26" 항목 맨 끝에 이 절
+5. 만든·고친 파일, 표준 출력, e5-codex-input.md 줄 수를 보고한다
+
+#### 읽은 파일
+
+- 답 JSON 네 개(구조와 칸 이름만 확인, 내용은 스크립트가 읽음), deep/07-graphrag/shared/codex-judge-rules.md(1~5번 줄), e5-method.md(끝부분), worklog.md(끝부분)
+- 저장소 밖 파일은 열지 않음(`ls /Volumes`로 디스크가 마운트되지 않았음을 확인)
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/scripts/build-e5-judge-units.py: 새로 만듦(110줄)
+- deep/07-graphrag/experiments/e5-judge-units.json, e5-codex-input.md(213줄), e5-codex-key.json: 새로 만듦(스크립트 출력)
+- deep/07-graphrag/experiments/e5-method.md: 수정 — 맨 끝에 추가 문단
+- worklog.md: 수정 — 이 절 추가
+- 답 JSON 파일은 고치지 않음. commit·push는 하지 않음
