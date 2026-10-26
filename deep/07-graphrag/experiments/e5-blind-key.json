@@ -1,0 +1,18 @@
+{
+  "ai-consulting": {
+    "A": "search",
+    "B": "graph",
+    "바꾼 횟수": {
+      "ai-consulting-A.json": 0,
+      "ai-consulting-B.json": 4
+    }
+  },
+  "oil-trade": {
+    "A": "search",
+    "B": "graph",
+    "바꾼 횟수": {
+      "oil-trade-A.json": 0,
+      "oil-trade-B.json": 4
+    }
+  }
+}

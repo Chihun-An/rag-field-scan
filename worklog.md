@@ -3467,3 +3467,67 @@ Codex 표본: 40개
 - deep/07-graphrag/experiments/e4-scale-check-oil-trade-method.md: 새로 만듦(28줄)
 - worklog.md: 수정 — 이 절 추가
 - 답 JSON 원본 네 개는 고치지 않음. commit·push는 하지 않음
+
+### 디스크 세션 — E5 채점과 E4 2번 저울 점검 (2026-10-26, 17:45경 기록, Claude Code)
+
+- 정답 디스크를 연 격리 Claude Code 대화(작업 폴더 /Volumes/rag-answer-keys, 새 대화, 편집 자동 승인 끔)가 Cowork가 쓴 지시문대로 해시를 확인하고(두 도메인 여섯 파일 OK), E4 저울 점검 화면을 디스크 안에 만들고, E5를 채점했다. 기대 답 항목과 항목별 판정은 디스크 안(e5-items.md, e5-scoring.md)에만 두고, 저장소에는 숫자만 옮겼다.
+- 그 대화가 스스로 보고한 규칙 위반 한 번: 표본 스크립트를 쓰기 전에 CSV 열 구성을 보려고 돌린 명령에서 기준 그래프 몇몇 열(주어, 분류 체계, 업무 단계, 주체, 원장 번호)의 서로 다른 값 목록이 그 대화의 도구 출력에 찍혔다. 값 칸과 근거 문장은 찍히지 않았고, 저장소와 디스크 파일에는 들어가지 않았다. E5 답은 이미 만들어져 있어 영향을 받을 대화가 없다.
+- 디스크가 열린 동안 에드워드가 Cowork에 승인 질문을 두 번 했다(A·B 파일 크기 확인, A 파일 구조 확인). Cowork는 맥 파일을 열지 않고 답했다. 디스크가 잠겼는지 확인하려고 Cowork가 `ls /Volumes`만 두 번 돌렸다(디스크 안 파일은 열지 않음).
+- E4 저울 점검은 디스크가 열린 동안 에드워드가 화면에서 직접 분류했고, 결과를 e4-scale-check-oil-trade.md로 저장했다.
+- 채점이 끝난 뒤 A/B 열쇠를 공개했다(e5-blind-key.json). 디스크 세션 대화는 에드워드가 삭제했고, 디스크가 잠긴 것은 Cowork가 확인했다.
+
+#### 한 일과 결과
+
+- 시작 전 `ls /Volumes`: rag-answer-keys 없음(잠김). 작업을 마친 뒤에도 같음
+- 종류 점수(검색만 / 그래프 경유 / 차이 / 판정):
+
+```
+1번 A	100.0% / 100.0% / +0.00%p / 비슷
+1번 B	97.1% / 100.0% / +2.94%p / 비슷
+1번 C	70.8% / 70.8% / +0.00%p / 비슷
+1번 D	93.8% / 96.9% / +3.12%p / 비슷
+1번 E	74.0% / 67.7% / -6.29%p / 비슷
+1번 Q1~Q10 전체	87.1% / 87.1% / -0.04%p / 비슷
+2번 A	100.0% / 100.0% / +0.00%p / 비슷
+2번 B	100.0% / 100.0% / +0.00%p / 비슷
+2번 C	72.7% / 81.8% / +9.09%p / 비슷
+2번 D	87.5% / 92.7% / +5.21%p / 비슷
+2번 E	75.0% / 83.3% / +8.33%p / 비슷
+2번 Q1~Q10 전체	87.0% / 91.6% / +4.53%p / 비슷
+두 도메인 비교(2번 차이 − 1번 차이)	+4.57%p / 비슷
+```
+
+- 통제 점수(5점 만점, T1~T4 G8 통과 + T5 점수): 1번 검색만 4.00, 1번 그래프 경유 3.00, 2번 검색만 4.00, 2번 그래프 경유 4.00
+- 틀린 항목 합계(Q1~Q10): 1번 검색만 20, 1번 그래프 경유 23, 2번 검색만 21, 2번 그래프 경유 48
+- E4 2번 저울 점검 분류 개수: 같은 사실 있음 1, 단위만 다름 0, 놓친 사실 19, 판단 어려움 0
+- 확인: 틀린 항목 합계와 질문별 G8(1번 검색만 T4, 1번 그래프 경유 T1·T4, 2번 두 답 T4)을 채점 표와 e5-golden-rules-results.md로 손으로 다시 맞춰 봄. 스크립트 종료 코드 0
+- 차이를 처음에 소수 첫째 자리로 냈더니 1번 전체 차이가 "-0.0%p"로, 두 도메인 비교가 "+4.6%p"(4.5 − 0.0처럼 보임)로 찍혀 헷갈렸다. 분수로 다시 셈한 정확한 값(-0.04, +4.53, +4.57)을 보고 %p만 소수 둘째 자리로 바꿨다. 판정은 바뀌지 않음. 결과 파일에는 고친 뒤 출력을 넣었다
+- 에이전트 오류: (1) 파일 내용을 확인하는 명령에서 zsh가 구분선 "=====" 를 명령으로 읽어 출력이 중간에 끊겼다. 따옴표로 감싸 다시 봄. (2) E4 머리를 넣은 뒤 기존 내용이 그대로인지 비교할 때 줄 위치를 하나 잘못 잡아(6번째 줄부터) "다름"이 나왔다. 머리는 4줄이라 5번째 줄부터 다시 비교해 같음을 확인함
+- 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 디스크 세션 결과(E5 채점 숫자, E4 저울 점검)를 저장소에 기록하고, A/B 열쇠를 공개해 E5 점수를 계산한다. 정답 디스크는 잠긴 상태다.
+
+- 지킬 것: 시작 전에 `ls /Volumes`로 rag-answer-keys가 없는지 확인한다(있으면 멈춤). 저장소 밖 파일(~/Documents/rag-e5-* 포함)은 열지 않는다. 채점 숫자 파일과 e4-scale-check-oil-trade.md의 표는 고치지 않는다. 결과 파일과 worklog에는 숫자만 쓴다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. "Claude outputs/e5-blind/"의 scores-ai-consulting.md, scores-oil-trade.md, key.json을 experiments/e5-scores-ai-consulting.md, e5-scores-oil-trade.md, e5-blind-key.json으로 옮긴다(내용 그대로, 원본은 둠)
+2. experiments/scripts/score-e5.py(질문 점수, 종류 점수와 판정, Q1~Q10 전체 점수와 두 도메인 비교, 통제 점수, 틀린 항목 합계)
+3. 스크립트를 돌리고 experiments/e5-score-results.md를 만든다(머리 문단, 실행 명령, 출력 전체, 해석 없음)
+4. e4-scale-check-oil-trade.md 맨 위에 [E4 머리]를 넣는다(기존 표와 개수는 그대로)
+5. worklog "## 2026-10-26" 항목 맨 끝에 이 절
+6. 만든·고친 파일 목록과 스크립트 출력 전체를 보고한다
+
+#### 읽은 파일
+
+- "Claude outputs/e5-blind/"의 scores-ai-consulting.md, scores-oil-trade.md, key.json(복사하고 내용 확인), deep/07-graphrag/experiments/e4-scale-check-oil-trade.md, deep/07-graphrag/ai-consulting/predictions.md·oil-trade/predictions.md(4·5절 판정 기준), worklog.md(끝부분)
+- 골든 룰 검사 스크립트와 답 JSON 네 개는 score-e5.py가 읽음. 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e5-scores-ai-consulting.md, e5-scores-oil-trade.md, e5-blind-key.json: 새로 만듦(복사, `cmp`로 원본과 같음을 확인. "Claude outputs/" 원본은 그대로 둠)
+- deep/07-graphrag/experiments/scripts/score-e5.py: 새로 만듦(150줄)
+- deep/07-graphrag/experiments/e5-score-results.md: 새로 만듦(85줄)
+- deep/07-graphrag/experiments/e4-scale-check-oil-trade.md: 수정 — 맨 위에 머리 4줄 추가(기존 표와 개수는 그대로)
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
