@@ -3212,3 +3212,30 @@ AI가 제안한 것: Cowork가 1번 check-graph-csv.py를 본뜬 2번 형식 검
 - deep/07-graphrag/experiments/e5-golden-rules-results.md: 새로 만듦
 - worklog.md: 수정 — 이 절 추가
 - 답 JSON 파일은 고치지 않음. commit·push는 하지 않음
+
+## 2026-10-26
+
+### 2주차 기록 (2026-10-26, 13:38경 마침, Claude Code)
+
+- progress/week-2.md를 만들었다. 2주차 점검 시각(10/25 21:00)이 지난 뒤에 썼고, 파일 맨 위에 그 사실을 적었다.
+- 네 줄은 Cowork가 저장소 기록에 있는 사실로 초안을 쓰고, 에드워드가 그대로 쓰기로 정했다.
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: progress/week-2.md를 만들고 worklog에 남긴다.
+
+- 지킬 것: [ ] 표시 사이 문장은 글자 하나 바꾸지 않고 넣는다. 다른 파일은 고치지 않는다. commit·push 하지 않는다
+
+1. progress/week-2.md를 [파일] 그대로 새로 만든다
+2. worklog 맨 끝에 "## 2026-10-26" 항목을 만들고 이 절
+3. 만든·고친 파일 목록, week-2.md 줄 수를 보고한다
+
+#### 읽은 파일
+
+- progress/ 폴더 목록, worklog.md(날짜 항목 머리와 끝부분)
+
+#### 만든·고친 파일
+
+- progress/week-2.md: 새로 만듦 — 받은 내용 그대로(8줄)
+- worklog.md: 수정 — "## 2026-10-26" 항목과 이 절 추가
+- commit·push는 하지 않음
