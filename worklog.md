@@ -3393,3 +3393,45 @@ Codex 표본: 40개
 - worklog.md: 수정 — 이 절 추가, 앞 절 "E5 citation-judge 판정" 제목 줄의 시각을 16:40경→16:37경으로 고침
 - deep/07-graphrag/experiments/scripts/__pycache__/: 지움(묻지 않고 지운 오류, 위 "한 일과 결과" 참고)
 - e5-judge-units.json, e5-judge-claude.json, e5-codex-input.md, e5-codex-output.md, e5-codex-key.json, 답 JSON은 고치지 않음. commit·push는 하지 않음
+
+### E5 사람 판정 비교 (2026-10-26, 17:04경 마침, Claude Code)
+
+- 1·2주차 멘토 점검(2026-10-26 받음)의 요청에 따라 에드워드가 E5 표본 40개를 직접 판정했다. 판정 화면은 Cowork가 e5-codex-input.md로 만든 로컬 HTML(Claude outputs/, 커밋 안 함)이고, 결과는 에드워드가 e5-human-judge.md로 저장해 비교 전에 커밋했다.
+- citation-judge의 단위별 판정은 보지 않았고, Codex의 단위별 판정은 저장하면서 본 뒤였다(e5-method.md 끝 "추가(2026-10-26, 사람 판정)").
+- 결과는 experiments/e5-human-judge-results.md에 남겼다.
+
+#### 한 일과 결과
+
+- 사람 대 citation-judge 일치: 27/40(67.5%)
+- 사람 대 Codex 일치: 27/40(67.5%)
+- 세 판정이 모두 같은 수: 23/40(57.5%)
+- 도메인별: 1번 사람 대 citation-judge 13/21(61.9%), 사람 대 Codex 15/21(71.4%) / 2번 사람 대 citation-judge 14/19(73.7%), 사람 대 Codex 12/19(63.2%)
+- 사람 "정보 부족" 4개, Codex "정보 부족" 14개(둘 다 "뒷받침 안 됨"으로 봄)
+- 확인: 두 2×2 표의 칸 숫자가 같게 나와서 따로 짧은 스크립트(`python3 -I -c`)로 다시 셌다. 사람과 어긋난 번호가 citation-judge 쪽 13개, Codex 쪽 13개인데 두 번호 목록은 서로 다르다. 같은 표가 잘못 두 번 찍힌 것이 아님
+- 에이전트 오류: 이 절의 마친 시각을 처음에 실제(17:04)보다 앞선 "17:05경"으로 적었다가 고쳤다. 앞 절에서 적은 같은 실수를 되풀이했다
+- 스크립트 종료 코드 0. 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: E5 사람 판정 40개를 citation-judge·Codex 판정과 비교해 숫자로 남긴다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys, ~/Documents/rag-e5-*, ~/Documents/codex-judge-empty 포함)은 열지 않는다. e5-human-judge.md, e5-judge-claude.json, e5-codex-output.md, e5-codex-key.json, e5-judge-units.json은 고치지 않는다. 결과 파일과 보고·worklog에는 개수와 비율만 쓴다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. e5-method.md 맨 끝에 [방법 추가] 문단
+2. experiments/scripts/compare-e5-human-judge.py(사람·Codex·citation-judge 판정 잇기, 일치율과 2×2 표, 세 판정 일치 수, 정보 부족 개수, 사람 원래 판정별 표, 도메인별 일치율)
+3. 스크립트를 돌리고 experiments/e5-human-judge-results.md를 만든다(머리 문단, 실행 명령, 출력 전체, 해석 없음)
+4. worklog "## 2026-10-26" 항목 맨 끝에 이 절
+5. 만든·고친 파일 목록과 스크립트 출력 전체를 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/experiments/e5-human-judge.md(표 형식과 판정 값 개수), e5-codex-output.md·e5-codex-key.json·e5-judge-claude.json·e5-judge-units.json(스크립트가 읽음), e5-method.md(끝부분), worklog.md(끝부분)
+- 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e5-method.md: 수정 — 맨 끝에 추가 문단
+- deep/07-graphrag/experiments/scripts/compare-e5-human-judge.py: 새로 만듦(110줄)
+- deep/07-graphrag/experiments/e5-human-judge-results.md: 새로 만듦(44줄)
+- worklog.md: 수정 — 이 절 추가
+- e5-human-judge.md, e5-judge-claude.json, e5-codex-output.md, e5-codex-key.json, e5-judge-units.json은 고치지 않음. commit·push는 하지 않음
