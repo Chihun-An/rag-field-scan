@@ -17,6 +17,8 @@ E1 결정(두 도메인 범위와 분류 축): [e1-decisions.md](e1-decisions.md
 
 E6 그래프 뷰어: [viewer/](viewer/index.html) (배포: https://chihun-an.github.io/rag-field-scan/deep/07-graphrag/viewer/)
 
+E7 발견 정리(예측 대 실제, 2번 보완): [findings.md](findings.md)
+
 ## 폴더 구조
 
 ```
@@ -26,6 +28,7 @@ deep/07-graphrag/
 ├── oil-trade/         2번 도메인 — 무역 & 기름
 ├── shared/            도메인과 상관없는 공통 도구 (예: 골든 룰 검사 스크립트)
 ├── viewer/            E6 그래프 뷰어 (정적 HTML)
+├── findings.md        E7 발견 정리
 ├── plan.md            이전 과제 계획
 ├── papers.md          이전 과제 계획
 └── tools.md           이전 과제 계획

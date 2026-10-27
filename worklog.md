@@ -3634,3 +3634,35 @@ Codex 표본: 40개
 - deep/07-graphrag/viewer/index.html: 수정 — Cowork가 고친 판으로 덮어씀(원본은 그대로 둠)
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### E7 발견 정리 (2026-10-27, 09:42경 마침, Claude Code)
+
+- deep/07-graphrag/findings.md를 만들었다. Cowork가 두 도메인 예측 파일과 결과 파일의 숫자로 초안을 쓰고, 에드워드가 주요 발견(에이전트 그래프는 정확했지만 좁았다), 핵심 질문의 한 줄 답, 2번 보완(2번 사람 그래프), 지금 하는 일과의 연결(검증하는 습관)과 그 이유를 골랐다. 초안을 글자 그대로 옮겼다.
+- 확인(Claude Code): findings.md md5 5398712b6e5799ca34c866490e66b4a0, `cmp`로 원본과 같음. 옮기기 전에 내용을 읽음. 상대 링크 20개(고유 17개)를 일회용 파이썬 스크립트로 확인했고 없는 파일 0개. README.md 기준 줄 두 개("E6 그래프 뷰어:", "├── viewer/")는 각각 정확히 한 번 나와 스크립트로 넣음
+- findings.md 안 숫자를 결과 파일과 하나씩 대조하지는 않음(지시 범위 밖)
+- 에이전트 오류 없음. 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: E7 발견 정리 문서를 저장소에 올린다. Cowork가 만든 초안(Claude outputs/findings-draft.md)을 글자 그대로 옮기고 링크를 넣는다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys 포함)은 열지 않는다. findings.md는 글자 하나 바꾸지 않고 옮기고 md5를 보고한다. [ ] 표시 사이 문장은 그대로 넣고 지시한 곳만 고친다. commit·push 하지 않는다
+
+1. "Claude outputs/findings-draft.md"를 deep/07-graphrag/findings.md로 복사(원본은 그대로 둠)
+2. findings.md 안의 상대 링크가 모두 실제 파일을 가리키는지 스크립트로 확인(없으면 고치지 말고 보고)
+3. deep/07-graphrag/README.md "E6 그래프 뷰어:" 줄 뒤에 빈 줄과 [07 링크]
+4. 폴더 구조 "├── viewer/" 줄 뒤에 [07 구조]
+5. worklog "## 2026-10-27" 항목 맨 끝에 이 절
+6. 만든·고친 파일 목록, findings.md md5, 2번 링크 확인 결과를 보고한다
+
+#### 읽은 파일
+
+- "Claude outputs/findings-draft.md"(복사 전 내용 확인), deep/07-graphrag/README.md, worklog.md(끝부분)
+- 링크 확인 스크립트는 링크한 파일이 있는지만 봄(내용은 열지 않음). 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/findings.md: 새로 만듦(복사, 원본은 그대로 둠)
+- deep/07-graphrag/README.md: 수정 — E7 링크 줄(앞에 빈 줄)과 폴더 구조 findings.md 줄 추가
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
