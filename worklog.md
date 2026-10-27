@@ -3795,3 +3795,19 @@ Codex 표본: 40개
 
 - deep/07-graphrag/oil-trade/human-graph-v2.csv: 새로 만듦(v1 9줄 + 새 줄 16줄)
 - worklog.md: 수정 — 이 절 추가
+
+### 2번 사람 그래프 v2 비교 (2026-10-27, Cowork)
+
+#### 한 일과 결과
+
+- 방법 6절대로 v2에서 v1 9줄을 뺀 16줄을 oil-trade/human-graph-v2-added.csv로 떼어 내고, v2 전체와 추가한 줄만을 각각 1·2회차와 비교했다(--ledger 4,11,14,17). 명령과 출력 전체는 [v2 결과](deep/07-graphrag/experiments/e4-human-graph-v2-oil-trade-results.md)에 있다.
+- 추가한 줄만의 A 재현율: 1회차 3/16(18.8%), 2회차 4/16(25.0%). 예측 "절반 미만"과 맞는다.
+- v2 전체의 A 재현율: 1회차 6/25(24.0%), 2회차 7/25(28.0%).
+- 추가한 16줄도 원장 4번(폐기물국가간이동법)은 0줄이다. 추가한 줄은 원장 11번(UMO 3줄)과 14번(PPO 12줄, ULO 1줄)에만 있다.
+- Cowork는 값과 근거 문장을 출력하지 않았다(줄 수와 비교 숫자만).
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/oil-trade/human-graph-v2-added.csv: 새로 만듦(v2의 10~25번째 줄, 16줄)
+- deep/07-graphrag/experiments/e4-human-graph-v2-oil-trade-results.md: 새로 만듦(해석 없음, 명령과 출력만)
+- worklog.md: 수정 — 이 절 추가
