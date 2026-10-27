@@ -38,12 +38,12 @@ footer{padding:8px 16px;color:var(--muted);font-size:12px;border-top:1px solid v
 <header>
   <h1>GraphRAG 그래프 뷰어</h1>
   <div class="row" id="domains"></div>
-  <div class="row"><span class="muted">그래프</span><select id="variant"></select><span id="stats" class="muted"></span></div>
+  <div class="row"><span class="muted">그래프</span><select id="variant"></select><span class="muted">배치</span><select id="layoutSel"><option value="col">열로 정렬</option><option value="cose">자유 배치</option></select><span id="stats" class="muted"></span></div>
   <div class="row filters" id="filters"></div>
 </header>
 <main>
   <div id="cy" aria-label="그래프"></div>
-  <aside id="panel"><p class="muted">노드나 선을 누르면 여기에 근거 문장과 출처(원장)가 나와요. 긴 이름은 확대하면 보여요.</p></aside>
+  <aside id="panel"></aside>
 </main>
 <footer>3주 챌린지 E6. 데이터는 이 저장소의 그래프 CSV와 원장(sources.csv)이다. 2번 기준 그래프는 정답 격리 때문에 넣지 않았다.</footer>
 <script>
@@ -56,6 +56,8 @@ const CONFIG = {
       human: {label: "사람 그래프 (7건)", file: "../ai-consulting/human-graph.csv"}
     },
     relations: ["수행","고객","고객 산업","적용 업무","사용 기술","해결하려던 병목","낸 성과"],
+    defaultOff: ["고객","해결하려던 병목","낸 성과"],
+    layout: "col",
     colors: {"사례":"#4b4b47","수행":"#2f5bd3","고객":"#1b8a8a","고객 산업":"#7a4fc2","적용 업무":"#d9792b","사용 기술":"#2e8b4e","해결하려던 병목":"#c2453b","낸 성과":"#b8962a"}
   },
   "oil-trade": {
@@ -65,6 +67,7 @@ const CONFIG = {
       agent: {label: "에이전트 그래프 1회차", file: "../oil-trade/agent-graph-1.csv"}
     },
     relations: ["원문 용어","품목 분류","요건"],
+    layout: "col",
     colors: {"제품":"#4b4b47","원문 용어":"#1b8a8a","분류 값":"#7a4fc2","요건":"#d9792b"},
     relColors: {"원문 용어":"#1b8a8a","품목 분류":"#7a4fc2","요건":"#d9792b"}
   }
@@ -72,7 +75,9 @@ const CONFIG = {
 const SHARED_1 = new Set(["수행","고객 산업","적용 업무","사용 기술"]); // 1번에서 사례끼리 공유되는 값
 const relColor = (c, r) => (c.relColors || c.colors)[r] || "#999";
 const PRODUCTS = new Set(["UMO","ULO","PPO"]);
-let state = {domain: "ai-consulting", variant: "agent"};
+const HINT_BASE = '노드나 선을 누르면 연결된 것만 밝게 보이고, 여기에 근거 문장과 출처(원장)가 나와요. 빈 곳을 누르면 돌아가요.';
+const hint = () => '<p class="muted">' + HINT_BASE + (CONFIG[state.domain].defaultOff ? ' 고객·병목·성과는 처음에 꺼 두었어요. 위 체크박스로 켤 수 있고, 사례를 누르면 패널에는 모두 나와요.' : '') + '</p>';
+let state = {domain: "ai-consulting", variant: "agent", layout: "col"};
 let cy = null, sources = {};
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -133,14 +138,43 @@ function edgeHTML(e, fromNode){
 }
 
 function showNode(n){
-  const es = n.connectedEdges(":visible");
-  let html = `<h2>${esc(n.data("full"))}</h2><div class="muted">종류: ${esc(n.data("type"))} · 연결 ${es.length}개</div>`;
+  const es = n.connectedEdges();
+  let html = `<h2>${esc(n.data("full"))}</h2><div class="muted">종류: ${esc(n.data("type"))} · 연결 ${es.length}개 (필터로 숨긴 관계도 여기에는 나와요)</div>`;
   if (n.data("ledger")) html += ledgerHTML(n.data("ledger"));
   es.forEach(e => html += edgeHTML(e, n));
   $("panel").innerHTML = html;
 }
 function showEdge(e){
   $("panel").innerHTML = `<h2>${esc(e.source().data("full"))}</h2><div class="muted">→ ${esc(e.target().data("full"))}</div>` + edgeHTML(e, null);
+}
+
+const LAYOUT = {name: "cose", animate: false, randomize: true, nodeRepulsion: 14000, idealEdgeLength: 80, nodeOverlap: 20, gravity: 0.6, numIter: 2000, padding: 20};
+function focus(ele){
+  const keep = ele.isNode() ? ele.closedNeighborhood() : ele.union(ele.connectedNodes());
+  cy.elements().addClass("faded"); keep.removeClass("faded"); keep.nodes().addClass("focus");
+}
+function clearFocus(){ if (cy) cy.elements().removeClass("faded focus"); }
+// 열로 정렬: 사례(또는 제품·주어)를 왼쪽 한 줄에, 값을 종류별 열에 세운다. 같은 값에 많이 이어진 것부터 위에 둔다.
+function runLayout(){
+  const vis = cy.nodes(":visible");
+  cy.elements().removeClass("col");
+  if (state.layout !== "col") { cy.elements(":visible").layout(LAYOUT).run(); return; }
+  const c = CONFIG[state.domain];
+  const leftTypes = ["사례", "제품"];
+  const deg = n => n.connectedEdges(":visible").length;
+  const left = vis.filter(n => leftTypes.includes(n.data("type"))).sort((a, b) => (a.data("type") === b.data("type") ? (+a.data("ledger") || 0) - (+b.data("ledger") || 0) || a.data("full").localeCompare(b.data("full")) : 0));
+  const order = state.domain === "ai-consulting" ? c.relations : ["분류 값", "원문 용어", "요건"];
+  const cols = order.filter(ty => vis.some(n => n.data("type") === ty));
+  const pos = {}, gapY = 34, gapX = 210;
+  left.forEach((n, i) => pos[n.id()] = {x: 0, y: i * gapY * 1.4});
+  const leftH = Math.max(1, left.length - 1) * gapY * 1.4;
+  cols.forEach((ty, j) => {
+    const ns = vis.filter(n => n.data("type") === ty).sort((a, b) => deg(b) - deg(a) || a.data("full").localeCompare(b.data("full")));
+    const h = Math.max(0, ns.length - 1) * gapY, top = (leftH - h) / 2;
+    ns.forEach((n, k) => pos[n.id()] = {x: (j + 1) * gapX, y: top + k * gapY});
+  });
+  vis.addClass("col"); cy.edges(":visible").addClass("col");
+  cy.layout({name: "preset", positions: n => pos[n.id()] || {x: 0, y: 0}, fit: true, padding: 30}).run();
 }
 
 function applyFilters(){
@@ -150,6 +184,8 @@ function applyFilters(){
     cy.nodes().forEach(n => n.style("display", n.connectedEdges().some(e => on.has(e.data("rel"))) ? "element" : "none"));
   });
   $("stats").textContent = `노드 ${cy.nodes(":visible").length} · 선 ${cy.edges(":visible").length}`;
+  runLayout();
+  clearFocus();
 }
 
 function renderControls(){
@@ -158,10 +194,12 @@ function renderControls(){
   $("variant").innerHTML = Object.entries(c.variants).map(([k,v]) => `<option value="${k}" ${k===state.variant?"selected":""}>${esc(v.label)}</option>`).join("");
   $("variant").disabled = Object.keys(c.variants).length < 2;
   const types = Object.keys(c.colors);
-  $("filters").innerHTML = '<span class="muted">관계</span> ' + c.relations.map(r => `<label><input type="checkbox" value="${esc(r)}" checked><span class="sw" style="background:${relColor(c, r)}"></span>${esc(r)}</label>`).join("")
+  $("filters").innerHTML = '<span class="muted">관계</span> ' + c.relations.map(r => `<label><input type="checkbox" value="${esc(r)}" ${(c.defaultOff || []).includes(r) ? "" : "checked"}><span class="sw" style="background:${relColor(c, r)}"></span>${esc(r)}</label>`).join("")
     + ' <span class="muted">· 노드 색: ' + types.map(t => `<span class="sw" style="background:${c.colors[t]}"></span> ${esc(t)}`).join(" ") + '</span>';
-  document.querySelectorAll("#domains .tab").forEach(b => b.onclick = () => { state.domain = b.dataset.d; state.variant = "agent"; load(); });
+  document.querySelectorAll("#domains .tab").forEach(b => b.onclick = () => { state.domain = b.dataset.d; state.variant = "agent"; state.layout = CONFIG[b.dataset.d].layout; load(); });
   $("variant").onchange = e => { state.variant = e.target.value; load(); };
+  $("layoutSel").value = state.layout;
+  $("layoutSel").onchange = e => { state.layout = e.target.value; runLayout(); };
   document.querySelectorAll("#filters input").forEach(x => x.onchange = applyFilters);
 }
 
@@ -180,18 +218,24 @@ async function load(){
         {selector: "node", style: {"background-color": n => c.colors[n.data("type")] || "#888", "label": "data(label)", "font-size": 9, "color": dark ? "#ecebe6" : "#1d1d1b", "text-valign": "bottom", "text-margin-y": 3, "width": 14, "height": 14, "text-wrap": "ellipsis", "text-max-width": 120}},
         {selector: 'node[?long]', style: {"font-size": 8, "label": ""}},
         {selector: 'node[?long].showlabel, node[?long]:selected', style: {"label": "data(label)"}},
-        {selector: 'node[type="사례"], node[type="제품"]', style: {"width": 24, "height": 24, "font-size": 11, "font-weight": "bold"}},
+        {selector: 'node[type="사례"], node[type="제품"]', style: {"width": 26, "height": 26, "font-size": 11, "font-weight": "bold", "shape": "round-rectangle"}},
+        {selector: 'node[?long].focus, node[?long].col', style: {"label": "data(label)"}},
+        {selector: 'node.col', style: {"text-halign": "right", "text-valign": "center", "text-margin-x": 6, "text-margin-y": 0, "text-max-width": 190, "font-size": 12}},
+        {selector: 'edge.col', style: {"opacity": 0.35, "curve-style": "straight"}},
+        {selector: 'node.col[type="사례"], node.col[type="제품"]', style: {"text-halign": "left", "text-margin-x": -6}},
         {selector: "edge", style: {"width": 1.2, "line-color": e => relColor(c, e.data("rel")), "opacity": 0.55, "curve-style": "bezier", "target-arrow-shape": "triangle", "target-arrow-color": e => relColor(c, e.data("rel")), "arrow-scale": 0.6}},
+        {selector: ".faded", style: {"opacity": 0.08, "text-opacity": 0}},
         {selector: ":selected", style: {"border-width": 3, "border-color": "#f0b400", "line-color": "#f0b400", "opacity": 1}}
       ],
-      layout: {name: "cose", animate: false, nodeRepulsion: 9000, idealEdgeLength: 60, randomize: true}
+      layout: {name: "preset"}
     });
     const toggleLabels = () => cy.nodes("[?long]").toggleClass("showlabel", cy.zoom() >= 1.8);
     cy.on("zoom", toggleLabels); toggleLabels();
-    cy.on("tap", "node", ev => showNode(ev.target));
-    cy.on("tap", "edge", ev => showEdge(ev.target));
+    cy.on("tap", "node", ev => { focus(ev.target); showNode(ev.target); });
+    cy.on("tap", "edge", ev => { focus(ev.target); showEdge(ev.target); });
+    cy.on("tap", ev => { if (ev.target === cy) { clearFocus(); $("panel").innerHTML = hint(); } });
     applyFilters();
-    $("panel").innerHTML = '<p class="muted">노드나 선을 누르면 여기에 근거 문장과 출처(원장)가 나와요. 긴 이름은 확대하면 보여요.</p>';
+    $("panel").innerHTML = hint();
   } catch (err) {
     $("panel").innerHTML = `<p>데이터를 불러오지 못했어요: ${esc(err && err.message || err)}</p><p class="muted">내 컴퓨터에서 파일을 바로 열면 브라우저가 CSV 읽기를 막아요. 저장소 맨 위에서 <code>python3 -m http.server</code>를 돌리고 http://localhost:8000/deep/07-graphrag/viewer/ 로 여세요.</p>`;
   }
