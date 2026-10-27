@@ -15,6 +15,8 @@ E1 결정(두 도메인 범위와 분류 축): [e1-decisions.md](e1-decisions.md
 
 3주 챌린지 과제 정의(핵심 질문, 단계 E0~E7과 마감, 필수선): [challenge.md](challenge.md)
 
+E6 그래프 뷰어: [viewer/](viewer/index.html) (배포: https://chihun-an.github.io/rag-field-scan/deep/07-graphrag/viewer/)
+
 ## 폴더 구조
 
 ```
@@ -23,6 +25,7 @@ deep/07-graphrag/
 ├── ai-consulting/     1번 도메인 — AI 컨설팅
 ├── oil-trade/         2번 도메인 — 무역 & 기름
 ├── shared/            도메인과 상관없는 공통 도구 (예: 골든 룰 검사 스크립트)
+├── viewer/            E6 그래프 뷰어 (정적 HTML)
 ├── plan.md            이전 과제 계획
 ├── papers.md          이전 과제 계획
 └── tools.md           이전 과제 계획

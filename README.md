@@ -6,6 +6,8 @@
 ## 배포 URL
 https://chihun-an.github.io/rag-field-scan/
 
+그래프 뷰어(3주 챌린지 E6): https://chihun-an.github.io/rag-field-scan/deep/07-graphrag/viewer/
+
 ## 출발 질문
 규정·품질 문서에 근거를 달아 답하는 AI를 만들려면 무엇을 알아야 할까?
 

@@ -3565,3 +3565,43 @@ Codex 표본: 40개
 - handoff.md: 수정 — 3행 마지막 갱신, 4절 제목, E5 행, 4절 E4 경위에 2번 저울 점검 한 줄과 E5 경위 추가, 5절 첫 줄, 2주차·3주차 할 일, G4 줄
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+## 2026-10-27
+
+### E6 그래프 뷰어 뼈대 (2026-10-27, 08:57경 마침, Claude Code)
+
+- E6 결정(2026-10-26, Cowork가 보기와 추천을 내고 에드워드가 모두 추천대로 골랐다): 두 도메인 모두 에이전트 그래프 1회차를 보여 주고 1번은 사람 그래프로 바꿔 볼 수 있게 한다. 라이브러리는 Cytoscape.js(MIT)이고 CSV 읽기는 PapaParse(MIT)다. 둘 다 cdnjs에서 부른다. 데이터는 저장소의 CSV를 그대로 읽는다. 2번 기준 그래프는 정답 격리 때문에 넣지 않는다.
+- 뷰어 코드는 Cowork가 Claude outputs/viewer/index.html에 초안을 만들고 Cowork 쪽 브라우저(Playwright)로 화면을 확인했다(1번 192줄, 사람 그래프 89줄, 2번 34줄이 CSV 줄 수와 같음, 휴대폰 폭에서 가로 넘침 없음). 그 파일을 글자 그대로 deep/07-graphrag/viewer/index.html로 옮겼다.
+- 되는 것: 도메인 전환, 1번 그래프 전환(에이전트 1회차·사람), 종류별 색, 노드·선을 누르면 근거 문장과 원장(제목·링크) 패널, 관계 필터. 긴 이름(병목·성과·요건)은 확대하거나 누르면 보인다.
+- AGENTS.md "실험 코드"에 뷰어 폴더 예외 한 줄을 넣었다.
+- 확인(Claude Code): 옮긴 index.html의 md5가 16b1026e71304b504a83753c5c115b2e로 지시한 값과 같고 `cmp`로 원본과 같음. 옮기기 전에 내용을 읽어, 읽는 파일이 저장소의 그래프 CSV 세 개(1번 agent-graph-1.csv·human-graph.csv, 2번 agent-graph-1.csv)와 원장 두 개뿐이고 기준 그래프는 읽지 않음을 확인함. 저장소 맨 위에서 `python3 -m http.server 8000`을 잠깐 띄워 세 주소(viewer/, ai-consulting/agent-graph-1.csv, oil-trade/agent-graph-1.csv)가 모두 200임을 확인하고 서버를 끔
+- 고칠 줄은 scratchpad의 일회용 파이썬 스크립트로 기준 줄이 정확히 한 번 나오는지 확인한 뒤 넣었다(넷 모두 한 번씩)
+- 에이전트 오류 없음. 설치한 도구 없음(브라우저로 화면을 직접 열어 보지는 않음)
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: E6 그래프 뷰어 뼈대를 저장소에 올린다. Cowork가 만든 초안(Claude outputs/viewer/index.html)을 그대로 옮기고, AGENTS.md 예외와 README 링크를 넣는다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys 포함)은 열지 않는다. index.html은 글자 하나 바꾸지 않고 옮긴다(md5 확인). [ ] 표시 사이 문장은 그대로 넣고 지시한 곳만 고친다. commit·push 하지 않는다
+
+1. "Claude outputs/viewer/index.html"을 deep/07-graphrag/viewer/index.html로 복사(testlib/는 옮기지 않음)
+2. AGENTS.md "## 실험 코드"에 [AGENTS] 한 줄
+3. deep/07-graphrag/README.md에 [07 링크]와 폴더 구조 [07 구조]
+4. 맨 위 README.md "## 배포 URL" 아래에 [README]
+5. 로컬 서버로 세 주소가 200인지 확인
+6. worklog "## 2026-10-27" 항목에 이 절
+7. 만든·고친 파일 목록, md5 확인 결과, 세 주소의 응답 코드를 보고한다
+
+#### 읽은 파일
+
+- "Claude outputs/viewer/index.html"(복사 전 내용 확인), AGENTS.md, README.md, deep/07-graphrag/README.md, worklog.md(끝부분)
+- 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/viewer/index.html: 새로 만듦(복사, 원본은 그대로 둠. testlib/는 옮기지 않음)
+- AGENTS.md: 수정 — "## 실험 코드"에 뷰어 폴더 예외 한 줄 추가
+- deep/07-graphrag/README.md: 수정 — 뷰어 링크 줄(앞에 빈 줄)과 폴더 구조 viewer/ 줄 추가
+- README.md: 수정 — "## 배포 URL" 아래에 그래프 뷰어 줄(앞에 빈 줄) 추가
+- worklog.md: 수정 — "## 2026-10-27" 항목과 이 절 추가
+- commit·push는 하지 않음

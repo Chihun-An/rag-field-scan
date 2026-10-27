@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GraphRAG 그래프 뷰어</title>
+<!-- E6 내 그래프 뷰어. 저장소의 그래프 CSV와 원장(sources.csv)을 그대로 읽어 그린다. 라이브러리: Cytoscape.js(MIT), PapaParse(MIT). -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+:root{--bg:#f7f7f5;--fg:#1d1d1b;--muted:#6b6b66;--card:#fff;--line:#e2e1dc;--acc:#2f5bd3;--quote:#f1f0eb}
+@media (prefers-color-scheme:dark){:root{--bg:#141413;--fg:#ecebe6;--muted:#a3a29c;--card:#1d1d1b;--line:#33322e;--acc:#86a2f7;--quote:#262623}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+header{padding:14px 16px 8px;border-bottom:1px solid var(--line);background:var(--card)}
+h1{font-size:18px;margin:0 0 8px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.tab{border:1px solid var(--line);background:transparent;color:var(--fg);padding:5px 12px;border-radius:999px;cursor:pointer;font:inherit}
+.tab[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+select{font:inherit;padding:4px 8px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
+.filters label{display:inline-flex;align-items:center;gap:4px;margin-right:10px;cursor:pointer;white-space:nowrap}
+.sw{display:inline-block;width:11px;height:11px;border-radius:50%}
+.muted{color:var(--muted)}
+main{display:grid;grid-template-columns:1fr 380px;height:calc(100vh - 150px);min-height:480px}
+#cy{background:var(--bg);border-right:1px solid var(--line);min-width:0;overflow:hidden;position:relative}
+main>*{min-width:0}
+#panel{overflow:auto;padding:14px 16px;background:var(--card)}
+#panel h2{font-size:16px;margin:0 0 4px}
+.item{border-top:1px solid var(--line);padding:10px 0}
+.rel{font-weight:600}
+blockquote{margin:6px 0;padding:6px 10px;background:var(--quote);border-radius:6px;white-space:pre-wrap;word-break:break-word}
+a{color:var(--acc)}
+footer{padding:8px 16px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);background:var(--card)}
+@media (max-width:820px){main{grid-template-columns:1fr;height:auto}#cy{height:60vh;border-right:0;border-bottom:1px solid var(--line)}#panel{min-height:30vh}}
+</style>
+</head>
+<body>
+<header>
+  <h1>GraphRAG 그래프 뷰어</h1>
+  <div class="row" id="domains"></div>
+  <div class="row"><span class="muted">그래프</span><select id="variant"></select><span id="stats" class="muted"></span></div>
+  <div class="row filters" id="filters"></div>
+</header>
+<main>
+  <div id="cy" aria-label="그래프"></div>
+  <aside id="panel"><p class="muted">노드나 선을 누르면 여기에 근거 문장과 출처(원장)가 나와요. 긴 이름은 확대하면 보여요.</p></aside>
+</main>
+<footer>3주 챌린지 E6. 데이터는 이 저장소의 그래프 CSV와 원장(sources.csv)이다. 2번 기준 그래프는 정답 격리 때문에 넣지 않았다.</footer>
+<script>
+const CONFIG = {
+  "ai-consulting": {
+    label: "1번 AI 컨설팅",
+    sources: "../ai-consulting/sources.csv",
+    variants: {
+      agent: {label: "에이전트 그래프 1회차 (17건)", file: "../ai-consulting/agent-graph-1.csv"},
+      human: {label: "사람 그래프 (7건)", file: "../ai-consulting/human-graph.csv"}
+    },
+    relations: ["수행","고객","고객 산업","적용 업무","사용 기술","해결하려던 병목","낸 성과"],
+    colors: {"사례":"#4b4b47","수행":"#2f5bd3","고객":"#1b8a8a","고객 산업":"#7a4fc2","적용 업무":"#d9792b","사용 기술":"#2e8b4e","해결하려던 병목":"#c2453b","낸 성과":"#b8962a"}
+  },
+  "oil-trade": {
+    label: "2번 무역 & 기름",
+    sources: "../oil-trade/sources.csv",
+    variants: {
+      agent: {label: "에이전트 그래프 1회차", file: "../oil-trade/agent-graph-1.csv"}
+    },
+    relations: ["원문 용어","품목 분류","요건"],
+    colors: {"제품":"#4b4b47","원문 용어":"#1b8a8a","분류 값":"#7a4fc2","요건":"#d9792b"},
+    relColors: {"원문 용어":"#1b8a8a","품목 분류":"#7a4fc2","요건":"#d9792b"}
+  }
+};
+const SHARED_1 = new Set(["수행","고객 산업","적용 업무","사용 기술"]); // 1번에서 사례끼리 공유되는 값
+const relColor = (c, r) => (c.relColors || c.colors)[r] || "#999";
+const PRODUCTS = new Set(["UMO","ULO","PPO"]);
+let state = {domain: "ai-consulting", variant: "agent"};
+let cy = null, sources = {};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const short = (s, n=26) => { s = String(s); return s.length > n ? s.slice(0, n-1) + "…" : s; };
+
+function loadCSV(url){
+  return new Promise((resolve, reject) => Papa.parse(url, {download:true, header:true, skipEmptyLines:true,
+    complete: r => resolve(r.data.map(row => Object.fromEntries(Object.entries(row).map(([k,v]) => [k.replace(/^﻿/,"").trim(), (v??"").trim()])))),
+    error: reject}));
+}
+
+function build1(rows){
+  const nodes = new Map(), edges = [];
+  const add = (id, data) => { if (!nodes.has(id)) nodes.set(id, {data: {id, ...data}}); };
+  rows.forEach((r, i) => {
+    const n = r["사례 번호"]; if (!n || !r["관계"] || !r["값"]) return;
+    const src = sources[n] || {};
+    add("case:"+n, {label: n + " · " + (src["펌"] || ""), type: "사례", full: "사례 " + n + (src["제목"] ? " — " + src["제목"] : ""), ledger: n});
+    const rel = r["관계"], val = r["값"];
+    const vid = SHARED_1.has(rel) ? "v:"+rel+":"+val : "v:"+rel+":"+n+":"+i;
+    add(vid, {label: short(val), type: rel, full: val, long: !SHARED_1.has(rel)});
+    edges.push({data: {id: "e"+i, source: "case:"+n, target: vid, rel, evidence: r["근거 문장"], ledger: n}});
+  });
+  return [...nodes.values(), ...edges];
+}
+
+function build2(rows){
+  const nodes = new Map(), edges = [];
+  const add = (id, data) => { if (!nodes.has(id)) nodes.set(id, {data: {id, ...data}}); };
+  const subjNode = s => { const id = "n:"+s; add(id, {label: short(s), type: PRODUCTS.has(s) ? "제품" : "분류 값", full: s}); return id; };
+  rows.forEach((r, i) => {
+    const s = r["주어"], rel = r["관계"], val = r["값"]; if (!s || !rel || !val) return;
+    const sid = subjNode(s);
+    let vid;
+    if (rel === "품목 분류") vid = subjNode(val);
+    else if (rel === "원문 용어") { vid = "t:"+val; add(vid, {label: short(val), type: "원문 용어", full: val}); }
+    else { vid = "r:"+s+":"+i; add(vid, {label: short(val), type: "요건", full: val, long: true}); }
+    edges.push({data: {id: "e"+i, source: sid, target: vid, rel, evidence: r["근거 문장"], ledger: r["원장 번호"], loc: r["위치"],
+      system: r["분류 체계"], stage: r["업무 단계"], actor: r["주체"]}});
+  });
+  return [...nodes.values(), ...edges];
+}
+
+function ledgerHTML(n){
+  const s = sources[n]; if (!n) return "";
+  if (!s) return `<div class="muted">원장 ${esc(n)}번</div>`;
+  const who = s["펌"] || s["발행 기관"] || "";
+  const link = s["URL"] ? `<a href="${esc(s["URL"])}" target="_blank" rel="noopener">${esc(s["제목"])}</a>` : esc(s["제목"]);
+  return `<div class="muted">원장 ${esc(n)}번 · ${esc(who)}<br>${link}</div>`;
+}
+
+function edgeHTML(e, fromNode){
+  const d = e.data();
+  const other = fromNode ? (e.source().id() === fromNode.id() ? e.target() : e.source()) : null;
+  const extra = [d.system && "분류 체계: "+d.system, d.stage && "업무 단계: "+d.stage, d.actor && "주체: "+d.actor, d.loc && "위치: "+d.loc].filter(Boolean).join(" · ");
+  const ev = d.evidence === "원장" ? '<div class="muted">근거: 원장(sources.csv의 펌 칸)</div>' : `<blockquote>${esc(d.evidence)}</blockquote>`;
+  return `<div class="item"><div><span class="rel">${esc(d.rel)}</span>${other ? " → " + esc(other.data("full")) : ""}</div>${extra ? `<div class="muted">${esc(extra)}</div>` : ""}${ev}${ledgerHTML(d.ledger)}</div>`;
+}
+
+function showNode(n){
+  const es = n.connectedEdges(":visible");
+  let html = `<h2>${esc(n.data("full"))}</h2><div class="muted">종류: ${esc(n.data("type"))} · 연결 ${es.length}개</div>`;
+  if (n.data("ledger")) html += ledgerHTML(n.data("ledger"));
+  es.forEach(e => html += edgeHTML(e, n));
+  $("panel").innerHTML = html;
+}
+function showEdge(e){
+  $("panel").innerHTML = `<h2>${esc(e.source().data("full"))}</h2><div class="muted">→ ${esc(e.target().data("full"))}</div>` + edgeHTML(e, null);
+}
+
+function applyFilters(){
+  const on = new Set([...document.querySelectorAll("#filters input:checked")].map(x => x.value));
+  cy.batch(() => {
+    cy.edges().forEach(e => e.style("display", on.has(e.data("rel")) ? "element" : "none"));
+    cy.nodes().forEach(n => n.style("display", n.connectedEdges().some(e => on.has(e.data("rel"))) ? "element" : "none"));
+  });
+  $("stats").textContent = `노드 ${cy.nodes(":visible").length} · 선 ${cy.edges(":visible").length}`;
+}
+
+function renderControls(){
+  const c = CONFIG[state.domain];
+  $("domains").innerHTML = Object.entries(CONFIG).map(([k,v]) => `<button class="tab" data-d="${k}" aria-pressed="${k===state.domain}">${esc(v.label)}</button>`).join("");
+  $("variant").innerHTML = Object.entries(c.variants).map(([k,v]) => `<option value="${k}" ${k===state.variant?"selected":""}>${esc(v.label)}</option>`).join("");
+  $("variant").disabled = Object.keys(c.variants).length < 2;
+  const types = Object.keys(c.colors);
+  $("filters").innerHTML = '<span class="muted">관계</span> ' + c.relations.map(r => `<label><input type="checkbox" value="${esc(r)}" checked><span class="sw" style="background:${relColor(c, r)}"></span>${esc(r)}</label>`).join("")
+    + ' <span class="muted">· 노드 색: ' + types.map(t => `<span class="sw" style="background:${c.colors[t]}"></span> ${esc(t)}`).join(" ") + '</span>';
+  document.querySelectorAll("#domains .tab").forEach(b => b.onclick = () => { state.domain = b.dataset.d; state.variant = "agent"; load(); });
+  $("variant").onchange = e => { state.variant = e.target.value; load(); };
+  document.querySelectorAll("#filters input").forEach(x => x.onchange = applyFilters);
+}
+
+async function load(){
+  renderControls();
+  $("panel").innerHTML = '<p class="muted">불러오는 중…</p>';
+  const c = CONFIG[state.domain];
+  try {
+    const [rows, srcRows] = await Promise.all([loadCSV(c.variants[state.variant].file), loadCSV(c.sources)]);
+    sources = Object.fromEntries(srcRows.map(s => [s["번호"], s]));
+    const elements = state.domain === "ai-consulting" ? build1(rows) : build2(rows);
+    if (cy) cy.destroy();
+    const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+    cy = cytoscape({container: $("cy"), elements,
+      style: [
+        {selector: "node", style: {"background-color": n => c.colors[n.data("type")] || "#888", "label": "data(label)", "font-size": 9, "color": dark ? "#ecebe6" : "#1d1d1b", "text-valign": "bottom", "text-margin-y": 3, "width": 14, "height": 14, "text-wrap": "ellipsis", "text-max-width": 120}},
+        {selector: 'node[?long]', style: {"font-size": 8, "label": ""}},
+        {selector: 'node[?long].showlabel, node[?long]:selected', style: {"label": "data(label)"}},
+        {selector: 'node[type="사례"], node[type="제품"]', style: {"width": 24, "height": 24, "font-size": 11, "font-weight": "bold"}},
+        {selector: "edge", style: {"width": 1.2, "line-color": e => relColor(c, e.data("rel")), "opacity": 0.55, "curve-style": "bezier", "target-arrow-shape": "triangle", "target-arrow-color": e => relColor(c, e.data("rel")), "arrow-scale": 0.6}},
+        {selector: ":selected", style: {"border-width": 3, "border-color": "#f0b400", "line-color": "#f0b400", "opacity": 1}}
+      ],
+      layout: {name: "cose", animate: false, nodeRepulsion: 9000, idealEdgeLength: 60, randomize: true}
+    });
+    const toggleLabels = () => cy.nodes("[?long]").toggleClass("showlabel", cy.zoom() >= 1.8);
+    cy.on("zoom", toggleLabels); toggleLabels();
+    cy.on("tap", "node", ev => showNode(ev.target));
+    cy.on("tap", "edge", ev => showEdge(ev.target));
+    applyFilters();
+    $("panel").innerHTML = '<p class="muted">노드나 선을 누르면 여기에 근거 문장과 출처(원장)가 나와요. 긴 이름은 확대하면 보여요.</p>';
+  } catch (err) {
+    $("panel").innerHTML = `<p>데이터를 불러오지 못했어요: ${esc(err && err.message || err)}</p><p class="muted">내 컴퓨터에서 파일을 바로 열면 브라우저가 CSV 읽기를 막아요. 저장소 맨 위에서 <code>python3 -m http.server</code>를 돌리고 http://localhost:8000/deep/07-graphrag/viewer/ 로 여세요.</p>`;
+  }
+}
+load();
+</script>
+</body>
+</html>
