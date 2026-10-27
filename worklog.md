@@ -3780,3 +3780,18 @@ Codex 표본: 40개
 - deep/07-graphrag/experiments/e4-human-graph-oil-trade-results.md: 새로 만듦(85줄)
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 2번 사람 그래프 v2 (2026-10-27, Cowork)
+
+#### 한 일과 결과
+
+- v1 결과를 들은 뒤 에드워드가 UMO·PPO 근거를 빠뜨렸다고 느껴, v2 방법과 예측을 먼저 커밋했다(e5606f3, [방법](deep/07-graphrag/experiments/e4-human-graph-oil-trade-method.md) 6절).
+- Cowork가 v1을 그대로 복사해 oil-trade/human-graph-v2.csv를 만들었고(내용은 열지 않고 cmp로 같은지만 확인), 에드워드가 구글 시트에서 AI 없이 줄을 추가해 CSV로 내려받았다.
+- 내려받은 파일을 저장소로 옮겨 v1과 비교해 보니 v1 9줄 가운데 3줄(원장 17 품목 분류 2줄, 원장 14 요건 1줄)이 원래 모양대로 없었다. 시트에서 작업하는 동안 바뀐 것이다. 에드워드가 "원래 줄 되살리기"를 골라, v1 9줄을 원래 순서 그대로 앞에 두고 v1에 없는 줄 16줄을 뒤에 붙였다. 바뀐 3줄의 새 모양은 새 줄 16줄 안에 들어 있다.
+- 형식 검사: 줄 25개, 위반 0건, 경고 0건. 관계별 원문 용어 5, 품목 분류 4, 요건 16. 주어별 UMO 3, ULO 10, PPO 12.
+- Cowork는 v1 3줄을 찾을 때 칸 이름·글자 수·주어·관계·원장 번호만 출력했고, 값과 근거 문장은 출력하지 않았다.
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/oil-trade/human-graph-v2.csv: 새로 만듦(v1 9줄 + 새 줄 16줄)
+- worklog.md: 수정 — 이 절 추가
