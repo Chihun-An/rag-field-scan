@@ -3741,3 +3741,42 @@ Codex 표본: 40개
 - deep/07-graphrag/experiments/compare-graphs-oil-trade-test.md: 수정 — 맨 끝에 8절 추가(앞 절은 그대로)
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 2번 사람 그래프 비교 (2026-10-27, 15:59경 마침, Claude Code)
+
+- 에드워드가 AI 없이 구글 시트에서 2번 사람 그래프를 만들었다(원장 4·11·14·17번). Cowork가 다운로드 폴더의 CSV를 oil-trade/human-graph.csv로 복사했고, 내용은 열지 않고 형식 검사 숫자만 확인했다(위반 0, 경고 0). 사람 그래프는 비교 전에 커밋했다.
+- 비교 결과는 experiments/e4-human-graph-oil-trade-results.md에 남겼다. 예측(재현율 80% 이상, 4번 법 0줄)과의 대조는 결과 파일을 본 뒤 findings.md에 더한다.
+
+#### 한 일과 결과
+
+- 시작 전 확인: `git log -1 --format=%s -- deep/07-graphrag/oil-trade/human-graph.csv` → "Add domain-2 human graph (ledgers 4, 11, 14, 17)"(커밋되어 있음)
+- 사람 그래프 줄 수: 9(형식 검사 위반 0, 경고 0)
+- 원장별 줄 수: 4번 0, 11번 2, 14번 4, 17번 3
+- 사람 대 1회차(--ledger 4,11,14,17): A 재현율 3 / 9 (33.3%), 닫힌 목록 일치율 1 / 1 (100.0%), B 정밀도 3 / 24 (12.5%)
+- 사람 대 2회차(--ledger 4,11,14,17): A 재현율 3 / 9 (33.3%), 닫힌 목록 일치율 1 / 1 (100.0%), B 정밀도 3 / 28 (10.7%)
+- 네 명령 모두 종료 코드 0. 원장별·관계별 줄 수는 새 파일을 만들지 않고 결과 파일의 명령 블록 안에 넣은 표준 라이브러리 코드(python3 - <<'EOF')로 셌다. 처음에는 줄이 있는 원장만 내게 짜서 4번이 빠졌고, 방법 파일의 원장 4편을 0줄까지 모두 내도록 고쳐 다시 셌다
+- 확인: 결과 파일 안의 네 명령을 그대로 다시 돌려 적힌 출력과 같음을 확인함. human-graph.csv와 에이전트 그래프 CSV는 고치지 않음(git status에 없음)
+- 에이전트 오류 없음. 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 커밋된 2번 사람 그래프를 에이전트 그래프 1·2회차와 비교하고 결과를 남긴다(experiments/e4-human-graph-oil-trade-method.md 3절).
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 oil-trade/raw/는 열지 않는다(스크립트가 읽는 것은 괜찮다). human-graph.csv와 에이전트 그래프 CSV는 고치지 않는다. 결과 파일·보고·worklog에는 개수와 비율만 쓰고 값과 근거 문장은 쓰지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. commit·push 하지 않는다
+
+1. 사람 그래프가 커밋되어 있는지 git log로 확인(없으면 멈춤)
+2. 형식 검사와 두 비교(--ledger 4,11,14,17)를 돌리고, 표준 라이브러리 스크립트로 사람 그래프의 원장별·관계별 줄 수를 센다
+3. experiments/e4-human-graph-oil-trade-results.md를 만든다(제목, [결과 머리], 세 절에 명령과 출력 전체만, 해석 없음)
+4. worklog "## 2026-10-27" 항목 맨 끝에 이 절
+5. 만든·고친 파일 목록과 2번 명령의 출력 전체를 보고한다
+
+#### 읽은 파일
+
+- 직접 연 파일 없음(worklog.md 끝부분만). human-graph.csv와 에이전트 그래프 CSV는 형식 검사·비교 스크립트와 줄 수를 세는 코드가 읽었고, 값과 근거 문장은 출력하지 않음
+- oil-trade/raw/와 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e4-human-graph-oil-trade-results.md: 새로 만듦(85줄)
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음
