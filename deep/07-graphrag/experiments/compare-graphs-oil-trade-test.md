@@ -753,3 +753,84 @@ B 정밀도: 30 / 38 (78.9%) / 관계별: 원문 용어 9 / 12 (75.0%), 품목 �
 
 - 기대와 다른 결과: 없음
 - 실수 기록: 1회차 대 2회차를 결과 파일과 처음 대조할 때 Claude Code가 결과 파일에서 출력 블록을 잘못 뽑아(명령 블록과 출력 블록 사이 빈 칸을 잡음) "다름"으로 나왔다. 출력 블록을 다시 뽑아 대조하니 같았다
+
+## 8. 원장 거르기 시험 (--ledger를 더한 뒤)
+
+2번 사람 그래프 비교([e4-human-graph-oil-trade-method.md](e4-human-graph-oil-trade-method.md) 3절)를 위해 스크립트에 선택지 --ledger를 더했다(2026-10-27). "--ledger 4,11,14,17"처럼 주면 두 파일 모두에서 원장 번호가 그 목록에 있는 줄만 남기고 비교하고, 출력 첫 줄 위에 "원장 거르기: …"를 낸다. 주지 않으면 앞과 똑같이 동작해야 한다.
+
+- 구현에서 정한 것: 칸 수가 틀린 줄은 원장 번호를 알 수 없으므로 거르기와 상관없이 "칸 수가 틀려 뺀 줄"로 센다. 원장 번호는 앞뒤 공백을 지운 글자 그대로 비교한다. 목록에 빈 번호가 있으면(예: "1,,2") 입력 오류(종료 코드 2)다
+- 시험 파일: 앞 절과 같은 [a.csv](fixtures/compare-oil-trade/a.csv), [b.csv](fixtures/compare-oil-trade/b.csv). 새 시험 파일은 만들지 않았다
+- 아래 기대는 실행 전에 손으로 계산해 적었다
+
+### 손으로 계산한 기대
+
+- --ledger 없이 돌린 여섯 비교(a 대 b, b 대 a, a 대 a, empty-a 대 empty-b, space-a 대 space-b, value-a 대 value-b): 7절 끝 "5번 우선으로 고친 뒤"의 출력과 글자 단위로 같다
+- a.csv 대 b.csv --ledger 1,2:
+  - 남는 줄: a는 1번 줄(원장 1, PPO 원문 용어)과 2번 줄(원장 2, ULO 품목 분류) 2줄, b도 1번 줄(원장 1)과 2번 줄(원장 2) 2줄. b의 칸이 3개인 줄은 거르기와 상관없이 "칸 수가 틀려 뺀 줄" B 1로 센다
+  - a1–b1: 주어·관계·값이 같은 원문 용어라 짝(짝짓기 7번). 비교할 닫힌 칸 없음
+  - a2–b2: 주어·관계·원장 번호가 같고, b 근거 문장("테스트 문장 나")이 a 근거 문장("테스트 문장 나 긴 문장")에 들어 있고, a 값이 b 값("테스트 분류 값 둘")에 들어 있어 짝. 분류 체계는 둘 다 HS(관세율표·WCO)라 같음
+  - 엇갈린 짝(a1–b2, a2–b1)은 주어가 달라 후보가 아님. 후보가 둘 이상인 줄 없음
+
+기대 출력:
+
+```
+원장 거르기: 1,2
+A 줄 수: 2, B 줄 수: 2 (칸 수가 틀려 뺀 줄: A 0, B 1)
+짝 수: 2, 후보가 둘 이상이었던 줄 수: A 0, B 0
+닫힌 목록 일치율: 1 / 1 (100.0%)
+칸별 일치율: 분류 체계 1 / 1 (100.0%), 업무 단계 0 / 0 (해당 없음), 주체 0 / 0 (해당 없음)
+뺀 칸 수: 양쪽 모두 기타 0, 양쪽 빈 칸 0
+A 재현율: 2 / 2 (100.0%) / 관계별: 원문 용어 1 / 1 (100.0%), 품목 분류 1 / 1 (100.0%), 요건 0 / 0 (해당 없음)
+B 정밀도: 2 / 2 (100.0%) / 관계별: 원문 용어 1 / 1 (100.0%), 품목 분류 1 / 1 (100.0%), 요건 0 / 0 (해당 없음)
+자카드 지수: 2 / 2 (100.0%)
+```
+
+### 실행과 출력
+
+모두 저장소 맨 위에서 돌렸다. 설치한 도구 없음.
+
+--ledger 없이 돌린 여섯 비교(모두 종료 코드 0):
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py deep/07-graphrag/experiments/fixtures/compare-oil-trade/a.csv deep/07-graphrag/experiments/fixtures/compare-oil-trade/b.csv
+python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py deep/07-graphrag/experiments/fixtures/compare-oil-trade/b.csv deep/07-graphrag/experiments/fixtures/compare-oil-trade/a.csv
+python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py deep/07-graphrag/experiments/fixtures/compare-oil-trade/a.csv deep/07-graphrag/experiments/fixtures/compare-oil-trade/a.csv
+python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py deep/07-graphrag/experiments/fixtures/compare-oil-trade/empty-a.csv deep/07-graphrag/experiments/fixtures/compare-oil-trade/empty-b.csv
+python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py deep/07-graphrag/experiments/fixtures/compare-oil-trade/space-a.csv deep/07-graphrag/experiments/fixtures/compare-oil-trade/space-b.csv
+python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py deep/07-graphrag/experiments/fixtures/compare-oil-trade/value-a.csv deep/07-graphrag/experiments/fixtures/compare-oil-trade/value-b.csv
+```
+
+출력은 여섯 개 모두 7절 끝 "5번 우선으로 고친 뒤"의 해당 출력 블록과 글자 단위로 같아서 여기에 다시 싣지 않는다. 대조는 두 가지로 했다. (1) 스크립트를 고치기 전에 같은 여섯 비교를 돌려 둔 출력과 고친 뒤 출력을 `cmp`로 비교함(모두 같음). (2) 고친 뒤 출력을 이 파일 7절 끝의 출력 블록과 일회용 파이썬 스크립트로 비교함(모두 같음).
+
+```bash
+python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py deep/07-graphrag/experiments/fixtures/compare-oil-trade/a.csv deep/07-graphrag/experiments/fixtures/compare-oil-trade/b.csv --ledger 1,2
+```
+
+종료 코드: 0
+
+```
+원장 거르기: 1,2
+A 줄 수: 2, B 줄 수: 2 (칸 수가 틀려 뺀 줄: A 0, B 1)
+짝 수: 2, 후보가 둘 이상이었던 줄 수: A 0, B 0
+닫힌 목록 일치율: 1 / 1 (100.0%)
+칸별 일치율: 분류 체계 1 / 1 (100.0%), 업무 단계 0 / 0 (해당 없음), 주체 0 / 0 (해당 없음)
+뺀 칸 수: 양쪽 모두 기타 0, 양쪽 빈 칸 0
+A 재현율: 2 / 2 (100.0%) / 관계별: 원문 용어 1 / 1 (100.0%), 품목 분류 1 / 1 (100.0%), 요건 0 / 0 (해당 없음)
+B 정밀도: 2 / 2 (100.0%) / 관계별: 원문 용어 1 / 1 (100.0%), 품목 분류 1 / 1 (100.0%), 요건 0 / 0 (해당 없음)
+자카드 지수: 2 / 2 (100.0%)
+```
+
+추가로 목록에 빈 번호가 있을 때(`--ledger "1,,2"`)를 돌려 "입력 오류: --ledger 목록에 빈 번호가 있음", 종료 코드 2를 확인했다.
+
+### 확인 표 (원장 거르기 시험)
+
+| 확인할 것 | 기대 | 스크립트 결과 | 사람 확인 |
+|-----------|------|---------------|-----------|
+| --ledger 없이 a 대 b, b 대 a, a 대 a, empty-a 대 empty-b, space-a 대 space-b, value-a 대 value-b | 7절 끝 출력과 같음 | 여섯 모두 글자 단위로 같음(고치기 전 출력과도 같음) | 에드워드 확인 전 |
+| a 대 b --ledger 1,2 출력 전체 | 위 기대 출력 | 글자 단위로 같음 | 에드워드 확인 전 |
+| 첫 줄 "원장 거르기: 1,2" | 선택지를 주었을 때만 나옴 | --ledger 1,2에서만 나옴(여섯 비교에는 없음) | 에드워드 확인 전 |
+| 남는 줄 수 | A 2, B 2(칸 수가 틀린 줄 B 1은 따로 셈) | A 2, B 2, 뺀 줄 B 1 | 에드워드 확인 전 |
+| --ledger "1,,2" | 입력 오류, 종료 코드 2 | 입력 오류, 종료 코드 2 | 에드워드 확인 전 |
+
+- 기대와 다른 결과: 없음
+- 앞 절(1~7절)의 시험 파일과 기대 칸은 고치지 않았다

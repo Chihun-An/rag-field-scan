@@ -3700,3 +3700,44 @@ Codex 표본: 40개
 - handoff.md: 수정 — 3행 마지막 갱신, 4절 제목, E6·E7 행, 5절 첫 줄, 3주차 묶음
 - worklog.md: 수정 — 이 절 추가
 - commit·push는 하지 않음
+
+### 2번 사람 그래프 방법과 예측 (2026-10-27, 10:56경 마침, Claude Code)
+
+- 2번 사람 그래프를 만들기 전에 방법과 예측을 정했다: experiments/e4-human-graph-oil-trade-method.md. 원장 4·11·14·17번 4편, 스키마 규칙 그대로, 에드워드가 AI 없이 만든다. 토요일(2026-10-31) 발표 전에 하기로 했다.
+- 비교 스크립트에 원장 번호로 거르는 선택지(--ledger)를 더했다. 선택지를 주지 않으면 결과가 앞과 같다.
+- 빈 양식(머리줄만)은 Cowork가 Claude outputs/human-graph-oil-trade-template.csv에 두었다(커밋하지 않음).
+
+#### 한 일과 결과
+
+- e4-human-graph-oil-trade-method.md를 지시문 [방법] 그대로 새로 만들었다
+- compare-graphs-oil-trade.py: main()에 --ledger 읽기와 거르기, 출력 첫 줄 위 "원장 거르기: …"를 넣고, 맨 위 주석의 입력·실행 설명에 선택지를 더했다(26줄 추가, 5줄 삭제. 짝짓기·세기 부분은 그대로). 구현에서 정한 것: 칸 수가 틀린 줄은 원장 번호를 알 수 없어 거르기와 상관없이 "칸 수가 틀려 뺀 줄"로 센다. 원장 번호는 앞뒤 공백을 지운 글자 그대로 비교한다. 목록에 빈 번호가 있으면 입력 오류(종료 코드 2)
+- 시험: 고치기 전에 여섯 비교(a 대 b, b 대 a, a 대 a, empty, space, value)를 돌려 출력을 scratchpad에 남겼다. 고친 뒤 --ledger 없이 다시 돌린 여섯 출력은 고치기 전 출력과 `cmp`로 같았고, compare-graphs-oil-trade-test.md 7절 끝(5번 우선으로 고친 뒤)의 출력 블록과도 글자 단위로 같았다
+- --ledger 시험: 실행 전에 a.csv 대 b.csv --ledger 1,2의 기대(남는 줄 A 2·B 2, 짝 2, 닫힌 목록 1 / 1, 자카드 2 / 2)를 손으로 계산해 시험 기록에 먼저 적고 돌렸다. 출력이 기대와 글자 단위로 같았다(종료 코드 0). 빈 번호("1,,2")는 입력 오류·종료 코드 2를 확인했다
+- compare-graphs-oil-trade-test.md 맨 끝에 "## 8. 원장 거르기 시험 (--ledger를 더한 뒤)" 절(기대·명령·출력·확인 표, 사람 확인 "에드워드 확인 전")을 덧붙였다. 앞 절(1~7절)과 시험 파일은 고치지 않았다(git diff에서 지운 줄 0)
+- 에이전트 오류: 고치기 전 출력을 남기는 첫 명령에서 zsh가 따옴표 없는 변수를 낱말로 나누지 않아 `set -- $p`에 두 파일 이름이 한 덩어리로 들어갔고, 여섯 비교가 모두 종료 코드 2로 실패했다. 스크립트를 고치기 전에 알아채고 파일 이름을 따로 넘겨 다시 돌렸다(파일에는 영향 없음)
+- 설치한 도구 없음
+
+#### 받은 지시(Cowork가 쓰고 에드워드가 전달)
+
+목표: 2번 사람 그래프를 만들기 전에 방법과 예측을 저장소에 남기고, 비교 스크립트에 원장 번호로 거르는 선택지를 더한다. 아직 사람 그래프는 없다.
+
+- 지킬 것: 저장소 밖 파일(/Volumes/rag-answer-keys 포함)과 oil-trade/raw/는 열지 않는다. [ ] 표시 사이 문장은 그대로 넣는다. 앞 시험의 시험 파일과 기대 칸은 고치지 않는다. commit·push 하지 않는다
+
+1. experiments/e4-human-graph-oil-trade-method.md를 [방법] 그대로 새로 만든다
+2. compare-graphs-oil-trade.py에 --ledger를 더한다(주지 않으면 지금과 똑같이 동작, 주었을 때만 출력 첫 줄 위에 "원장 거르기: …", 맨 위 주석의 입력·실행 설명에 추가, 다른 곳은 고치지 않음)
+3. --ledger 없이 여섯 비교를 다시 돌려 시험 기록 7절 끝 결과와 같은지 확인하고, 기대를 먼저 적은 뒤 "a.csv 대 b.csv --ledger 1,2"를 돌려 시험 기록 맨 끝 8절에 남긴다
+4. worklog "## 2026-10-27" 항목 맨 끝에 이 절
+5. 만든·고친 파일 목록과 3번 시험 결과를 보고한다
+
+#### 읽은 파일
+
+- deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py, compare-graphs-oil-trade-test.md(절 제목과 7절), fixtures/compare-oil-trade/a.csv·b.csv(기대 계산), worklog.md(끝부분)
+- oil-trade/raw/, 에이전트 그래프 CSV, 저장소 밖 파일은 열지 않음
+
+#### 만든·고친 파일
+
+- deep/07-graphrag/experiments/e4-human-graph-oil-trade-method.md: 새로 만듦
+- deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py: 수정 — --ledger 선택지와 맨 위 주석 설명 추가
+- deep/07-graphrag/experiments/compare-graphs-oil-trade-test.md: 수정 — 맨 끝에 8절 추가(앞 절은 그대로)
+- worklog.md: 수정 — 이 절 추가
+- commit·push는 하지 않음

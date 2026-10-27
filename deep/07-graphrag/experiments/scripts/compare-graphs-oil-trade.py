@@ -5,6 +5,9 @@
 #   값·근거 문장·주어 이름은 출력하지 않고 개수와 비율만 낸다. 짝 목록 같은 중간 파일은 만들지 않는다.
 # 입력: 명령줄 인자 2개 — A CSV(기준 그래프 또는 1회차), B CSV(에이전트 그래프 또는 2회차).
 #   utf-8-sig, 머리줄 "주어,관계,값,분류 체계,업무 단계,주체,원장 번호,위치,근거 문장"(check-graph-csv-oil-trade.py와 같음)
+#   선택지 --ledger <번호,번호,...> (예: --ledger 4,11,14,17): 두 파일 모두에서 원장 번호가 그 목록에 있는 줄만 남기고 비교한다.
+#     이때 출력 첫 줄 위에 "원장 거르기: 4,11,14,17"을 낸다. 주지 않으면 거르지 않는다.
+#     칸 수가 틀린 줄은 원장 번호를 알 수 없어 거르기와 상관없이 "칸 수가 틀려 뺀 줄"로 센다.
 # 출력: 표준 출력에 줄 수, 짝 수, 닫힌 목록 일치율(전체·칸별), 뺀 칸 수, A 재현율, B 정밀도, 자카드 지수(비율은 소수점 한 자리 %)
 # 종료 코드: 0 정상, 2 입력 오류(파일 없음, 머리줄 틀림)
 #
@@ -12,7 +15,7 @@
 #   빈 근거 문장(원문 용어·품목 분류는 빈 값도)인 줄은 후보가 되지 않는다(방법 파일 짝짓기 5번).
 #   근거 문장과 값은 정규화한 뒤 공백을 모두 지우고 비교한다(방법 파일 짝짓기 6번).
 #   원문 용어·품목 분류는 주어·관계가 같고 공백을 지운 값이 완전히 같으면 근거 문장·원장 번호와 상관없이 후보다(방법 파일 짝짓기 7번). 단, 근거 문장이 빈 줄은 5번대로 후보가 되지 않는다.
-# 실행: python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py <A CSV> <B CSV>
+# 실행: python3 deep/07-graphrag/experiments/scripts/compare-graphs-oil-trade.py <A CSV> <B CSV> [--ledger 4,11,14,17]
 
 import csv
 import difflib
@@ -129,11 +132,27 @@ def frac(n, d):
 
 
 def main():
-    if len(sys.argv) != 3:
-        print("사용: python3 compare-graphs-oil-trade.py <A CSV> <B CSV>")
+    usage = "사용: python3 compare-graphs-oil-trade.py <A CSV> <B CSV> [--ledger 4,11,14,17]"
+    args = sys.argv[1:]
+    ledger = None
+    if "--ledger" in args:
+        k = args.index("--ledger")
+        if k + 1 >= len(args):
+            print(usage)
+            return 2
+        ledger = [x.strip() for x in args[k + 1].split(",")]
+        del args[k:k + 2]
+        if not all(ledger):
+            input_error("--ledger 목록에 빈 번호가 있음")
+    if len(args) != 2:
+        print(usage)
         return 2
-    A, bad_a = load(sys.argv[1])
-    B, bad_b = load(sys.argv[2])
+    A, bad_a = load(args[0])
+    B, bad_b = load(args[1])
+    if ledger is not None:
+        keep = set(ledger)
+        A = [r for r in A if r["원장 번호"] in keep]
+        B = [r for r in B if r["원장 번호"] in keep]
 
     cand = [(i, j) for i, a in enumerate(A) for j, b in enumerate(B) if is_candidate(a, b)]
     cand_a = {}
@@ -175,6 +194,8 @@ def main():
         return ", ".join(parts)
 
     n_pairs = len(pairs)
+    if ledger is not None:
+        print(f"원장 거르기: {','.join(ledger)}")
     print(f"A 줄 수: {len(A)}, B 줄 수: {len(B)} (칸 수가 틀려 뺀 줄: A {bad_a}, B {bad_b})")
     print(f"짝 수: {n_pairs}, 후보가 둘 이상이었던 줄 수: A {multi_a}, B {multi_b}")
     print(f"닫힌 목록 일치율: {frac(sum(same.values()), sum(compared.values()))}")
