@@ -13,8 +13,24 @@ https://chihun-an.github.io/rag-field-scan/
 
 ## 2026-10-31 발표 요약
 
-3주 챌린지(두 도메인 GraphRAG)의 요약이다. 짧게 발표할 때는 "한눈에"만, 길게 할 때는 아래 절까지 쓴다. 자세한 내용은 [findings.md](deep/07-graphrag/findings.md)에 있다.
+3주 챌린지(두 도메인 GraphRAG)의 요약이다. 2번 도메인은 2026-10-13 멘토 승인으로 방산에서 무역 & 기름(UMO·ULO·PPO)으로 바꿨다. 짧게 발표할 때는 아래 표에서 ★ 줄만 쓴다. 자세한 내용은 [findings.md](deep/07-graphrag/findings.md)에 있다.
 
+### 발표 순서와 바로 가기
+
+| 순서 | 말할 것 | 바로 가기 |
+|------|---------|-----------|
+| 1 ★ | 과제와 핵심 질문, 2번 도메인 변경 | [challenge.md](deep/07-graphrag/challenge.md) |
+| 2 ★ | 한 줄 답 | [한눈에](#한눈에) |
+| 3 | 무엇을 했나(E0~E7)와 작업 순서의 증거 | [무엇을 만들고 쟀나](#무엇을-만들고-쟀나) · 커밋: 골든 세트 [b847eaf](https://github.com/Chihun-An/rag-field-scan/commit/b847eaf) → 사람 그래프 [065cf33](https://github.com/Chihun-An/rag-field-scan/commit/065cf33) → 에이전트 그래프 [b173c20](https://github.com/Chihun-An/rag-field-scan/commit/b173c20) · [07 커밋 목록](https://github.com/Chihun-An/rag-field-scan/commits/main/deep/07-graphrag) |
+| 4 ★ | 멘토 피드백 "두 도메인의 저울 맞추기"에 한 일 | [저울 점검](deep/07-graphrag/experiments/e4-scale-check-oil-trade.md) → [사람 그래프 v1](deep/07-graphrag/experiments/e4-human-graph-oil-trade-results.md) → [v2](deep/07-graphrag/experiments/e4-human-graph-v2-oil-trade-results.md) → [요건 14줄 진단](deep/07-graphrag/experiments/e4-human-req-diagnosis-oil-trade.md) |
+| 5 ★ | 주요 발견: 그래프 경유 답은 근거가 덜 탄탄했다 | [주요 발견](#주요-발견--그래프-경유-답은-근거가-덜-탄탄했다) · [채점](deep/07-graphrag/experiments/e5-score-results.md) · [판정](deep/07-graphrag/experiments/e5-judge-results.md) |
+| 6 | 정확했지만 좁았다, 같은 저울, AI 판정 대 사람 | [그 밖의 발견](#그-밖의-발견) · [사람 판정 비교](deep/07-graphrag/experiments/e5-human-judge-results.md) |
+| 7 | 예측 대 실제 | [예측 대 실제](#예측-대-실제) |
+| 8 ★ | 그래프 뷰어 시연 | [그래프 뷰어(배포)](https://chihun-an.github.io/rag-field-scan/deep/07-graphrag/viewer/) |
+| 9 | 한계, 지금 하는 일과의 연결 | [3주 챌린지의 한계](#3주-챌린지의-한계) · [findings 7절](deep/07-graphrag/findings.md#7-지금-하는-일과의-연결) |
+| 10 | 다음 계획 | [week-3.md](progress/week-3.md) |
+
+- [발표 순서와 바로 가기](#발표-순서와-바로-가기)
 - [한눈에](#한눈에)
 - [무엇을 만들고 쟀나](#무엇을-만들고-쟀나)
 - [일한 방식](#일한-방식)
