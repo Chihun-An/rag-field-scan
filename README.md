@@ -30,8 +30,8 @@ https://chihun-an.github.io/rag-field-scan/
 1. **질문:** 자료가 많은 도메인(1번 AI 컨설팅)과 적은 도메인(2번 무역 & 기름)에 GraphRAG를 하나씩 만들면, 그래프는 언제 도움이 될까? 원장(원천 자료 목록)은 도메인마다 17건이다.
 2. **답:** 자료가 다 읽을 수 없을 만큼 많고, 그래프를 만드는 규칙이 질문에 필요한 연결을 담을 때 도움이 된다. 이번에는 둘 다 아니었고, 그래서 그래프 경유 답과 검색만 답의 점수가 비슷했다(1번 87.1% 대 87.1%, 2번 87.0% 대 91.6%).
 3. **주요 발견:** 그래프 경유 답은 점수는 비슷했지만 근거가 덜 탄탄했다. 근거가 주장을 뒷받침하는 비율이 1번 79.6% → 73.0%, 2번 73.6% → 64.0%로 낮았다.
-4. **에이전트 그래프는 정확했지만 좁았다:** 2번에서 짝 지은 줄은 분류 값이 모두 같았지만, 사람이 같은 규칙으로 만든 그래프 줄의 33.3%만 찾았다. 무역 법령 요건은 사람도 이 규칙으로는 넣지 못했다. 그래프가 담는 범위는 모델보다 규칙이 정했다.
-5. **같은 저울:** 사람 그래프 기준으로 재면 에이전트가 찾은 비율이 1번 72.2%, 2번 33.3%였다.
+4. **에이전트 그래프는 정확했지만 좁았다:** 2번에서 짝 지은 줄은 분류 값이 모두 같았지만, 기준 그래프의 요건 105줄 중 5줄만 찾았고 표본 20줄을 직접 분류하니 19줄이 정말 놓친 사실이었다. 무역 법령 요건은 사람도 이 규칙으로는 넣지 못했다. 그래프가 담는 범위는 모델보다 규칙이 정했다.
+5. **같은 저울:** 사람 그래프 기준으로 재면 에이전트가 찾은 비율이 1번 72.2%, 2번 33.3%였다. 다만 2번은 짝짓기 방식 탓이 커서, 짝이 안 된 사람 요건 14줄을 직접 분류하니 놓친 사실은 0줄이었다.
 
 [목차로](#2026-10-31-발표-요약)
 
@@ -41,7 +41,7 @@ https://chihun-an.github.io/rag-field-scan/
 |------|-------|---------------|-----------------|
 | E1·E2 | 범위, 분류 축, 원천 원장 | 컨설팅 펌 7곳의 공개 AI 도입 사례 17건 | UMO·ULO·PPO 관련 법령·고시·관세율표 17건 |
 | E3 | 골든 세트(스키마, 질문 10개와 통제 항목 5개, 기대 답, 골든 룰 G1~G9, 예측) | 완료 | 완료 |
-| E4 | 사람 그래프 대 에이전트 그래프(에이전트는 2회) | 사람 그래프 7건 기준, 닫힌 목록 일치율 72.2% | 기준 그래프 대비 재현율 12.9%·15.1%, 사람 그래프(원장 4편) 대비 33.3% |
+| E4 | 사람 그래프 대 에이전트 그래프(에이전트는 2회) | 사람 그래프 7건 기준, 닫힌 목록 일치율 72.2% | 기준 그래프 대비 재현율 12.9%·15.1%, 사람 그래프(원장 4편) 대비 33.3%(짝이 안 된 요건 14줄 중 놓친 사실 0) |
 | E5 | 검색만 대 그래프 경유 답, 채점과 판정 | 87.1% 대 87.1% | 87.0% 대 91.6% |
 | E6 | 그래프 뷰어 | 에이전트 그래프와 사람 그래프 | 에이전트 그래프 |
 | E7 | 발견 정리 | [findings.md](deep/07-graphrag/findings.md) | 같음 |
@@ -84,13 +84,13 @@ https://chihun-an.github.io/rag-field-scan/
 
 ### 그 밖의 발견
 
-- **에이전트 그래프는 정확했지만 좁았다(2번).** 짝 지은 줄의 분류 값은 모두 같았다(기준 그래프와 15/15·17/17, 사람 그래프와 1/1). 그런데 찾은 비율은 기준 그래프의 12.9%·15.1%(요건은 105줄 중 5줄), 사람 그래프 v1의 33.3%(요건 4줄 중 0줄), 결과를 본 뒤 16줄을 더한 v2의 24.0%·28.0%였다. 기준 그래프 요건 20줄을 에드워드가 분류하니 놓친 사실이 19였다. 제품을 바젤 코드나 수출입 폐기물 구분에 이으려면 두 문서를 엮어야 하는데, 스키마는 한 줄에 근거 하나만 허용했다. 사람 그래프도 v1·v2 모두 원장 4번(폐기물국가간이동법)에서 한 줄도 없었다. 무역 법령 요건이 빠진 것은 에이전트만이 아니라 규칙의 한계다.
-- **같은 저울로 재니 두 도메인이 달랐다.** 사람 줄 중 에이전트에도 있는 비율이 1번 72.2%(26/36), 2번 33.3%(3/9)였고, 에이전트 줄 중 사람에게도 있는 비율은 1번 89.7%·86.7%, 2번 12.5%·10.7%였다. 1번은 사람과 에이전트가 거의 같은 사실을, 2번은 서로 다른 사실을 많이 뽑았다. 다만 1번은 사례 번호·관계·값으로, 2번은 근거 문장으로 짝을 지어 방식이 같지 않고, 2번 사람 그래프는 원장 4편·9줄로 작다.
+- **에이전트 그래프는 정확했지만 좁았다(2번).** 짝 지은 줄의 분류 값은 모두 같았다(기준 그래프와 15/15·17/17, 사람 그래프와 1/1). 그런데 찾은 비율은 기준 그래프의 12.9%·15.1%(요건은 105줄 중 5줄), 사람 그래프 v1의 33.3%, 결과를 본 뒤 16줄을 더한 v2의 24.0%·28.0%였다. 다만 사람 그래프 쪽은 짝이 안 된 요건 14줄을 에드워드가 분류하니 놓친 사실 0, 같은 사실이지만 주어가 다름 4(사람 ULO, 에이전트 폐윤활유), 근거 문장이 다름 4, 판단 어려움 6이어서, 낮은 숫자는 주로 짝짓기 방식 탓이었다. 기준 그래프 요건 20줄을 에드워드가 분류하니 놓친 사실이 19였다. 제품을 바젤 코드나 수출입 폐기물 구분에 이으려면 두 문서를 엮어야 하는데, 스키마는 한 줄에 근거 하나만 허용했다. 사람 그래프도 v1·v2 모두 원장 4번(폐기물국가간이동법)에서 한 줄도 없었다. 무역 법령 요건이 빠진 것은 에이전트만이 아니라 규칙의 한계다.
+- **같은 저울로 재니 두 도메인의 숫자가 달랐다.** 사람 줄 중 에이전트에도 있는 비율이 1번 72.2%(26/36), 2번 33.3%(3/9)였고, 에이전트 줄 중 사람에게도 있는 비율은 1번 89.7%·86.7%, 2번 12.5%·10.7%였다. 다만 1번은 사례 번호·관계·값으로, 2번은 근거 문장으로 짝을 지어 방식이 같지 않고, 2번 사람 그래프는 원장 4편·9줄로 작다. 2번 숫자는 짝짓기 방식 때문에 낮게 나온 몫이 커서(놓친 사실 0/14), 두 도메인에서 에이전트가 뽑은 사실의 차이로 읽으면 안 된다.
 - **AI 판정기끼리는 맞고, 사람과는 덜 맞았다.** 표본 40개에서 Codex 대 citation-judge는 80.0%, 사람 대 각각은 67.5%였다. 사람이 "뒷받침됨"으로 본 29개 중 8개를 AI 둘은 다르게 봤다.
 - **그래프가 질문에 맞으면 원문을 덜 읽었다.** 1번 그래프 경유 답은 15문항 중 11문항을 그래프만으로 답했고, 검색만 답은 17편을 다 읽었다. 점수는 같았다.
 - **측정 규칙이 숫자를 흔들었다.** 2번 회차끼리 자카드 지수(두 그래프의 겹침)가 짝짓기 규칙 하나로 46.9%에서 71.4%로 바뀌었다. 원문 PDF의 낱말 중간 공백 때문에 형식 검사와 짝짓기를 고쳤다(모두 기준과 비교하기 전, 방법 파일에 기록).
 
-출처: [findings.md](deep/07-graphrag/findings.md) 3·4·6절, [e4-reference-results-oil-trade.md](deep/07-graphrag/experiments/e4-reference-results-oil-trade.md), [e4-scale-check-oil-trade.md](deep/07-graphrag/experiments/e4-scale-check-oil-trade.md), [e4-closed-results.md](deep/07-graphrag/experiments/e4-closed-results.md), [e4-human-graph-oil-trade-results.md](deep/07-graphrag/experiments/e4-human-graph-oil-trade-results.md), [e4-human-graph-v2-oil-trade-results.md](deep/07-graphrag/experiments/e4-human-graph-v2-oil-trade-results.md), [e5-human-judge-results.md](deep/07-graphrag/experiments/e5-human-judge-results.md), [e4-method-oil-trade.md](deep/07-graphrag/experiments/e4-method-oil-trade.md) · [목차로](#2026-10-31-발표-요약)
+출처: [findings.md](deep/07-graphrag/findings.md) 3·4·6절, [e4-reference-results-oil-trade.md](deep/07-graphrag/experiments/e4-reference-results-oil-trade.md), [e4-scale-check-oil-trade.md](deep/07-graphrag/experiments/e4-scale-check-oil-trade.md), [e4-closed-results.md](deep/07-graphrag/experiments/e4-closed-results.md), [e4-human-graph-oil-trade-results.md](deep/07-graphrag/experiments/e4-human-graph-oil-trade-results.md), [e4-human-graph-v2-oil-trade-results.md](deep/07-graphrag/experiments/e4-human-graph-v2-oil-trade-results.md), [e4-human-req-diagnosis-oil-trade.md](deep/07-graphrag/experiments/e4-human-req-diagnosis-oil-trade.md), [e5-human-judge-results.md](deep/07-graphrag/experiments/e5-human-judge-results.md), [e4-method-oil-trade.md](deep/07-graphrag/experiments/e4-method-oil-trade.md) · [목차로](#2026-10-31-발표-요약)
 
 ### 예측 대 실제
 
@@ -102,6 +102,7 @@ https://chihun-an.github.io/rag-field-scan/
 | 2번 사람 그래프 재현율 80% 이상 | 33.3% |
 | 2번 사람 그래프의 원장 4번 줄 0줄 | 맞음(0줄) |
 | 사람 그래프 v2에 추가한 줄 중 짝은 절반 미만 | 맞음(18.8%·25.0%) |
+| 짝이 안 된 사람 요건 줄 중 놓친 사실은 절반 이상 | 0/14 |
 
 출처: [findings.md](deep/07-graphrag/findings.md) 2절, [1번 예측](deep/07-graphrag/ai-consulting/predictions.md), [2번 예측](deep/07-graphrag/oil-trade/predictions.md), [사람 그래프 방법](deep/07-graphrag/experiments/e4-human-graph-oil-trade-method.md) · [목차로](#2026-10-31-발표-요약)
 
@@ -121,7 +122,7 @@ https://chihun-an.github.io/rag-field-scan/
 - 원장이 도메인마다 17건이고 질문은 종류마다 2개다. "자료가 많을 때 그래프가 도움이 된다"는 시험하지 못한 가설이다.
 - 그래프 추출, 답, citation-judge, 채점이 모두 Claude 계열이다. 다른 계열(Codex) 판정은 40개뿐이다.
 - 사람 판정 40개는 Codex 판정을 화면에서 본 뒤에 했다.
-- 2번 사람 그래프는 작고(9줄), 에드워드가 뷰어 화면으로 에이전트 그래프 모양을 미리 봤다. v2는 결과를 들은 뒤에 만들었다. 짝이 안 된 사람 요건 줄이 놓친 사실인지 다른 근거를 쓴 같은 사실인지는 가리지 않았다.
+- 2번 사람 그래프는 작고(9줄), 에드워드가 뷰어 화면으로 에이전트 그래프 모양을 미리 봤다. v2는 결과를 들은 뒤에 만들었다. 짝이 안 된 사람 요건 14줄의 진단은 에드워드 한 명이 1회차와만 대 본 것이고, 6줄은 판단 어려움이었다.
 - 2번 기대 답 일부가 격리 대화의 보고로 샜고(10-15), 채점 세션에서 격리 대화가 기준 그래프 몇몇 열의 값 목록을 자기 출력에 찍었다. 둘 다 worklog에 기록했다.
 
 출처: [findings.md](deep/07-graphrag/findings.md) 5절, [worklog.md](worklog.md) · [목차로](#2026-10-31-발표-요약)
