@@ -97,7 +97,6 @@
 - 3주차: 완료. 멘토 점검에서 받은 할 일(2번 저울 점검, E5 사람 판정, E6 뷰어 뼈대)을 모두 했다. E6 뷰어(852cbea, 고친 판 95d405a), E7 발견 정리(6525d34), [week-3.md](progress/week-3.md). week-3.md는 2026-10-30에 사람 그래프와 README 요약을 더해 고쳤다
 - E6 뷰어 구조: deep/07-graphrag/viewer/index.html 한 파일. Cytoscape.js·PapaParse를 cdnjs에서 부르고 저장소 CSV를 그대로 읽는다. 내 맥에서 미리 보려면 저장소 맨 위에서 python3 -m http.server를 돌리고 http://localhost:8000/deep/07-graphrag/viewer/ 를 연다. Cowork는 초안을 Claude outputs/viewer/에 만들고 Cowork 쪽 브라우저로 확인한 뒤 옮겼다
 - 남은 작은 일:
-  - [07 README](deep/07-graphrag/README.md) 폴더 구조 블록에 e1-decisions.md가 아직 없다(worklog 2026-10-13에 기록된 상태)
   - 2번 통관 단계: 근거 자료를 찾으면 [2번 스키마](deep/07-graphrag/oil-trade/schema.md)에 추가한다(에드워드 예정)
   - 한국 10단위 세번이 관세·통계통합품목분류표(재정경제부장관 고시)에 있는지 확인 필요
   - 골든 룰 G4의 원문 PDF 공백 문제는 E5 답 전에 경고로 바꿨다(43c5fbb)

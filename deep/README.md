@@ -10,9 +10,12 @@
 - 작업 폴더: [05-citation/](05-citation/)
 - 결론: [05-citation/findings.md](05-citation/findings.md)
 
-## 07 GraphRAG (계획)
+## 07 GraphRAG (3주 챌린지)
 
-- 목표: 전략 컨설팅 펌의 공개 리포트를 대상으로 GraphRAG 계획을 세운다.
+- 처음 2주에는 전략 컨설팅 펌의 공개 리포트로 GraphRAG 계획을 세웠고([07-graphrag/plan.md](07-graphrag/plan.md)), 2026-10-12부터 3주 챌린지로 두 도메인(AI 컨설팅, 무역 & 기름)에 GraphRAG를 만들어 쟀다.
+- 확인할 질문: 자료가 많은 도메인과 적은 도메인에 GraphRAG를 하나씩 만들면, 그래프는 언제 도움이 될까?
 - 관련 영역: [areas/07-graphrag.md](../areas/07-graphrag.md)
-- 작업 폴더: [07-graphrag/](07-graphrag/)
-- 계획서: [07-graphrag/plan.md](07-graphrag/plan.md)
+- 작업 폴더: [07-graphrag/](07-graphrag/README.md)
+- 과제 정의: [07-graphrag/challenge.md](07-graphrag/challenge.md)
+- 결론: [07-graphrag/findings.md](07-graphrag/findings.md)
+- 그래프 뷰어: https://chihun-an.github.io/rag-field-scan/deep/07-graphrag/viewer/

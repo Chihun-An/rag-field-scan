@@ -3829,3 +3829,13 @@ Codex 표본: 40개
 - handoff.md: 마지막 갱신, 4절 2번 E4 칸과 E4 경위(사람 그래프 커밋 순서), 5절 다음 할 일·3주차·남은 작은 일(사람 요건 14줄 진단, README와 findings의 주요 발견이 다르다는 주의)을 고쳤다. 고치기 전에 초안을 에드워드가 확인했다.
 - 확인: handoff.md가 링크한 저장소 파일 모두 있음.
 - 만든·고친 파일: progress/week-3.md(수정), handoff.md(수정), worklog.md(이 절 추가). commit·push는 하지 않음.
+
+### 안내 문서 고침 (Cowork)
+
+- 과제가 다 끝났는지 에드워드가 물어, 멘토가 저장소를 돌아볼 때 거치는 안내 문서를 Cowork가 다시 열어 보니 옛 상태가 남아 있었다. Cowork가 초안을 보여 주고 에드워드가 확인한 뒤 고쳤다. 결과와 숫자는 바꾸지 않았다.
+- deep/README.md: "07 GraphRAG (계획)" 절을 3주 챌린지 절로 바꿨다(질문, 과제 정의, 결론 findings.md, 뷰어 주소).
+- deep/07-graphrag/README.md: 두 도메인 상태 "진행" → "완료(E0~E7)", 1주차 마감 옛 문장을 고침, experiments/ 링크 추가, 폴더 구조에 challenge.md·e1-decisions.md·experiments/를 넣고 shared/ 설명을 사실대로 고침(handoff 5절 "남은 작은 일"의 e1-decisions.md 항목도 이것으로 해결).
+- ai-consulting/README.md, oil-trade/README.md: 원장·제외 목록·기대 답 해시·사람 그래프·에이전트 그래프·E5 답·experiments/ 링크를 더했다. 1번의 "실험 기록을 이 폴더에 둔다"는 사실과 달라 고쳤다.
+- shared/README.md: "골든 룰 검사 스크립트처럼"을 고쳤다(실제로는 Codex 판정 규칙만 있고 스크립트는 experiments/scripts/에 있다).
+- 확인: 다섯 파일의 저장소 링크가 모두 있는 파일을 가리킴.
+- 만든·고친 파일: 위 다섯 README(수정), worklog.md(이 절 추가). commit·push는 하지 않음.
