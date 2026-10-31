@@ -16,7 +16,7 @@ https://chihun-an.github.io/rag-field-scan/
 멘토님이 10/31(토) 21:00에 보시는 것을 기준으로, 과제에서 요구한 것과 지난 점검(10/26)의 피드백마다 무엇을 했고 어디서 보면 되는지 정리했다. 과제 원문은 [challenge.md](deep/07-graphrag/challenge.md)이고, 2번 도메인은 2026-10-13 멘토 승인으로 방산에서 무역 & 기름(UMO·ULO·PPO)으로 바꿨다. 발견과 숫자의 자세한 내용은 [findings.md](deep/07-graphrag/findings.md)에 있다.
 
 - [한눈에](#한눈에)
-- [과제 요구 사항과 한 것](#과제-요구-사항과-한-것)
+- [완료 기준 12칸](#완료-기준-12칸)
 - [지난 점검 피드백에 한 것](#지난-점검-피드백에-한-것)
 - [일한 방식](#일한-방식)
 - [주요 발견 — 그래프 경유 답은 근거가 덜 탄탄했다](#주요-발견--그래프-경유-답은-근거가-덜-탄탄했다)
@@ -36,35 +36,36 @@ https://chihun-an.github.io/rag-field-scan/
 
 [목차로](#3주-챌린지-최종-점검-2026-10-31)
 
-### 과제 요구 사항과 한 것
+### 완료 기준 12칸
 
-과제 원문의 요구를 주차별로 옮기고, 한 것과 보는 곳을 붙였다. 시각은 커밋 시각이다.
+과제 원문의 요구 12개를 주차별로 옮기고, 한 것과 보는 곳을 붙였다. **12칸 모두 했고, 8번(E5)과 9번(week-2.md)은 점검 시각(10/25 21:00) 뒤인 10/26에 했다.** 시각은 커밋 시각이다.
 
 **1주차 (점검 10/18 21:00)**
 
-| 요구 | 한 것 | 보는 곳 |
-|------|-------|---------|
-| E0 저장소 정리(.DS_Store 3개·빈 .Rhistory 지우고 .gitignore에 추가) | 저장소에서 빼고 .gitignore에 넣었다(10/12) | 커밋 [7b45236](https://github.com/Chihun-An/rag-field-scan/commit/7b45236), [.gitignore](.gitignore) |
-| E1 두 도메인 범위 + 분류 축, 3줄 판단 기록 | 1번은 펌 7곳(McKinsey·BCG·Bain·Deloitte·PwC·EY·KPMG)의 공개 AI 도입 사례, 2번은 UMO·ULO·PPO의 품목 분류·규제·수출입 절차(한국 법령, 바젤협약, HS 코드). 분류 축은 두 도메인 모두 업무 유형. 판단 기록(AI 제안 / 내 선택 / 이유) 있음 | [e1-decisions.md](deep/07-graphrag/e1-decisions.md) |
-| E2 원천 원장(AI 컨설팅 15건+, 방산 10건+, 찾았지만 못 쓴 자료도 세기) | 1번 원장 17건·제외 19건(10/13), 2번 원장 17건·제외 24건(10/14). 원문은 저작권 때문에 올리지 않고 해시를 원장에 적었다 | 1번 [원장](deep/07-graphrag/ai-consulting/sources.csv)·[제외](deep/07-graphrag/ai-consulting/excluded.csv), 2번 [원장](deep/07-graphrag/oil-trade/sources.csv)·[제외](deep/07-graphrag/oil-trade/excluded.csv) · 커밋 [0d9f7e2](https://github.com/Chihun-An/rag-field-scan/commit/0d9f7e2), [5e4c595](https://github.com/Chihun-An/rag-field-scan/commit/5e4c595) |
-| E3 골든 세트를 그래프보다 먼저(질문 8~10 + 통제 4~5 + 골든 룰 6~10 + 검사 스크립트) | 도메인마다 질문 10개 + 통제 항목 5개 + 골든 룰 G1~G9 + 검사 스크립트. 기대 답은 암호 디스크(저장소 밖)에 두고 해시만 커밋(1번 10/14 16:33). 예측도 그래프 전에 커밋 | 1번 [질문](deep/07-graphrag/ai-consulting/questions.md)·[골든 룰](deep/07-graphrag/ai-consulting/golden-rules.md)·[예측](deep/07-graphrag/ai-consulting/predictions.md), 2번 [질문](deep/07-graphrag/oil-trade/questions.md)·[골든 룰](deep/07-graphrag/oil-trade/golden-rules.md)·[예측](deep/07-graphrag/oil-trade/predictions.md) · [검사 스크립트](deep/07-graphrag/experiments/scripts/) · 커밋 [b847eaf](https://github.com/Chihun-An/rag-field-scan/commit/b847eaf) |
-| progress/week-1.md 4줄 · 리즈 저장소 상호 검토 1장 | 10/15, 10/16 | [week-1.md](progress/week-1.md), [상호 검토](progress/review-liz-week-1.md) |
+| 칸 | 완료 | 요구 | 한 것 | 보는 곳 |
+|----|------|------|-------|---------|
+| 1 | ✅ | E0 저장소 정리(.DS_Store 3개·빈 .Rhistory 지우고 .gitignore에 추가) | 저장소에서 빼고 .gitignore에 넣었다(10/12) | 커밋 [7b45236](https://github.com/Chihun-An/rag-field-scan/commit/7b45236), [.gitignore](.gitignore) |
+| 2 | ✅ | E1 두 도메인 범위 + 분류 축, 3줄 판단 기록 | 1번은 펌 7곳(McKinsey·BCG·Bain·Deloitte·PwC·EY·KPMG)의 공개 AI 도입 사례, 2번은 UMO·ULO·PPO의 품목 분류·규제·수출입 절차(한국 법령, 바젤협약, HS 코드). 분류 축은 두 도메인 모두 업무 유형. 판단 기록(AI 제안 / 내 선택 / 이유) 있음 | [e1-decisions.md](deep/07-graphrag/e1-decisions.md) |
+| 3 | ✅ | E2 원천 원장(AI 컨설팅 15건+, 방산 10건+, 찾았지만 못 쓴 자료도 세기) | 1번 원장 17건·제외 19건(10/13), 2번 원장 17건·제외 24건(10/14). 원문은 저작권 때문에 올리지 않고 해시를 원장에 적었다 | 1번 [원장](deep/07-graphrag/ai-consulting/sources.csv)·[제외](deep/07-graphrag/ai-consulting/excluded.csv), 2번 [원장](deep/07-graphrag/oil-trade/sources.csv)·[제외](deep/07-graphrag/oil-trade/excluded.csv) · 커밋 [0d9f7e2](https://github.com/Chihun-An/rag-field-scan/commit/0d9f7e2), [5e4c595](https://github.com/Chihun-An/rag-field-scan/commit/5e4c595) |
+| 4 | ✅ | E3 골든 세트를 그래프보다 먼저(질문 8~10 + 통제 4~5 + 골든 룰 6~10 + 검사 스크립트) | 도메인마다 질문 10개 + 통제 항목 5개 + 골든 룰 G1~G9 + 검사 스크립트. 기대 답은 암호 디스크(저장소 밖)에 두고 해시만 커밋(1번 10/14 16:33). 예측도 그래프 전에 커밋 | 1번 [질문](deep/07-graphrag/ai-consulting/questions.md)·[골든 룰](deep/07-graphrag/ai-consulting/golden-rules.md)·[예측](deep/07-graphrag/ai-consulting/predictions.md), 2번 [질문](deep/07-graphrag/oil-trade/questions.md)·[골든 룰](deep/07-graphrag/oil-trade/golden-rules.md)·[예측](deep/07-graphrag/oil-trade/predictions.md) · [검사 스크립트](deep/07-graphrag/experiments/scripts/) · 커밋 [b847eaf](https://github.com/Chihun-An/rag-field-scan/commit/b847eaf) |
+| 5 | ✅ | progress/week-1.md 4줄 | 10/15 | [week-1.md](progress/week-1.md) |
+| 6 | ✅ | 리즈 저장소 상호 검토 1장 | 10/16, 10/19 추가 검토 | [상호 검토](progress/review-liz-week-1.md) · 커밋 [63f37fb](https://github.com/Chihun-An/rag-field-scan/commit/63f37fb), [88afef3](https://github.com/Chihun-An/rag-field-scan/commit/88afef3) |
 
 **2주차 (점검 10/25 21:00)**
 
-| 요구 | 한 것 | 보는 곳 |
-|------|-------|---------|
-| E4 사람 그래프(AI 컨설팅 6건+, 먼저·독립적으로) vs 에이전트 그래프(2회+) → 정밀도·재현율 | 1번: 사람 그래프 7건(10/22 10:36) → 에이전트 그래프 2회(12:08, 13:29). 닫힌 목록 재현율 72.2%·정밀도 89.7%·86.7%, 열린 값 재현율 78.3%·73.9%. 에이전트는 Claude Code를 추출기로, 회차마다 저장소 밖 새 폴더·새 대화. 2번: 에이전트 그래프 2회를 기준 그래프와 비교해 재현율 12.9%·15.1%, 정밀도 52.9%·55.3% | 1번 [닫힌 목록](deep/07-graphrag/experiments/e4-closed-results.md)·[열린 값 1회차](deep/07-graphrag/experiments/e4-open-results-run1.md)·[2회차](deep/07-graphrag/experiments/e4-open-results-run2.md), 2번 [기준 비교](deep/07-graphrag/experiments/e4-reference-results-oil-trade.md) · 커밋 [065cf33](https://github.com/Chihun-An/rag-field-scan/commit/065cf33) → [b173c20](https://github.com/Chihun-An/rag-field-scan/commit/b173c20) → [ed2203d](https://github.com/Chihun-An/rag-field-scan/commit/ed2203d) |
-| E5 검색만 vs 그래프 경유, 05의 2층 검증 그대로 + 다른 계열 판정기 1회 이상 | 두 도메인 × 두 방식 답 4개. 층위 1은 골든 룰 검사, 층위 2는 citation-judge(판정 단위 414개). 다른 계열 판정기 Codex로 40개. 채점은 두 답을 A/B로 가린 채 했다. 점수 1번 87.1% 대 87.1%, 2번 87.0% 대 91.6% | [방법](deep/07-graphrag/experiments/e5-method.md) · [골든 룰 검사](deep/07-graphrag/experiments/e5-golden-rules-results.md) · [판정](deep/07-graphrag/experiments/e5-judge-results.md) · [채점](deep/07-graphrag/experiments/e5-score-results.md) · [사람 판정 비교](deep/07-graphrag/experiments/e5-human-judge-results.md) |
-| progress/week-2.md 4줄 | 10/26 13:39(점검 시각 뒤에 씀) | [week-2.md](progress/week-2.md) |
+| 칸 | 완료 | 요구 | 한 것 | 보는 곳 |
+|----|------|------|-------|---------|
+| 7 | ✅ | E4 사람 그래프(AI 컨설팅 6건+, 먼저·독립적으로) vs 에이전트 그래프(2회+) → 정밀도·재현율 | 1번: 사람 그래프 7건(10/22 10:36) → 에이전트 그래프 2회(12:08, 13:29). 닫힌 목록 재현율 72.2%·정밀도 89.7%·86.7%, 열린 값 재현율 78.3%·73.9%. 에이전트는 Claude Code를 추출기로, 회차마다 저장소 밖 새 폴더·새 대화. 2번: 에이전트 그래프 2회를 기준 그래프와 비교해 재현율 12.9%·15.1%, 정밀도 52.9%·55.3% | 1번 [닫힌 목록](deep/07-graphrag/experiments/e4-closed-results.md)·[열린 값 1회차](deep/07-graphrag/experiments/e4-open-results-run1.md)·[2회차](deep/07-graphrag/experiments/e4-open-results-run2.md), 2번 [기준 비교](deep/07-graphrag/experiments/e4-reference-results-oil-trade.md) · 커밋 [065cf33](https://github.com/Chihun-An/rag-field-scan/commit/065cf33) → [b173c20](https://github.com/Chihun-An/rag-field-scan/commit/b173c20) → [ed2203d](https://github.com/Chihun-An/rag-field-scan/commit/ed2203d) |
+| 8 | ✅ (늦음) | E5 검색만 vs 그래프 경유, 05의 2층 검증 그대로 + 다른 계열 판정기 1회 이상 | 두 도메인 × 두 방식 답 4개. 층위 1은 골든 룰 검사, 층위 2는 citation-judge(판정 단위 414개). 다른 계열 판정기 Codex로 40개. 채점은 두 답을 A/B로 가린 채 했다. 점수 1번 87.1% 대 87.1%, 2번 87.0% 대 91.6% | [방법](deep/07-graphrag/experiments/e5-method.md) · [골든 룰 검사](deep/07-graphrag/experiments/e5-golden-rules-results.md) · [판정](deep/07-graphrag/experiments/e5-judge-results.md) · [채점](deep/07-graphrag/experiments/e5-score-results.md) · [사람 판정 비교](deep/07-graphrag/experiments/e5-human-judge-results.md) |
+| 9 | ✅ (늦음) | progress/week-2.md 4줄 | 10/26 13:39(점검 시각 뒤에 씀) | [week-2.md](progress/week-2.md) |
 
 **3주차 (최종 점검 10/31 21:00)**
 
-| 요구 | 한 것 | 보는 곳 |
-|------|-------|---------|
-| E6 내 그래프 뷰어(오픈소스 JS 라이브러리, 정적 HTML, GitHub Pages, 도메인 전환·종류별 색·클릭하면 출처 패널·필터) | Cytoscape.js·PapaParse로 만든 HTML 한 파일을 GitHub Pages에 올렸다. 네 기능 모두 있고, 열로 정렬·누른 노드와 이웃만 밝게·1번 사람/에이전트 그래프 전환을 더했다(10/27) | [뷰어(배포)](https://chihun-an.github.io/rag-field-scan/deep/07-graphrag/viewer/) · [index.html](deep/07-graphrag/viewer/index.html) · 커밋 [852cbea](https://github.com/Chihun-An/rag-field-scan/commit/852cbea), [95d405a](https://github.com/Chihun-An/rag-field-scan/commit/95d405a) |
-| E7 발견 정리(먼저 적은 예측 vs 실제 · 방산 보완) | 예측 대 실제는 findings 2절, 2번 보완(저울 점검, 사람 그래프 v1·v2, 요건 줄 진단)은 3·6절 | [findings.md](deep/07-graphrag/findings.md) |
-| progress/week-3.md 4줄 | 있음 | [week-3.md](progress/week-3.md) |
+| 칸 | 완료 | 요구 | 한 것 | 보는 곳 |
+|----|------|------|-------|---------|
+| 10 | ✅ | E6 내 그래프 뷰어(오픈소스 JS 라이브러리, 정적 HTML, GitHub Pages, 도메인 전환·종류별 색·클릭하면 출처 패널·필터) | Cytoscape.js·PapaParse로 만든 HTML 한 파일을 GitHub Pages에 올렸다. 네 기능 모두 있고, 열로 정렬·누른 노드와 이웃만 밝게·1번 사람/에이전트 그래프 전환을 더했다(10/27) | [뷰어(배포)](https://chihun-an.github.io/rag-field-scan/deep/07-graphrag/viewer/) · [index.html](deep/07-graphrag/viewer/index.html) · 커밋 [852cbea](https://github.com/Chihun-An/rag-field-scan/commit/852cbea), [95d405a](https://github.com/Chihun-An/rag-field-scan/commit/95d405a) |
+| 11 | ✅ | E7 발견 정리(먼저 적은 예측 vs 실제 · 방산 보완) | 예측 대 실제는 findings 2절, 2번 보완(저울 점검, 사람 그래프 v1·v2, 요건 줄 진단)은 3·6절 | [findings.md](deep/07-graphrag/findings.md) |
+| 12 | ✅ | progress/week-3.md 4줄 | 10/27, 10/30에 사람 그래프·진단을 더해 고침 | [week-3.md](progress/week-3.md) |
 
 **꼭 지킬 것**
 
